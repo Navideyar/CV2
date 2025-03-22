@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+Host: thealibigdeli.ir
+Sitemap: https://thealibigdeli.ir/sitemap.xml
+

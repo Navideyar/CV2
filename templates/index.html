@@ -231,14 +231,14 @@
                     </figure>
                     <!-- Icon logos START -->
                     <div
-                        class="p-2 bg-white shadow rounded-3 position-absolute top-50 start-0 translate-middle-y mt-n7 d-none d-sm-block">
+                        class="p-2 bg-white shadow rounded-3 position-absolute top-50 start-0 translate-middle-y mt-n7 d-none d-sm-block tech-icon python-icon">
                         <img src="{% static 'images/client/python.svg' %}" alt="Icon" loading="lazy">
                     </div>
-                    <div class="p-2 bg-white shadow rounded-3 position-absolute top-0 end-0 me-5">
+                    <div class="p-2 bg-white shadow rounded-3 position-absolute top-0 end-0 me-5 tech-icon django-icon">
                         <img src="{% static 'images/client/django.svg' %}" alt="Icon" loading="lazy">
                     </div>
                     <div
-                        class="p-2 bg-white shadow rounded-3 position-absolute top-50 end-0 translate-middle-y mt-5 ms-5 d-none d-lg-block z-index-9">
+                        class="p-2 bg-white shadow rounded-3 position-absolute top-50 end-0 translate-middle-y mt-5 ms-5 d-none d-lg-block z-index-9 tech-icon docker-icon">
                         <img src="{% static 'images/client/docker.svg' %}" alt="Icon" loading="lazy">
                     </div>
                     <!-- Icon logos END -->
@@ -262,6 +262,56 @@
     100% {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+.tech-icon {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: techIconEntrance 1.5s ease-out forwards;
+}
+
+.tech-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.tech-icon img {
+    transition: transform 0.3s ease;
+}
+
+.tech-icon:hover img {
+    transform: scale(1.1);
+}
+
+.python-icon {
+    animation-delay: 0s;
+}
+
+.django-icon {
+    animation-delay: 0s;
+}
+
+.docker-icon {
+    animation-delay: 0s;
+}
+
+@keyframes techIconEntrance {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+        rotate: -15deg;
+    }
+    70% {
+        transform: scale(1.1);
+        opacity: 1;
+        rotate: 5deg;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        rotate: 0deg;
     }
 }
 </style>

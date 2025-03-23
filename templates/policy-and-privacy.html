@@ -1,15 +1,16 @@
 
 
-
+{% load static %}
 
 
 
 <!DOCTYPE html>
+
 <html lang="fa" class="page-dir-rtl"  itemscope itemtype="https://schema.org/None" >
 
 <head  prefix="og: http://ogp.me/ns#">
      
-    
+
 <meta name="description" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta name="keywords" content="python, ai, iot, py3, پایتون, اینترنت اشیا, django, جنگو, micropython, fastapi"><title>شرایط و قوانین استفاده از سایت</title><meta property="og:title" content="شرایط و قوانین استفاده از سایت"><meta property="og:url" content="https://thealibigdeli.ir/policy-and-privacy"><meta property="og:description" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta property="og:image" content="https://thealibigdeli.ir/static/images/alibigdeli.png"><meta property="og:image:secure_url" content="https://thealibigdeli.ir/static/images/alibigdeli.png"><meta property="og:type" content="website"><meta property="og:site_name" content="thealibigdeli"><meta property="og:locale" content="fa_IR"><meta name="twitter:domain" content="thealibigdeli.ir"><meta name="twitter:card" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta name="twitter:title" content="شرایط و قوانین استفاده از سایت"><meta name="twitter:url" content="https://thealibigdeli.ir/policy-and-privacy"><meta name="twitter:description" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta name="twitter:image" content="https://thealibigdeli.ir/static/images/alibigdeli.png"><meta name="twitter:site" content="@thealibigdeli"><meta itemprop="name" content="شرایط و قوانین استفاده از سایت"><meta itemprop="url" content="https://thealibigdeli.ir/policy-and-privacy"><meta itemprop="description" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta itemprop="image" content="https://thealibigdeli.ir/static/images/alibigdeli.png">
 
     <!-- Path to manifest.json -->
@@ -124,22 +125,127 @@
 
     gtag('config', `G-CKLL2N4SXV`);
 </script>
-
+<style>
+    /* تعریف آیکون far fa-check-circle برای اطمینان از نمایش درست */
+    .far.fa-check-circle:before {
+        content: "\f058";
+    }
+    
+    /* استایل‌های لوگو */
+    .logo-navidyar {
+        font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+        font-weight: 800;
+        position: relative;
+        display: inline-block;
+        transition: all 0.3s ease;
+        letter-spacing: 1px;
+        padding: 0.3rem 1rem;
+        border-radius: 12px;
+        overflow: hidden;
+        animation: colorShift 8s infinite alternate;
+    }
+    
+    @keyframes colorShift {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+        100% {
+            filter: hue-rotate(90deg);
+        }
+    }
+    
+    .logo-navidyar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        z-index: -1;
+        border-radius: 12px;
+        transform: translateY(100%);
+        transition: all 0.3s ease;
+    }
+    
+    .logo-navidyar:hover::before {
+        transform: translateY(0);
+    }
+    
+    .logo-navidyar::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 100%;
+        top: 0;
+        left: -100px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transform: skewX(-15deg);
+        animation: shine 6s infinite;
+    }
+    
+    @keyframes shine {
+        0% {
+            left: -100px;
+        }
+        20% {
+            left: 120%;
+        }
+        100% {
+            left: 120%;
+        }
+    }
+    
+    .logo-navidyar-navbar {
+        font-size: 2rem;
+        margin-right: 4rem; /* فاصله از لبه راست کمتر می‌شود تا به وسط نزدیک‌تر شود */
+        padding: 0.4rem 1.2rem;
+    }
+    
+    .logo-navidyar-footer {
+        font-size: 3.2rem;
+        padding: 0.5rem 1.5rem;
+    }
+    
+    /* حالت روشن */
+    html:not([data-bs-theme="dark"]) .logo-navidyar {
+        background: linear-gradient(45deg, #7928CA, #FF0080);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 15px rgba(121, 40, 202, 0.15);
+    }
+    
+    /* حالت تاریک */
+    html[data-bs-theme="dark"] .logo-navidyar {
+        background: linear-gradient(45deg, #00DBDE, #FC00FF);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 15px rgba(0, 219, 222, 0.15);
+    }
+    
+    /* افکت هاور */
+    .logo-navidyar:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+    }
+</style>
 </head>
 
 <body>
     <!-- Header START -->
     <header class="navbar-light navbar-sticky header-static">
         <!-- Nav START -->
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <nav class="navbar navbar-expand-xl">
     <div class="container-fluid px-3 px-xl-5">
         <!-- Logo START -->
-        <a class="navbar-brand" href="/">
-            <img class="light-mode-item navbar-brand-item" src="/static/images/logo.png" alt="logo">
-            <img class="dark-mode-item navbar-brand-item" src="/static/images/logo-light.png"
-                alt="logo">
+        <a class="navbar-brand mx-auto mx-lg-0" href="/">
+            <span class="logo-navidyar logo-navidyar-navbar">نویدیار</span>
         </a>
         <!-- Logo END -->
 
@@ -361,8 +467,9 @@ Footer START -->
                 <!-- logo -->
                 <div class="text-center ">
                     <a class="me-0" href="/">
-                        <img class="light-mode-item h-60px" src="/static/images/logo.png" alt="logo">
-                        <img class="dark-mode-item h-60px" src="/static/images/logo-light.png" alt="logo">
+                        <a class="navbar-brand mx-auto mx-lg-0" href="/">
+                            <span class="logo-navidyar logo-navidyar-navbar">نویدیار</span>
+                        </a>
                     </a>
                 </div>
 
@@ -478,7 +585,7 @@ Footer START -->
                     <div class="text-primary-hover">
                         Copyright ©
                         <span id="year">2024</span>
-                        کلیه حقوق این سایت متعلق به علی بیگدلی می&zwnj;باشد
+                        کلیه حقوق این سایت متعلق به نویدیار می&zwnj;باشد
                     </div>
                     <!-- copyright links-->
                     <div class="justify-content-center mt-3 mt-lg-0">
@@ -503,7 +610,7 @@ Footer START -->
                                 </div> -->
                             </li>
                             <li class="list-inline-item"><a class="nav-link"
-                                    href="/policy-and-privacy">قوانین و شرایط استفاده</a>
+                                <a href="{% url 'policy' %}">قوانین و شرایط استفاده</a>
                             </li>
 
                         </ul>

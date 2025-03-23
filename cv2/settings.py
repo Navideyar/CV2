@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "resume2",
     "compressor",
+    "blog"
 ]
 
 MIDDLEWARE = [

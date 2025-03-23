@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="fa" class="page-dir-rtl"  itemscope itemtype="https://schema.org/None" >
 
@@ -356,8 +350,8 @@ Page Banner START -->
 					<div class="col-sm-6 col-md-12">
 						<div class="bg-grad rounded-4 p-5 text-start">
 							<span class="text-white">هدف من:</span>
-							<h3 class="text-white ff-vb">“توسعه و پیشرفت در زمینه برنامه نویسی و رسیدن به حد کمال و کمک
-								به پیشرفت دیگر توسعه دهندگان”</h3>
+							<h3 class="text-white ff-vb">"توسعه و پیشرفت در زمینه برنامه نویسی و رسیدن به حد کمال و کمک
+								به پیشرفت دیگر توسعه دهندگان"</h3>
 						</div>
 					</div>
 					<!-- Image -->
@@ -377,25 +371,25 @@ Page Banner END -->
 	<div class="container">
 		<div class="row g-4">
 			<div class="col-md-4">
-				<div class="card  shadow p-5 m-3">
+				<div class="card resume-card shadow p-5 m-3">
 					<!-- Skills START -->
-					<h4 class="mb-3 fs-5">روحیات من</h4>
+					<h4 class="mb-3 fs-5 card-title">روحیات من</h4>
 
 					<ul class="list-inline mb-0 text-center">
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Self Study</a>
+						<li class="list-inline-item"> <a class="skill-badge">Self Study</a>
 						</li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Curious</a>
+						<li class="list-inline-item"> <a class="skill-badge">Curious</a>
 						</li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Tech Lover</a>
+						<li class="list-inline-item"> <a class="skill-badge">Tech Lover</a>
 						</li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Fast Learner</a>
+						<li class="list-inline-item"> <a class="skill-badge">Fast Learner</a>
 						</li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Creative</a>
+						<li class="list-inline-item"> <a class="skill-badge">Creative</a>
 						</li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >R&D is my
+						<li class="list-inline-item"> <a class="skill-badge">R&D is my
 								thing</a>
 						</li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >love to teach</a>
+						<li class="list-inline-item"> <a class="skill-badge">love to teach</a>
 						</li>
 					</ul>
 				</div>
@@ -404,11 +398,11 @@ Page Banner END -->
 
 
 			<div class="col-md-4">
-				<div class="card  shadow p-5 m-3">
+				<div class="card resume-card shadow p-5 m-3">
 
 					<!-- Education START -->
 					<!-- Title -->
-					<h4 class="mb-3 fs-5">تحصیلات</h4>
+					<h4 class="mb-3 fs-5 card-title">تحصیلات</h4>
 
 					<!-- Education item -->
 					<div class="d-flex align-items-center mb-4">
@@ -433,43 +427,43 @@ Page Banner END -->
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div class="card  shadow p-5 m-3">
+				<div class="card resume-card shadow p-5 m-3">
 					<!-- Skills START -->
-					<h4 class="mb-3 fs-5">مهارت ها</h4>
+					<h4 class="mb-3 fs-5 card-title">مهارت ها</h4>
 
 					<ul class="list-inline mb-0 text-center">
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Python</a>
+						<li class="list-inline-item"> <a class="skill-badge">Python</a>
 						</li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Django</a></li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >DRF</a></li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Django
+						<li class="list-inline-item"> <a class="skill-badge">Django</a></li>
+						<li class="list-inline-item"> <a class="skill-badge">DRF</a></li>
+						<li class="list-inline-item"> <a class="skill-badge">Django
 								Channels</a></li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Celery</a></li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >FastApi</a>
+						<li class="list-inline-item"> <a class="skill-badge">Celery</a></li>
+						<li class="list-inline-item"> <a class="skill-badge">FastApi</a>
 						</li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Docker</a>
+						<li class="list-inline-item"> <a class="skill-badge">Docker</a>
 						</li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Kubernetes</a>
+						<li class="list-inline-item"> <a class="skill-badge">Kubernetes</a>
 						</li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Redis &
+						<li class="list-inline-item"> <a class="skill-badge">Redis &
 								RabbitMQ</a></li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >IOT</a>
+						<li class="list-inline-item"> <a class="skill-badge">IOT</a>
 						</li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >MicroPython</a>
+						<li class="list-inline-item"> <a class="skill-badge">MicroPython</a>
 						</li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Arduino</a></li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >AI</a></li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Git</a></li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Github</a></li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Gitlab</a></li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >CICD</a></li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >MCITP &
+						<li class="list-inline-item"> <a class="skill-badge">Arduino</a></li>
+						<li class="list-inline-item"> <a class="skill-badge">AI</a></li>
+						<li class="list-inline-item"> <a class="skill-badge">Git</a></li>
+						<li class="list-inline-item"> <a class="skill-badge">Github</a></li>
+						<li class="list-inline-item"> <a class="skill-badge">Gitlab</a></li>
+						<li class="list-inline-item"> <a class="skill-badge">CICD</a></li>
+						<li class="list-inline-item"> <a class="skill-badge">MCITP &
 								Network+</a></li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >HTML/CSS/JS</a>
+						<li class="list-inline-item"> <a class="skill-badge">HTML/CSS/JS</a>
 						</li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >ReactJS</a></li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Redux</a></li>
-						<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" >Axios</a></li>
+						<li class="list-inline-item"> <a class="skill-badge">ReactJS</a></li>
+						<li class="list-inline-item"> <a class="skill-badge">Redux</a></li>
+						<li class="list-inline-item"> <a class="skill-badge">Axios</a></li>
 					</ul>
 
 				</div>
@@ -511,7 +505,7 @@ Page Banner END -->
 				</figure>
 
 				<!-- FAQ START -->
-				<div class="accordion accordion-icon accordion-shadow mt-4 text-start position-relative"
+				<div class="accordion accordion-icon accordion-shadow mt-4 text-start position-relative experience-accordion"
 					id="accordionExample2">
 					<!-- Item -->
 					<div class="accordion-item mb-3">

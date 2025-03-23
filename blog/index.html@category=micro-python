@@ -1,0 +1,1047 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="fa" class="page-dir-rtl"  itemscope itemtype="https://schema.org/None" >
+
+<head  prefix="og: http://ogp.me/ns#">
+     
+    
+<meta name="description" content="پست های هفتگی انواع پروژه های مختلف اینترنت اشیا و هوش مصنوعی و طراحی سایت به همراه آموزش با پایتون "><meta name="keywords" content="python, ai, iot, py3, پایتون, اینترنت اشیا, django, جنگو, micropython, fastapi"><title>وبلاگ</title><meta property="og:title" content="وبلاگ"><meta property="og:url" content="https://thealibigdeli.ir/blog/?category=micro-python"><meta property="og:description" content="پست های هفتگی انواع پروژه های مختلف اینترنت اشیا و هوش مصنوعی و طراحی سایت به همراه آموزش با پایتون "><meta property="og:image" content="https://thealibigdeli.ir/static/images/alibigdeli.png"><meta property="og:image:secure_url" content="https://thealibigdeli.ir/static/images/alibigdeli.png"><meta property="og:type" content="website"><meta property="og:site_name" content="thealibigdeli"><meta property="og:locale" content="fa_IR"><meta name="twitter:domain" content="thealibigdeli.ir"><meta name="twitter:card" content="پست های هفتگی انواع پروژه های مختلف اینترنت اشیا و هوش مصنوعی و طراحی سایت به همراه آموزش با پایتون "><meta name="twitter:title" content="وبلاگ"><meta name="twitter:url" content="https://thealibigdeli.ir/blog/?category=micro-python"><meta name="twitter:description" content="پست های هفتگی انواع پروژه های مختلف اینترنت اشیا و هوش مصنوعی و طراحی سایت به همراه آموزش با پایتون "><meta name="twitter:image" content="https://thealibigdeli.ir/static/images/alibigdeli.png"><meta name="twitter:site" content="@thealibigdeli"><meta itemprop="name" content="وبلاگ"><meta itemprop="url" content="https://thealibigdeli.ir/blog/?category=micro-python"><meta itemprop="description" content="پست های هفتگی انواع پروژه های مختلف اینترنت اشیا و هوش مصنوعی و طراحی سایت به همراه آموزش با پایتون "><meta itemprop="image" content="https://thealibigdeli.ir/static/images/alibigdeli.png">
+
+    <!-- Path to manifest.json -->
+<link rel="manifest" href="/manifest.json">
+
+<!-- Add to homescreen for Chrome on Android -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="TheAliBigdeli">
+
+
+<!-- Chrome for Android theme color -->
+<meta name="theme-color" content="#2a2c31">
+
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="TheAliBigdeli">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+    
+        <link rel="apple-touch-icon" href="/static/pwa/icons/192x192.png" sizes="192x192">
+    
+        <link rel="apple-touch-icon" href="/static/pwa/icons/512x512.png" sizes="512x512">
+    
+
+
+
+
+<link href="/static/images/icons/splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
+
+<link href="/static/images/icons/splash-750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
+
+<link href="/static/images/icons/splash-1242x2208.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image"/>
+
+<link href="/static/images/icons/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image"/>
+
+<link href="/static/images/icons/splash-828x1792.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
+
+<link href="/static/images/icons/splash-1242x2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image"/>
+
+<link href="/static/images/icons/splash-1536x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
+
+<link href="/static/images/icons/splash-1668x2224.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
+
+<link href="/static/images/icons/splash-1668x2388.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
+
+<link href="/static/images/icons/splash-2048x2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
+
+
+
+<!-- Tile for Win8 -->
+<meta name="msapplication-TileColor" content="#2a2c31">
+
+<meta name="msapplication-TileImage" content="/static/pwa/icons/512x512.png">
+
+
+<link rel="icon" sizes="512x512" href="/static/pwa/icons/512x512.png">
+
+
+<script type="text/javascript">
+    // Initialize the service worker
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/serviceworker.js', {
+            scope: '/'
+        }).then(function (registration) {
+            // Registration was successful
+            
+        }, function (err) {
+            // registration failed :(
+            
+        });
+    }
+</script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<link rel="canonical" href="https://thealibigdeli.ir/blog/" />
+
+    <link rel="stylesheet" href="/static/CACHE/css/output.004c4f90511e.css" type="text/css">
+    
+    
+    
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="57x57" href="/static/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/static/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/static/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/static/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/static/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/static/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/static/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/static/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/static/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+<link rel="manifest" href="/static/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CKLL2N4SXV"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', `G-CKLL2N4SXV`);
+</script>
+
+</head>
+
+<body>
+    <!-- Header START -->
+    <header class="navbar-light navbar-sticky header-static">
+        <!-- Nav START -->
+        
+
+<nav class="navbar navbar-expand-xl">
+    <div class="container-fluid px-3 px-xl-5">
+        <!-- Logo START -->
+        <a class="navbar-brand" href="/">
+            <img class="light-mode-item navbar-brand-item" src="/static/images/logo.png" alt="logo">
+            <img class="dark-mode-item navbar-brand-item" src="/static/images/logo-light.png"
+                alt="logo">
+        </a>
+        <!-- Logo END -->
+
+
+        <!-- Responsive navbar toggler -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-animation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </button>
+
+        <!-- Main navbar START -->
+        <div class="navbar-collapse w-100 collapse" id="navbarCollapse">
+
+            <!-- Nav category menu START -->
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+
+            </ul>
+            <!-- Nav category menu END -->
+
+            <!-- Nav Main menu START -->
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+
+                <li class="nav-item"><a class="nav-link" href="/">صفحه اصلی</a></li>
+                <li class="nav-item"><a class="nav-link" href="/courses/">دوره ها</a></li>
+                <li class="nav-item"><a class="nav-link" href="/blog/">وبلاگ</a></li>
+                <li class="nav-item"><a class="nav-link" href="/event/">رویداد ها</a></li>
+                <li class="nav-item"><a class="nav-link" href="/library/">کتابخانه</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about-me">درباره من</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact-me">تماس با من</a>
+                <!-- <li class="nav-item"><a class="nav-link text-success" href="/courses/django-workshop-landing">کارگاه جنگو</a> -->
+                </li>
+               
+
+            </ul>
+            <!-- Nav Main menu END -->
+
+            <!-- Nav Search START -->
+            <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
+
+                <div class="nav-item w-100">
+                    <form class="position-relative" action="/blog/">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="Fh072Ml4m1Ea77TYnDANTGtzHD3s54sqYyEYiZlUqUD9XIj0wpUHI9ilIURl4pTF">
+                        <input class="form-control pe-5 bg-transparent" type="search" placeholder=" جستجو..."
+                            aria-label="Search" name="q">
+                        <button
+                            class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
+                            type="submit">
+                            <i class="fas fa-search fs-6 "></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-light mx-3 mb-0" id="bd-theme" type="button" aria-expanded="false"
+                        data-bs-toggle="dropdown" data-bs-display="static">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                            class="fa fa-adjust fa-fw theme-icon-active" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+                            <use href="#"></use>
+                        </svg>
+                    </button>
+
+                    <ul class="dropdown-menu min-w-auto dropdown-menu-end" aria-labelledby="bd-theme">
+                        <li class="mb-1">
+                            <button type="button" class="dropdown-item d-flex align-items-center"
+                                data-bs-theme-value="light">
+                                <svg width="16" height="16" fill="currentColor"
+                                    class="fas fa-lightbulb fa-fw mode-switch me-1"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z">
+                                    </path>
+                                    <use href="#"></use>
+                                </svg>روشن
+                            </button>
+                        </li>
+                        <li class="mb-1">
+                            <button type="button" class="dropdown-item d-flex align-items-center"
+                                data-bs-theme-value="dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="fas fa-moon fa-fw mode-switch me-1"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z">
+                                    </path>
+                                    <path
+                                        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
+                                    </path>
+                                    <use href="#"></use>
+                                </svg>تیره
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center active"
+                                data-bs-theme-value="auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="fa fa-adjust fa-fw mode-switch me-1"
+                                    viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+                                    <use href="#"></use>
+                                </svg>خودکار
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Nav Search END -->
+        </div>
+
+        <!-- Profile START -->
+        <div class="dropdown ms-1 ms-lg-0">
+            
+            <div class="d-flex">
+
+                <a class="btn btn-primary-soft mb-0" href="/accounts/login/"><i
+                        class="fas fa-sign-in-alt me-2"></i>ورود</a>
+
+
+
+            </div>
+            
+        </div>
+        <!-- Profile START -->
+    </div>
+</nav>
+        <!-- Nav END -->
+    </header>
+    <!-- Header END -->
+
+    <!-- **************** MAIN CONTENT START **************** -->
+    <main>
+        
+<!-- =======================
+Page Banner START -->
+<section class="py-5">
+	<div class="container">
+		<div class="row position-relative">
+			<!-- SVG decoration -->
+			<figure class="position-absolute top-0 start-0 d-none d-sm-block">
+				<svg width="22px" height="22px" viewBox="0 0 22 22" style="transform: scale(-1,1)">
+					<polygon class="fill-purple"
+						points="22,8.3 13.7,8.3 13.7,0 8.3,0 8.3,8.3 0,8.3 0,13.7 8.3,13.7 8.3,22 13.7,22 13.7,13.7 22,13.7 ">
+					</polygon>
+				</svg>
+			</figure>
+
+			<!-- Title and breadcrumb -->
+			<div class="col-lg-10 mx-auto text-center position-relative">
+				<!-- SVG decoration -->
+				<figure class="position-absolute top-50 end-0 translate-middle-y">
+					<svg width="27px" height="27px" style="transform: scale(-1,1)">
+						<path class="fill-orange"
+							d="M13.122,5.946 L17.679,-0.001 L17.404,7.528 L24.661,5.946 L19.683,11.533 L26.244,15.056 L18.891,16.089 L21.686,23.068 L15.400,19.062 L13.122,26.232 L10.843,19.062 L4.557,23.068 L7.352,16.089 L-0.000,15.056 L6.561,11.533 L1.582,5.946 L8.839,7.528 L8.565,-0.001 L13.122,5.946 Z">
+						</path>
+					</svg>
+				</figure>
+
+				<!-- SVG decoration -->
+				<figure class="position-absolute top-100 start-50 translate-middle mt-3 ms-n9 d-none d-lg-block">
+					<svg style="transform: scale(-1,1)">
+						<path class="fill-success"
+							d="m181.6 6.7c-0.1 0-0.2-0.1-0.3 0-2.5-0.3-4.9-1-7.3-1.4-2.7-0.4-5.5-0.7-8.2-0.8-1.4-0.1-2.8-0.1-4.1-0.1-0.5 0-0.9-0.1-1.4-0.2-0.9-0.3-1.9-0.1-2.8-0.1-5.4 0.2-10.8 0.6-16.1 1.4-2.7 0.3-5.3 0.8-7.9 1.3-0.6 0.1-1.1 0.3-1.8 0.3-0.4 0-0.7-0.1-1.1-0.1-1.5 0-3 0.7-4.3 1.2-3 1-6 2.4-8.8 3.9-2.1 1.1-4 2.4-5.9 3.9-1 0.7-1.8 1.5-2.7 2.2-0.5 0.4-1.1 0.5-1.5 0.9s-0.7 0.8-1.1 1.2c-1 1-1.9 2-2.9 2.9-0.4 0.3-0.8 0.5-1.2 0.5-1.3-0.1-2.7-0.4-3.9-0.6-0.7-0.1-1.2 0-1.8 0-3.1 0-6.4-0.1-9.5 0.4-1.7 0.3-3.4 0.5-5.1 0.7-5.3 0.7-10.7 1.4-15.8 3.1-4.6 1.6-8.9 3.8-13.1 6.3-2.1 1.2-4.2 2.5-6.2 3.9-0.9 0.6-1.7 0.9-2.6 1.2s-1.7 1-2.5 1.6c-1.5 1.1-3 2.1-4.6 3.2-1.2 0.9-2.7 1.7-3.9 2.7-1 0.8-2.2 1.5-3.2 2.2-1.1 0.7-2.2 1.5-3.3 2.3-0.8 0.5-1.7 0.9-2.5 1.5-0.9 0.8-1.9 1.5-2.9 2.2 0.1-0.6 0.3-1.2 0.4-1.9 0.3-1.7 0.2-3.6 0-5.3-0.1-0.9-0.3-1.7-0.8-2.4s-1.5-1.1-2.3-0.8c-0.2 0-0.3 0.1-0.4 0.3s-0.1 0.4-0.1 0.6c0.3 3.6 0.2 7.2-0.7 10.7-0.5 2.2-1.5 4.5-2.7 6.4-0.6 0.9-1.4 1.7-2 2.6s-1.5 1.6-2.3 2.3c-0.2 0.2-0.5 0.4-0.6 0.7s0 0.7 0.1 1.1c0.2 0.8 0.6 1.6 1.3 1.8 0.5 0.1 0.9-0.1 1.3-0.3 0.9-0.4 1.8-0.8 2.7-1.2 0.4-0.2 0.7-0.3 1.1-0.6 1.8-1 3.8-1.7 5.8-2.3 4.3-1.1 9-1.1 13.3 0.1 0.2 0.1 0.4 0.1 0.6 0.1 0.7-0.1 0.9-1 0.6-1.6-0.4-0.6-1-0.9-1.7-1.2-2.5-1.1-4.9-2.1-7.5-2.7-0.6-0.2-1.3-0.3-2-0.4-0.3-0.1-0.5 0-0.8-0.1s-0.9 0-1.1-0.1-0.3 0-0.3-0.2c0-0.4 0.7-0.7 1-0.8 0.5-0.3 1-0.7 1.5-1l5.4-3.6c0.4-0.2 0.6-0.6 1-0.9 1.2-0.9 2.8-1.3 4-2.2 0.4-0.3 0.9-0.6 1.3-0.9l2.7-1.8c1-0.6 2.2-1.2 3.2-1.8 0.9-0.5 1.9-0.8 2.7-1.6 0.9-0.8 2.2-1.4 3.2-2 1.2-0.7 2.3-1.4 3.5-2.1 4.1-2.5 8.2-4.9 12.7-6.6 5.2-1.9 10.6-3.4 16.2-4 5.4-0.6 10.8-0.3 16.2-0.5h0.5c1.4-0.1 2.3-0.1 1.7 1.7-1.4 4.5 1.3 7.5 4.3 10 3.4 2.9 7 5.7 11.3 7.1 4.8 1.6 9.6 3.8 14.9 2.7 3-0.6 6.5-4 6.8-6.4 0.2-1.7 0.1-3.3-0.3-4.9-0.4-1.4-1-3-2.2-3.9-0.9-0.6-1.6-1.6-2.4-2.4-0.9-0.8-1.9-1.7-2.9-2.3-2.1-1.4-4.2-2.6-6.5-3.5-3.2-1.3-6.6-2.2-10-3-0.8-0.2-1.6-0.4-2.5-0.5-0.2 0-1.3-0.1-1.3-0.3-0.1-0.2 0.3-0.4 0.5-0.6 0.9-0.8 1.8-1.5 2.7-2.2 1.9-1.4 3.8-2.8 5.8-3.9 2.1-1.2 4.3-2.3 6.6-3.2 1.2-0.4 2.3-0.8 3.6-1 0.6-0.2 1.2-0.2 1.8-0.4 0.4-0.1 0.7-0.3 1.1-0.5 1.2-0.5 2.7-0.5 3.9-0.8 1.3-0.2 2.7-0.4 4.1-0.7 2.7-0.4 5.5-0.8 8.2-1.1 3.3-0.4 6.7-0.7 10-1 7.7-0.6 15.3-0.3 23 1.3 4.2 0.9 8.3 1.9 12.3 3.6 1.2 0.5 2.3 1.1 3.5 1.5 0.7 0.2 1.3 0.7 1.8 1.1 0.7 0.6 1.5 1.1 2.3 1.7 0.2 0.2 0.6 0.3 0.8 0.2 0.1-0.1 0.1-0.2 0.2-0.4 0.1-0.9-0.2-1.7-0.7-2.4-0.4-0.6-1-1.4-1.6-1.9-0.8-0.7-2-1.1-2.9-1.6-1-0.5-2-0.9-3.1-1.3-2.5-1.1-5.2-2-7.8-2.8-1-0.8-2.4-1.2-3.7-1.4zm-64.4 25.8c4.7 1.3 10.3 3.3 14.6 7.9 0.9 1 2.4 1.8 1.8 3.5-0.6 1.6-2.2 1.5-3.6 1.7-4.9 0.8-9.4-1.2-13.6-2.9-4.5-1.7-8.8-4.3-11.9-8.3-0.5-0.6-1-1.4-1.1-2.2 0-0.3 0-0.6-0.1-0.9s-0.2-0.6 0.1-0.9c0.2-0.2 0.5-0.2 0.8-0.2 2.3-0.1 4.7 0 7.1 0.4 0.9 0.1 1.6 0.6 2.5 0.8 1.1 0.4 2.3 0.8 3.4 1.1z">
+						</path>
+					</svg>
+				</figure>
+
+				<!-- Title -->
+				<h1 class="fs-2">وبلاگ</h1>
+				<!-- Breadcrumb -->
+				<div class="d-flex justify-content-center position-relative">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb mb-0">
+							<li class="breadcrumb-item"><a href="/">صفحه اصلی</a></li>
+							<li class="breadcrumb-item active" aria-current="page"> وبلاگ</li>
+						</ol>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Page Banner END -->
+
+<!-- =======================
+Page content START -->
+<section class="py-5">
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-lg-8 pt-5 pt-lg-0">
+				<div class="row mb-4 align-items-center">
+					<!-- Search bar -->
+					<div class="col-xl-6 mb-3">
+						<form action="/blog/" class="border rounded p-2">
+							<div class="input-group input-borderless">
+								<input class="form-control me-1" type="search" placeholder="جستجو وبلاگ ..."
+									name="q" id="search-query-filter">
+								<button type="submit" class="btn btn-primary mb-0 rounded z-index-1"><i
+										class="fas fa-search"></i></button>
+							</div>
+						</form>
+					</div>
+
+					<!-- Select option -->
+					<div class="col-xl-3 mb-3">
+						<div class="border rounded p-2">
+							<select class="form-select border-0" id="order-by-filter">
+								<option value="">مرتب سازی</option>
+								<option value="-created_date">جدیدترین</option>
+								<option value="created_date">قدیمی ترین</option>
+							</select>
+						</div>
+					</div>
+
+					<!-- Content -->
+					<div class="col-12 col-xl-3 d-flex justify-content-between align-items-center mt-3 mt-xl-0">
+
+						<!-- Advanced filter responsive toggler START -->
+						<button class="btn btn-primary mb-0 d-lg-none" type="button" data-bs-toggle="offcanvas"
+							data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+							<i class="fas fa-sliders-h me-1"></i> نمایش فیلتر
+						</button>
+						<!-- Advanced filter responsive toggler END -->
+						<p class="mb-0 text-end">3 نتیجه یافت شد</p>
+					</div>
+
+				</div>
+				<div class="row g-4">
+					
+					<!-- Card item START -->
+					<div class="col-sm-6 col-lg-6 col-xl-6">
+
+						<div class="card bg-transparent">
+							<div class="overflow-hidden rounded-3">
+								<img src="/media/CACHE/images/images/blog_thumbs/banner_a7uNHU1/e1735ea71ed57ff34a94ad4257f0ffb0.jpg" class="card-img" alt="پایشگر آب و هوا و کنترل از طریق MQTT با نرم افزار IOT Dashboard"
+									loading="lazy">
+								<!-- Overlay -->
+								<div class="bg-overlay bg-dark opacity-1"></div>
+								<div class="card-img-overlay d-flex align-items-start p-3">
+									<!-- badge -->
+									<a href="/blog/?category=micro-python" class="badge text-bg-danger">micro python</a>
+								</div>
+							</div>
+
+							<!-- Card body -->
+							<div class="card-body">
+								<!-- Title -->
+								<h5 class="card-title fw-normal"><a
+										href="/blog/%D9%BE%D8%A7%DB%8C%D8%B4%DA%AF%D8%B1-%D8%A2%D8%A8-%D9%88-%D9%87%D9%88%D8%A7-%D9%88-%DA%A9%D9%86%D8%AA%D8%B1%D9%84-%D8%A7%D8%B2-%D8%B7%D8%B1%DB%8C%D9%82-mqtt-%D8%A8%D8%A7-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-iot-dashboard/">پایشگر آب و هوا و کنترل از طریق MQTT با نرم افزار IOT Dashboard</a></h5>
+								<p class="text-truncate-2">در این پست به بررسی نحوه ساخت یک پایشگر آب و هوا با استفاده از میکروپایتون بر ESP32 با استفاده از پروتکل ارتباطی MQTT می نماییم و داده های نمایشی…</p>
+								<!-- Info -->
+								<div class="d-flex justify-content-between">
+									<h6 class="mb-0 fw-normal"><a href="#">علی بیگدلی</a>
+									</h6>
+									<span class="small">1402/06/11  <i class="far fa-calendar-alt"></i></span>
+									<span class="small"> 3179 <i class="fas fa-eye"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Card item END -->
+					
+					<!-- Card item START -->
+					<div class="col-sm-6 col-lg-6 col-xl-6">
+
+						<div class="card bg-transparent">
+							<div class="overflow-hidden rounded-3">
+								<img src="/media/CACHE/images/images/blog_thumbs/banner/173eeb6bcf488dc60530d650f2648ab2.jpg" class="card-img" alt="مانیتور آب و هوا با میکروپایتون و نمایش بر روی وب سرور ESP32"
+									loading="lazy">
+								<!-- Overlay -->
+								<div class="bg-overlay bg-dark opacity-1"></div>
+								<div class="card-img-overlay d-flex align-items-start p-3">
+									<!-- badge -->
+									<a href="/blog/?category=micro-python" class="badge text-bg-danger">micro python</a>
+								</div>
+							</div>
+
+							<!-- Card body -->
+							<div class="card-body">
+								<!-- Title -->
+								<h5 class="card-title fw-normal"><a
+										href="/blog/%D9%85%D8%A7%D9%86%DB%8C%D8%AA%D9%88%D8%B1-%D8%A2%D8%A8-%D9%88-%D9%87%D9%88%D8%A7-%D8%A8%D8%A7-%D9%85%DB%8C%DA%A9%D8%B1%D9%88%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86-%D9%88-%D9%86%D9%85%D8%A7%DB%8C%D8%B4-%D8%A8%D8%B1-%D8%B1%D9%88%DB%8C-%D9%88%D8%A8-%D8%B3%D8%B1%D9%88%D8%B1-esp32/">مانیتور آب و هوا با میکروپایتون و نمایش بر روی وب سرور ESP32</a></h5>
+								<p class="text-truncate-2">در این پست به بررسی نحوه ساخت یک وب سرور با میکروپایتون بر روی esp32 با استفاده از کتابخانه microdot خواهیم پرداخت. &amp;nbsp; &amp;nbsp; قطعه کد کامل پروژه را می…</p>
+								<!-- Info -->
+								<div class="d-flex justify-content-between">
+									<h6 class="mb-0 fw-normal"><a href="#">علی بیگدلی</a>
+									</h6>
+									<span class="small">1402/06/10  <i class="far fa-calendar-alt"></i></span>
+									<span class="small"> 1761 <i class="fas fa-eye"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Card item END -->
+					
+					<!-- Card item START -->
+					<div class="col-sm-6 col-lg-6 col-xl-6">
+
+						<div class="card bg-transparent">
+							<div class="overflow-hidden rounded-3">
+								<img src="/media/CACHE/images/images/blog_thumbs/micropython-usage/dd7bd99483dc92ddd9dc1884b5f9ad74.jpg" class="card-img" alt="شروع استفاده از micropython"
+									loading="lazy">
+								<!-- Overlay -->
+								<div class="bg-overlay bg-dark opacity-1"></div>
+								<div class="card-img-overlay d-flex align-items-start p-3">
+									<!-- badge -->
+									<a href="/blog/?category=micro-python" class="badge text-bg-danger">micro python</a>
+								</div>
+							</div>
+
+							<!-- Card body -->
+							<div class="card-body">
+								<!-- Title -->
+								<h5 class="card-title fw-normal"><a
+										href="/blog/%D8%B4%D8%B1%D9%88%D8%B9-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-micropython/">شروع استفاده از micropython</a></h5>
+								<p class="text-truncate-2">در این پست به بررسی نحوه استفاده از میکرو پایتون در اینترنت اشیا و شروع یادگیری و استافده از آن خواهیم پرداخت. در ویدئو زیر نحوه آماده سازی و استفاده…</p>
+								<!-- Info -->
+								<div class="d-flex justify-content-between">
+									<h6 class="mb-0 fw-normal"><a href="#">علی بیگدلی</a>
+									</h6>
+									<span class="small">1402/06/05  <i class="far fa-calendar-alt"></i></span>
+									<span class="small"> 1306 <i class="fas fa-eye"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Card item END -->
+					
+				</div>
+				
+				<!-- Pagination END -->
+			</div>
+			<div class="col-lg-4 pt-5 pt-lg-0">
+				<div class="col-md-6 col-lg-12 mb-3">
+					<!-- Responsive offcanvas body START -->
+					<div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasSidebar">
+						<div class="offcanvas-body p-3 p-lg-0">
+							<div class="offcanvas-header bg-light">
+								<h5 class="offcanvas-title" id="offcanvasNavbarLabel">جستجوی پیشرفته</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+									data-bs-target="#offcanvasSidebar" aria-label="Close"></button>
+							</div>
+							<!-- Category END -->
+
+							<!-- placement for categories -->
+							<!-- Category START -->
+
+							<div class="card card-body shadow p-4 mb-4">
+								<!-- Title -->
+								<h4 class="mb-3 fs-6">فیلتر دسته بندی</h4>
+								<!-- Category group -->
+
+								<div class="col-12">
+
+									
+
+									<div class="d-flex justify-content-between align-items-center">
+										<div>
+											<label for="flexCheckDefault">
+												<button class="btn btn-link p-0" onclick="addOrEditCategory('python')">
+													python
+												</button>
+											</label>
+										</div>
+										<span class="small">(2)</span>
+									</div>
+									
+
+									<div class="d-flex justify-content-between align-items-center">
+										<div>
+											<label for="flexCheckDefault">
+												<button class="btn btn-link p-0" onclick="addOrEditCategory('django')">
+													django
+												</button>
+											</label>
+										</div>
+										<span class="small">(12)</span>
+									</div>
+									
+
+									<div class="d-flex justify-content-between align-items-center">
+										<div>
+											<label for="flexCheckDefault">
+												<button class="btn btn-link p-0" onclick="addOrEditCategory('micro-python')">
+													micro python
+												</button>
+											</label>
+										</div>
+										<span class="small">(3)</span>
+									</div>
+									
+
+									
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+					<!-- Responsive offcanvas body END -->
+				</div>
+				<div class="col-md-6 col-lg-12 pb-4">
+					
+
+<!-- Recently Viewed START -->
+<div class="card card-body shadow p-4 ">
+    <!-- Title -->
+    <h4 class="mb-3 fs-5">دوره های من در مکتبخونه</h4>
+    <!-- Course item START -->
+    <div class="row gx-3 mb-3">
+        <!-- Image -->
+        <div class="col-4">
+            <img class="rounded" src="/static/images/maktabkhooneh/django-ecommerce.webp" alt=""  loading="lazy">
+        </div>
+        <!-- Info -->
+        <div class="col-8">
+            <h6 class="mb-0 fw-normal"><a href="https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C-%D9%81%D8%B1%D9%88%D8%B4%DA%AF%D8%A7%D9%87-%D8%AC%D9%86%DA%AF%D9%88-mk5631/?v=1&affiliate_code=eYrbPz" target="_blank">آموزش
+                    طراحی فروشگاه با جنگو
+                </a>
+            </h6>
+            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                    <span class="text-secondary">سطح: پیشرفته</span>
+                    <span class="h6 text-info">4.4<i class="fas fa-star text-warning ms-1"></i></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Course item END -->
+    <!-- Course item START -->
+    <div class="row gx-3 mb-3">
+        <!-- Image -->
+        <div class="col-4">
+            <img class="rounded" src="/static/images/maktabkhooneh/django-advanced.webp" alt=""  loading="lazy">
+        </div>
+        <!-- Info -->
+        <div class="col-8">
+            <h6 class="mb-0 fw-normal"><a
+                    href="https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D9%86%DA%AF%D9%88-%D9%BE%DB%8C%D8%B4%D8%B1%D9%81%D8%AA%D9%87-mk1438/?v=1&affiliate_code=eYrbPz"
+                    target="_blank">آموزش جنگو پیشرفته
+                </a>
+            </h6>
+            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                    <span class="text-secondary">سطح: پیشرفته</span>
+                    <span class="h6 text-info">4.7<i class="fas fa-star text-warning ms-1"></i></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Course item END -->
+    <!-- Course item START -->
+    <div class="row gx-3 mb-3">
+        <!-- Image -->
+        <div class="col-4">
+            <img class="rounded" src="/static/images/maktabkhooneh/django.webp" alt=""  loading="lazy">
+        </div>
+        <!-- Info -->
+        <div class="col-8">
+            <h6 class="mb-0 fw-normal"><a
+                    href="https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D9%86%DA%AF%D9%88-mk1287/?v=1&affiliate_code=eYrbPz"
+                    target="_blank">آموزش جنگو Django</a>
+            </h6>
+            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                    <span class="text-secondary">سطح: مقدماتی</span>
+                    <span class="h6 text-info">4.6<i class="fas fa-star text-warning ms-1"></i></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Course item END -->
+
+    <!-- Course item START -->
+    <div class="row gx-3 mb-3">
+        <!-- Image -->
+        <div class="col-4">
+            <img class="rounded" src="/static/images/maktabkhooneh/python-oop.jpg" alt=""  loading="lazy">
+        </div>
+        <!-- Info -->
+        <div class="col-8">
+            <h6 class="mb-0 fw-normal"><a
+                    href="https://maktabkhooneh.org/course/%D8%B4%DB%8C%D8%A1-%DA%AF%D8%B1%D8%A7%DB%8C%DB%8C-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86-mk2032/?v=1&affiliate_code=eYrbPz"
+                    target="_blank">آموزش شی‌ءگرایی در پایتون</a>
+            </h6>
+            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                    <span class="text-secondary">سطح: متوسط</span>
+                    <span class="h6 text-info">4.2<i class="fas fa-star text-warning ms-1"></i></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Course item END -->
+
+    <!-- Course item START -->
+    <div class="row gx-3 mb-3">
+        <!-- Image -->
+        <div class="col-4">
+            <img class="rounded" src="/static/images/maktabkhooneh/micropython.webp" alt=""  loading="lazy">
+        </div>
+        <!-- Info -->
+        <div class="col-8">
+            <h6 class="mb-0 fw-normal"><a
+                    href="https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%DB%8C%DA%A9%D8%B1%D9%88-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86-%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA-%D8%A7%D8%B4%DB%8C%D8%A7-mk3287/?v=1&affiliate_code=eYrbPz"
+                    target="_blank">آموزش میکروپایتون در اینترنت اشیا
+                </a>
+            </h6>
+            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                    <span class="text-secondary">سطح: متوسط</span>
+                    <span class="h6 text-info">4.4<i class="fas fa-star text-warning ms-1"></i></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Course item END -->
+     <!-- Course item START -->
+    <div class="row gx-3 mb-3">
+        <!-- Image -->
+        <div class="col-4">
+            <img class="rounded" src="/static/images/maktabkhooneh/telegram.webp" alt=""  loading="lazy">
+        </div>
+        <!-- Info -->
+        <div class="col-8">
+            <h6 class="mb-0 fw-normal"><a
+                    href="https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B3%D8%A7%D8%AE%D8%AA-%D8%B1%D8%A8%D8%A7%D8%AA-%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86-mk7147/?v=1&affiliate_code=eYrbPz"
+                    target="_blank">آموزش ساخت ربات تلگرام با پایتون
+                </a>
+            </h6>
+            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                    <span class="text-secondary">سطح: متوسط</span>
+                    <span class="h6 text-info">4.3<i class="fas fa-star text-warning ms-1"></i></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Course item END -->
+
+
+
+</div>
+<!-- Recently Viewed END -->
+				</div>
+				<div class="col-md-6 col-xl-12  pb-4">
+					
+<div class="card card-body shadow p-4 ">
+    <!-- Title -->
+    <h4 class="mb-3 fs-5">آخرین دوره ها</h4>
+    
+    <!-- Course item START -->
+    <div class="row gx-3 mb-3">
+        <!-- Image -->
+        <div class="col-4">
+            <img class="rounded" width="100" src="/media/CACHE/images/images/course_covers/python_async/9501dc526248d39b2de27ea07e6f479f.jpg" alt="آموزش برنامه نویسی Async در پایتون">
+        </div>
+        <!-- Info -->
+        <div class="col-8">
+            <h6 class="mb-0 fw-normal"><a href="/courses/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-async-%D8%AF%D8%B1-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86">آموزش برنامه نویسی Async در پایتون</a>
+            </h6>
+            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
+                <li class="list-group-item px-0 d-flex justify-content-between just">
+                    
+                    <span class="text-success formatted-price">0</span>
+                    <!-- <span class="h6 fw-light">4.5<i class="fas fa-star text-warning ms-1"></i></span> -->
+                     
+                    <span class="h6 text-info">119 دانشجو </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Course item END -->
+    
+    <!-- Course item START -->
+    <div class="row gx-3 mb-3">
+        <!-- Image -->
+        <div class="col-4">
+            <img class="rounded" width="100" src="/media/CACHE/images/images/course_covers/telegram_bot/3eecf99224f00d1cff6b1ce9fec339b6.jpg" alt="آموزش ساخت ربات تلگرام با پایتون">
+        </div>
+        <!-- Info -->
+        <div class="col-8">
+            <h6 class="mb-0 fw-normal"><a href="/courses/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B3%D8%A7%D8%AE%D8%AA-%D8%B1%D8%A8%D8%A7%D8%AA-%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85-%D8%A8%D8%A7-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86">آموزش ساخت ربات تلگرام با پایتون</a>
+            </h6>
+            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
+                <li class="list-group-item px-0 d-flex justify-content-between just">
+                    
+                    <span class="text-success formatted-price">600000</span>
+                    <!-- <span class="h6 fw-light">4.5<i class="fas fa-star text-warning ms-1"></i></span> -->
+                     
+                    <span class="h6 text-info">27 دانشجو </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Course item END -->
+    
+    <!-- Course item START -->
+    <div class="row gx-3 mb-3">
+        <!-- Image -->
+        <div class="col-4">
+            <img class="rounded" width="100" src="/media/CACHE/images/images/course_covers/arduino-tutorial/0bd86c61f960b59ba07cb1033dc27477.jpg" alt="آموزش arduino">
+        </div>
+        <!-- Info -->
+        <div class="col-8">
+            <h6 class="mb-0 fw-normal"><a href="/courses/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-arduino">آموزش Arduino</a>
+            </h6>
+            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
+                <li class="list-group-item px-0 d-flex justify-content-between just">
+                    
+                    <span class="text-success formatted-price">0</span>
+                    <!-- <span class="h6 fw-light">4.5<i class="fas fa-star text-warning ms-1"></i></span> -->
+                     
+                    <span class="h6 text-info">152 دانشجو </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Course item END -->
+    
+
+</div>
+				</div>
+				<div class="col-md-6 col-xl-12 mb-3">
+					<div class="card card-body shadow p-4">
+						<h4 class="mb-3 fs-5">برچسب ها</h4>
+						<ul class="list-inline mb-0 social-media-btn">
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('پایتون')">پایتون</button>
+							</li>
+
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('هواشناسی')">هواشناسی</button>
+							</li>
+
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('openweather')">openweather</button>
+							</li>
+
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('requests')">requests</button>
+							</li>
+
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('api')">api</button>
+							</li>
+
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('پروژه')">پروژه</button>
+							</li>
+
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('پروژه-پایتون')">پروژه پایتون</button>
+							</li>
+
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('python')">python</button>
+							</li>
+
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('پروژه-ها')">پروژه ها</button>
+							</li>
+
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('py')">py</button>
+							</li>
+
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('python-requets')">python requets</button>
+							</li>
+
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('current-weather')">current weather</button>
+							</li>
+
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('python-api')">python api</button>
+							</li>
+
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('python-request')">python request</button>
+							</li>
+
+							
+							<li class="list-inline-item"> <button  class="btn btn-outline-light btn-sm "
+									onclick="addOrEditTag('python-weather')">python weather</button>
+							</li>
+
+							
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+</section>
+<!-- =======================
+Page content END -->
+
+
+    </main>
+    <!-- =======================
+Footer START -->
+    
+
+<footer class="pt-5">
+    <div class="container">
+        <!-- Row START -->
+        <div class="row g-4">
+
+            <!-- Widget 1 START -->
+            <div class="col-lg-3">
+                <!-- logo -->
+                <div class="text-center ">
+                    <a class="me-0" href="/">
+                        <img class="light-mode-item h-60px" src="/static/images/logo.png" alt="logo">
+                        <img class="dark-mode-item h-60px" src="/static/images/logo-light.png" alt="logo">
+                    </a>
+                </div>
+
+                <p class="my-3 text-justify">بزرگترین هدف من تغییر روند آموزش و بالا بردن کیفیت تفکر توسعه دهنده هستش تا
+                    بتونیم
+                    در جمع بزرگتری از دنیا فعالیت کنیم و بدون هیچ مشکلی در جایگاه های قوی تری نقش آفرین باشیم.
+                </p>
+
+
+            </div>
+            <!-- Widget 1 END -->
+
+            <div class="col-lg-2 text-center">
+                <div class="row">
+                    <!-- Link block -->
+
+                    <h5 class="mb-2 mb-md-4">لینک های مفید</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link" href="/about-me">درباره
+                                من</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact-me">تماس با
+                                من</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/blog/">وبلاگ</a>
+
+                </div>
+
+            </div>
+            <div class="col-lg-2 text-center">
+                <div class="row">
+                    <!-- Link block -->
+
+                    <h5 class="mb-2 mb-md-4">مشاوره و منتورینگ</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link" href="/counseling-or-mentor/request">درخواست
+                                مشاوره یا منتور</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/project/request">درخواست پروژه </a></li>
+                        <li class="nav-item"><a class="nav-link" href="/road-map/python-backend">نقشه راه
+                                یادگیری</a></li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+            <div class="col-lg-2 text-center">
+
+
+                <div class="row">
+                    <!-- Link block -->
+
+                    <h5 class="mb-2 mb-md-4">همکاری ها</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link"
+                                href="https://maktabkhooneh.org/teacher/ali-bigdeli/" target="_blank">مکتبخونه</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="https://easy-iot.io/"
+                                target="_blank">easy-iot</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://hamravesh.com"
+                                target="_blank">همروش</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://danajou.com"
+                                target="_blank">داناجو</a></li>
+
+                    </ul>
+
+
+                </div>
+
+            </div>
+            <!-- Widget 3 START -->
+            <div class="col-lg-3 text-center">
+                <h5 class="mb-2 mb-md-4">تماس با من</h5>
+                <!-- Time -->
+                <p class="mb-2">
+                    تلفن: <span class="h6 fw-light ms-2">09124610183</span>
+                    <span class="d-block small">(9:00 تا 17:00 بعداز ظهر)</span>
+                </p>
+
+                <p class="mb-0">ایمیل:<span class="h6 fw-light ms-2">bigdeli.ali3@gmail.com</span></p>
+                <!-- Social media icon -->
+                <ul class="list-inline mb-0 mt-3">
+                    <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-twitter"
+                            href="https://t.me/thealibigdeli" target="_blank"><i
+                                class="fab fa-fw fa-telegram"></i></a> </li>
+                    <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-instagram-gradient"
+                            href="https://instagram.com/thealibigdeli" target="_blank"><i
+                                class="fab fa-fw fa-instagram"></i></a> </li>
+                    <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-linkedin"
+                            href="https://www.linkedin.com/in/thealibigdeli/" target="_blank"><i
+                                class="fab fa-fw fa-linkedin-in"></i></a> </li>
+                    <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-white"
+                            href="https://www.aparat.com/thealibigdeli" target="_blank"><img
+                                src="/static/images/client/aparat-red.svg" style="width:15px"
+                                alt="aparat"></span></a> </li>
+                    <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-danger"
+                            href="https://youtube.com/TheAliBigdeli" target="_blank"><i
+                                class="text-white fab fa-fw fa-youtube"></i></a> </li>
+                    <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-dark"
+                            href="https://github.com/AliBigdeli" target="_blank"><i
+                                class="text-white fab fa-fw fa-github"></i></a> </li>
+                </ul>
+            </div>
+            <!-- Widget 3 END -->
+        </div><!-- Row END -->
+
+        <!-- Divider -->
+        <hr class="mt-4 mb-0">
+
+        <!-- Bottom footer -->
+        <div class="py-3">
+            <div class="container px-0">
+                <div class="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
+                    <!-- copyright text -->
+                    <div class="text-primary-hover">
+                        Copyright ©
+                        <span id="year">2024</span>
+                        کلیه حقوق این سایت متعلق به علی بیگدلی می&zwnj;باشد
+                    </div>
+                    <!-- copyright links-->
+                    <div class="justify-content-center mt-3 mt-lg-0">
+                        <ul class="nav list-inline justify-content-center mb-0">
+                            <li class="list-inline-item">
+                                <!-- Language selector -->
+                                <!-- <div class="dropup mt-0 text-center text-sm-end">
+                                    <a class="dropdown-toggle nav-link" href="#" role="button" id="languageSwitcher"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-globe me-2"></i>زبان ها
+                                    </a>
+                                    <ul class="dropdown-menu min-w-auto" aria-labelledby="languageSwitcher">
+                                        <li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2"
+                                                    src="/static/images/flags/uk.svg" alt="">فارسی</a></li>
+                                        <li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2"
+                                                    src="/static/images/flags/gr.svg" alt="">انگلیسی </a>
+                                        </li>
+                                        <li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2"
+                                                    src="/static/images/flags/sp.svg" alt="">فرانسوی</a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                            </li>
+                            <li class="list-inline-item"><a class="nav-link"
+                                    href="/policy-and-privacy">قوانین و شرایط استفاده</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- =======================
+Footer END -->
+
+    <!-- Back to top -->
+    <div class="back-top"><i class="fas fa-arrow-up position-absolute top-50 start-50 translate-middle"></i></div>
+
+    <script src="/static/CACHE/js/output.8d126b85d939.js"></script>
+    
+
+
+    
+
+
+</body>
+
+
+
+</html>

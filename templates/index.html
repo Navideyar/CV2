@@ -171,8 +171,8 @@
         }
         
         .logo-navidyar-navbar {
-            font-size: 3rem;
-            margin-right: 24rem; /* فاصله از لبه راست کمتر می‌شود تا به وسط نزدیک‌تر شود */
+            font-size: 2rem;
+            margin-right: 4rem; /* فاصله از لبه راست کمتر می‌شود تا به وسط نزدیک‌تر شود */
             padding: 0.4rem 1.2rem;
         }
         
@@ -206,6 +206,263 @@
             transform: scale(1.05);
             filter: brightness(1.2);
         }
+
+        /* استایل‌های جدید منو */
+        .main-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .main-menu .nav-item {
+            position: relative;
+            margin: 0 5px;
+        }
+
+        .menu-item {
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 8px 16px !important;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .menu-item:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* حالت روشن */
+        html:not([data-bs-theme="dark"]) .menu-item {
+            color: #333;
+        }
+
+        html:not([data-bs-theme="dark"]) .menu-item::before {
+            background: linear-gradient(135deg, rgba(121, 40, 202, 0.15), rgba(255, 0, 128, 0.15));
+        }
+
+        html:not([data-bs-theme="dark"]) .menu-item:hover {
+            color: #7928CA;
+            text-shadow: 0 0 1px rgba(121, 40, 202, 0.3);
+        }
+
+        html:not([data-bs-theme="dark"]) .nav-item:nth-child(1) .menu-item:hover {
+            color: #7928CA;
+        }
+
+        html:not([data-bs-theme="dark"]) .nav-item:nth-child(2) .menu-item:hover {
+            color: #FF0080;
+        }
+
+        html:not([data-bs-theme="dark"]) .nav-item:nth-child(3) .menu-item:hover {
+            color: #0070F3;
+        }
+
+        html:not([data-bs-theme="dark"]) .nav-item:nth-child(4) .menu-item:hover {
+            color: #00C07F;
+        }
+
+        /* حالت تاریک */
+        html[data-bs-theme="dark"] .menu-item {
+            color: #f0f0f0;
+        }
+
+        html[data-bs-theme="dark"] .menu-item::before {
+            background: linear-gradient(135deg, rgba(0, 219, 222, 0.15), rgba(252, 0, 255, 0.15));
+        }
+
+        html[data-bs-theme="dark"] .menu-item:hover {
+            color: #00DBDE;
+            text-shadow: 0 0 5px rgba(0, 219, 222, 0.5);
+        }
+
+        html[data-bs-theme="dark"] .nav-item:nth-child(1) .menu-item:hover {
+            color: #00DBDE;
+        }
+
+        html[data-bs-theme="dark"] .nav-item:nth-child(2) .menu-item:hover {
+            color: #FC00FF;
+        }
+
+        html[data-bs-theme="dark"] .nav-item:nth-child(3) .menu-item:hover {
+            color: #00BFFF;
+        }
+
+        html[data-bs-theme="dark"] .nav-item:nth-child(4) .menu-item:hover {
+            color: #00FFA3;
+        }
+
+        /* افکت پویا برای منو */
+        .menu-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        html:not([data-bs-theme="dark"]) .menu-item::after {
+            background: linear-gradient(90deg, #7928CA, #FF0080);
+        }
+
+        html[data-bs-theme="dark"] .menu-item::after {
+            background: linear-gradient(90deg, #00DBDE, #FC00FF);
+        }
+
+        .menu-item:hover::after {
+            width: 70%;
+        }
+
+        .menu-item:hover::after {
+            width: 70%;
+        }
+    
+        /* استایل دکمه ورود */
+    .login-button {
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 8px 20px !important;
+        border-radius: 12px;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        border: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.4s ease;
+        transform: translateY(100%);
+    }
+
+    .login-button:hover::before {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .login-button::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 150%;
+        background: rgba(255, 255, 255, 0.3);
+        top: -25%;
+        left: -100%;
+        transform: rotate(25deg);
+        transition: all 0.6s ease;
+    }
+
+    .login-button:hover::after {
+        left: 120%;
+    }
+
+    /* حالت روشن */
+    html:not([data-bs-theme="dark"]) .login-button {
+        background: linear-gradient(45deg, #7928CA, #FF0080);
+        color: white;
+    }
+
+    html:not([data-bs-theme="dark"]) .login-button:hover {
+        background: linear-gradient(45deg, #7928CA, #FF0080);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(121, 40, 202, 0.3);
+    }
+
+    html:not([data-bs-theme="dark"]) .login-button::before {
+        background: linear-gradient(45deg, #FF0080, #7928CA);
+    }
+
+    /* حالت تاریک */
+    html[data-bs-theme="dark"] .login-button {
+        background: linear-gradient(45deg, #00DBDE, #FC00FF);
+        color: white;
+    }
+
+    html[data-bs-theme="dark"] .login-button:hover {
+        background: linear-gradient(45deg, #00DBDE, #FC00FF);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 219, 222, 0.3);
+    }
+
+    html[data-bs-theme="dark"] .login-button::before {
+        background: linear-gradient(45deg, #FC00FF, #00DBDE);
+    }
+
+    /* استایل باکس جستجو */
+    .search-box {
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border: 1px solid transparent;
+    }
+
+    html:not([data-bs-theme="dark"]) .search-box {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-color: rgba(121, 40, 202, 0.1);
+    }
+
+    html:not([data-bs-theme="dark"]) .search-box:focus {
+        background-color: rgba(255, 255, 255, 1);
+        border-color: rgba(121, 40, 202, 0.3);
+        box-shadow: 0 5px 15px rgba(121, 40, 202, 0.15);
+    }
+
+    html[data-bs-theme="dark"] .search-box {
+        background-color: rgba(33, 37, 41, 0.8);
+        border-color: rgba(0, 219, 222, 0.1);
+    }
+
+    html[data-bs-theme="dark"] .search-box:focus {
+        background-color: rgba(33, 37, 41, 1);
+        border-color: rgba(0, 219, 222, 0.3);
+        box-shadow: 0 5px 15px rgba(0, 219, 222, 0.15);
+    }
+
+    .search-button {
+        transition: all 0.3s ease;
+    }
+
+    html:not([data-bs-theme="dark"]) .search-button:hover {
+        color: #7928CA !important;
+    }
+
+    html[data-bs-theme="dark"] .search-button:hover {
+        color: #00DBDE !important;
+    }
+    
+    </style>
     </style>
     
     <link rel="stylesheet" href="{% static 'CACHE/css/output.004c4f90511e.css' %}" type="text/css">
@@ -281,15 +538,15 @@
             <!-- Nav category menu END -->
 
             <!-- Nav Main menu START -->
-            <ul class="navbar-nav navbar-nav-scroll mx-auto">
+            <ul class="navbar-nav navbar-nav-scroll mx-auto main-menu">
 
-                <li class="nav-item"><a class="nav-link" href="/">صفحه اصلی</a></li>
-                <li class="nav-item"><a class="nav-link" href="/courses/">دوره ها</a></li>
-                <li class="nav-item"><a class="nav-link" href="/blog/">وبلاگ</a></li>
-                <li class="nav-item"><a class="nav-link" href="/event/">رویداد ها</a></li>
-                <li class="nav-item"><a class="nav-link" href="/library/">کتابخانه</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about-me">درباره من</a></li>
-                <li class="nav-item"><a class="nav-link" href="/contact-me">تماس با من</a>
+                <li class="nav-item"><a class="nav-link menu-item" href="/">صفحه اصلی</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="/courses/">دوره ها</a></li> -->
+                <li class="nav-item"><a class="nav-link menu-item" href="/blog/">وبلاگ</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="/event/">رویداد ها</a></li> -->
+                <!-- <li class="nav-item"><a class="nav-link" href="/library/">کتابخانه</a></li> -->
+                <li class="nav-item"><a class="nav-link menu-item" href="/about-me">درباره من</a></li>
+                <li class="nav-item"><a class="nav-link menu-item" href="/contact-me">تماس با من</a>
                 <!-- <li class="nav-item"><a class="nav-link text-success" href="/courses/django-workshop-landing">کارگاه جنگو</a> -->
                 </li>
                
@@ -303,10 +560,10 @@
                 <div class="nav-item w-100">
                     <form class="position-relative" action="/blog/">
                         <input type="hidden" name="csrfmiddlewaretoken" value="xH1SotxgJ1yuq1q0maUbUucoiKrnctlTQYFJEGx6NUxtgCQ2vWe5JX1aj1fgbOM8">
-                        <input class="form-control pe-5 bg-transparent" type="search" placeholder=" جستجو..."
+                        <input class="form-control pe-5 bg-transparent search-box" type="search" placeholder=" جستجو..."
                             aria-label="Search" name="q">
                         <button
-                            class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
+                            class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset search-button"
                             type="submit">
                             <i class="fas fa-search fs-6 "></i>
                         </button>
@@ -374,12 +631,14 @@
             
             <div class="d-flex">
 
-                <a class="btn btn-primary-soft mb-0" href="/accounts/login/"><i
-                        class="fas fa-sign-in-alt me-2"></i>ورود</a>
+                <div class="d-flex">
 
-
-
-            </div>
+                    <a class="btn login-button mb-0" href="/accounts/login/"><i
+                            class="fas fa-sign-in-alt me-2"></i>ورود</a>
+    
+    
+    
+                </div>
             
         </div>
         <!-- Profile START -->
@@ -963,7 +1222,7 @@
                                 <!-- Title -->
 
                                 <h2 class="mb-0 fs-4">عضویت در خبرنامه</h2>
-                                <p class="mb-0">می توانید جهت آگاهی از سرویس ها و دوره های جدید در خبرنامه عضو شوید و به
+                                <p class="mb-0">می توانید جهت آگاهی از سرویس ها و به‌روزرسانی‌های جدید در خبرنامه عضو شوید و به
                                     روز بمانید.</p>
                             </div>
 
@@ -994,78 +1253,7 @@
             <div class="row justify-content-center my-4">
                 <div class="col-12">
                     <!-- Slider START -->
-                    <div class="tiny-slider arrow-round arrow-blur arrow-hover">
-                        <div class="d-flex tiny-slider-inner pb-1 align-items-center" data-autoplay="true"
-                            data-arrow="true" data-edge="2" data-dots="false" data-items="7" data-items-lg="2"
-                            data-items-sm="2">
-
-
-                            <div>
-                                <div>
-                                    <img src="{% static 'images/client/easyiot.png' %}" alt="easyiot" loading="lazy">
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <img src="{% static 'images/client/maktabkhooneh.png' %}" alt="maktabkhooneh"
-                                        loading="lazy">
-                                </div>
-                            </div>
-
-                            <div>
-                                <div>
-                                    <img src="{% static 'images/client/hamravesh.png' %}" alt="hamravesh"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <img src="{% static 'images/client/fidar.png' %}" alt="fidar" loading="lazy">
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <img src="{% static 'images/client/womtechnologies.png' %}" alt="womtechnologies"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <img src="{% static 'images/client/samacontrol.png' %}" alt="samacontrol"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <img src="{% static 'images/client/icc-aria.png' %}" alt="icc-aria" loading="lazy">
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <img src="{% static 'images/client/satplat.png' %}" alt="satplat" loading="lazy">
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <img src="{% static 'images/client/smart-pi.png' %}" alt="smart-pi" loading="lazy">
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <img src="{% static 'images/client/shabdiznet.png' %}" alt="shabdiznet"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <img src="{% static 'images/client/danajou.png' %}" alt="danajou"
-                                        loading="lazy">
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
+                  
                     <!-- Slider END -->
                 </div>
             </div>
@@ -1182,13 +1370,6 @@ Footer START -->
                     <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-linkedin"
                             href="https://www.linkedin.com/in/thealibigdeli/" target="_blank"><i
                                 class="fab fa-fw fa-linkedin-in"></i></a> </li>
-                    <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-white"
-                            href="https://www.aparat.com/thealibigdeli" target="_blank"><img
-                                src="{% static 'images/client/aparat-red.svg' %}" style="width:15px"
-                                alt="aparat"></span></a> </li>
-                    <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-danger"
-                            href="https://youtube.com/TheAliBigdeli" target="_blank"><i
-                                class="text-white fab fa-fw fa-youtube"></i></a> </li>
                     <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-dark"
                             href="https://github.com/AliBigdeli" target="_blank"><i
                                 class="text-white fab fa-fw fa-github"></i></a> </li>

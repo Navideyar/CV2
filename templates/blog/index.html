@@ -106,65 +106,35 @@ Page content START -->
 				<div class="row g-4">
 					
 					<!-- Card item START -->
-					<div class="col-sm-6 col-lg-6 col-xl-6">
-
-						<div class="card bg-transparent">
-							<div class="overflow-hidden rounded-3">
-								<img src="/media/CACHE/images/images/blog_thumbs/Untitled-1/f7dbb925302290026f561d31596bfee9.jpg" class="card-img" alt="انتقال پروژه Django از پلتفرم Liara به پلتفرم Hamravesh"
-									loading="lazy">
-								<!-- Overlay -->
-								<div class="bg-overlay bg-dark opacity-1"></div>
-								<div class="card-img-overlay d-flex align-items-start p-3">
-									<!-- badge -->
-									<a href="/blog/?category=django" class="badge text-bg-danger">django</a>
+					<div class="col-12">
+						<div class="card bg-transparent shadow h-100 transition-hover border-0 hover-translate-y">
+							<div class="row g-0">
+								<div class="col-lg-4">
+									<div class="overflow-hidden rounded-start h-100">
+										<img src="{% static 'images/blog-placeholder.jpg' %}" onerror="this.src='https://via.placeholder.com/600x400/6B5BA7/FFFFFF?text=بلاگ'" class="card-img-start h-100 w-100" alt="انتقال پروژه Django از پلتفرم Liara به پلتفرم Hamravesh" loading="lazy" style="object-fit: cover;">
+										<!-- Overlay -->
+										<div class="bg-overlay bg-dark opacity-2"></div>
+										<div class="card-img-overlay d-flex align-items-start p-3">
+											<!-- badge -->
+											<a href="/blog/?category=django" class="badge text-bg-danger fw-bold">django</a>
+										</div>
+									</div>
 								</div>
-							</div>
-
-							<!-- Card body -->
-							<div class="card-body">
-								<!-- Title -->
-								<h5 class="card-title fw-normal"><a
-										href="/blog/%D8%A7%D9%86%D8%AA%D9%82%D8%A7%D9%84-%D9%BE%D8%B1%D9%88%DA%98%D9%87-django-%D8%A7%D8%B2-%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85-liara-%D8%A8%D9%87-%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85-hamravesh/">انتقال پروژه Django از پلتفرم Liara به پلتفرم Hamravesh</a></h5>
-								<p class="text-truncate-2">خوب رسیدیم به بخش ترسناکی که برای خیلی ها می تونه کابوس باشه اونم انتقال پروژه از یک پلتفرم به پلتفرم دیگه، اما با این ویدئو مسائل رو براتون خیلی…</p>
-								<!-- Info -->
-								<div class="d-flex justify-content-between">
-									<h6 class="mb-0 fw-normal"><a href="#">علی بیگدلی</a>
-									</h6>
-									<span class="small">1403/05/28  <i class="far fa-calendar-alt"></i></span>
-									<span class="small"> 949 <i class="fas fa-eye"></i></span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Card item END -->
-					
-					<!-- Card item START -->
-					<div class="col-sm-6 col-lg-6 col-xl-6">
-
-						<div class="card bg-transparent">
-							<div class="overflow-hidden rounded-3">
-								<img src="/media/CACHE/images/images/blog_thumbs/hamravesh-channels/6c0507b8799f6378afb68f66f69c12a4.jpg" class="card-img" alt="پیاده سازی پروژه Django Channels (ASGI/Websocket) بر روی پلتفرم Hamravesh"
-									loading="lazy">
-								<!-- Overlay -->
-								<div class="bg-overlay bg-dark opacity-1"></div>
-								<div class="card-img-overlay d-flex align-items-start p-3">
-									<!-- badge -->
-									<a href="/blog/?category=django" class="badge text-bg-danger">django</a>
-								</div>
-							</div>
-
-							<!-- Card body -->
-							<div class="card-body">
-								<!-- Title -->
-								<h5 class="card-title fw-normal"><a
-										href="/blog/%D9%BE%DB%8C%D8%A7%D8%AF%D9%87-%D8%B3%D8%A7%D8%B2%DB%8C-%D9%BE%D8%B1%D9%88%DA%98%D9%87-django-channels-asgi-websocket-%D8%A8%D8%B1-%D8%B1%D9%88%DB%8C-%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85-hamravesh/">پیاده سازی پروژه Django Channels (ASGI/Websocket) بر روی پلتفرم Hamravesh</a></h5>
-								<p class="text-truncate-2">توی این ویدئو درباره نحوه پیاده سازی پروژه های ASGI در جنگو با استفاده از ماژول Channels و Daphne صحبت خواهم کرد و یک نمونه پروژه برای تست رو در…</p>
-								<!-- Info -->
-								<div class="d-flex justify-content-between">
-									<h6 class="mb-0 fw-normal"><a href="#">علی بیگدلی</a>
-									</h6>
-									<span class="small">1403/05/19  <i class="far fa-calendar-alt"></i></span>
-									<span class="small"> 735 <i class="fas fa-eye"></i></span>
+								<div class="col-lg-8">
+									<!-- Card body -->
+									<div class="card-body p-4 h-100 d-flex flex-column">
+										<!-- Title -->
+										<h4 class="card-title fw-semi-bold mb-3"><a class="text-decoration-none stretched-link"
+												href="/blog/%D8%A7%D9%86%D8%AA%D9%82%D8%A7%D9%84-%D9%BE%D8%B1%D9%88%DA%98%D9%87-django-%D8%A7%D8%B2-%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85-liara-%D8%A8%D9%87-%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85-hamravesh/">انتقال پروژه Django از پلتفرم Liara به پلتفرم Hamravesh</a></h4>
+										<p class="text-truncate-3 mb-3">خوب رسیدیم به بخش ترسناکی که برای خیلی ها می تونه کابوس باشه اونم انتقال پروژه از یک پلتفرم به پلتفرم دیگه، اما با این ویدئو مسائل رو براتون خیلی…</p>
+										<!-- Info -->
+										<div class="d-flex justify-content-between align-items-center border-top pt-3 mt-auto">
+											<h6 class="mb-0 fw-normal"><a href="#" class="text-reset"><i class="fas fa-user-circle me-1 text-primary"></i>علی بیگدلی</a>
+											</h6>
+											<span class="small me-2"><i class="far fa-calendar-alt text-secondary me-1"></i>1403/05/28</span>
+											<span class="small"><i class="fas fa-eye text-secondary me-1"></i>949</span>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -172,65 +142,35 @@ Page content START -->
 					<!-- Card item END -->
 					
 					<!-- Card item START -->
-					<div class="col-sm-6 col-lg-6 col-xl-6">
-
-						<div class="card bg-transparent">
-							<div class="overflow-hidden rounded-3">
-								<img src="/media/CACHE/images/images/blog_thumbs/django-caprover/ff4ba23722c3d7d320c262fdb39737c8.jpg" class="card-img" alt="پیاده سازی پروژه django بر روی پلتفرم Caprover به همراه Media"
-									loading="lazy">
-								<!-- Overlay -->
-								<div class="bg-overlay bg-dark opacity-1"></div>
-								<div class="card-img-overlay d-flex align-items-start p-3">
-									<!-- badge -->
-									<a href="/blog/?category=django" class="badge text-bg-danger">django</a>
+					<div class="col-12">
+						<div class="card bg-transparent shadow h-100 transition-hover border-0 hover-translate-y">
+							<div class="row g-0">
+								<div class="col-lg-4">
+									<div class="overflow-hidden rounded-start h-100">
+										<img src="{% static 'images/blog-placeholder.jpg' %}" onerror="this.src='https://via.placeholder.com/600x400/5FA99D/FFFFFF?text=بلاگ'" class="card-img-start h-100 w-100" alt="پیاده سازی پروژه Django Channels (ASGI/Websocket) بر روی پلتفرم Hamravesh" loading="lazy" style="object-fit: cover;">
+										<!-- Overlay -->
+										<div class="bg-overlay bg-dark opacity-2"></div>
+										<div class="card-img-overlay d-flex align-items-start p-3">
+											<!-- badge -->
+											<a href="/blog/?category=django" class="badge text-bg-danger fw-bold">django</a>
+										</div>
+									</div>
 								</div>
-							</div>
-
-							<!-- Card body -->
-							<div class="card-body">
-								<!-- Title -->
-								<h5 class="card-title fw-normal"><a
-										href="/blog/%D9%BE%DB%8C%D8%A7%D8%AF%D9%87-%D8%B3%D8%A7%D8%B2%DB%8C-%D9%BE%D8%B1%D9%88%DA%98%D9%87-django-%D8%A8%D8%B1-%D8%B1%D9%88%DB%8C-%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85-caprover-%D8%A8%D9%87-%D9%87%D9%85%D8%B1%D8%A7%D9%87-media/">پیاده سازی پروژه django بر روی پلتفرم Caprover به همراه Media</a></h5>
-								<p class="text-truncate-2">توی این ویدئو نحوه پیاده سازی پروژه جنگو رو به صورت کامل بر روی پلتفرم caprover شرح دادم به طوری که یک پروژه قالب رو آماده سازی کردم و در…</p>
-								<!-- Info -->
-								<div class="d-flex justify-content-between">
-									<h6 class="mb-0 fw-normal"><a href="#">علی بیگدلی</a>
-									</h6>
-									<span class="small">1403/05/15  <i class="far fa-calendar-alt"></i></span>
-									<span class="small"> 521 <i class="fas fa-eye"></i></span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Card item END -->
-					
-					<!-- Card item START -->
-					<div class="col-sm-6 col-lg-6 col-xl-6">
-
-						<div class="card bg-transparent">
-							<div class="overflow-hidden rounded-3">
-								<img src="/media/CACHE/images/images/blog_thumbs/caprover/29a184e41589f6d6c4434b510d53c7f3.jpg" class="card-img" alt="نحوه نصب و پیاده سازی Caprover بر روی لینوکس"
-									loading="lazy">
-								<!-- Overlay -->
-								<div class="bg-overlay bg-dark opacity-1"></div>
-								<div class="card-img-overlay d-flex align-items-start p-3">
-									<!-- badge -->
-									<a href="/blog/?category=django" class="badge text-bg-danger">django</a>
-								</div>
-							</div>
-
-							<!-- Card body -->
-							<div class="card-body">
-								<!-- Title -->
-								<h5 class="card-title fw-normal"><a
-										href="/blog/%D9%86%D8%AD%D9%88%D9%87-%D9%86%D8%B5%D8%A8-%D9%88-%D9%BE%DB%8C%D8%A7%D8%AF%D9%87-%D8%B3%D8%A7%D8%B2%DB%8C-caprover-%D8%A8%D8%B1-%D8%B1%D9%88%DB%8C-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/">نحوه نصب و پیاده سازی Caprover بر روی لینوکس</a></h5>
-								<p class="text-truncate-2">در این ویدئو به بررسی نحوه پیاده سازی و نصب caprover بر روی ubuntu و نحوه پیکربندی آن و اتصال دامنه به همراه دریافت SSL خواهیم پرداخت. در حقیقتCapRover یک…</p>
-								<!-- Info -->
-								<div class="d-flex justify-content-between">
-									<h6 class="mb-0 fw-normal"><a href="#">علی بیگدلی</a>
-									</h6>
-									<span class="small">1402/11/29  <i class="far fa-calendar-alt"></i></span>
-									<span class="small"> 2054 <i class="fas fa-eye"></i></span>
+								<div class="col-lg-8">
+									<!-- Card body -->
+									<div class="card-body p-4 h-100 d-flex flex-column">
+										<!-- Title -->
+										<h4 class="card-title fw-semi-bold mb-3"><a class="text-decoration-none stretched-link"
+												href="/blog/%D9%BE%DB%8C%D8%A7%D8%AF%D9%87-%D8%B3%D8%A7%D8%B2%DB%8C-%D9%BE%D8%B1%D9%88%DA%98%D9%87-django-channels-asgi-websocket-%D8%A8%D8%B1-%D8%B1%D9%88%DB%8C-%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85-hamravesh/">پیاده سازی پروژه Django Channels (ASGI/Websocket) بر روی پلتفرم Hamravesh</a></h4>
+										<p class="text-truncate-3 mb-3">توی این ویدئو درباره نحوه پیاده سازی پروژه های ASGI در جنگو با استفاده از ماژول Channels و Daphne صحبت خواهم کرد و یک نمونه پروژه برای تست رو در…</p>
+										<!-- Info -->
+										<div class="d-flex justify-content-between align-items-center border-top pt-3 mt-auto">
+											<h6 class="mb-0 fw-normal"><a href="#" class="text-reset"><i class="fas fa-user-circle me-1 text-primary"></i>علی بیگدلی</a>
+											</h6>
+											<span class="small me-2"><i class="far fa-calendar-alt text-secondary me-1"></i>1403/05/19</span>
+											<span class="small"><i class="fas fa-eye text-secondary me-1"></i>735</span>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -238,32 +178,35 @@ Page content START -->
 					<!-- Card item END -->
 					
 					<!-- Card item START -->
-					<div class="col-sm-6 col-lg-6 col-xl-6">
-
-						<div class="card bg-transparent">
-							<div class="overflow-hidden rounded-3">
-								<img src="/media/CACHE/images/images/blog_thumbs/docker-compose-usage/2d6c11be8489e8cb1c349e852d43124b.jpg" class="card-img" alt="استفاده از محیط docker-compose و dev container در مدیریت پروژه"
-									loading="lazy">
-								<!-- Overlay -->
-								<div class="bg-overlay bg-dark opacity-1"></div>
-								<div class="card-img-overlay d-flex align-items-start p-3">
-									<!-- badge -->
-									<a href="/blog/?category=django" class="badge text-bg-danger">django</a>
+					<div class="col-12">
+						<div class="card bg-transparent shadow h-100 transition-hover border-0 hover-translate-y">
+							<div class="row g-0">
+								<div class="col-lg-4">
+									<div class="overflow-hidden rounded-start h-100">
+										<img src="{% static 'images/blog-placeholder.jpg' %}" onerror="this.src='https://via.placeholder.com/600x400/E76F51/FFFFFF?text=بلاگ'" class="card-img-start h-100 w-100" alt="پیاده سازی پروژه django بر روی پلتفرم Caprover به همراه Media" loading="lazy" style="object-fit: cover;">
+										<!-- Overlay -->
+										<div class="bg-overlay bg-dark opacity-2"></div>
+										<div class="card-img-overlay d-flex align-items-start p-3">
+											<!-- badge -->
+											<a href="/blog/?category=django" class="badge text-bg-danger fw-bold">django</a>
+										</div>
+									</div>
 								</div>
-							</div>
-
-							<!-- Card body -->
-							<div class="card-body">
-								<!-- Title -->
-								<h5 class="card-title fw-normal"><a
-										href="/blog/%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-%D9%85%D8%AD%DB%8C%D8%B7-docker-compose-%D9%88-dev-container-%D8%AF%D8%B1-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%BE%D8%B1%D9%88%DA%98%D9%87/">استفاده از محیط docker-compose و dev container در مدیریت پروژه</a></h5>
-								<p class="text-truncate-2">در این ویدئو خواهید دید که چطور می توان یک پروژه جنگو و یا مبتنی بر پایتون را در یک محیط ایزوله کنترل و از سرویس های متفاوت در این…</p>
-								<!-- Info -->
-								<div class="d-flex justify-content-between">
-									<h6 class="mb-0 fw-normal"><a href="#">علی بیگدلی</a>
-									</h6>
-									<span class="small">1402/11/22  <i class="far fa-calendar-alt"></i></span>
-									<span class="small"> 1727 <i class="fas fa-eye"></i></span>
+								<div class="col-lg-8">
+									<!-- Card body -->
+									<div class="card-body p-4 h-100 d-flex flex-column">
+										<!-- Title -->
+										<h4 class="card-title fw-semi-bold mb-3"><a class="text-decoration-none stretched-link"
+												href="/blog/%D9%BE%DB%8C%D8%A7%D8%AF%D9%87-%D8%B3%D8%A7%D8%B2%DB%8C-%D9%BE%D8%B1%D9%88%DA%98%D9%87-django-%D8%A8%D8%B1-%D8%B1%D9%88%DB%8C-%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85-caprover-%D8%A8%D9%87-%D9%87%D9%85%D8%B1%D8%A7%D9%87-media/">پیاده سازی پروژه django بر روی پلتفرم Caprover به همراه Media</a></h4>
+										<p class="text-truncate-3 mb-3">توی این ویدئو نحوه پیاده سازی پروژه جنگو رو به صورت کامل بر روی پلتفرم caprover شرح دادم به طوری که یک پروژه قالب رو آماده سازی کردم و در…</p>
+										<!-- Info -->
+										<div class="d-flex justify-content-between align-items-center border-top pt-3 mt-auto">
+											<h6 class="mb-0 fw-normal"><a href="#" class="text-reset"><i class="fas fa-user-circle me-1 text-primary"></i>علی بیگدلی</a>
+											</h6>
+											<span class="small me-2"><i class="far fa-calendar-alt text-secondary me-1"></i>1403/05/15</span>
+											<span class="small"><i class="fas fa-eye text-secondary me-1"></i>521</span>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -271,32 +214,107 @@ Page content START -->
 					<!-- Card item END -->
 					
 					<!-- Card item START -->
-					<div class="col-sm-6 col-lg-6 col-xl-6">
-
-						<div class="card bg-transparent">
-							<div class="overflow-hidden rounded-3">
-								<img src="/media/CACHE/images/images/blog_thumbs/banner_a7uNHU1/e1735ea71ed57ff34a94ad4257f0ffb0.jpg" class="card-img" alt="پایشگر آب و هوا و کنترل از طریق MQTT با نرم افزار IOT Dashboard"
-									loading="lazy">
-								<!-- Overlay -->
-								<div class="bg-overlay bg-dark opacity-1"></div>
-								<div class="card-img-overlay d-flex align-items-start p-3">
-									<!-- badge -->
-									<a href="/blog/?category=micro-python" class="badge text-bg-danger">micro python</a>
+					<div class="col-12">
+						<div class="card bg-transparent shadow h-100 transition-hover border-0 hover-translate-y">
+							<div class="row g-0">
+								<div class="col-lg-4">
+									<div class="overflow-hidden rounded-start h-100">
+										<img src="{% static 'images/blog-placeholder.jpg' %}" onerror="this.src='https://via.placeholder.com/600x400/2A9D8F/FFFFFF?text=بلاگ'" class="card-img-start h-100 w-100" alt="نحوه نصب و پیاده سازی Caprover بر روی لینوکس" loading="lazy" style="object-fit: cover;">
+										<!-- Overlay -->
+										<div class="bg-overlay bg-dark opacity-2"></div>
+										<div class="card-img-overlay d-flex align-items-start p-3">
+											<!-- badge -->
+											<a href="/blog/?category=django" class="badge text-bg-danger fw-bold">django</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-8">
+									<!-- Card body -->
+									<div class="card-body p-4 h-100 d-flex flex-column">
+										<!-- Title -->
+										<h4 class="card-title fw-semi-bold mb-3"><a class="text-decoration-none stretched-link"
+												href="/blog/%D9%86%D8%AD%D9%88%D9%87-%D9%86%D8%B5%D8%A8-%D9%88-%D9%BE%DB%8C%D8%A7%D8%AF%D9%87-%D8%B3%D8%A7%D8%B2%DB%8C-caprover-%D8%A8%D8%B1-%D8%B1%D9%88%DB%8C-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/">نحوه نصب و پیاده سازی Caprover بر روی لینوکس</a></h4>
+										<p class="text-truncate-3 mb-3">در این ویدئو به بررسی نحوه پیاده سازی و نصب caprover بر روی ubuntu و نحوه پیکربندی آن و اتصال دامنه به همراه دریافت SSL خواهیم پرداخت. در حقیقتCapRover یک…</p>
+										<!-- Info -->
+										<div class="d-flex justify-content-between align-items-center border-top pt-3 mt-auto">
+											<h6 class="mb-0 fw-normal"><a href="#" class="text-reset"><i class="fas fa-user-circle me-1 text-primary"></i>علی بیگدلی</a>
+											</h6>
+											<span class="small me-2"><i class="far fa-calendar-alt text-secondary me-1"></i>1402/11/29</span>
+											<span class="small"><i class="fas fa-eye text-secondary me-1"></i>2054</span>
+										</div>
+									</div>
 								</div>
 							</div>
-
-							<!-- Card body -->
-							<div class="card-body">
-								<!-- Title -->
-								<h5 class="card-title fw-normal"><a
-										href="/blog/%D9%BE%D8%A7%DB%8C%D8%B4%DA%AF%D8%B1-%D8%A2%D8%A8-%D9%88-%D9%87%D9%88%D8%A7-%D9%88-%DA%A9%D9%86%D8%AA%D8%B1%D9%84-%D8%A7%D8%B2-%D8%B7%D8%B1%DB%8C%D9%82-mqtt-%D8%A8%D8%A7-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-iot-dashboard/">پایشگر آب و هوا و کنترل از طریق MQTT با نرم افزار IOT Dashboard</a></h5>
-								<p class="text-truncate-2">در این پست به بررسی نحوه ساخت یک پایشگر آب و هوا با استفاده از میکروپایتون بر ESP32 با استفاده از پروتکل ارتباطی MQTT می نماییم و داده های نمایشی…</p>
-								<!-- Info -->
-								<div class="d-flex justify-content-between">
-									<h6 class="mb-0 fw-normal"><a href="#">علی بیگدلی</a>
-									</h6>
-									<span class="small">1402/06/11  <i class="far fa-calendar-alt"></i></span>
-									<span class="small"> 3179 <i class="fas fa-eye"></i></span>
+						</div>
+					</div>
+					<!-- Card item END -->
+					
+					<!-- Card item START -->
+					<div class="col-12">
+						<div class="card bg-transparent shadow h-100 transition-hover border-0 hover-translate-y">
+							<div class="row g-0">
+								<div class="col-lg-4">
+									<div class="overflow-hidden rounded-start h-100">
+										<img src="{% static 'images/blog-placeholder.jpg' %}" onerror="this.src='https://via.placeholder.com/600x400/264653/FFFFFF?text=بلاگ'" class="card-img-start h-100 w-100" alt="استفاده از محیط docker-compose و dev container در مدیریت پروژه" loading="lazy" style="object-fit: cover;">
+										<!-- Overlay -->
+										<div class="bg-overlay bg-dark opacity-2"></div>
+										<div class="card-img-overlay d-flex align-items-start p-3">
+											<!-- badge -->
+											<a href="/blog/?category=django" class="badge text-bg-danger fw-bold">django</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-8">
+									<!-- Card body -->
+									<div class="card-body p-4 h-100 d-flex flex-column">
+										<!-- Title -->
+										<h4 class="card-title fw-semi-bold mb-3"><a class="text-decoration-none stretched-link"
+												href="/blog/%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-%D9%85%D8%AD%DB%8C%D8%B7-docker-compose-%D9%88-dev-container-%D8%AF%D8%B1-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%BE%D8%B1%D9%88%DA%98%D9%87/">استفاده از محیط docker-compose و dev container در مدیریت پروژه</a></h4>
+										<p class="text-truncate-3 mb-3">در این ویدئو خواهید دید که چطور می توان یک پروژه جنگو و یا مبتنی بر پایتون را در یک محیط ایزوله کنترل و از سرویس های متفاوت در این…</p>
+										<!-- Info -->
+										<div class="d-flex justify-content-between align-items-center border-top pt-3 mt-auto">
+											<h6 class="mb-0 fw-normal"><a href="#" class="text-reset"><i class="fas fa-user-circle me-1 text-primary"></i>علی بیگدلی</a>
+											</h6>
+											<span class="small me-2"><i class="far fa-calendar-alt text-secondary me-1"></i>1402/11/22</span>
+											<span class="small"><i class="fas fa-eye text-secondary me-1"></i>1727</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Card item END -->
+					
+					<!-- Card item START -->
+					<div class="col-12">
+						<div class="card bg-transparent shadow h-100 transition-hover border-0 hover-translate-y">
+							<div class="row g-0">
+								<div class="col-lg-4">
+									<div class="overflow-hidden rounded-start h-100">
+										<img src="{% static 'images/blog-placeholder.jpg' %}" onerror="this.src='https://via.placeholder.com/600x400/F4A261/FFFFFF?text=بلاگ'" class="card-img-start h-100 w-100" alt="پایشگر آب و هوا و کنترل از طریق MQTT با نرم افزار IOT Dashboard" loading="lazy" style="object-fit: cover;">
+										<!-- Overlay -->
+										<div class="bg-overlay bg-dark opacity-2"></div>
+										<div class="card-img-overlay d-flex align-items-start p-3">
+											<!-- badge -->
+											<a href="/blog/?category=micro-python" class="badge text-bg-danger fw-bold">micro python</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-8">
+									<!-- Card body -->
+									<div class="card-body p-4 h-100 d-flex flex-column">
+										<!-- Title -->
+										<h4 class="card-title fw-semi-bold mb-3"><a class="text-decoration-none stretched-link"
+												href="/blog/%D9%BE%D8%A7%DB%8C%D8%B4%DA%AF%D8%B1-%D8%A2%D8%A8-%D9%88-%D9%87%D9%88%D8%A7-%D9%88-%DA%A9%D9%86%D8%AA%D8%B1%D9%84-%D8%A7%D8%B2-%D8%B7%D8%B1%DB%8C%D9%82-mqtt-%D8%A8%D8%A7-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-iot-dashboard/">پایشگر آب و هوا و کنترل از طریق MQTT با نرم افزار IOT Dashboard</a></h4>
+										<p class="text-truncate-3 mb-3">در این پست به بررسی نحوه ساخت یک پایشگر آب و هوا با استفاده از میکروپایتون بر ESP32 با استفاده از پروتکل ارتباطی MQTT می نماییم و داده های نمایشی…</p>
+										<!-- Info -->
+										<div class="d-flex justify-content-between align-items-center border-top pt-3 mt-auto">
+											<h6 class="mb-0 fw-normal"><a href="#" class="text-reset"><i class="fas fa-user-circle me-1 text-primary"></i>علی بیگدلی</a>
+											</h6>
+											<span class="small me-2"><i class="far fa-calendar-alt text-secondary me-1"></i>1402/06/11</span>
+											<span class="small"><i class="fas fa-eye text-secondary me-1"></i>3179</span>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -738,3 +756,38 @@ Page content END -->
 
 </html>
 {% endblock %}
+
+<style>
+.hover-translate-y {
+    transition: all 0.3s ease-in-out;
+}
+.hover-translate-y:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+.transition-hover {
+    transition: all 0.3s ease;
+}
+.fw-semi-bold {
+    font-weight: 600;
+}
+.card-img {
+    height: 200px;
+    object-fit: cover;
+}
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 48px;
+}
+.text-truncate-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+</style>

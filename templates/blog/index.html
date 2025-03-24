@@ -68,24 +68,26 @@ Page content START -->
 			<div class="col-lg-8 pt-5 pt-lg-0">
 				<div class="row mb-4 align-items-center">
 					<!-- Search bar -->
-					<div class="col-xl-6 mb-3">
-						<form action="/blog/" class="border rounded p-2">
-							<div class="input-group input-borderless">
-								<input class="form-control me-1" type="search" placeholder="جستجو وبلاگ ..."
-									name="q" id="search-query-filter">
-								<button type="submit" class="btn btn-primary mb-0 rounded z-index-1"><i
-										class="fas fa-search"></i></button>
-							</div>
-						</form>
+					<div class="col-md-6">
+						<div class="input-group search-box mb-3">
+							<input type="text" class="form-control custom-search-input" placeholder="جستجو وبلاگ ..." aria-label="جستجو وبلاگ" aria-describedby="button-search">
+							<button class="btn btn-primary search-btn" type="button" id="button-search">
+								<i class="fas fa-search"></i> جستجو
+							</button>
+						</div>
 					</div>
 
 					<!-- Select option -->
-					<div class="col-xl-3 mb-3">
-						<div class="border rounded p-2">
-							<select class="form-select border-0" id="order-by-filter">
-								<option value="">مرتب سازی</option>
-								<option value="-created_date">جدیدترین</option>
-								<option value="created_date">قدیمی ترین</option>
+					<div class="col-md-6">
+						<div class="input-group sort-box mb-3">
+							<label class="input-group-text sort-label" for="inputGroupSort">
+								<i class="fas fa-sort-amount-down"></i>
+							</label>
+							<select class="form-select custom-sort-select" id="inputGroupSort">
+								<option selected>مرتب سازی</option>
+								<option value="1">جدیدترین</option>
+								<option value="2">قدیمی ترین</option>
+								<option value="3">پربازدیدترین</option>
 							</select>
 						</div>
 					</div>
@@ -94,12 +96,12 @@ Page content START -->
 					<div class="col-12 col-xl-3 d-flex justify-content-between align-items-center mt-3 mt-xl-0">
 
 						<!-- Advanced filter responsive toggler START -->
-						<button class="btn btn-primary mb-0 d-lg-none" type="button" data-bs-toggle="offcanvas"
+						<button class="btn btn-outline-primary mb-0 filter-btn d-lg-none" type="button" data-bs-toggle="offcanvas"
 							data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
 							<i class="fas fa-sliders-h me-1"></i> نمایش فیلتر
 						</button>
 						<!-- Advanced filter responsive toggler END -->
-						<p class="mb-0 text-end">17 نتیجه یافت شد</p>
+						<p class="mb-0 text-end result-count"><span class="badge bg-primary rounded-pill">17</span> نتیجه یافت شد</p>
 					</div>
 
 				</div>
@@ -789,5 +791,56 @@ Page content END -->
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/* استایل برای بخش جستجو و مرتب‌سازی */
+.search-box, .sort-box {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.search-box:focus-within, .sort-box:focus-within {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+}
+
+.custom-search-input, .custom-sort-select {
+    border: none;
+    padding: 12px 16px;
+    font-size: 1rem;
+    height: auto;
+}
+
+.custom-search-input:focus, .custom-sort-select:focus {
+    box-shadow: none;
+}
+
+.search-btn {
+    padding: 0 24px;
+    border-radius: 0;
+    font-weight: 500;
+}
+
+.sort-label {
+    background-color: #f8f9fa;
+    border: none;
+    color: #6c757d;
+}
+
+.filter-btn {
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-weight: 500;
+}
+
+.result-count {
+    font-weight: 500;
+}
+
+.result-count .badge {
+    padding: 6px 10px;
+    margin-left: 6px;
 }
 </style>

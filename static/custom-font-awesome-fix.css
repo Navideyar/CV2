@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "Font Awesome 5 Brands";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url(/static/vendor/font-awesome/webfonts/fa-brands-400.eot@6402d78a4bbb);
+    src: url(/static/vendor/font-awesome/webfonts/fa-brands-400.eot@6402d78a4bbb) format("embedded-opentype"),
+         url(/static/vendor/font-awesome/webfonts/fa-brands-400.woff2@6402d78a4bbb) format("woff2"),
+         url(/static/vendor/font-awesome/webfonts/fa-brands-400.woff@6402d78a4bbb) format("woff"),
+         url(/static/vendor/font-awesome/webfonts/fa-brands-400.ttf@6402d78a4bbb) format("truetype"),
+         url(/static/vendor/font-awesome/webfonts/fa-brands-400.svg@6402d78a4bbb) format("svg");
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("/static/vendor/font-awesome/webfonts/fa-regular-400.eot?6402d78a4bbb");
+    src: url("/static/vendor/font-awesome/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+         url("/static/vendor/font-awesome/webfonts/fa-regular-400.woff2?6402d78a4bbb") format("woff2"),
+         url("/static/vendor/font-awesome/webfonts/fa-regular-400.woff?6402d78a4bbb") format("woff"),
+         url("/static/vendor/font-awesome/webfonts/fa-regular-400.ttf?6402d78a4bbb") format("truetype"),
+         url("/static/vendor/font-awesome/webfonts/fa-regular-400.svg?6402d78a4bbb#fontawesome") format("svg");
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url("/static/vendor/font-awesome/webfonts/fa-solid-900.eot?6402d78a4bbb");
+    src: url("/static/vendor/font-awesome/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+         url("/static/vendor/font-awesome/webfonts/fa-solid-900.woff2?6402d78a4bbb") format("woff2"),
+         url("/static/vendor/font-awesome/webfonts/fa-solid-900.woff?6402d78a4bbb") format("woff"),
+         url("/static/vendor/font-awesome/webfonts/fa-solid-900.ttf?6402d78a4bbb") format("truetype"),
+         url("/static/vendor/font-awesome/webfonts/fa-solid-900.svg?6402d78a4bbb#fontawesome") format("svg");
+}
+
+.fab {
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
+}
+
+.far {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+}
+
+.fa, .fas {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+} 

@@ -247,6 +247,46 @@ Page Banner END -->
 	</div>
 </section>
 
+<!-- بخش دانلود رزومه -->
+<section class="my-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="resume-download-card bg-gradient p-5 rounded-4 shadow-lg text-center position-relative overflow-hidden">
+                    <!-- تزیینات SVG -->
+                    <div class="resume-decoration-1"></div>
+                    <div class="resume-decoration-2"></div>
+                    <div class="resume-decoration-3"></div>
+                    
+                    <div class="resume-content">
+                        <h2 class="text-dark mb-4 font-vazir">دانلود رزومه من</h2>
+                        <p class="text-dark mb-4 font-vazir">برای آشنایی بیشتر با سوابق تحصیلی، مهارت‌ها و تجربیات کاری من می‌توانید رزومه کامل من را دانلود کنید.</p>
+                        
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-6">
+                                <a href="{% static 'resume/resume-fa.pdf' %}" download class="btn btn-success btn-lg w-100 resume-download-btn hover-scale">
+                                    <span class="d-flex align-items-center justify-content-center">
+                                        <i class="fas fa-file-pdf text-white me-2"></i>
+                                        <span class="font-vazir text-white">دانلود رزومه فارسی</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="{% static 'resume/resume-en.pdf' %}" download class="btn btn-info btn-lg w-100 resume-download-btn hover-scale">
+                                    <span class="d-flex align-items-center justify-content-center">
+                                        <i class="fas fa-file-pdf text-white me-2"></i>
+                                        <span class="font-vazir text-white">دانلود رزومه انگلیسی</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
 
@@ -662,6 +702,177 @@ h1:hover .subtitle {
 
 .title-container:hover .divider-icon {
     transform: rotate(180deg);
+}
+
+/* استایل‌های مربوط به بخش دانلود رزومه */
+.resume-download-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.resume-download-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
+}
+
+[data-theme="dark"] .resume-download-card {
+    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .resume-content h2,
+[data-theme="dark"] .resume-content p {
+    color: #ffffff !important;
+}
+
+.resume-decoration-1,
+.resume-decoration-2,
+.resume-decoration-3 {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+    z-index: 0;
+    transition: all 0.6s ease;
+}
+
+.resume-decoration-1 {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, #ff79c6 0%, #bd93f9 100%);
+    top: -50px;
+    left: -50px;
+}
+
+.resume-decoration-2 {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #50fa7b 0%, #8be9fd 100%);
+    bottom: -30px;
+    right: 20%;
+}
+
+.resume-decoration-3 {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ffb86c 0%, #ff5555 100%);
+    top: 20%;
+    right: -20px;
+}
+
+.resume-download-card:hover .resume-decoration-1 {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.resume-download-card:hover .resume-decoration-2 {
+    transform: scale(1.2) rotate(-15deg);
+}
+
+.resume-download-card:hover .resume-decoration-3 {
+    transform: scale(1.2) rotate(25deg);
+}
+
+.resume-content {
+    position: relative;
+    z-index: 10;
+}
+
+.resume-download-btn {
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.resume-download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    background-color: #f8f9fa;
+}
+
+.resume-download-btn i {
+    transition: transform 0.3s ease;
+}
+
+.resume-download-btn:hover i {
+    transform: scale(1.2);
+}
+
+/* تغییر استایل برای حالت تاریک */
+[data-theme="dark"] .resume-download-btn {
+    background-color: #2d3748;
+    color: #e2e8f0;
+    border-color: #4a5568;
+}
+
+[data-theme="dark"] .resume-download-btn:hover {
+    background-color: #4a5568;
+}
+
+.resume-download-btn span {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.resume-download-btn.btn-primary {
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    border: none;
+    font-weight: bold;
+}
+
+.resume-download-btn.btn-primary:hover {
+    background: linear-gradient(135deg, #224abe 0%, #193983 100%);
+    box-shadow: 0 10px 25px rgba(78, 115, 223, 0.4);
+}
+
+.resume-download-btn.btn-success {
+    background: linear-gradient(135deg, #1cc88a 0%, #169b6b 100%);
+    border: none;
+    font-weight: bold;
+}
+
+.resume-download-btn.btn-success:hover {
+    background: linear-gradient(135deg, #169b6b 0%, #0e715a 100%);
+    box-shadow: 0 10px 25px rgba(28, 200, 138, 0.4);
+}
+
+.resume-download-btn.btn-info {
+    background: linear-gradient(135deg, #36b9cc 0%, #258391 100%);
+    border: none;
+    font-weight: bold;
+}
+
+.resume-download-btn.btn-info:hover {
+    background: linear-gradient(135deg, #258391 0%, #1a6876 100%);
+    box-shadow: 0 10px 25px rgba(54, 185, 204, 0.4);
+}
+
+[data-theme="dark"] .resume-download-btn.btn-primary {
+    background: linear-gradient(135deg, #6a93ff 0%, #4e73df 100%);
+}
+
+[data-theme="dark"] .resume-download-btn.btn-primary:hover {
+    background: linear-gradient(135deg, #4e73df 0%, #3a5abe 100%);
+    box-shadow: 0 10px 25px rgba(106, 147, 255, 0.4);
+}
+
+[data-theme="dark"] .resume-download-btn.btn-success {
+    background: linear-gradient(135deg, #2eeb9c 0%, #1cc88a 100%);
+}
+
+[data-theme="dark"] .resume-download-btn.btn-success:hover {
+    background: linear-gradient(135deg, #1cc88a 0%, #169b6b 100%);
+    box-shadow: 0 10px 25px rgba(46, 235, 156, 0.4);
+}
+
+[data-theme="dark"] .resume-download-btn.btn-info {
+    background: linear-gradient(135deg, #48d8ef 0%, #36b9cc 100%);
+}
+
+[data-theme="dark"] .resume-download-btn.btn-info:hover {
+    background: linear-gradient(135deg, #36b9cc 0%, #258391 100%);
+    box-shadow: 0 10px 25px rgba(72, 216, 239, 0.4);
 }
 </style>
 

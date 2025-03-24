@@ -127,6 +127,26 @@
     }
     
     /* استایل‌های لوگو */
+    :root {
+        /* متغیرهای حالت روز */
+        --card-bg-light: linear-gradient(145deg, #ffffff, #f5f5f5);
+        --card-bg-dark: linear-gradient(145deg, #2c3e50, #1a252f);
+        --text-light: #2c3e50;
+        --text-dark: #ecf0f1;
+        --text-muted-light: #34495e;
+        --text-muted-dark: rgba(236, 240, 241, 0.7);
+        --border-light: rgba(0,0,0,0.1);
+        --border-dark: rgba(255,255,255,0.1);
+        --hover-shadow-light: rgba(0,0,0,0.1);
+        --hover-shadow-dark: rgba(0,0,0,0.3);
+        --icon-bg-light: rgba(78, 115, 223, 0.1);
+        --icon-bg-dark: rgba(78, 115, 223, 0.2);
+        --item-hover-light: rgba(78, 115, 223, 0.05);
+        --item-hover-dark: rgba(78, 115, 223, 0.1);
+        --accent-light: #4e73df;
+        --accent-dark: #6a93ff;
+    }
+
     .logo-navidyar {
         font-family: 'Vazirmatn', 'Tahoma', sans-serif;
         font-weight: 800;
@@ -1292,6 +1312,372 @@
     }
     
     .dropdown.show .dropdown-toggle .fa-chevron-down {
+        transform: rotate(180deg);
+    }
+
+    /* تغییر استایل برای حالت تاریک */
+    [data-bs-theme="dark"] .login-button::before {
+        background: linear-gradient(45deg, #FC00FF, #00DBDE);
+    }
+
+    /* استایل‌های مربوط به بخش دانلود رزومه در حالت تاریک */
+    [data-bs-theme="dark"] .resume-download-card {
+        background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    [data-bs-theme="dark"] .resume-content h2,
+    [data-bs-theme="dark"] .resume-content p {
+        color: #ffffff !important;
+    }
+
+    [data-bs-theme="dark"] .resume-download-btn {
+        background-color: #2d3748;
+        color: #e2e8f0;
+        border-color: #4a5568;
+    }
+
+    [data-bs-theme="dark"] .resume-download-btn:hover {
+        background-color: #4a5568;
+    }
+
+    [data-bs-theme="dark"] .resume-download-btn.btn-primary {
+        background: linear-gradient(135deg, #6a93ff 0%, #4e73df 100%);
+    }
+
+    [data-bs-theme="dark"] .resume-download-btn.btn-primary:hover {
+        background: linear-gradient(135deg, #4e73df 0%, #3a5abe 100%);
+        box-shadow: 0 10px 25px rgba(106, 147, 255, 0.4);
+    }
+
+    [data-bs-theme="dark"] .resume-download-btn.btn-success {
+        background: linear-gradient(135deg, #2eeb9c 0%, #1cc88a 100%);
+    }
+
+    [data-bs-theme="dark"] .resume-download-btn.btn-success:hover {
+        background: linear-gradient(135deg, #1cc88a 0%, #169b6b 100%);
+        box-shadow: 0 10px 25px rgba(46, 235, 156, 0.4);
+    }
+
+    [data-bs-theme="dark"] .resume-download-btn.btn-info {
+        background: linear-gradient(135deg, #48d8ef 0%, #36b9cc 100%);
+    }
+
+    [data-bs-theme="dark"] .resume-download-btn.btn-info:hover {
+        background: linear-gradient(135deg, #36b9cc 0%, #258391 100%);
+        box-shadow: 0 10px 25px rgba(72, 216, 239, 0.4);
+    }
+
+    /* استایل‌های عمومی سایت در حالت روشن و تاریک */
+    .hover-scale {
+        transition: all 0.3s ease-in-out;
+    }
+    .hover-scale:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+    }
+
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    }
+
+    .bg-gradient-success {
+        background: linear-gradient(135deg, #1cc88a 0%, #169b6b 100%);
+    }
+
+    .bg-gradient-warning {
+        background: linear-gradient(135deg, #f6c23e 0%, #dda20a 100%);
+    }
+
+    .bg-gradient-danger {
+        background: linear-gradient(135deg, #e74a3b 0%, #be2617 100%);
+    }
+
+    .icon-wrapper {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .info-card:hover .icon-wrapper {
+        transform: scale(1.1);
+    }
+
+    .hover-card {
+        transition: all 0.3s ease-in-out;
+        border: none;
+    }
+
+    html:not([data-bs-theme="dark"]) .hover-card {
+        background: var(--card-bg-light);
+        color: var(--text-light);
+    }
+
+    [data-bs-theme="dark"] .hover-card {
+        background: var(--card-bg-dark);
+        color: var(--text-dark);
+    }
+
+    .hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+    }
+
+    .section-title {
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    html:not([data-bs-theme="dark"]) .section-title {
+        color: var(--text-light);
+    }
+
+    [data-bs-theme="dark"] .section-title {
+        color: var(--text-dark);
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(90deg, #4e73df, #1cc88a);
+        border-radius: 3px;
+    }
+
+    .hover-btn {
+        transition: all 0.3s ease-in-out;
+        border-radius: 20px;
+        padding: 5px 15px;
+        font-size: 0.85rem;
+    }
+
+    html:not([data-bs-theme="dark"]) .hover-btn {
+        color: var(--text-light);
+        border-color: rgba(0,0,0,0.1);
+    }
+
+    [data-bs-theme="dark"] .hover-btn {
+        color: var(--text-dark);
+        border-color: rgba(255,255,255,0.1);
+    }
+
+    .hover-btn:hover {
+        transform: translateY(-2px);
+    }
+
+    html:not([data-bs-theme="dark"]) .hover-btn:hover {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        background: rgba(78, 115, 223, 0.05);
+    }
+
+    [data-bs-theme="dark"] .hover-btn:hover {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        background: rgba(78, 115, 223, 0.1);
+    }
+
+    /* استایل‌های جدید برای عنوان اصلی */
+    .main-title {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+    }
+
+    .main-title-text {
+        font-weight: 800;
+        letter-spacing: 1px;
+        transition: color 0.3s ease-in-out;
+    }
+
+    html:not([data-bs-theme="dark"]) .main-title-text {
+        color: var(--text-light);
+    }
+
+    [data-bs-theme="dark"] .main-title-text {
+        color: var(--text-dark);
+    }
+
+    .main-title-highlight {
+        position: absolute;
+        bottom: 0;
+        left: -10px;
+        right: -10px;
+        height: 10px;
+        z-index: -1;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .main-title:hover .main-title-highlight {
+        height: 20px;
+        bottom: -3px;
+        transform: skewX(-10deg);
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    html:not([data-bs-theme="dark"]) .subtitle {
+        color: var(--text-muted-light);
+    }
+
+    [data-bs-theme="dark"] .subtitle {
+        color: var(--text-muted-dark);
+    }
+
+    h1:hover .subtitle {
+        transform: translateY(3px);
+    }
+
+    html:not([data-bs-theme="dark"]) h1:hover .subtitle {
+        color: var(--text-light);
+    }
+
+    [data-bs-theme="dark"] h1:hover .subtitle {
+        color: var(--text-dark);
+    }
+
+    /* استایل جدید برای تیتر */
+    .title-container {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .main-heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .heading-primary {
+        font-size: 3.5rem;
+        font-weight: 900;
+        letter-spacing: 2px;
+        position: relative;
+        display: inline-block;
+        font-family: 'Vazir', 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    html:not([data-bs-theme="dark"]) .heading-primary {
+        color: var(--text-light);
+        text-shadow: 2px 2px 0px var(--border-light);
+    }
+
+    [data-bs-theme="dark"] .heading-primary {
+        color: var(--text-dark);
+        text-shadow: 2px 2px 0px var(--border-dark);
+    }
+
+    .heading-primary::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: transparent;
+        z-index: -1;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+    }
+
+    html:not([data-bs-theme="dark"]) .heading-primary::after {
+        -webkit-text-stroke: 1px var(--accent-light);
+    }
+
+    [data-bs-theme="dark"] .heading-primary::after {
+        -webkit-text-stroke: 1px var(--accent-dark);
+    }
+
+    .heading-secondary {
+        font-size: 1.5rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        position: relative;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+
+    html:not([data-bs-theme="dark"]) .heading-secondary {
+        color: var(--text-muted-light);
+    }
+
+    [data-bs-theme="dark"] .heading-secondary {
+        color: var(--text-muted-dark);
+    }
+
+    .heading-divider {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 300px;
+        margin: 0.5rem 0;
+    }
+
+    .divider-line {
+        flex-grow: 1;
+        height: 2px;
+        opacity: 0.5;
+        transition: all 0.3s ease;
+    }
+
+    html:not([data-bs-theme="dark"]) .divider-line {
+        background-color: var(--accent-light);
+    }
+
+    [data-bs-theme="dark"] .divider-line {
+        background-color: var(--accent-dark);
+    }
+
+    .divider-icon {
+        padding: 0 1rem;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+    }
+
+    html:not([data-bs-theme="dark"]) .divider-icon {
+        color: var(--accent-light);
+    }
+
+    [data-bs-theme="dark"] .divider-icon {
+        color: var(--accent-dark);
+    }
+
+    .title-container:hover .heading-primary {
+        transform: translateY(-5px);
+    }
+
+    html:not([data-bs-theme="dark"]) .title-container:hover .heading-primary {
+        text-shadow: 4px 4px 0px var(--border-light);
+    }
+
+    [data-bs-theme="dark"] .title-container:hover .heading-primary {
+        text-shadow: 4px 4px 0px var(--border-dark);
+    }
+
+    .title-container:hover .heading-secondary {
+        transform: translateY(5px);
+    }
+
+    html:not([data-bs-theme="dark"]) .title-container:hover .heading-secondary {
+        color: var(--accent-light);
+    }
+
+    [data-bs-theme="dark"] .title-container:hover .heading-secondary {
+        color: var(--accent-dark);
+    }
+
+    .title-container:hover .divider-line {
+        opacity: 1;
+        height: 3px;
+    }
+
+    .title-container:hover .divider-icon {
         transform: rotate(180deg);
     }
 </style>

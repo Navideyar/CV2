@@ -1190,6 +1190,110 @@
          border-top: 1px solid rgba(0, 0, 0, 0.05);
          line-height: 1.8;
      }
+
+    /* استایل منوی کشویی خدمات */
+    .dropdown-menu {
+        border-radius: 15px;
+        padding: 1rem;
+        border: none;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        margin-top: 10px;
+        transition: all 0.3s ease;
+    }
+
+    html:not([data-bs-theme="dark"]) .dropdown-menu {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(121, 40, 202, 0.1);
+    }
+
+    html[data-bs-theme="dark"] .dropdown-menu {
+        background: rgba(33, 37, 41, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 219, 222, 0.1);
+    }
+
+    .dropdown-item {
+        border-radius: 10px;
+        padding: 0.7rem 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-bottom: 5px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .dropdown-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: scale(0.5);
+        border-radius: 10px;
+    }
+
+    .dropdown-item:hover::before {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    html:not([data-bs-theme="dark"]) .dropdown-item {
+        color: #333;
+    }
+
+    html:not([data-bs-theme="dark"]) .dropdown-item::before {
+        background: linear-gradient(135deg, rgba(121, 40, 202, 0.1), rgba(255, 0, 128, 0.1));
+    }
+
+    html:not([data-bs-theme="dark"]) .dropdown-item:hover {
+        color: #7928CA;
+        background: transparent;
+    }
+
+    html[data-bs-theme="dark"] .dropdown-item {
+        color: #f0f0f0;
+    }
+
+    html[data-bs-theme="dark"] .dropdown-item::before {
+        background: linear-gradient(135deg, rgba(0, 219, 222, 0.1), rgba(252, 0, 255, 0.1));
+    }
+
+    html[data-bs-theme="dark"] .dropdown-item:hover {
+        color: #00DBDE;
+        background: transparent;
+    }
+
+    .dropdown-divider {
+        margin: 0.5rem 0;
+        opacity: 0.1;
+    }
+
+    html:not([data-bs-theme="dark"]) .dropdown-divider {
+        border-color: rgba(121, 40, 202, 0.3);
+    }
+
+    html[data-bs-theme="dark"] .dropdown-divider {
+        border-color: rgba(0, 219, 222, 0.3);
+    }
+
+    /* استایل آیکون فلش منوی خدمات */
+    .dropdown-toggle .fa-chevron-down {
+        transition: transform 0.3s ease;
+    }
+    
+    .dropdown-toggle:hover .fa-chevron-down {
+        transform: translateY(2px);
+    }
+    
+    .dropdown.show .dropdown-toggle .fa-chevron-down {
+        transform: rotate(180deg);
+    }
 </style>
 </head>
 
@@ -1232,15 +1336,22 @@
             <ul class="navbar-nav navbar-nav-scroll me-auto main-menu">
 
                 <li class="nav-item"><a class="nav-link menu-item" href="/">صفحه اصلی</a></li>
-                <!-- <li class="nav-item"><a class="nav-link" href="/courses/">دوره ها</a></li> -->
-                <li class="nav-item"><a class="nav-link menu-item" href="/blog/">وبلاگ</a></li>
-                <!-- <li class="nav-item"><a class="nav-link" href="/event/">رویداد ها</a></li> -->
-                <!-- <li class="nav-item"><a class="nav-link" href="/library/">کتابخانه</a></li> -->
                 <li class="nav-item"><a class="nav-link menu-item" href="/about-me">درباره من</a></li>
-                <li class="nav-item"><a class="nav-link menu-item" href="/contact-me">تماس با من</a>
-                <!-- <li class="nav-item"><a class="nav-link text-success" href="/courses/django-workshop-landing">کارگاه جنگو</a> -->
+                <li class="nav-item"><a class="nav-link menu-item" href="/blog/">وبلاگ</a></li>
+                
+               <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle menu-item" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        خدمات <i class="fas fa-chevron-down ms-1" style="font-size: 0.8rem;"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <li><a class="dropdown-item" href="/services/personal-website">طراحی وب‌سایت شخصی</a></li>
+                        <li><a class="dropdown-item" href="/services/ecommerce-website">طراحی سایت فروشگاهی</a></li>
+                        <li><a class="dropdown-item" href="/services/corporate-website">طراحی سایت شرکتی</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/testimonials">نظرات مشتریان</a></li>
+                    </ul>
                 </li>
-               
+                <li class="nav-item"><a class="nav-link menu-item" href="/contact-me">تماس با من</a></li>
 
             </ul>
             <!-- Nav Main menu END -->
@@ -1441,7 +1552,7 @@
                                 <div class="copyright-links">
                                     <a href="/policy" class="copyright-link">قوانین و شرایط</a>
                                     <span class="copyright-separator"></span>
-                                    <a href="/privacy" class="copyright-link">حریم خصوصی</a>
+                                    <a href="/privacy.html" class="copyright-link">حریم خصوصی</a>
                                 </div>
                             </div>
                         </div>

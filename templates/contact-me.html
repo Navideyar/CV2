@@ -1,0 +1,132 @@
+
+
+
+
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %}
+
+    <!-- **************** MAIN CONTENT START **************** -->
+    <main>
+        
+
+<!-- =======================
+Image and contact form START -->
+<section>
+	<div class="container">
+		<div class="row g-4 g-lg-0 align-items-center">
+
+			<div class="col-md-6 align-items-center text-center">
+				<!-- Image -->
+				<img src="/static/images/element/contact.svg" class="h-400px" alt="" loading="lazy">
+
+
+			</div>
+
+			<!-- Contact form START -->
+			<div class="col-md-6">
+				<div class="row g-4">
+					<!-- Title -->
+					<h2 class="mt-4 mt-md-0 fs-4">با من در ارتباط باشید</h2>
+					<p>می تونید سوالات و نظرات و درخواست هاتون رو از طریق این فرم با من مطرح کنین</p>
+
+					<form action="/submit/ticket" method="post">
+						<script src="https://www.google.com/recaptcha/api.js?render=6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa"></script>
+<script type="text/javascript">
+    var element
+    grecaptcha.ready(function() {
+        element = document.querySelector('.g-recaptcha[data-widget-uuid="b8a824f828ce471f9c84b58750844bd0"]');
+        element.form.addEventListener('submit', recaptchaFormSubmit);
+    });
+    function recaptchaFormSubmit(event) {
+        event.preventDefault();
+        grecaptcha.execute('6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa', {action: 'form'})
+        .then(function(token) {
+            console.log("reCAPTCHA validated for 'data-widget-uuid=\"b8a824f828ce471f9c84b58750844bd0\"'. Setting input value...")
+            element.value = token;
+            element.form.submit();
+        });
+    }
+</script>
+<input class="g-recaptcha"
+    type="hidden"
+    name="captcha"
+     required_score="0.5" data-sitekey="6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa" required id="id_captcha" data-widget-uuid="b8a824f828ce471f9c84b58750844bd0" data-callback="onSubmit_b8a824f828ce471f9c84b58750844bd0" data-size="normal">
+						<input type="hidden" name="csrfmiddlewaretoken" value="MzKgc2gjfrConMtoFlT89NHcWcRTEWSJ5Qo7sfg9jkBndnTqO7d2YgwYXtFMDhjY">
+						<!-- Name -->
+						<div class="d-flex">
+							<div class="col-md-6 mb-4 m-1 bg-light-input">
+								<label for="yourName" class="form-label">نام و نام خانوادگی *</label>
+								<input type="text" class="form-control form-control-lg" id="yourName" name="full_name">
+							</div>
+
+							<div class="col-md-6  mb-4  m-1 bg-light-input">
+								<label for="subjectInput" class="form-label">عنوان *</label>
+								<input type="text" class="form-control form-control-lg" id="subjectInput"
+									name="subject">
+							</div>
+						</div>
+						<div class="d-flex">
+							<div class="col-md-6 mb-4 m-1 bg-light-input">
+								<label for="emailInput" class="form-label">ایمیل *</label>
+								<input type="email" class="form-control form-control-lg" id="emailInput" name="email">
+							</div>
+							<div class="col-md-6 mb-4 m-1 bg-light-input">
+								<label for="phone_numberInput" class="form-label">شماره همراه </label>
+								<input type="text" class="form-control form-control-lg" id="phone_numberInput"
+									name="phone_number">
+							</div>
+						</div>
+						<!-- Message -->
+						<div class=" col-md-12 mb-4 m-1 bg-light-input">
+							<label for="textareaBox" class="form-label">متن درخواست *</label>
+							<textarea class="form-control" id="textareaBox" rows="4" name="content" maxlength="700"
+								oninput="updateCharacterCount()"></textarea>
+							<div id="characterCount">0/700</div>
+						</div>
+						<!-- Button -->
+						<div class="col-md-12 m-1 d-grid ">
+							<button class="btn btn-lg btn-primary mb-0" type="submit">ارسال</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- Contact form END -->
+		</div>
+	</div>
+</section>
+<!-- =======================
+Image and contact form END -->
+
+
+    </main>
+    
+
+    <!-- Back to top -->
+    <div class="back-top"><i class="fas fa-arrow-up position-absolute top-50 start-50 translate-middle"></i></div>
+
+    <script src="/static/CACHE/js/output.8d126b85d939.js"></script>
+    
+<script src="https://www.google.com/recaptcha/api.js?render=6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa"></script>
+<script>
+	function updateCharacterCount() {
+		var textarea = document.getElementById("textareaBox");
+		var countElement = document.getElementById("characterCount");
+
+		var enteredCharacters = textarea.value.length;
+		var remainingCharacters = textarea.maxLength - enteredCharacters;
+
+		countElement.textContent = enteredCharacters + "/" + remainingCharacters;
+	}
+</script>
+
+    
+
+
+</body>
+
+
+
+</html>
+
+{% endblock %}

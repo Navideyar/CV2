@@ -3,311 +3,255 @@
 {% block title %}<title>درباره نویدیار | توسعه دهنده Backend</title>{% endblock %}
 {% block content %}
 
-    <!-- **************** MAIN CONTENT START **************** -->
-    <main>
-        
-<!-- =======================
-Page Banner START -->
-<section>
-	<div class="container">
+<main class="py-5">
+    <!-- بخش هدر و معرفی -->
+    <section class="header-section mb-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- عنوان و تزئینات -->
+                <div class="col-lg-10 text-center position-relative mb-5">
+                    <!-- تزئینات SVG -->
+                    <figure class="position-absolute top-100 start-50 translate-middle mt-5 ms-n9 pt-5 d-none d-lg-block">
+                        <svg style="transform: scale(-1,1)">
+                            <path class="fill-success"
+                                d="m181.6 6.7c-0.1 0-0.2-0.1-0.3 0-2.5-0.3-4.9-1-7.3-1.4-2.7-0.4-5.5-0.7-8.2-0.8-1.4-0.1-2.8-0.1-4.1-0.1-0.5 0-0.9-0.1-1.4-0.2-0.9-0.3-1.9-0.1-2.8-0.1-5.4 0.2-10.8 0.6-16.1 1.4-2.7 0.3-5.3 0.8-7.9 1.3-0.6 0.1-1.1 0.3-1.8 0.3-0.4 0-0.7-0.1-1.1-0.1-1.5 0-3 0.7-4.3 1.2-3 1-6 2.4-8.8 3.9-2.1 1.1-4 2.4-5.9 3.9-1 0.7-1.8 1.5-2.7 2.2-0.5 0.4-1.1 0.5-1.5 0.9s-0.7 0.8-1.1 1.2c-1 1-1.9 2-2.9 2.9-0.4 0.3-0.8 0.5-1.2 0.5-1.3-0.1-2.7-0.4-3.9-0.6-0.7-0.1-1.2 0-1.8 0-3.1 0-6.4-0.1-9.5 0.4-1.7 0.3-3.4 0.5-5.1 0.7-5.3 0.7-10.7 1.4-15.8 3.1-4.6 1.6-8.9 3.8-13.1 6.3-2.1 1.2-4.2 2.5-6.2 3.9-0.9 0.6-1.7 0.9-2.6 1.2s-1.7 1-2.5 1.6c-1.5 1.1-3 2.1-4.6 3.2-1.2 0.9-2.7 1.7-3.9 2.7-1 0.8-2.2 1.5-3.2 2.2-1.1 0.7-2.2 1.5-3.3 2.3-0.8 0.5-1.7 0.9-2.5 1.5-0.9 0.8-1.9 1.5-2.9 2.2 0.1-0.6 0.3-1.2 0.4-1.9 0.3-1.7 0.2-3.6 0-5.3-0.1-0.9-0.3-1.7-0.8-2.4s-1.5-1.1-2.3-0.8c-0.2 0-0.3 0.1-0.4 0.3s-0.1 0.4-0.1 0.6c0.3 3.6 0.2 7.2-0.7 10.7-0.5 2.2-1.5 4.5-2.7 6.4-0.6 0.9-1.4 1.7-2 2.6s-1.5 1.6-2.3 2.3c-0.2 0.2-0.5 0.4-0.6 0.7s0 0.7 0.1 1.1c0.2 0.8 0.6 1.6 1.3 1.8 0.5 0.1 0.9-0.1 1.3-0.3 0.9-0.4 1.8-0.8 2.7-1.2 0.4-0.2 0.7-0.3 1.1-0.6 1.8-1 3.8-1.7 5.8-2.3 4.3-1.1 9-1.1 13.3 0.1 0.2 0.1 0.4 0.1 0.6 0.1 0.7-0.1 0.9-1 0.6-1.6-0.4-0.6-1-0.9-1.7-1.2-2.5-1.1-4.9-2.1-7.5-2.7-0.6-0.2-1.3-0.3-2-0.4-0.3-0.1-0.5 0-0.8-0.1s-0.9 0-1.1-0.1-0.3 0-0.3-0.2c0-0.4 0.7-0.7 1-0.8 0.5-0.3 1-0.7 1.5-1l5.4-3.6c0.4-0.2 0.6-0.6 1-0.9 1.2-0.9 2.8-1.3 4-2.2 0.4-0.3 0.9-0.6 1.3-0.9l2.7-1.8c1-0.6 2.2-1.2 3.2-1.8 0.9-0.5 1.9-0.8 2.7-1.6 0.9-0.8 2.2-1.4 3.2-2 1.2-0.7 2.3-1.4 3.5-2.1 4.1-2.5 8.2-4.9 12.7-6.6 5.2-1.9 10.6-3.4 16.2-4 5.4-0.6 10.8-0.3 16.2-0.5h0.5c1.4-0.1 2.3-0.1 1.7 1.7-1.4 4.5 1.3 7.5 4.3 10 3.4 2.9 7 5.7 11.3 7.1 4.8 1.6 9.6 3.8 14.9 2.7 3-0.6 6.5-4 6.8-6.4 0.2-1.7 0.1-3.3-0.3-4.9-0.4-1.4-1-3-2.2-3.9-0.9-0.6-1.6-1.6-2.4-2.4-0.9-0.8-1.9-1.7-2.9-2.3-2.1-1.4-4.2-2.6-6.5-3.5-3.2-1.3-6.6-2.2-10-3-0.8-0.2-1.6-0.4-2.5-0.5-0.2 0-1.3-0.1-1.3-0.3-0.1-0.2 0.3-0.4 0.5-0.6 0.9-0.8 1.8-1.5 2.7-2.2 1.9-1.4 3.8-2.8 5.8-3.9 2.1-1.2 4.3-2.3 6.6-3.2 1.2-0.4 2.3-0.8 3.6-1 0.6-0.2 1.2-0.2 1.8-0.4 0.4-0.1 0.7-0.3 1.1-0.5 1.2-0.5 2.7-0.5 3.9-0.8 1.3-0.2 2.7-0.4 4.1-0.7 2.7-0.4 5.5-0.8 8.2-1.1 3.3-0.4 6.7-0.7 10-1 7.7-0.6 15.3-0.3 23 1.3 4.2 0.9 8.3 1.9 12.3 3.6 1.2 0.5 2.3 1.1 3.5 1.5 0.7 0.2 1.3 0.7 1.8 1.1 0.7 0.6 1.5 1.1 2.3 1.7 0.2 0.2 0.6 0.3 0.8 0.2 0.1-0.1 0.1-0.2 0.2-0.4 0.1-0.9-0.2-1.7-0.7-2.4-0.4-0.6-1-1.4-1.6-1.9-0.8-0.7-2-1.1-2.9-1.6-1-0.5-2-0.9-3.1-1.3-2.5-1.1-5.2-2-7.8-2.8-1-0.8-2.4-1.2-3.7-1.4zm-64.4 25.8c4.7 1.3 10.3 3.3 14.6 7.9 0.9 1 2.4 1.8 1.8 3.5-0.6 1.6-2.2 1.5-3.6 1.7-4.9 0.8-9.4-1.2-13.6-2.9-4.5-1.7-8.8-4.3-11.9-8.3-0.5-0.6-1-1.4-1.1-2.2 0-0.3 0-0.6-0.1-0.9s-0.2-0.6 0.1-0.9c0.2-0.2 0.5-0.2 0.8-0.2 2.3-0.1 4.7 0 7.1 0.4 0.9 0.1 1.6 0.6 2.5 0.8 1.1 0.4 2.3 0.8 3.4 1.1z" />
+                        </svg>
+                    </figure>
+                    <figure class="position-absolute top-0 start-0 ms-n9">
+                        <svg style="transform: scale(-1,1)" width="22px" height="22px" viewBox="0 0 22 22">
+                            <polygon class="fill-orange"
+                                points="22,8.3 13.7,8.3 13.7,0 8.3,0 8.3,8.3 0,8.3 0,13.7 8.3,13.7 8.3,22 13.7,22 13.7,13.7 22,13.7 " />
+                        </svg>
+                    </figure>
+                    <figure class="position-absolute top-100 start-100 translate-middle ms-5 d-none d-md-block">
+                        <svg style="transform: scale(-1,1)" width="21.5px" height="21.5px" viewBox="0 0 21.5 21.5">
+                            <polygon class="fill-danger"
+                                points="21.5,14.3 14.4,9.9 18.9,2.8 14.3,0 9.9,7.1 2.8,2.6 0,7.2 7.1,11.6 2.6,18.7 7.2,21.5 11.6,14.4 18.7,18.9 " />
+                        </svg>
+                    </figure>
+                    <figure class="position-absolute top-0 start-100 translate-middle">
+                        <svg style="transform: scale(-1,1)" width="27px" height="27px">
+                            <path class="fill-orange"
+                                d="M13.122,5.946 L17.679,-0.001 L17.404,7.528 L24.661,5.946 L19.683,11.533 L26.244,15.056 L18.891,16.089 L21.686,23.068 L15.400,19.062 L13.122,26.232 L10.843,19.062 L4.557,23.068 L7.352,16.089 L-0.000,15.056 L6.561,11.533 L1.582,5.946 L8.839,7.528 L8.565,-0.001 L13.122,5.946 Z" />
+                        </svg>
+                    </figure>
 
-		<div class="row g-4">
-			<!-- Title and SVG START -->
-			<div class="col-10 text-center mx-auto position-relative">
-				<!-- SVG decoration -->
-				<figure class="position-absolute top-100 start-50 translate-middle mt-5 ms-n9 pt-5 d-none d-lg-block">
-					<svg style="transform: scale(-1,1)">
-						<path class="fill-success"
-							d="m181.6 6.7c-0.1 0-0.2-0.1-0.3 0-2.5-0.3-4.9-1-7.3-1.4-2.7-0.4-5.5-0.7-8.2-0.8-1.4-0.1-2.8-0.1-4.1-0.1-0.5 0-0.9-0.1-1.4-0.2-0.9-0.3-1.9-0.1-2.8-0.1-5.4 0.2-10.8 0.6-16.1 1.4-2.7 0.3-5.3 0.8-7.9 1.3-0.6 0.1-1.1 0.3-1.8 0.3-0.4 0-0.7-0.1-1.1-0.1-1.5 0-3 0.7-4.3 1.2-3 1-6 2.4-8.8 3.9-2.1 1.1-4 2.4-5.9 3.9-1 0.7-1.8 1.5-2.7 2.2-0.5 0.4-1.1 0.5-1.5 0.9s-0.7 0.8-1.1 1.2c-1 1-1.9 2-2.9 2.9-0.4 0.3-0.8 0.5-1.2 0.5-1.3-0.1-2.7-0.4-3.9-0.6-0.7-0.1-1.2 0-1.8 0-3.1 0-6.4-0.1-9.5 0.4-1.7 0.3-3.4 0.5-5.1 0.7-5.3 0.7-10.7 1.4-15.8 3.1-4.6 1.6-8.9 3.8-13.1 6.3-2.1 1.2-4.2 2.5-6.2 3.9-0.9 0.6-1.7 0.9-2.6 1.2s-1.7 1-2.5 1.6c-1.5 1.1-3 2.1-4.6 3.2-1.2 0.9-2.7 1.7-3.9 2.7-1 0.8-2.2 1.5-3.2 2.2-1.1 0.7-2.2 1.5-3.3 2.3-0.8 0.5-1.7 0.9-2.5 1.5-0.9 0.8-1.9 1.5-2.9 2.2 0.1-0.6 0.3-1.2 0.4-1.9 0.3-1.7 0.2-3.6 0-5.3-0.1-0.9-0.3-1.7-0.8-2.4s-1.5-1.1-2.3-0.8c-0.2 0-0.3 0.1-0.4 0.3s-0.1 0.4-0.1 0.6c0.3 3.6 0.2 7.2-0.7 10.7-0.5 2.2-1.5 4.5-2.7 6.4-0.6 0.9-1.4 1.7-2 2.6s-1.5 1.6-2.3 2.3c-0.2 0.2-0.5 0.4-0.6 0.7s0 0.7 0.1 1.1c0.2 0.8 0.6 1.6 1.3 1.8 0.5 0.1 0.9-0.1 1.3-0.3 0.9-0.4 1.8-0.8 2.7-1.2 0.4-0.2 0.7-0.3 1.1-0.6 1.8-1 3.8-1.7 5.8-2.3 4.3-1.1 9-1.1 13.3 0.1 0.2 0.1 0.4 0.1 0.6 0.1 0.7-0.1 0.9-1 0.6-1.6-0.4-0.6-1-0.9-1.7-1.2-2.5-1.1-4.9-2.1-7.5-2.7-0.6-0.2-1.3-0.3-2-0.4-0.3-0.1-0.5 0-0.8-0.1s-0.9 0-1.1-0.1-0.3 0-0.3-0.2c0-0.4 0.7-0.7 1-0.8 0.5-0.3 1-0.7 1.5-1l5.4-3.6c0.4-0.2 0.6-0.6 1-0.9 1.2-0.9 2.8-1.3 4-2.2 0.4-0.3 0.9-0.6 1.3-0.9l2.7-1.8c1-0.6 2.2-1.2 3.2-1.8 0.9-0.5 1.9-0.8 2.7-1.6 0.9-0.8 2.2-1.4 3.2-2 1.2-0.7 2.3-1.4 3.5-2.1 4.1-2.5 8.2-4.9 12.7-6.6 5.2-1.9 10.6-3.4 16.2-4 5.4-0.6 10.8-0.3 16.2-0.5h0.5c1.4-0.1 2.3-0.1 1.7 1.7-1.4 4.5 1.3 7.5 4.3 10 3.4 2.9 7 5.7 11.3 7.1 4.8 1.6 9.6 3.8 14.9 2.7 3-0.6 6.5-4 6.8-6.4 0.2-1.7 0.1-3.3-0.3-4.9-0.4-1.4-1-3-2.2-3.9-0.9-0.6-1.6-1.6-2.4-2.4-0.9-0.8-1.9-1.7-2.9-2.3-2.1-1.4-4.2-2.6-6.5-3.5-3.2-1.3-6.6-2.2-10-3-0.8-0.2-1.6-0.4-2.5-0.5-0.2 0-1.3-0.1-1.3-0.3-0.1-0.2 0.3-0.4 0.5-0.6 0.9-0.8 1.8-1.5 2.7-2.2 1.9-1.4 3.8-2.8 5.8-3.9 2.1-1.2 4.3-2.3 6.6-3.2 1.2-0.4 2.3-0.8 3.6-1 0.6-0.2 1.2-0.2 1.8-0.4 0.4-0.1 0.7-0.3 1.1-0.5 1.2-0.5 2.7-0.5 3.9-0.8 1.3-0.2 2.7-0.4 4.1-0.7 2.7-0.4 5.5-0.8 8.2-1.1 3.3-0.4 6.7-0.7 10-1 7.7-0.6 15.3-0.3 23 1.3 4.2 0.9 8.3 1.9 12.3 3.6 1.2 0.5 2.3 1.1 3.5 1.5 0.7 0.2 1.3 0.7 1.8 1.1 0.7 0.6 1.5 1.1 2.3 1.7 0.2 0.2 0.6 0.3 0.8 0.2 0.1-0.1 0.1-0.2 0.2-0.4 0.1-0.9-0.2-1.7-0.7-2.4-0.4-0.6-1-1.4-1.6-1.9-0.8-0.7-2-1.1-2.9-1.6-1-0.5-2-0.9-3.1-1.3-2.5-1.1-5.2-2-7.8-2.8-1-0.8-2.4-1.2-3.7-1.4zm-64.4 25.8c4.7 1.3 10.3 3.3 14.6 7.9 0.9 1 2.4 1.8 1.8 3.5-0.6 1.6-2.2 1.5-3.6 1.7-4.9 0.8-9.4-1.2-13.6-2.9-4.5-1.7-8.8-4.3-11.9-8.3-0.5-0.6-1-1.4-1.1-2.2 0-0.3 0-0.6-0.1-0.9s-0.2-0.6 0.1-0.9c0.2-0.2 0.5-0.2 0.8-0.2 2.3-0.1 4.7 0 7.1 0.4 0.9 0.1 1.6 0.6 2.5 0.8 1.1 0.4 2.3 0.8 3.4 1.1z" />
-					</svg>
-				</figure>
-				<!-- SVG decoration -->
-				<figure class="position-absolute top-0 start-0 ms-n9">
-					<svg style="transform: scale(-1,1)" width="22px" height="22px" viewBox="0 0 22 22">
-						<polygon class="fill-orange"
-							points="22,8.3 13.7,8.3 13.7,0 8.3,0 8.3,8.3 0,8.3 0,13.7 8.3,13.7 8.3,22 13.7,22 13.7,13.7 22,13.7 " />
-					</svg>
-				</figure>
-				<!-- SVG decoration -->
-				<figure class="position-absolute top-100 start-100 translate-middle ms-5 d-none d-md-block">
-					<svg style="transform: scale(-1,1)" width="21.5px" height="21.5px" viewBox="0 0 21.5 21.5">
-						<polygon class="fill-danger"
-							points="21.5,14.3 14.4,9.9 18.9,2.8 14.3,0 9.9,7.1 2.8,2.6 0,7.2 7.1,11.6 2.6,18.7 7.2,21.5 11.6,14.4 18.7,18.9 " />
-					</svg>
-				</figure>
-				<!-- SVG decoration -->
-				<figure class="position-absolute top-0 start-100 translate-middle">
-					<svg style="transform: scale(-1,1)" width="27px" height="27px">
-						<path class="fill-orange"
-							d="M13.122,5.946 L17.679,-0.001 L17.404,7.528 L24.661,5.946 L19.683,11.533 L26.244,15.056 L18.891,16.089 L21.686,23.068 L15.400,19.062 L13.122,26.232 L10.843,19.062 L4.557,23.068 L7.352,16.089 L-0.000,15.056 L6.561,11.533 L1.582,5.946 L8.839,7.528 L8.565,-0.001 L13.122,5.946 Z" />
-					</svg>
-				</figure>
-
-				<!-- Title -->
-				<div class="title-container text-center mb-4">
-					<h1 class="main-heading">
-						<span class="heading-primary">نویدیار</span>
-						<div class="heading-divider">
-							<span class="divider-line"></span>
-							<span class="divider-icon"><i class="fas fa-code"></i></span>
-							<span class="divider-line"></span>
-						</div>
-						<span class="heading-secondary">توسعه دهنده Backend</span>
-					</h1>
-				</div>
-			</div>
-			<!-- Title and SVG END -->
-		</div>
-
-		<!-- Images START -->
-		<div class="row g-4 mt-0 mt-lg-5">
-			<!-- Left info -->
-			<div class="col-md-3">
-				<div class="row g-4">
-					<div class="col-sm-6 col-md-12">
-						<div class="info-card bg-gradient-primary rounded-4 p-4 text-start shadow-lg hover-scale">
-							<div class="d-flex align-items-center mb-3">
-								<div class="icon-wrapper bg-white bg-opacity-10 rounded-circle p-2 me-3">
-									<i class="fas fa-code text-white"></i>
-								</div>
-								<span class="text-white fw-bold fs-6 font-vazir">علاقه‌مندی‌های من</span>
-							</div>
-							<h3 class="text-white ff-vb fs-6 mt-3 font-vazir">"علاقه‌مند به یادگیری تکنولوژی‌های جدید و به اشتراک‌گذاری دانش با دیگران"</h3>
-							<p class="text-white opacity-75 mt-3 font-vazir">من همیشه مشتاق یادگیری تکنولوژی‌های جدید هستم و دوست دارم دانش خود را با دیگران به اشتراک بگذارم.</p>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-12">
-						<div class="info-card bg-gradient-success rounded-4 p-4 text-start shadow-lg hover-scale">
-							<div class="d-flex align-items-center mb-3">
-								<div class="icon-wrapper bg-white bg-opacity-10 rounded-circle p-2 me-3">
-									<i class="fas fa-lightbulb text-white"></i>
-								</div>
-								<span class="text-white fw-bold fs-6 font-vazir">رویکرد من</span>
-							</div>
-							<h3 class="text-white ff-vb fs-6 mt-3 font-vazir">"توسعه راه‌حل‌های نوآورانه با استفاده از تکنولوژی‌های مدرن"</h3>
-							<p class="text-white opacity-75 mt-3 font-vazir">من به دنبال توسعه راه‌حل‌های خلاقانه و نوآورانه هستم که با استفاده از آخرین تکنولوژی‌ها، مشکلات واقعی را حل کنند.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<!-- Center image -->
-			<div class="col-md-6 position-relative">
-				<div class="position-relative">
-					<img class="rounded-4 w-100" src="{% static 'images/about/about-me-1.png' %}" alt="" loading="lazy" style="background: transparent;">
-				</div>
-			</div>
-
-			<!-- Right info -->
-			<div class="col-md-3">
-				<div class="row g-4">
-					<div class="col-sm-6 col-md-12">
-						<div class="info-card bg-gradient-warning rounded-4 p-4 text-start shadow-lg hover-scale">
-							<div class="d-flex align-items-center mb-3">
-								<div class="icon-wrapper bg-white bg-opacity-10 rounded-circle p-2 me-3">
-									<i class="fas fa-bullseye text-white"></i>
-								</div>
-								<span class="text-white fw-bold fs-6 font-vazir">هدف من</span>
-							</div>
-							<h3 class="text-white ff-vb fs-6 mt-3 font-vazir">"توسعه و پیشرفت در زمینه برنامه نویسی و رسیدن به حد کمال و کمک به پیشرفت دیگر توسعه دهندگان"</h3>
-							<p class="text-white opacity-75 mt-3 font-vazir">هدف اصلی من رشد مستمر در زمینه برنامه نویسی و کمک به جامعه توسعه‌دهندگان است.</p>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-12">
-						<div class="info-card bg-gradient-danger rounded-4 p-4 text-start shadow-lg hover-scale">
-							<div class="d-flex align-items-center mb-3">
-								<div class="icon-wrapper bg-white bg-opacity-10 rounded-circle p-2 me-3">
-									<i class="fas fa-laptop-code text-white"></i>
-								</div>
-								<span class="text-white fw-bold fs-6 font-vazir">تخصص من</span>
-							</div>
-							<h3 class="text-white ff-vb fs-6 mt-3 font-vazir">"توسعه سیستم‌های هوشمند و اینترنت اشیا با استفاده از تکنولوژی‌های مدرن"</h3>
-							<p class="text-white opacity-75 mt-3 font-vazir">تخصص اصلی من در زمینه توسعه سیستم‌های هوشمند و اینترنت اشیا است.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Images END -->
-	</div>
-</section>
-<!-- =======================
-Page Banner END -->
-
-<section>
-	<div class="container">
-		<div class="row g-4">
-			<div class="col-md-4">
-				<div class="card shadow p-5 m-3 hover-card">
-					<h4 class="mb-4 fs-5 section-title">
-						<i class="fas fa-heart text-danger me-2"></i>
-						روحیات من
-					</h4>
-					<ul class="list-inline mb-0 text-center">
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-primary btn-sm hover-btn">Self Study</a>
-						</li>
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-success btn-sm hover-btn">Curious</a>
-						</li>
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-warning btn-sm hover-btn">Tech Lover</a>
-						</li>
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-info btn-sm hover-btn">Fast Learner</a>
-						</li>
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-danger btn-sm hover-btn">Creative</a>
-						</li>
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-primary btn-sm hover-btn">R&D is my thing</a>
-						</li>
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-success btn-sm hover-btn">love to teach</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-
-			<!--<div class="col-md-4">
-				<div class="card shadow p-5 m-3 hover-card">
-					<h4 class="mb-4 fs-5 section-title">
-						<i class="fas fa-graduation-cap text-primary me-2"></i>
-						تحصیلات
-					</h4>
-					<div class="education-item">
-					<div class="d-flex align-items-center mb-4">
-							<div class="education-icon">
-								<i class="fas fa-university text-primary"></i>
-							</div>
-						<div class="ms-3">
-								<h6 class="mb-1 fw-bold">ارشد هوش مصنوعی و رباتیک</h6>
-								<p class="mb-0 text-muted">دانشگاه قزوین باراجین</p>
-							</div>
-						</div>
-					</div>
-					<div class="education-item">
-					<div class="d-flex align-items-center mb-4">
-							<div class="education-icon">
-								<i class="fas fa-university text-primary"></i>
-							</div>
-						<div class="ms-3">
-								<h6 class="mb-1 fw-bold">کارشناسی فناوری اطلاعات</h6>
-								<p class="mb-0 text-muted">دانشگاه زنجان</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>-->
-
-			<div class="col-md-4">
-				<div class="card shadow p-5 m-3 hover-card">
-					<h4 class="mb-4 fs-5 section-title">
-						<i class="fas fa-code text-success me-2"></i>
-						مهارت‌ها
-					</h4>
-					<ul class="list-inline mb-0 text-center">
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-primary btn-sm hover-btn">Python</a>
-						</li>
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-success btn-sm hover-btn">Django</a>
-						</li>
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-warning btn-sm hover-btn">DRF</a>
-						</li>
-						
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-primary btn-sm hover-btn">FastApi</a>
-						</li>
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-success btn-sm hover-btn">Docker</a>
-						</li>
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-primary btn-sm hover-btn">MicroPython</a>
-						</li>
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-info btn-sm hover-btn">Git</a>
-						</li>
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-danger btn-sm hover-btn">Github</a>
-						</li>
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-warning btn-sm hover-btn">Network+</a>
-						</li>
-						<li class="list-inline-item mb-2"> 
-							<a class="btn btn-outline-info btn-sm hover-btn">HTML/CSS/JS</a>
-						</li>
-						
-					
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- بخش دانلود رزومه -->
-<section class="my-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="resume-download-card bg-gradient p-5 rounded-4 shadow-lg text-center position-relative overflow-hidden">
-                    <!-- تزیینات SVG -->
-                    <div class="resume-decoration-1"></div>
-                    <div class="resume-decoration-2"></div>
-                    <div class="resume-decoration-3"></div>
-                    
-                    <div class="resume-content">
-                        <h2 class="text-dark mb-4 font-vazir">دانلود رزومه من</h2>
-                        <p class="text-dark mb-4 font-vazir">برای آشنایی بیشتر با سوابق تحصیلی، مهارت‌ها و تجربیات کاری من می‌توانید رزومه کامل من را دانلود کنید.</p>
-                        
-                        <div class="row g-4 justify-content-center">
-                            <div class="col-md-6">
-                                <a href="{% static 'resume/resume-fa.pdf' %}" download class="btn btn-success btn-lg w-100 resume-download-btn hover-scale">
-                                    <span class="d-flex align-items-center justify-content-center">
-                                        <i class="fas fa-file-pdf text-white me-2"></i>
-                                        <span class="font-vazir text-white">دانلود رزومه فارسی</span>
-                                    </span>
-                                </a>
+                    <!-- عنوان اصلی -->
+                    <div class="title-container text-center">
+                        <h1 class="main-heading mb-4">
+                            <span class="heading-primary display-4 fw-bold">نویدیار</span>
+                            <div class="heading-divider my-4">
+                                <span class="divider-line"></span>
+                                <span class="divider-icon"><i class="fas fa-code"></i></span>
+                                <span class="divider-line"></span>
                             </div>
-                            <div class="col-md-6">
-                                <a href="{% static 'resume/resume-en.pdf' %}" download class="btn btn-info btn-lg w-100 resume-download-btn hover-scale">
-                                    <span class="d-flex align-items-center justify-content-center">
-                                        <i class="fas fa-file-pdf text-white me-2"></i>
-                                        <span class="font-vazir text-white">دانلود رزومه انگلیسی</span>
-                                    </span>
-                                </a>
+                            <span class="heading-secondary h3">توسعه دهنده Backend</span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بخش کارت‌های اطلاعات -->
+            <div class="row g-4 mt-4">
+                <!-- کارت‌های سمت راست -->
+                <div class="col-md-3">
+                    <div class="row g-4">
+                        <div class="col-sm-6 col-md-12">
+                            <div class="info-card bg-gradient-primary rounded-4 p-4 text-start shadow-lg hover-scale">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="icon-wrapper bg-white bg-opacity-10 rounded-circle p-2 me-3">
+                                        <i class="fas fa-code text-white"></i>
+                                    </div>
+                                    <span class="text-white fw-bold fs-6 font-vazir">علاقه‌مندی‌های من</span>
+                                </div>
+                                <h3 class="text-white ff-vb fs-6 mt-3 font-vazir">"علاقه‌مند به یادگیری تکنولوژی‌های جدید و به اشتراک‌گذاری دانش با دیگران"</h3>
+                                <p class="text-white opacity-75 mt-3 font-vazir">من همیشه مشتاق یادگیری تکنولوژی‌های جدید هستم و دوست دارم دانش خود را با دیگران به اشتراک بگذارم.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-12">
+                            <div class="info-card bg-gradient-success rounded-4 p-4 text-start shadow-lg hover-scale">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="icon-wrapper bg-white bg-opacity-10 rounded-circle p-2 me-3">
+                                        <i class="fas fa-lightbulb text-white"></i>
+                                    </div>
+                                    <span class="text-white fw-bold fs-6 font-vazir">رویکرد من</span>
+                                </div>
+                                <h3 class="text-white ff-vb fs-6 mt-3 font-vazir">"توسعه راه‌حل‌های نوآورانه با استفاده از تکنولوژی‌های مدرن"</h3>
+                                <p class="text-white opacity-75 mt-3 font-vazir">من به دنبال توسعه راه‌حل‌های خلاقانه و نوآورانه هستم که با استفاده از آخرین تکنولوژی‌ها، مشکلات واقعی را حل کنند.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- تصویر مرکزی -->
+                <div class="col-md-6">
+                    <div class="position-relative rounded-4 overflow-hidden shadow-lg">
+                        <img class="w-100" src="{% static 'images/about/about-me-1.png' %}" alt="تصویر نویدیار" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- کارت‌های سمت چپ -->
+                <div class="col-md-3">
+                    <div class="row g-4">
+                        <div class="col-sm-6 col-md-12">
+                            <div class="info-card bg-gradient-warning rounded-4 p-4 text-start shadow-lg hover-scale">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="icon-wrapper bg-white bg-opacity-10 rounded-circle p-2 me-3">
+                                        <i class="fas fa-bullseye text-white"></i>
+                                    </div>
+                                    <span class="text-white fw-bold fs-6 font-vazir">هدف من</span>
+                                </div>
+                                <h3 class="text-white ff-vb fs-6 mt-3 font-vazir">"توسعه و پیشرفت در زمینه برنامه نویسی و رسیدن به حد کمال و کمک به پیشرفت دیگر توسعه دهندگان"</h3>
+                                <p class="text-white opacity-75 mt-3 font-vazir">هدف اصلی من رشد مستمر در زمینه برنامه نویسی و کمک به جامعه توسعه‌دهندگان است.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-12">
+                            <div class="info-card bg-gradient-danger rounded-4 p-4 text-start shadow-lg hover-scale">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="icon-wrapper bg-white bg-opacity-10 rounded-circle p-2 me-3">
+                                        <i class="fas fa-laptop-code text-white"></i>
+                                    </div>
+                                    <span class="text-white fw-bold fs-6 font-vazir">تخصص من</span>
+                                </div>
+                                <h3 class="text-white ff-vb fs-6 mt-3 font-vazir">"توسعه سیستم‌های هوشمند و اینترنت اشیا با استفاده از تکنولوژی‌های مدرن"</h3>
+                                <p class="text-white opacity-75 mt-3 font-vazir">تخصص اصلی من در زمینه توسعه سیستم‌های هوشمند و اینترنت اشیا است.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- بخش مهارت‌ها و روحیات -->
+    <section class="skills-section py-5 bg-light">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <!-- روحیات -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-lg rounded-4 p-4 h-100 hover-card">
+                        <h4 class="mb-4 fs-5 section-title d-flex align-items-center">
+                            <i class="fas fa-heart text-danger me-2"></i>
+                            <span>روحیات من</span>
+                        </h4>
+                        <ul class="list-inline mb-0 text-center">
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-primary btn-sm hover-btn">Self Study</a>
+                            </li>
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-success btn-sm hover-btn">Curious</a>
+                            </li>
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-warning btn-sm hover-btn">Tech Lover</a>
+                            </li>
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-info btn-sm hover-btn">Fast Learner</a>
+                            </li>
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-danger btn-sm hover-btn">Creative</a>
+                            </li>
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-primary btn-sm hover-btn">R&D is my thing</a>
+                            </li>
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-success btn-sm hover-btn">love to teach</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
+                <!-- مهارت‌ها -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-lg rounded-4 p-4 h-100 hover-card">
+                        <h4 class="mb-4 fs-5 section-title d-flex align-items-center">
+                            <i class="fas fa-code text-success me-2"></i>
+                            <span>مهارت‌ها</span>
+                        </h4>
+                        <ul class="list-inline mb-0 text-center">
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-primary btn-sm hover-btn">Python</a>
+                            </li>
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-success btn-sm hover-btn">Django</a>
+                            </li>
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-warning btn-sm hover-btn">DRF</a>
+                            </li>
+                            
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-primary btn-sm hover-btn">FastApi</a>
+                            </li>
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-success btn-sm hover-btn">Docker</a>
+                            </li>
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-primary btn-sm hover-btn">MicroPython</a>
+                            </li>
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-info btn-sm hover-btn">Git</a>
+                            </li>
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-danger btn-sm hover-btn">Github</a>
+                            </li>
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-warning btn-sm hover-btn">Network+</a>
+                            </li>
+                            <li class="list-inline-item mb-2"> 
+                                <a class="btn btn-outline-info btn-sm hover-btn">HTML/CSS/JS</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- بخش دانلود رزومه -->
+    <section class="resume-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="resume-download-card bg-gradient p-5 rounded-4 shadow-lg text-center position-relative overflow-hidden">
+                        <!-- تزیینات SVG -->
+                        <div class="resume-decoration-1"></div>
+                        <div class="resume-decoration-2"></div>
+                        <div class="resume-decoration-3"></div>
+                        
+                        <div class="resume-content">
+                            <h2 class="text-dark mb-4 font-vazir">دانلود رزومه من</h2>
+                            <p class="text-dark mb-4 font-vazir">برای آشنایی بیشتر با سوابق تحصیلی، مهارت‌ها و تجربیات کاری من می‌توانید رزومه کامل من را دانلود کنید.</p>
+                            
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-md-6">
+                                    <a href="{% static 'resume/resume-fa.pdf' %}" download class="btn btn-success btn-lg w-100 resume-download-btn hover-scale">
+                                        <span class="d-flex align-items-center justify-content-center">
+                                            <i class="fas fa-file-pdf text-white me-2"></i>
+                                            <span class="font-vazir text-white">دانلود رزومه فارسی</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="{% static 'resume/resume-en.pdf' %}" download class="btn btn-info btn-lg w-100 resume-download-btn hover-scale">
+                                        <span class="d-flex align-items-center justify-content-center">
+                                            <i class="fas fa-file-pdf text-white me-2"></i>
+                                            <span class="font-vazir text-white">دانلود رزومه انگلیسی</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 
+<!-- دکمه بازگشت به بالا -->
+<div class="back-top shadow-lg"><i class="fas fa-arrow-up position-absolute top-50 start-50 translate-middle"></i></div>
 
-
-    </main>
- 
-    <!-- =======================
-Footer END -->
-
-    <!-- Back to top -->
-    <div class="back-top"><i class="fas fa-arrow-up position-absolute top-50 start-50 translate-middle"></i></div>
-
-    <script src="{% static 'CACHE/js/output.8d126b85d939.js' %}"></script>
-    
-
-    
-    
-
-
-</body>
+<script src="{% static 'CACHE/js/output.8d126b85d939.js' %}"></script>
 
 <style>
 /* استایل‌های مربوط به بخش دانلود رزومه */

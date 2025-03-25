@@ -6,132 +6,68 @@
     <!-- **************** MAIN CONTENT START **************** -->
     <main>
         
-<!-- =======================
-Page Banner START -->
-<section>
-	<div class="container">
-
-		<div class="row g-4">
-			<!-- Title and SVG START -->
-			<div class="col-10 text-center mx-auto position-relative">
-				<!-- SVG decoration -->
-				
-				<!-- SVG decoration -->
-				<figure class="position-absolute top-0 start-0 ms-n9">
-					<svg style="transform: scale(-1,1)" width="22px" height="22px" viewBox="0 0 22 22">
-						<polygon class="fill-orange"
-							points="22,8.3 13.7,8.3 13.7,0 8.3,0 8.3,8.3 0,8.3 0,13.7 8.3,13.7 8.3,22 13.7,22 13.7,13.7 22,13.7 " />
-					</svg>
-				</figure>
-				<!-- SVG decoration -->
-				
-				<!-- SVG decoration -->
-				<figure class="position-absolute top-0 start-100 translate-middle">
-					<svg style="transform: scale(-1,1)" width="27px" height="27px">
-						<path class="fill-orange"
-							d="M13.122,5.946 L17.679,-0.001 L17.404,7.528 L24.661,5.946 L19.683,11.533 L26.244,15.056 L18.891,16.089 L21.686,23.068 L15.400,19.062 L13.122,26.232 L10.843,19.062 L4.557,23.068 L7.352,16.089 L-0.000,15.056 L6.561,11.533 L1.582,5.946 L8.839,7.528 L8.565,-0.001 L13.122,5.946 Z" />
-					</svg>
-				</figure>
-
-				<!-- Title -->
-				<div class="title-container text-center mb-4">
-					<h1 class="main-heading">
-						<span class="heading-primary">نویدیار</span>
-						<div class="heading-divider">
-							<span class="divider-line"></span>
-							<span class="divider-icon"><i class="fas fa-code"></i></span>
-							<span class="divider-line"></span>
-						</div>
-						<span class="heading-secondary">توسعه دهنده Backend</span>
-					</h1>
-				</div>
-			</div>
-			<!-- Title and SVG END -->
-		</div>
-
-		<!-- Images START -->
-		<div class="row g-4">
-			<!-- تصویر سمت راست -->
-			<div class="col-md-5 order-md-2 mt-n3">
-				<div class="main-image-container position-relative">
-					<img class="main-profile-image w-100" src="{% static 'images/about/about-me-1.png' %}" alt="تصویر نویدیار" loading="lazy">
-				</div>
-			</div>
-
-			<!-- کارت‌های اطلاعات سمت چپ -->
-			<div class="col-md-7 order-md-1">
-				<div class="row g-3">
-					<!-- علاقه‌مندی‌ها -->
-					<div class="col-md-6">
-						<div class="info-card bg-gradient-primary rounded-4 p-3 text-center shadow-lg hover-scale">
-							<div class="d-flex align-items-center justify-content-center mb-2">
-								<div class="icon-wrapper bg-white bg-opacity-10 rounded-circle p-2 me-2">
-									<i class="fas fa-code text-white fa-2x"></i>
-								</div>
-								<h4 class="text-white mb-0 fs-6 font-vazir">علاقه‌مندی‌های من</h4>
-							</div>
-							<div class="card-content text-center">
-								<h3 class="text-white ff-vb fs-6 mt-2 font-vazir quote-text">"علاقه‌مند به یادگیری تکنولوژی‌های جدید و به اشتراک‌گذاری دانش با دیگران"</h3>
-								<p class="text-white opacity-75 mt-2 font-vazir small">من همیشه مشتاق یادگیری تکنولوژی‌های جدید هستم و دوست دارم دانش خود را با دیگران به اشتراک بگذارم.</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- رویکرد -->
-					<div class="col-md-6">
-						<div class="info-card bg-gradient-success rounded-4 p-3 text-center shadow-lg hover-scale">
-							<div class="d-flex align-items-center justify-content-center mb-2">
-								<div class="icon-wrapper bg-white bg-opacity-10 rounded-circle p-2 me-2">
-									<i class="fas fa-lightbulb text-white fa-2x"></i>
-								</div>
-								<h4 class="text-white mb-0 fs-6 font-vazir">رویکرد من</h4>
-							</div>
-							<div class="card-content text-center">
-								<h3 class="text-white ff-vb fs-6 mt-2 font-vazir quote-text">"توسعه راه‌حل‌های نوآورانه با استفاده از تکنولوژی‌های مدرن"</h3>
-								<p class="text-white opacity-75 mt-2 font-vazir small">من به دنبال توسعه راه‌حل‌های خلاقانه و نوآورانه هستم که با استفاده از آخرین تکنولوژی‌ها، مشکلات واقعی را حل کنند.</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- هدف -->
-					<div class="col-md-6">
-						<div class="info-card bg-gradient-warning rounded-4 p-3 text-center shadow-lg hover-scale">
-							<div class="d-flex align-items-center justify-content-center mb-2">
-								<div class="icon-wrapper bg-white bg-opacity-10 rounded-circle p-2 me-2">
-									<i class="fas fa-bullseye text-white fa-2x"></i>
-								</div>
-								<h4 class="text-white mb-0 fs-6 font-vazir">هدف من</h4>
-							</div>
-							<div class="card-content text-center">
-								<h3 class="text-white ff-vb fs-6 mt-2 font-vazir quote-text">"توسعه و پیشرفت در زمینه برنامه نویسی و کمک به پیشرفت دیگر توسعه دهندگان"</h3>
-								<p class="text-white opacity-75 mt-2 font-vazir small">هدف اصلی من رشد مستمر در زمینه برنامه نویسی و کمک به جامعه توسعه‌دهندگان است.</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- تخصص -->
-					<div class="col-md-6">
-						<div class="info-card bg-gradient-danger rounded-4 p-3 text-center shadow-lg hover-scale">
-							<div class="d-flex align-items-center justify-content-center mb-2">
-								<div class="icon-wrapper bg-white bg-opacity-10 rounded-circle p-2 me-2">
-									<i class="fas fa-laptop-code text-white fa-2x"></i>
-								</div>
-								<h4 class="text-white mb-0 fs-6 font-vazir">تخصص من</h4>
-							</div>
-							<div class="card-content text-center">
-								<h3 class="text-white ff-vb fs-6 mt-2 font-vazir quote-text">"توسعه سیستم‌های هوشمند و اینترنت اشیا با استفاده از تکنولوژی‌های مدرن"</h3>
-								<p class="text-white opacity-75 mt-2 font-vazir small">تخصص اصلی من در زمینه توسعه سیستم‌های هوشمند و اینترنت اشیا است.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Images END -->
-	</div>
+<!-- بخش معرفی جدید با طراحی مدرن -->
+<section class="intro-section py-4 mb-3">
+    <div class="container intro-container">
+        <div class="row align-items-center g-md-5">
+            <!-- بخش عکس پروفایل -->
+            <div class="col-md-5 mb-4 mb-md-0">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image-container">
+                        <img src="{% static 'images/about/about-me-1.png' %}" alt="نوید صفایی" class="profile-image">
+                        <div class="image-shape-1"></div>
+                        <div class="image-shape-2"></div>
+                    </div>
+                    <div class="profile-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">آماده همکاری</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- بخش معرفی و توضیحات -->
+            <div class="col-md-7">
+                <div class="intro-content">
+                    <div class="intro-badges mb-2">
+                        <span class="intro-badge">Python</span>
+                        <span class="intro-badge">Django</span>
+                        <span class="intro-badge">DRF</span>
+                    </div>
+                    <h1 class="intro-name">نوید صفایی</h1>
+                    <p class="intro-bio">
+                        من یک توسعه‌دهنده وب با بیش از ۵ سال تجربه در زمینه برنامه‌نویسی Back-end هستم. 
+                        به توسعه اپلیکیشن‌های مدرن با استفاده از تکنولوژی‌های روز دنیا علاقه‌مند بوده 
+                        و همواره در تلاش برای یادگیری و بهبود مهارت‌های خود هستم. تخصص اصلی من در 
+                        زمینه‌های Python، Django، و طراحی RESTful APIs می‌باشد.
+                    </p>
+                    <div class="developer-role">
+                        <span class="role-text">توسعه‌دهنده Backend</span>
+                    </div>
+                    <div class="intro-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">۵+</div>
+                            <div class="stat-label">سال تجربه</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">۲۰+</div>
+                            <div class="stat-label">پروژه موفق</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">۱۵+</div>
+                            <div class="stat-label">مشتری راضی</div>
+                        </div>
+                    </div>
+                    <div class="intro-social">
+                        <a href="#" class="social-icon" title="گیت‌هاب"><i class="bi bi-github"></i></a>
+                        <a href="#" class="social-icon" title="لینکدین"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-icon" title="توییتر"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-icon" title="ایمیل"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<!-- =======================
-Page Banner END -->
 
 <section>
 	<div class="container">
@@ -247,35 +183,34 @@ Page Banner END -->
 </section>
 
 <!-- بخش دانلود رزومه -->
-<section class="my-5">
+<section class="my-4">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="resume-download-card theme-adaptive-card p-5 rounded-4 shadow-lg text-center position-relative overflow-hidden">
-                    <!-- تزیینات SVG -->
-                    <div class="resume-decoration-1"></div>
-                    <div class="resume-decoration-2"></div>
-                    <div class="resume-decoration-3"></div>
-                    
-                    <div class="resume-content">
-                        <h2 class="theme-adaptive-text mb-4 font-vazir">دانلود رزومه من</h2>
-                        <p class="theme-adaptive-text mb-4 font-vazir">برای آشنایی بیشتر با سوابق تحصیلی، مهارت‌ها و تجربیات کاری من می‌توانید رزومه کامل من را دانلود کنید.</p>
-                        
-                        <div class="row g-4 justify-content-center">
-                            <div class="col-md-6">
-                                <a href="{% static 'resume/resume-fa.pdf' %}" download class="btn btn-primary btn-lg w-100 resume-download-btn hover-scale">
-                                    <span class="d-flex align-items-center justify-content-center">
-                                        <i class="fas fa-file-pdf me-2"></i>
-                                        <span class="font-vazir">دانلود رزومه فارسی</span>
-                                    </span>
+            <div class="col-md-8">
+                <!-- کارت رزومه با طراحی رسمی و شیک -->
+                <div class="resume-card-container">
+                    <div class="resume-card-header">
+                        <div class="resume-title-container">
+                            <i class="fas fa-file-alt me-2 resume-title-icon"></i>
+                            <h3 class="resume-title">دانلود رزومه</h3>
+                        </div>
+                    </div>
+                    <div class="resume-card-body">
+                        <div class="row g-0">
+                            <div class="col-md-6 resume-file-item">
+                                <a href="{% static 'resume/resume-fa.pdf' %}" download class="resume-download-link">
+                                    <div class="resume-lang">فارسی</div>
+                                    <div class="resume-download-icon persian-icon">
+                                        <i class="fas fa-download"></i>
+                                    </div>
                                 </a>
                             </div>
-                            <div class="col-md-6">
-                                <a href="{% static 'resume/resume-en.pdf' %}" download class="btn btn-info btn-lg w-100 resume-download-btn hover-scale">
-                                    <span class="d-flex align-items-center justify-content-center">
-                                        <i class="fas fa-file-pdf me-2"></i>
-                                        <span class="font-vazir">دانلود رزومه انگلیسی</span>
-                                    </span>
+                            <div class="col-md-6 resume-file-item">
+                                <a href="{% static 'resume/resume-en.pdf' %}" download class="resume-download-link">
+                                    <div class="resume-lang">English</div>
+                                    <div class="resume-download-icon english-icon">
+                                        <i class="fas fa-download"></i>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -534,6 +469,783 @@ Footer END -->
 .hover-scale:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
+}
+
+/* استایل‌های جدید بخش دانلود رزومه با طراحی گلاس مورفیسم */
+.resume-container {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: rgba(var(--bs-tertiary-bg-rgb), 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* استایل تیتر جدید و کوچکتر */
+.section-title-compact {
+    padding-top: 0.5rem;
+}
+
+.resume-heading {
+    font-family: 'Estedad', 'vazir', system-ui, sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 0.8rem;
+    position: relative;
+    text-align: center;
+}
+
+.resume-title-text {
+    display: inline-block;
+    position: relative;
+    color: transparent;
+    background-image: linear-gradient(45deg, #3a0ca3, #4361ee, #4cc9f0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    padding: 0.2rem 1rem;
+    letter-spacing: 1px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.resume-title-text::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    bottom: -10px;
+    left: 0;
+    background: linear-gradient(90deg, transparent, #4361ee 20%, #4cc9f0 80%, transparent);
+    border-radius: 5px;
+    transform: scaleX(0.7);
+    transition: transform 0.3s ease;
+}
+
+.resume-title-text::after {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    bottom: -18px;
+    left: 15%;
+    background: linear-gradient(90deg, transparent, rgba(67, 97, 238, 0.4) 30%, rgba(76, 201, 240, 0.4) 70%, transparent);
+    border-radius: 2px;
+}
+
+.resume-heading:hover .resume-title-text::before {
+    transform: scaleX(1);
+}
+
+[data-bs-theme="dark"] .resume-title-text {
+    background-image: linear-gradient(45deg, #8338ec, #3a86ff, #38b6ff);
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.15));
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* کارت‌های کوچکتر و ساده‌تر */
+.resume-card-compact {
+    background-color: var(--bs-body-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.resume-card-compact:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+[data-bs-theme="dark"] .resume-card-compact {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* آیکون کوچکتر */
+.resume-icon-small {
+    display: inline-flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.resume-icon-small.english {
+    background: linear-gradient(45deg, #8b5cf6, #ec4899);
+}
+
+.resume-card-compact:hover .resume-icon-small {
+    transform: scale(1.1);
+}
+
+/* عنوان کارت */
+.resume-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: var(--bs-body-color);
+}
+
+/* دکمه دانلود کوچکتر */
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.resume-btn:hover {
+    background: linear-gradient(to right, #3b82f6, #ec4899);
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.download-text {
+    margin-right: 0.5rem;
+}
+
+.download-icon-small {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.resume-btn:hover .download-icon-small {
+    transform: translateY(-2px);
+}
+
+/* تزئینات ساده‌تر و کوچکتر */
+.decoration-small {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+    z-index: 0;
+    filter: blur(8px);
+}
+
+.decoration-1 {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #3b82f6, transparent 70%);
+    top: -40px;
+    right: -40px;
+}
+
+.decoration-2 {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #ec4899, transparent 70%);
+    bottom: -30px;
+    left: -30px;
+}
+
+[data-bs-theme="dark"] .decoration-small {
+    opacity: 0.15;
+}
+
+/* حذف استایل‌های قبلی که دیگر استفاده نمی‌شوند */
+.title-text-glassy, .title-icon-left, .title-icon-right, .title-glow, 
+.glassmorphism-card, .card-blur-bg, .resume-icon-container, .resume-icon, 
+.persian-resume, .english-resume, .resume-title, .resume-divider, 
+.resume-desc, .resume-download-link, .decoration-circle, 
+.circle-1, .circle-2, .circle-3, .circle-4, 
+.download-icon, .download-text, .card-content {
+    /* استایل‌های حذف شده */
+}
+
+@keyframes float-rotate1, @keyframes float-rotate2, @keyframes float-rotate3 {
+    /* انیمیشن‌های حذف شده */
+}
+
+/* طراحی بهینه‌شده و رسمی برای بخش رزومه من */
+.resume-card-container {
+    background-color: var(--bs-body-bg);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+    margin: 2rem 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-card-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] .resume-card-container {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="dark"] .resume-card-container:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.resume-card-header {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+[data-bs-theme="dark"] .resume-card-header {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.resume-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resume-title-icon {
+    color: var(--bs-primary);
+    font-size: 1.1rem;
+    margin-top: 2px;
+}
+
+[data-bs-theme="dark"] .resume-title-icon {
+    color: var(--bs-info);
+}
+
+.resume-title {
+    font-family: 'vazir', 'Tahoma', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--bs-emphasis-color);
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.5px;
+}
+
+.resume-card-body {
+    padding: 0;
+}
+
+.resume-file-item {
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+    transition: background-color 0.2s ease;
+}
+
+.resume-file-item:last-child {
+    border-left: none;
+}
+
+[data-bs-theme="dark"] .resume-file-item {
+    border-left-color: rgba(255, 255, 255, 0.08);
+}
+
+.resume-download-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 1.8rem;
+    text-decoration: none;
+    color: var(--bs-body-color);
+    transition: all 0.3s ease;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.resume-download-link:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bs-primary);
+    opacity: 0;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.resume-download-link:hover:before {
+    transform: scaleX(1);
+    transform-origin: left;
+    opacity: 0.05;
+}
+
+[data-bs-theme="dark"] .resume-download-link:before {
+    background-color: var(--bs-info);
+}
+
+.resume-download-link:hover {
+    color: var(--bs-primary);
+}
+
+[data-bs-theme="dark"] .resume-download-link:hover {
+    color: var(--bs-info);
+}
+
+.resume-lang {
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: transform 0.3s ease;
+}
+
+.resume-download-link:hover .resume-lang {
+    transform: scale(1.05);
+}
+
+.resume-download-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.persian-icon {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.english-icon {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+}
+
+[data-bs-theme="dark"] .persian-icon {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    box-shadow: 0 3px 8px rgba(59, 130, 246, 0.3);
+}
+
+[data-bs-theme="dark"] .english-icon {
+    background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+    box-shadow: 0 3px 8px rgba(139, 92, 246, 0.3);
+}
+
+.resume-download-link:hover .resume-download-icon {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+[data-bs-theme="dark"] .resume-download-link:hover .resume-download-icon {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* حذف استایل‌های قبلی که دیگر استفاده نمی‌شوند */
+.resume-container, .section-title-compact, .resume-heading, .resume-title-text,
+.resume-card-compact, .resume-icon-small, .resume-card-title, .resume-btn,
+.download-text, .download-icon-small, .decoration-small, .decoration-1, .decoration-2 {
+    /* استایل‌های حذف شده */
+}
+
+/* استایل‌های بخش معرفی جدید */
+.intro-section {
+    position: relative;
+    padding: 3rem 0;
+    background-color: rgba(var(--bs-tertiary-bg-rgb), 0.5);
+    border-radius: 16px;
+    margin: 1.5rem 0 3.5rem;
+    overflow: hidden;
+}
+
+.intro-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* استایل عکس پروفایل */
+.profile-image-wrapper {
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transform: perspective(1000px) rotateY(5deg);
+    transition: all 0.5s ease;
+}
+
+.profile-image-container:hover {
+    transform: perspective(1000px) rotateY(0deg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.6s ease-in-out;
+    display: block;
+    transform: scale(1.02);
+}
+
+.profile-image-container:hover .profile-image {
+    transform: scale(1.05);
+}
+
+.image-shape-1,
+.image-shape-2 {
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(20px);
+    opacity: 0.5;
+    transition: all 0.8s ease;
+}
+
+.image-shape-1 {
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, #3b82f6, transparent 70%);
+    top: -30px;
+    right: -30px;
+}
+
+.image-shape-2 {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #ec4899, transparent 70%);
+    bottom: -30px;
+    left: -30px;
+}
+
+[data-bs-theme="dark"] .image-shape-1 {
+    background: radial-gradient(circle, #60a5fa, transparent 70%);
+    opacity: 0.5;
+}
+
+[data-bs-theme="dark"] .image-shape-2 {
+    background: radial-gradient(circle, #f472b6, transparent 70%);
+    opacity: 0.5;
+}
+
+.profile-image-container:hover .image-shape-1 {
+    transform: translateY(-10px) scale(1.1);
+}
+
+.profile-image-container:hover .image-shape-2 {
+    transform: translateY(10px) scale(1.1);
+}
+
+.profile-status {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--bs-body-bg);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    margin-top: -15px;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+[data-bs-theme="dark"] .profile-status {
+    background-color: #2a2d35;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.profile-status:hover {
+    transform: translateY(-3px);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #22c55e;
+    margin-left: 8px;
+    position: relative;
+}
+
+.status-dot::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgba(34, 197, 94, 0.3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.8;
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+}
+
+.status-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--bs-body-color);
+}
+
+/* استایل محتوای معرفی */
+.intro-content {
+    padding: 0 1rem;
+}
+
+.intro-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.intro-badge {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.2));
+    color: #3b82f6;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+[data-bs-theme="dark"] .intro-badge {
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.2), rgba(37, 99, 235, 0.3));
+    color: #60a5fa;
+    border-color: rgba(96, 165, 250, 0.2);
+}
+
+.intro-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 8px rgba(59, 130, 246, 0.2);
+}
+
+.intro-name {
+    font-family: 'Estedad', 'vazir', system-ui, sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0.2rem 0 1rem;
+    color: var(--bs-emphasis-color);
+    position: relative;
+    display: inline-block;
+}
+
+.intro-name::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 40%;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    bottom: -7px;
+    left: 0;
+    border-radius: 2px;
+}
+
+.intro-bio {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--bs-body-color);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+/* استایل آمار */
+.intro-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--bs-primary);
+    line-height: 1;
+}
+
+[data-bs-theme="dark"] .stat-value {
+    color: var(--bs-info);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--bs-body-color);
+    opacity: 0.8;
+    margin-top: 0.25rem;
+}
+
+/* استایل شبکه‌های اجتماعی */
+.intro-social {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-bs-theme="dark"] .social-icon {
+    background-color: #2a2d35;
+    color: var(--bs-body-color);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    color: white;
+}
+
+.social-icon:nth-child(1):hover {
+    background-color: #333;
+}
+
+.social-icon:nth-child(2):hover {
+    background-color: #0077b5;
+}
+
+.social-icon:nth-child(3):hover {
+    background-color: #1da1f2;
+}
+
+.social-icon:nth-child(4):hover {
+    background-color: #ea4335;
+}
+
+/* Fix for Bootstrap Icons */
+.social-icon i {
+    font-size: 1.2rem;
+}
+
+.social-icon:hover i.bi-github,
+.social-icon:hover i.bi-linkedin,
+.social-icon:hover i.bi-twitter,
+.social-icon:hover i.bi-envelope {
+    transition: all 0.3s ease;
+    transform: scale(1.2);
+}
+
+/* استایل‌های واکنش‌گرا */
+@media (max-width: 768px) {
+    .intro-name {
+        font-size: 1.8rem;
+    }
+    
+    .intro-bio {
+        font-size: 0.95rem;
+    }
+    
+    .intro-stats {
+        gap: 1.5rem;
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+    }
+}
+
+/* استایل برای نقش توسعه دهنده */
+.developer-role {
+    margin-bottom: 1.5rem;
+}
+
+.role-text {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.role-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.role-text:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(67, 97, 238, 0.4);
+}
+
+.role-text:hover::before {
+    left: 100%;
+}
+
+[data-bs-theme="dark"] .role-text {
+    background: linear-gradient(135deg, #4cc9f0, #4361ee);
+    box-shadow: 0 4px 12px rgba(76, 201, 240, 0.3);
+}
+
+[data-bs-theme="dark"] .role-text:hover {
+    box-shadow: 0 6px 15px rgba(76, 201, 240, 0.4);
 }
 </style>
 

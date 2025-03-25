@@ -184,7 +184,8 @@
                         <svg width="550px" height="538px" viewBox="0 0 554 544"
                             style="enable-background:new 0 0 554 544;" xml:space="preserve">
                             <path class="fill-primary"
-                                d="M423.3,77.2c49.5,32.5,100.4,67.2,118.4,114.5s3.5,107.1-15.4,165.7c-18.7,58.6-41.8,116.1-84,148.6 c-42.5,32.8-104.2,40.2-163.8,37.3c-59.5-3.2-116.8-17.1-164.7-47.9c-48.3-30.6-87.2-78.2-102-131.6C-3,310.5,6.6,251,25.3,194.7 C43.6,138,70.7,84.3,114.1,49.5C157.2,14.8,216.7-1,270.8,6.4C324.8,14.2,373.4,44.7,423.3,77.2z" />
+                                d="M423.3,77.2c49.5,32.5,100.4,67.2,118.4,114.5s3.5,107.1-15.4,165.7c-18.7,58.6-41.8,116.1-84,148.6 c-42.5,32.8-104.2,40.2-163.8,37.3c-59.5-3.2-116.8-17.1-164.7-47.9c-48.3-30.6-87.2-78.2-102-131.6C-3,310.5,6.6,251,25.3,194.7 C43.6,138,70.7,84.3,114.1,49.5C157.2,14.8,216.7-1,270.8,6.4C324.8,14.2,373.4,44.7,423.3,77.2z">
+                            </path>
                         </svg>
                     </figure>
 
@@ -192,7 +193,8 @@
                     <figure class="position-absolute bottom-0 start-50 translate-middle-x mb-n5 z-index-9">
                         <svg width="686px" height="298px" viewBox="0 0 686 298">
                             <path class="fill-body"
-                                d="M60.9,0L0.1,0C0,0,0,0,0,0.1c1.5,5,0,249.5,11.5,297.9c0,0,649.1,16.1,669-4.6c0,0,0,0,0,0c0.2-0.4,1.2-177.2,4.2-293.3 c0,0,0-0.1-0.1-0.1l-72.9,0c0,0-0.1,0-0.1,0c-0.8,3-43.3,162.3-105.9,209.1c0,0-111.4,87.2-309.9-6C195.9,203.1,66.1,143.2,60.9,0 C61,0,60.9,0,60.9,0z" />
+                                d="M60.9,0L0.1,0C0,0,0,0,0,0.1c1.5,5,0,249.5,11.5,297.9c0,0,649.1,16.1,669-4.6c0,0,0,0,0,0c0.2-0.4,1.2-177.2,4.2-293.3 c0,0,0-0.1-0.1-0.1l-72.9,0c0,0-0.1,0-0.1,0c-0.8,3-43.3,162.3-105.9,209.1c0,0-111.4,87.2-309.9-6C195.9,203.1,66.1,143.2,60.9,0 C61,0,60.9,0,60.9,0z">
+                            </path>
                         </svg>
                     </figure>
 
@@ -461,9 +463,22 @@
 <div class="container">
     <!-- Title -->
     <div class="row mb-4">
-        <div class="col-12 text-center">
-            <h2 class="blog-section-title mb-3">جدیدترین اخبـار وبلاگ</h2>
-            <div class="title-separator"></div>
+        <div class="col-12">
+            <div class="blog-title-wrapper text-center">
+                <div class="blog-title-top">
+                    <i class="fas fa-feather-alt blog-icon"></i>
+                    <span class="blog-badge">مطالب وبلاگ</span>
+                </div>
+                <h2 class="blog-main-title">
+                    <span class="blog-title-text">آخـریـن</span>
+                    <span class="blog-title-text">پـسـت‌ها</span>
+                </h2>
+                <div class="blog-title-line">
+                    <span class="line-dot"></span>
+                    <span class="line-middle"></span>
+                    <span class="line-dot"></span>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -551,7 +566,7 @@
 
         <!-- View All Button -->
         <div class="col-12 text-center mt-4">
-            <a href="/blog" class="btn btn-primary-soft">
+            <a href="/blog" class="btn btn-blog-view-all">
                 مشاهده تمام مقالات
                 <i class="fas fa-long-arrow-alt-left ms-2"></i>
             </a>
@@ -572,6 +587,8 @@
     --blog-hover-shadow: rgba(0,0,0,0.15);
     --blog-date-bg: #f8f9fa;
     --blog-date-day-color: var(--bs-primary);
+    --blog-title-glow: rgba(13, 110, 253, 0.2);
+    --blog-title-border-color: var(--bs-primary);
 }
 
 [data-bs-theme="dark"] {
@@ -585,44 +602,130 @@
     --blog-hover-shadow: rgba(255,255,255,0.1);
     --blog-date-bg: rgba(33, 37, 41, 0.8);
     --blog-date-day-color: var(--bs-primary-bg-subtle);
+    --blog-title-glow: rgba(102, 153, 255, 0.35);
+    --blog-title-border-color: var(--bs-primary-bg-subtle);
 }
 
 /* Blog Section Title */
+.blog-section-header {
+    position: relative;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+.blog-section-icon {
+    margin-bottom: 1rem;
+    animation: pulse 2s infinite;
+}
+
+.blog-section-icon i {
+    font-size: 2rem;
+    color: var(--blog-title-color);
+    transition: color 0.3s ease;
+}
+
 .blog-section-title {
     color: var(--blog-title-color);
     font-weight: 700;
     position: relative;
     display: inline-block;
     transition: color 0.3s ease;
+    text-shadow: 0 0 15px var(--blog-title-glow);
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, var(--blog-title-color) 0%, var(--bs-primary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0 1rem;
+}
+
+.blog-title-highlight {
+    position: relative;
+    display: inline-block;
+    animation: colorPulse 3s infinite alternate;
+}
+
+@keyframes colorPulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+.blog-title-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--bs-warning);
+    animation: widthPulse 3s infinite alternate;
+    border-radius: 2px;
+}
+
+@keyframes widthPulse {
+    0% { width: 0; left: 0; }
+    100% { width: 100%; left: 0; }
 }
 
 .title-separator {
-    width: 80px;
+    width: 100px;
     height: 3px;
-    background: var(--blog-separator-color);
+    background: linear-gradient(90deg, transparent, var(--blog-separator-color), transparent);
     margin: 0 auto;
     position: relative;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 .title-separator::before,
 .title-separator::after {
     content: '';
     position: absolute;
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     background: var(--blog-separator-color);
     border-radius: 50%;
-    top: -1.5px;
-    transition: background-color 0.3s ease;
+    top: -2.5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .title-separator::before {
-    left: -10px;
+    left: 20px;
+    animation: moveLeft 3s infinite alternate;
 }
 
 .title-separator::after {
-    right: -10px;
+    right: 20px;
+    animation: moveRight 3s infinite alternate;
+}
+
+.title-separator-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--blog-title-color);
+    border-radius: 50%;
+    position: absolute;
+    top: -3.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px var(--blog-title-glow);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes moveLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-10px); }
+}
+
+@keyframes moveRight {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(10px); }
 }
 
 /* Blog Cards */
@@ -759,7 +862,7 @@
     right: 0;
     width: 5px;
     height: 0;
-    background-color: var(--blog-title-border-color);
+    background: linear-gradient(to top, var(--blog-separator-color), transparent);
     transition: height 0.3s ease;
     border-radius: 0 0 0 3px;
 }
@@ -773,6 +876,7 @@
     width: 120px;
     min-width: 120px;
     height: 120px;
+    overflow: hidden;
 }
 
 .blog-card-mini-img img {
@@ -791,18 +895,55 @@
     flex-grow: 1;
     transition: background-color 0.3s ease;
     background: var(--blog-card-bg);
+    position: relative;
+    z-index: 1;
+}
+
+.blog-card-mini-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(var(--bs-primary-rgb), 0.05));
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.blog-card-mini:hover .blog-card-mini-content::before {
+    width: 100%;
 }
 
 .blog-title-mini {
     font-size: 1rem;
     margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
 }
 
 .blog-title-mini a {
     color: var(--blog-text-color);
     text-decoration: none;
     transition: color 0.3s ease;
+    padding-bottom: 2px;
+    position: relative;
+}
+
+.blog-title-mini a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    right: 0;
+    background: var(--blog-separator-color);
+    transition: width 0.3s ease;
+}
+
+.blog-card-mini:hover .blog-title-mini a::after {
+    width: 100%;
 }
 
 .blog-title-mini a:hover {
@@ -813,12 +954,19 @@
     font-size: 0.85rem;
     color: var(--blog-meta-color);
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
 .blog-meta-mini .date {
     display: inline-block;
     position: relative;
     padding-right: 12px;
+    transition: transform 0.3s ease;
+}
+
+.blog-card-mini:hover .blog-meta-mini .date {
+    transform: translateX(-5px);
 }
 
 .blog-meta-mini .date::before {
@@ -831,6 +979,34 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    box-shadow: 0 0 5px var(--blog-title-glow);
+    transition: all 0.3s ease;
+}
+
+.blog-card-mini:hover .blog-meta-mini .date::before {
+    width: 8px;
+    height: 8px;
+}
+
+.blog-category {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover .blog-category,
+.blog-card-mini:hover .blog-category {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    letter-spacing: 0.5px;
 }
 
 /* Responsive Adjustments */
@@ -847,43 +1023,59 @@
         height: 100px;
     }
 }
+
+/* View All Button */
+.btn-blog-view-all {
+    background: var(--blog-card-bg);
+    color: var(--blog-title-color);
+    border: 2px solid var(--blog-separator-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 4px 15px var(--blog-card-shadow);
+}
+
+.btn-blog-view-all::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--blog-separator-color), var(--bs-primary));
+    transition: width 0.5s ease;
+    z-index: -1;
+}
+
+.btn-blog-view-all:hover {
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--blog-hover-shadow);
+}
+
+.btn-blog-view-all:hover::before {
+    width: 100%;
+}
+
+.btn-blog-view-all i {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.btn-blog-view-all:hover i {
+    transform: translateX(-5px);
+}
+
+/* Dark mode specific adjustments */
+[data-bs-theme="dark"] .btn-blog-view-all:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
 </style>
-    </section>
-
-    <section class="py-0">
-        <div class="container position-relative">
-            <div class="row">
-                <div class="col-12">
-                    <div class="bg-light rounded-3 position-relative p-3 p-sm-5">
-                        <div class="row g-4 align-items-center">
-                            <div class="col-md-6">
-                                <!-- Title -->
-
-                                <h2 class="mb-0 fs-4">عضویت در خبرنامه</h2>
-                                <p class="mb-0">می توانید جهت آگاهی از سرویس ها و به‌روزرسانی‌های جدید در خبرنامه عضو شوید و به
-                                    روز بمانید.</p>
-                            </div>
-
-                            <!-- Form -->
-                            <div class="col-md-6">
-                                <form action="/newsletter" method="POST"
-                                    class="bg-body rounded-2 p-2">
-                                    <input type="hidden" name="csrfmiddlewaretoken" value="xH1SotxgJ1yuq1q0maUbUucoiKrnctlTQYFJEGx6NUxtgCQ2vWe5JX1aj1fgbOM8">
-                                    <div class="input-group">
-                                        <input class="form-control border-0 me-1" type="email" placeholder="ایمیل"
-                                            name="email">
-                                        <input class="form-control border-0 me-1" type="text" placeholder="نام"
-                                            name="first_name" hidden>
-
-                                        <button type="submit" class="btn btn-blue mb-0 rounded-2">ثبت نام</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div> <!-- Row END -->
-                    </div>
-                </div>
-            </div> <!-- Row END -->
-        </div>
     </section>
 
     <section class="py-5">

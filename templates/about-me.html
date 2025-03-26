@@ -6,6 +6,14 @@
     <!-- **************** MAIN CONTENT START **************** -->
     <main>
         
+<!-- تیتر اصلی صفحه -->
+<div class="container mt-4">
+    <div class="about-page-title text-center">
+        <h1 class="about-title">درباره من</h1>
+        <div class="about-title-line"></div>
+    </div>
+</div>
+
 <!-- بخش معرفی جدید با طراحی مدرن -->
 <section class="intro-section py-4 mb-3">
     <div class="container intro-container">
@@ -24,19 +32,16 @@
             <div class="col-md-7">
                 <div class="intro-content">
                     
-                    <h1 class="intro-name">نویدیار</h1>
-					<br>
-					<br>
-					<!--
-					<div class="developer-role">
-                        <span class="role-text">توسعه‌دهنده Backend</span>
+                    <!-- استایل مشترک برای نام و نقش -->
+                    <div class="dev-title-container">
+                        
+                        <div class="dev-subtitle"><h1>نویدیار </h1>
+
+                            توسعه‌دهنده Backend</div>
                     </div>
-					-->
-					
-                    
-					<div class="badge-title">
+                    <div class="skills-header">
                         <i class="fas fa-code text-primary me-2"></i>
-                        مهارت‌های اصلی
+                        <span>مهارت‌های اصلی</span>
                     </div>
 					<div class="intro-badges mb-4">
                         <span class="intro-badge">Python</span>
@@ -48,9 +53,9 @@
                     </div>
 					
 					
-					<div class="badge-title">
+					<div class="skills-header">
                         <i class="fas fa-heart text-danger me-2"></i>
-                        روحیات من
+                        <span>روحیات من</span>
                     </div>
 					<div class="intro-badges-2 mb-4">
                         <span class="intro-badge">خلاق</span>
@@ -60,6 +65,9 @@
                         <span class="intro-badge">منظم</span>
                         <span class="intro-badge">مشتاق فناوری</span>
                     </div>
+                    <div class="section-divider mt-4 mb-3"></div>
+					
+                  
 					<div class="intro-bio-container">
                         <p class="intro-bio">
                             من یک توسعه‌دهنده وب با بیش از ۵ سال تجربه در زمینه برنامه‌نویسی <span class="highlight">Back-end</span> هستم. 
@@ -68,22 +76,9 @@
                             زمینه‌های <span class="highlight">Python</span>، <span class="highlight">Django</span>، و طراحی <span class="highlight">RESTful APIs</span> می‌باشد.
                         </p>
                     </div>
-					
+                    <div class="section-divider mt-4 mb-3"></div>
+                  
                     
-                    <div class="intro-stats">
-                        <div class="stat-item">
-                            <div class="stat-value">۵+</div>
-                            <div class="stat-label">سال تجربه</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">۲۰+</div>
-                            <div class="stat-label">پروژه موفق</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">۱۵+</div>
-                            <div class="stat-label">مشتری راضی</div>
-                        </div>
-                    </div>
                     
                     <!-- آیکون‌های شبکه‌های اجتماعی -->
                     <div class="social-media-row">
@@ -192,6 +187,12 @@
 <!-- بخش دانلود رزومه -->
 <section class="my-4">
     <div class="container">
+        <div class="career-path-header text-center mb-4">
+            <h2 class="career-path-title">
+                دانلود رزومه
+            </h2>
+            <div class="career-path-title-line"></div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <!-- کارت رزومه با طراحی رسمی و شیک -->
@@ -251,6 +252,39 @@ Footer END -->
 </body>
 
 <style>
+/* استایل تیتر اصلی صفحه */
+.about-page-title {
+    margin-bottom: 2rem;
+}
+
+.about-title {
+    font-family: 'Estedad', 'vazir', system-ui, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--bs-emphasis-color);
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    position: relative;
+}
+
+.about-title-line {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+[data-bs-theme="dark"] .about-title-line {
+    background: linear-gradient(90deg, #60a5fa, #a78bfa);
+}
+
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2rem;
+    }
+}
+
 /* استایل‌های مربوط به بخش دانلود رزومه */
 .resume-download-card {
     transition: transform 0.5s ease, box-shadow 0.5s ease;
@@ -1037,115 +1071,310 @@ Footer END -->
 .intro-badges .intro-badge:nth-child(6) { animation-delay: 0.6s; }
 
 .intro-name {
-    font-family: 'Estedad', 'vazir', system-ui, sans-serif;
-    font-size: 2.2rem;
+    font-size: 3.2rem;
     font-weight: 800;
-    margin: 0.2rem 0 1rem;
-    color: var(--bs-emphasis-color);
+    margin: 0.2rem 0 0.5rem;
     position: relative;
     display: inline-block;
+    background-image: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s ease-in-out infinite alternate;
+    letter-spacing: 1px;
 }
 
 .intro-name::after {
     content: "";
     position: absolute;
-    height: 4px;
-    width: 40%;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-    bottom: -7px;
+    height: 6px;
+    width: 60%;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+    bottom: -10px;
     left: 0;
-    border-radius: 2px;
+    border-radius: 3px;
+    opacity: 0.7;
+    transform-origin: left;
+    animation: expand 3s ease-in-out infinite alternate;
 }
 
-.intro-bio {
-    position: relative;
+.name-subtitle {
+    font-family: 'vazir', sans-serif;
     font-size: 1rem;
-    line-height: 1.9;
-    text-align: justify;
-    color: var(--bs-body-color);
-    padding: 0.75rem 1rem;
+    font-weight: 500;
+    color: #64748b;
     margin-bottom: 1.5rem;
-    background-color: rgba(var(--bs-tertiary-bg-rgb), 0.5);
-    border-radius: 10px;
-    border-right: 3px solid #3b82f6;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
-}
-
-[data-bs-theme="dark"] .intro-bio {
-    border-right-color: #60a5fa;
-    background-color: rgba(255, 255, 255, 0.03);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-}
-
-.intro-bio .highlight {
-    color: #3b82f6;
-    font-weight: 600;
+    opacity: 0.9;
     position: relative;
     display: inline-block;
+    margin-right: 10px;
 }
 
-[data-bs-theme="dark"] .intro-bio .highlight {
+.name-subtitle::before {
+    content: "{ ";
+    color: #3b82f6;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.name-subtitle::after {
+    content: " }";
+    color: #3b82f6;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+[data-bs-theme="dark"] .name-subtitle {
+    color: #94a3b8;
+}
+
+[data-bs-theme="dark"] .name-subtitle::before,
+[data-bs-theme="dark"] .name-subtitle::after {
     color: #60a5fa;
 }
 
-.intro-bio .highlight::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 0.25rem;
-    background-color: rgba(59, 130, 246, 0.15);
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    border-radius: 2px;
-    transition: height 0.3s ease;
+@keyframes shine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
-[data-bs-theme="dark"] .intro-bio .highlight::after {
-    background-color: rgba(96, 165, 250, 0.15);
+@keyframes expand {
+    0% {
+        transform: scaleX(0.7);
+    }
+    100% {
+        transform: scaleX(1);
+    }
 }
 
-.intro-bio:hover .highlight::after {
-    height: 0.4rem;
+@font-face {
+    font-family: 'aviny';
+    src: url('{% static "fonts/aviny.woff2" %}') format('woff2'),
+         url('{% static "fonts/aviny.woff" %}') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* تنظیمات واکنش‌گرا برای عنوان */
+@media (max-width: 768px) {
+    .intro-name {
+        font-size: 2.5rem;
+    }
+    
+    .name-subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+/* استایل محتوای معرفی */
+.intro-bio {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    color: var(--bs-body-color);
+}
+
+.intro-bio .highlight {
+    font-weight: 600;
+    color: var(--bs-primary);
+}
+
+[data-bs-theme="dark"] .intro-bio .highlight {
+    color: var(--bs-info);
 }
 
 @media (max-width: 768px) {
     .intro-bio {
-        font-size: 0.95rem;
-        line-height: 1.8;
-        padding: 0.5rem 0.75rem;
+        font-size: 1rem;
     }
 }
 
-/* استایل آمار */
+/* استایل مدرن و جمع‌وجور برای بخش آمار */
 .intro-stats {
     display: flex;
-    gap: 2rem;
-    margin-bottom: 1.5rem;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 1.5rem 0;
 }
 
 .stat-item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 100px;
+    height: 110px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 0.7rem 0.5rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    z-index: 1;
+    animation: fadeInUp 0.5s forwards;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.stat-item:nth-child(1) {
+    animation-delay: 0.05s;
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.06), rgba(37, 99, 235, 0.12));
+}
+
+.stat-item:nth-child(2) {
+    animation-delay: 0.1s;
+    background: linear-gradient(145deg, rgba(139, 92, 246, 0.06), rgba(109, 40, 217, 0.12));
+}
+
+.stat-item:nth-child(3) {
+    animation-delay: 0.15s;
+    background: linear-gradient(145deg, rgba(236, 72, 153, 0.06), rgba(190, 24, 93, 0.12));
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="dark"] .stat-item {
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] .stat-item:nth-child(1) {
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.18));
+}
+
+[data-bs-theme="dark"] .stat-item:nth-child(2) {
+    background: linear-gradient(145deg, rgba(139, 92, 246, 0.1), rgba(109, 40, 217, 0.18));
+}
+
+[data-bs-theme="dark"] .stat-item:nth-child(3) {
+    background: linear-gradient(145deg, rgba(236, 72, 153, 0.1), rgba(190, 24, 93, 0.18));
+}
+
+[data-bs-theme="dark"] .stat-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.stat-item::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 65%);
+    opacity: 0;
+    z-index: -1;
+    transform: scale(0.5);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.stat-item:hover::before {
+    transform: scale(1);
+    opacity: 0.12;
 }
 
 .stat-value {
-    font-size: 1.8rem;
+    font-family: 'Estedad', 'vazir', sans-serif;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: var(--bs-primary);
+    margin-bottom: 0.2rem;
+    position: relative;
+    display: inline-block;
     line-height: 1;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
-[data-bs-theme="dark"] .stat-value {
-    color: var(--bs-info);
+.stat-item:nth-child(1) .stat-value {
+    color: #3b82f6;
+    background-image: linear-gradient(to right, #3b82f6, #2563eb);
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-item:nth-child(2) .stat-value {
+    color: #8b5cf6;
+    background-image: linear-gradient(to right, #8b5cf6, #6d28d9);
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-item:nth-child(3) .stat-value {
+    color: #ec4899;
+    background-image: linear-gradient(to right, #ec4899, #be185d);
+    -webkit-text-fill-color: transparent;
+}
+
+[data-bs-theme="dark"] .stat-item:nth-child(1) .stat-value {
+    background-image: linear-gradient(to right, #60a5fa, #3b82f6);
+}
+
+[data-bs-theme="dark"] .stat-item:nth-child(2) .stat-value {
+    background-image: linear-gradient(to right, #a78bfa, #8b5cf6);
+}
+
+[data-bs-theme="dark"] .stat-item:nth-child(3) .stat-value {
+    background-image: linear-gradient(to right, #f472b6, #ec4899);
 }
 
 .stat-label {
-    font-size: 0.85rem;
+    font-family: 'vazir', 'Tahoma', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
     color: var(--bs-body-color);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    transition: all 0.3s ease;
     opacity: 0.8;
-    margin-top: 0.25rem;
+}
+
+.stat-item:hover .stat-label {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .intro-stats {
+        gap: 0.6rem;
+    }
+    
+    .stat-item {
+        width: 90px;
+        height: 100px;
+        padding: 0.5rem;
+    }
+    
+    .stat-icon {
+        font-size: 0.9rem;
+        width: 28px;
+        height: 28px;
+    }
+    
+    .stat-value {
+        font-size: 1.3rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
+    }
 }
 
 /* استایل شبکه‌های اجتماعی */
@@ -1338,7 +1567,7 @@ Footer END -->
 
 /* استایل برای نقش توسعه دهنده */
 .developer-role {
-    margin-bottom: 1.5rem;
+    margin: 1.2rem 0 1.5rem;
 }
 
 .role-text {
@@ -1481,6 +1710,74 @@ Footer END -->
     .col-md-7 {
         flex: 0 0 auto;
         width: 55%;
+    }
+}
+
+/* خط جداکننده بین بخش‌ها */
+.section-divider {
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, transparent);
+    border-radius: 2px;
+    width: 100%;
+    opacity: 0.3;
+}
+
+/* استایل برای عنوان بخش‌های مهارت */
+.skills-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-family: 'vazir', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bs-emphasis-color);
+}
+
+.skills-header i {
+    color: #3b82f6;
+    margin-left: 8px;
+    font-size: 1.1rem;
+}
+
+[data-bs-theme="dark"] .skills-header i {
+    color: #60a5fa;
+}
+
+/* استایل مشترک برای نام و نقش */
+.dev-title-container {
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+
+.dev-subtitle {
+    font-size: 1.35rem;
+    font-weight: 600;
+    font-family: 'Estedad', 'vazir', system-ui, sans-serif;
+    color: rgba(var(--bs-body-color-rgb), 0.7);
+    margin-top: 0.3rem;
+    margin-right: 0.3rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 0.8rem;
+
+  
+}
+
+
+
+[data-bs-theme="dark"] .dev-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 768px) {
+    .dev-title {
+        font-size: 2.8rem;
+    }
+    
+    .dev-subtitle {
+        font-size: 1.1rem;
     }
 }
 </style>

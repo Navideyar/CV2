@@ -1,166 +1,256 @@
 {% extends 'base.html' %}
 {% load static %} 
 {% block content %}
-    <!-- **************** MAIN CONTENT START **************** -->
-    <main>
-        
-        <!-- **************** MAIN CONTENT START **************** -->
-        <main>
+
+
         
 <!-- Main Banner START -->
-<section class="py-5">
+<section class="py-5 position-relative overflow-hidden">
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center mb-5">
-                <h1 class="display-4 fw-bold mb-3">خدمات طراحی وبسایت شخصی</h1>
-                <p class="lead">وبسایت شخصی خاص خود را با جدیدترین تکنولوژی‌ها و طراحی منحصر به فرد داشته باشید</p>
+            <div class="col-12 text-center">
+                <div class="title-container">
+                    <div class="main-heading">
+                        <h1 class="heading-primary" data-text="خدمات طراحی وبسایت شخصی">خدمات طراحی وبسایت شخصی</h1>
+                        <div class="heading-divider">
+                            <div class="divider-line"></div>
+                            <div class="divider-icon"><i class="fas fa-code"></i></div>
+                            <div class="divider-line"></div>
+                        </div>
+                        <p class="heading-secondary">وبسایت شخصی خاص خود را با جدیدترین تکنولوژی‌ها و طراحی منحصر به فرد داشته باشید</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Background Elements -->
+    <figure class="position-absolute top-50 start-0 translate-middle-y ms-n7">
+        <svg class="fill-primary opacity-2" width="500px" height="500px">
+            <path d="M445.3,7.7c59.7,50.3,122.9,96,149.7,161c26.5,64.6,15.9,148.6-29.9,197.7C520.3,415,439,429,364.9,452.1 c-74.5,23.1-142.1,55.2-200.4,42.3S57.2,423.7,32.6,361.3c-24.2-62-24.2-128.9-17.8-199.6C21.7,91,34.5,16.6,78.7-36.4S198.6-121,264.4-109.3S386.1-42.8,445.3,7.7z"/>
+        </svg>
+    </figure>
 </section>
 <!-- Main Banner END -->
 
-<!-- Services Intro START -->
-<section class="py-4">
+<!-- Services Features START -->
+<section class="py-5 bg-light position-relative">
     <div class="container">
         <div class="row g-4">
-            <!-- Service feature START -->
+            <!-- Service feature 1 -->
             <div class="col-md-4">
-                <div class="card service-card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4 text-center">
-                        <div class="service-icon-wrap mb-3">
-                            <i class="fas fa-palette fa-3x text-primary"></i>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
                         </div>
-                        <h4 class="card-title">طراحی اختصاصی</h4>
-                        <p class="card-text">وبسایت شخصی با طراحی منحصر به فرد و متناسب با نیاز و سلیقه شما</p>
                     </div>
+                    <h4 class="feature-title">طراحی اختصاصی</h4>
+                    <p class="feature-text">وبسایت شخصی با طراحی منحصر به فرد و متناسب با نیاز و سلیقه شما</p>
                 </div>
             </div>
-            <!-- Service feature END -->
 
-            <!-- Service feature START -->
+            <!-- Service feature 2 -->
             <div class="col-md-4">
-                <div class="card service-card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4 text-center">
-                        <div class="service-icon-wrap mb-3">
-                            <i class="fas fa-mobile-alt fa-3x text-warning"></i>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <h4 class="card-title">واکنشگرا</h4>
-                        <p class="card-text">طراحی کاملاً واکنشگرا برای نمایش مناسب در تمام دستگاه‌ها</p>
                     </div>
+                    <h4 class="feature-title">واکنشگرا</h4>
+                    <p class="feature-text">طراحی کاملاً واکنشگرا برای نمایش مناسب در تمام دستگاه‌ها</p>
                 </div>
             </div>
-            <!-- Service feature END -->
 
-            <!-- Service feature START -->
+            <!-- Service feature 3 -->
             <div class="col-md-4">
-                <div class="card service-card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4 text-center">
-                        <div class="service-icon-wrap mb-3">
-                            <i class="fas fa-rocket fa-3x text-success"></i>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
                         </div>
-                        <h4 class="card-title">بهینه‌سازی سرعت</h4>
-                        <p class="card-text">سرعت بارگذاری بالا با استفاده از تکنیک‌های بهینه‌سازی پیشرفته</p>
                     </div>
+                    <h4 class="feature-title">بهینه‌سازی سرعت</h4>
+                    <p class="feature-text">سرعت بارگذاری بالا با استفاده از تکنیک‌های بهینه‌سازی پیشرفته</p>
                 </div>
             </div>
-            <!-- Service feature END -->
         </div>
     </div>
+
+    <!-- Decorative Elements -->
+    <div class="decoration-dots decoration-dots-1"></div>
+    <div class="decoration-dots decoration-dots-2"></div>
 </section>
-<!-- Services Intro END -->
+<!-- Services Features END -->
 
 <!-- Packages Section START -->
-<section class="py-5 bg-light">
+<section class="py-5">
     <div class="container">
         <div class="row mb-4">
             <div class="col-12 text-center">
-                <h2 class="fw-bold">بسته‌های خدماتی</h2>
-                <p class="lead">بسته متناسب با نیاز خود را انتخاب کنید</p>
+                <div class="package-header">
+                    <span class="package-badge">پکیج‌های ما</span>
+                    <h2 class="package-title">بسته‌های خدماتی</h2>
+                    <p class="package-subtitle">بسته متناسب با نیاز خود را انتخاب کنید</p>
+                </div>
             </div>
         </div>
 
         <div class="row g-4">
-            <!-- Package 1 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card price-card h-100 border-0 shadow-hover">
-                    <div class="card-header text-center bg-transparent pt-4 border-0">
-                        <h3 class="mb-0 text-danger">پایه</h3>
-                        <div class="price-value mt-3">
-                            <h4 class="mb-0 display-6 fw-bold">۱,۹۰۰,۰۰۰ <small class="fs-6 fw-light">تومان</small></h4>
+            <!-- پکیج پایه -->
+            <div class="col-lg-4">
+                <div class="price-card basic">
+                    <div class="price-header">
+                        <div class="price-badge">پایه</div>
+                        <div class="price-amount">
+                            <span class="amount">۱,۹۰۰,۰۰۰</span>
+                            <span class="currency">تومان</span>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled mt-3">
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>طراحی قالب اختصاصی (۳ صفحه)</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>طراحی واکنشگرا</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>بخش معرفی</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>صفحه تماس با من</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>بهینه‌سازی SEO پایه</li>
-                            <li class="mb-3 text-muted"><i class="far fa-times-circle text-danger me-2"></i>وبلاگ شخصی</li>
-                            <li class="mb-3 text-muted"><i class="far fa-times-circle text-danger me-2"></i>نمونه کارها</li>
-                            <li class="mb-3 text-muted"><i class="far fa-times-circle text-danger me-2"></i>پشتیبانی ۶ ماهه</li>
+                    <div class="price-features">
+                        <ul>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>طراحی قالب اختصاصی (۳ صفحه)</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>طراحی واکنشگرا</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>بخش معرفی</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>صفحه تماس با من</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>بهینه‌سازی SEO پایه</span>
+                            </li>
+                            <li class="inactive">
+                                <i class="fas fa-times-circle"></i>
+                                <span>وبلاگ شخصی</span>
+                            </li>
+                            <li class="inactive">
+                                <i class="fas fa-times-circle"></i>
+                                <span>نمونه کارها</span>
+                            </li>
+                            <li class="inactive">
+                                <i class="fas fa-times-circle"></i>
+                                <span>پشتیبانی ۶ ماهه</span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="card-footer bg-transparent border-0 text-center py-4">
-                        <a href="#contact-section" class="btn btn-outline-danger rounded-pill">سفارش</a>
+                    <div class="price-footer">
+                        <a href="#contact-section" class="btn-order">سفارش</a>
                     </div>
                 </div>
             </div>
-            
-            <!-- Package 2 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card price-card h-100 border-0 shadow-hover position-relative">
-                    <div class="popular-badge position-absolute top-0 start-50 translate-middle bg-warning px-3 py-1 rounded-pill">
-                        <span class="fw-bold">محبوب</span>
-                    </div>
-                    <div class="card-header text-center bg-transparent pt-4 border-0">
-                        <h3 class="mb-0 text-primary">استاندارد</h3>
-                        <div class="price-value mt-3">
-                            <h4 class="mb-0 display-6 fw-bold">۲,۹۰۰,۰۰۰ <small class="fs-6 fw-light">تومان</small></h4>
+
+            <!-- پکیج استاندارد -->
+            <div class="col-lg-4">
+                <div class="price-card standard popular">
+                    <div class="popular-badge">محبوب‌ترین</div>
+                    <div class="price-header">
+                        <div class="price-badge">استاندارد</div>
+                        <div class="price-amount">
+                            <span class="amount">۲,۹۰۰,۰۰۰</span>
+                            <span class="currency">تومان</span>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled mt-3">
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>طراحی قالب اختصاصی (۵ صفحه)</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>طراحی واکنشگرا</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>بخش معرفی پیشرفته</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>صفحه تماس با من</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>بهینه‌سازی SEO پیشرفته</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>وبلاگ شخصی</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>نمونه کارها</li>
-                            <li class="mb-3 text-muted"><i class="far fa-times-circle text-danger me-2"></i>پشتیبانی ۶ ماهه</li>
+                    <div class="price-features">
+                        <ul>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>طراحی قالب اختصاصی (۵ صفحه)</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>طراحی واکنشگرا</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>بخش معرفی پیشرفته</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>صفحه تماس با من</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>بهینه‌سازی SEO پیشرفته</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>وبلاگ شخصی</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>نمونه کارها</span>
+                            </li>
+                            <li class="inactive">
+                                <i class="fas fa-times-circle"></i>
+                                <span>پشتیبانی ۶ ماهه</span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="card-footer bg-transparent border-0 text-center py-4">
-                        <a href="#contact-section" class="btn btn-primary rounded-pill">سفارش</a>
+                    <div class="price-footer">
+                        <a href="#contact-section" class="btn-order popular">سفارش</a>
                     </div>
                 </div>
             </div>
-            
-            <!-- Package 3 -->
-            <div class="col-lg-4 col-md-6 mx-auto">
-                <div class="card price-card h-100 border-0 shadow-hover">
-                    <div class="card-header text-center bg-transparent pt-4 border-0">
-                        <h3 class="mb-0 text-success">حرفه‌ای</h3>
-                        <div class="price-value mt-3">
-                            <h4 class="mb-0 display-6 fw-bold">۳,۹۰۰,۰۰۰ <small class="fs-6 fw-light">تومان</small></h4>
+
+            <!-- پکیج حرفه‌ای -->
+            <div class="col-lg-4">
+                <div class="price-card premium">
+                    <div class="price-header">
+                        <div class="price-badge">حرفه‌ای</div>
+                        <div class="price-amount">
+                            <span class="amount">۳,۹۰۰,۰۰۰</span>
+                            <span class="currency">تومان</span>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled mt-3">
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>طراحی قالب اختصاصی (نامحدود)</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>طراحی واکنشگرا</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>بخش معرفی پیشرفته</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>صفحه تماس با من</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>بهینه‌سازی SEO حرفه‌ای</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>وبلاگ پیشرفته</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>گالری نمونه کارها</li>
-                            <li class="mb-3"><i class="far fa-check-circle text-success me-2"></i>پشتیبانی ۶ ماهه</li>
+                    <div class="price-features">
+                        <ul>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>طراحی قالب اختصاصی (نامحدود)</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>طراحی واکنشگرا</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>بخش معرفی پیشرفته</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>صفحه تماس با من</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>بهینه‌سازی SEO حرفه‌ای</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>وبلاگ پیشرفته</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>گالری نمونه کارها</span>
+                            </li>
+                            <li class="active">
+                                <i class="fas fa-check-circle"></i>
+                                <span>پشتیبانی ۶ ماهه</span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="card-footer bg-transparent border-0 text-center py-4">
-                        <a href="#contact-section" class="btn btn-outline-success rounded-pill">سفارش</a>
+                    <div class="price-footer">
+                        <a href="#contact-section" class="btn-order premium">سفارش</a>
                     </div>
                 </div>
             </div>
@@ -170,60 +260,71 @@
 <!-- Packages Section END -->
 
 <!-- Portfolio Section START -->
-<section class="py-5" id="portfolio-section">
+<section class="py-5 bg-light">
     <div class="container">
         <div class="row mb-4">
             <div class="col-12 text-center">
-                <h2 class="fw-bold">نمونه کارهای اخیر</h2>
-                <p class="lead">برخی از وبسایت‌های شخصی طراحی شده توسط ما</p>
+                <div class="portfolio-header">
+                    <h2 class="portfolio-title">نمونه کارهای اخیر</h2>
+                    <p class="portfolio-subtitle">برخی از وبسایت‌های شخصی طراحی شده توسط ما</p>
+                </div>
             </div>
         </div>
 
         <div class="row g-4">
-            <!-- Portfolio item 1 -->
+            <!-- نمونه کار 1 -->
             <div class="col-lg-4 col-md-6">
-                <div class="card portfolio-card border-0 rounded-4 shadow-hover h-100">
-                    <div class="portfolio-img-wrapper rounded-top overflow-hidden">
-                        <img src="{% static 'images/portfolio/portfolio-1.jpg' %}" class="card-img-top portfolio-img" alt="نمونه کار شخصی">
-                        <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                            <a href="#" class="btn btn-sm btn-primary rounded-pill"><i class="fas fa-link me-2"></i>مشاهده</a>
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="{% static 'images/portfolio/portfolio-1.jpg' %}" alt="نمونه کار شخصی">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-link"></i>
+                                <span>مشاهده</span>
+                            </a>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">وبسایت شخصی مشاور</h5>
-                        <p class="card-text">طراحی وبسایت شخصی برای یک مشاور کسب و کار با قابلیت رزرو آنلاین</p>
+                    <div class="portfolio-content">
+                        <h5>وبسایت شخصی مشاور</h5>
+                        <p>طراحی وبسایت شخصی برای یک مشاور کسب و کار با قابلیت رزرو آنلاین</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Portfolio item 2 -->
+            <!-- نمونه کار 2 -->
             <div class="col-lg-4 col-md-6">
-                <div class="card portfolio-card border-0 rounded-4 shadow-hover h-100">
-                    <div class="portfolio-img-wrapper rounded-top overflow-hidden">
-                        <img src="{% static 'images/portfolio/portfolio-2.jpg' %}" class="card-img-top portfolio-img" alt="نمونه کار شخصی">
-                        <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                            <a href="#" class="btn btn-sm btn-primary rounded-pill"><i class="fas fa-link me-2"></i>مشاهده</a>
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="{% static 'images/portfolio/portfolio-2.jpg' %}" alt="نمونه کار شخصی">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-link"></i>
+                                <span>مشاهده</span>
+                            </a>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">وبسایت شخصی هنرمند</h5>
-                        <p class="card-text">طراحی وبسایت شخصی برای یک هنرمند با گالری آثار و فروشگاه آنلاین</p>
+                    <div class="portfolio-content">
+                        <h5>وبسایت شخصی هنرمند</h5>
+                        <p>طراحی وبسایت شخصی برای یک هنرمند با گالری آثار و فروشگاه آنلاین</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Portfolio item 3 -->
+            <!-- نمونه کار 3 -->
             <div class="col-lg-4 col-md-6">
-                <div class="card portfolio-card border-0 rounded-4 shadow-hover h-100">
-                    <div class="portfolio-img-wrapper rounded-top overflow-hidden">
-                        <img src="{% static 'images/portfolio/portfolio-3.jpg' %}" class="card-img-top portfolio-img" alt="نمونه کار شخصی">
-                        <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                            <a href="#" class="btn btn-sm btn-primary rounded-pill"><i class="fas fa-link me-2"></i>مشاهده</a>
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="{% static 'images/portfolio/portfolio-3.jpg' %}" alt="نمونه کار شخصی">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-link"></i>
+                                <span>مشاهده</span>
+                            </a>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">وبسایت شخصی برنامه‌نویس</h5>
-                        <p class="card-text">طراحی وبسایت شخصی برای یک برنامه‌نویس با نمایش نمونه کارها و مهارت‌ها</p>
+                    <div class="portfolio-content">
+                        <h5>وبسایت شخصی برنامه‌نویس</h5>
+                        <p>طراحی وبسایت شخصی برای یک برنامه‌نویس با نمایش نمونه کارها و مهارت‌ها</p>
                     </div>
                 </div>
             </div>
@@ -232,323 +333,661 @@
 </section>
 <!-- Portfolio Section END -->
 
-<!-- Why Choose Us Section START -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <div class="row mb-4">
-            <div class="col-12 text-center">
-                <h2 class="fw-bold">چرا ما را انتخاب کنید؟</h2>
-                <p class="lead">مزایای استفاده از خدمات طراحی وبسایت شخصی ما</p>
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <!-- Feature 1 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="feature-box text-center p-4 rounded-4 h-100 shadow-sm">
-                    <div class="feature-icon-wrap mb-3">
-                        <i class="fas fa-code fa-3x text-primary"></i>
-                    </div>
-                    <h5 class="feature-title">کدنویسی تمیز</h5>
-                    <p class="feature-text mb-0">کدهای بهینه و استاندارد برای بهترین عملکرد و سازگاری</p>
-                </div>
-            </div>
-
-            <!-- Feature 2 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="feature-box text-center p-4 rounded-4 h-100 shadow-sm">
-                    <div class="feature-icon-wrap mb-3">
-                        <i class="fas fa-tachometer-alt fa-3x text-warning"></i>
-                    </div>
-                    <h5 class="feature-title">سرعت بارگذاری</h5>
-                    <p class="feature-text mb-0">بهینه‌سازی سرعت برای تجربه کاربری عالی و رتبه بهتر در گوگل</p>
-                </div>
-            </div>
-
-            <!-- Feature 3 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="feature-box text-center p-4 rounded-4 h-100 shadow-sm">
-                    <div class="feature-icon-wrap mb-3">
-                        <i class="fas fa-cog fa-3x text-success"></i>
-                    </div>
-                    <h5 class="feature-title">پنل مدیریت ساده</h5>
-                    <p class="feature-text mb-0">مدیریت آسان محتوا بدون نیاز به دانش فنی</p>
-                </div>
-            </div>
-
-            <!-- Feature 4 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="feature-box text-center p-4 rounded-4 h-100 shadow-sm">
-                    <div class="feature-icon-wrap mb-3">
-                        <i class="fas fa-headset fa-3x text-danger"></i>
-                    </div>
-                    <h5 class="feature-title">پشتیبانی مداوم</h5>
-                    <p class="feature-text mb-0">پشتیبانی سریع و حرفه‌ای حتی پس از تحویل پروژه</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Why Choose Us Section END -->
-
-<!-- Contact Section START -->
+<!-- Contact Form Section START -->
 <section class="py-5" id="contact-section">
     <div class="container">
         <div class="row mb-4">
             <div class="col-12 text-center">
-                <h2 class="fw-bold">درخواست مشاوره رایگان</h2>
-                <p class="lead">با ما در تماس باشید تا درمورد پروژه شما صحبت کنیم</p>
+                <div class="contact-header">
+                    <span class="contact-badge">تماس با ما</span>
+                    <h2 class="contact-title">درخواست مشاوره رایگان</h2>
+                    <p class="contact-subtitle">با ما در تماس باشید تا درمورد پروژه شما صحبت کنیم</p>
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-4 p-md-5">
-                        <form>
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="floatingName" placeholder="نام و نام خانوادگی">
-                                        <label for="floatingName">نام و نام خانوادگی</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="floatingEmail" placeholder="ایمیل">
-                                        <label for="floatingEmail">ایمیل</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="tel" class="form-control" id="floatingPhone" placeholder="شماره تماس">
-                                        <label for="floatingPhone">شماره تماس</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="floatingSelect">
-                                            <option selected>انتخاب کنید</option>
-                                            <option value="basic">پایه</option>
-                                            <option value="standard">استاندارد</option>
-                                            <option value="pro">حرفه‌ای</option>
-                                        </select>
-                                        <label for="floatingSelect">بسته موردنظر</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" id="floatingMessage" placeholder="پیام شما" style="height: 150px"></textarea>
-                                        <label for="floatingMessage">پیام شما</label>
-                                    </div>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-primary rounded-pill px-5 py-3">ارسال درخواست</button>
+                <div class="contact-form-card">
+                    <form>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="form-floating custom-form-group">
+                                    <input type="text" class="form-control" id="name" placeholder="نام و نام خانوادگی">
+                                    <label for="name">نام و نام خانوادگی</label>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                            <div class="col-md-6">
+                                <div class="form-floating custom-form-group">
+                                    <input type="email" class="form-control" id="email" placeholder="ایمیل">
+                                    <label for="email">ایمیل</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating custom-form-group">
+                                    <input type="tel" class="form-control" id="phone" placeholder="شماره تماس">
+                                    <label for="phone">شماره تماس</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating custom-form-group">
+                                    <select class="form-select" id="package">
+                                        <option selected disabled value="">انتخاب کنید</option>
+                                        <option value="basic">پایه</option>
+                                        <option value="standard">استاندارد</option>
+                                        <option value="pro">حرفه‌ای</option>
+                                    </select>
+                                    <label for="package">بسته موردنظر</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating custom-form-group">
+                                    <textarea class="form-control" id="message" placeholder="پیام شما" style="height: 150px"></textarea>
+                                    <label for="message">پیام شما</label>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn-submit">
+                                    <span>ارسال درخواست</span>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Contact Section END -->
+<!-- Contact Form Section END -->
 
-<!-- Custom CSS for dark/light mode support -->
 <style>
-    /* تنظیمات کلی */
-    :root {
-        --service-icon-bg-light: rgba(78, 115, 223, 0.1);
-        --service-icon-bg-dark: rgba(78, 115, 223, 0.2);
-        --card-shadow-light: 0 5px 15px rgba(0,0,0,0.05);
-        --card-shadow-dark: 0 5px 15px rgba(0,0,0,0.3);
-    }
-    
-    /* Service Cards */
-    .service-card {
-        transition: all 0.3s ease;
-        border-radius: 15px;
-        overflow: hidden;
-    }
-    
-    html:not([data-bs-theme="dark"]) .service-card {
-        background: var(--card-bg-light);
-        box-shadow: var(--card-shadow-light);
-    }
-    
-    html[data-bs-theme="dark"] .service-card {
-        background: var(--card-bg-dark);
-        box-shadow: var(--card-shadow-dark);
-    }
-    
-    .service-card:hover {
-        transform: translateY(-5px);
-    }
-    
-    .service-icon-wrap {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-        transition: all 0.3s ease;
-    }
-    
-    html:not([data-bs-theme="dark"]) .service-icon-wrap {
-        background-color: var(--service-icon-bg-light);
-    }
-    
-    html[data-bs-theme="dark"]) .service-icon-wrap {
-        background-color: var(--service-icon-bg-dark);
-    }
-    
-    /* Price Cards */
-    .price-card {
-        transition: all 0.3s ease;
-        border-radius: 15px;
-        overflow: hidden;
-    }
-    
-    html:not([data-bs-theme="dark"]) .price-card {
-        background: var(--card-bg-light);
-    }
-    
-    html[data-bs-theme="dark"]) .price-card {
-        background: var(--card-bg-dark);
-    }
-    
-    .shadow-hover:hover {
-        transform: translateY(-10px);
-    }
-    
-    html:not([data-bs-theme="dark"]) .shadow-hover:hover {
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-    
-    html[data-bs-theme="dark"]) .shadow-hover:hover {
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-    
-    /* Portfolio */
-    .portfolio-card {
-        transition: all 0.3s ease;
-    }
-    
-    .portfolio-img-wrapper {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .portfolio-img {
-        transition: all 0.5s ease;
-    }
-    
-    .portfolio-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.7);
-        opacity: 0;
-        transition: all 0.3s ease;
-    }
-    
-    .portfolio-card:hover .portfolio-overlay {
-        opacity: 1;
-    }
-    
-    .portfolio-card:hover .portfolio-img {
-        transform: scale(1.1);
-    }
-    
-    /* Feature Box */
-    .feature-box {
-        transition: all 0.3s ease;
-    }
-    
-    html:not([data-bs-theme="dark"]) .feature-box {
-        background-color: white;
-    }
-    
-    html[data-bs-theme="dark"]) .feature-box {
-        background-color: #2c3e50;
-    }
-    
-    .feature-box:hover {
-        transform: translateY(-5px);
-    }
-    
-    html:not([data-bs-theme="dark"]) .feature-box:hover {
-        box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
-    }
-    
-    html[data-bs-theme="dark"]) .feature-box:hover {
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
-    }
-    
-    .feature-icon-wrap {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-        transition: all 0.3s ease;
-    }
-    
-    html:not([data-bs-theme="dark"]) .feature-icon-wrap {
-        background-color: var(--service-icon-bg-light);
-    }
-    
-    html[data-bs-theme="dark"]) .feature-icon-wrap {
-        background-color: var(--service-icon-bg-dark);
-    }
-    
-    /* Form Styling */
-    .form-control, .form-select {
-        transition: all 0.3s ease;
-    }
-    
-    .form-control:focus, .form-select:focus {
-        box-shadow: 0 0 0 0.25rem rgba(78, 115, 223, 0.25);
-    }
+/* استایل‌های عمومی */
+:root {
+    --primary-gradient: linear-gradient(45deg, var(--bs-primary), var(--bs-info));
+    --secondary-gradient: linear-gradient(45deg, var(--bs-warning), var(--bs-danger));
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --hover-transform: translateY(-5px);
+}
+
+/* استایل‌های بخش بنر اصلی */
+.title-container {
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.heading-primary {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, var(--bs-primary), var(--bs-info));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+}
+
+.heading-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.divider-line {
+    height: 2px;
+    width: 100px;
+    background: linear-gradient(45deg, var(--bs-primary), var(--bs-info));
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.divider-icon {
+    font-size: 1.5rem;
+    color: var(--bs-primary);
+    animation: rotate 3s linear infinite;
+}
+
+.heading-secondary {
+    font-size: 1.2rem;
+    color: var(--bs-gray-600);
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-out;
+}
+
+/* استایل‌های بخش ویژگی‌ها */
+.feature-card {
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    background: var(--bs-white);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--bs-primary), var(--bs-info));
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(var(--bs-primary-rgb), 0.15);
+}
+
+.feature-card:hover::before {
+    opacity: 0.05;
+}
+
+.feature-icon-wrap {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--bs-primary), var(--bs-info));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+
+.feature-icon::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 23px;
+    background: linear-gradient(135deg, var(--bs-primary), var(--bs-info));
+    opacity: 0.3;
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+.feature-card:hover .feature-icon::before {
+    transform: scale(1.2);
+    opacity: 0.1;
+}
+
+.feature-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--bs-gray-800);
+    transition: all 0.3s ease;
+}
+
+.feature-text {
+    color: var(--bs-gray-600);
+    text-align: center;
+    margin-bottom: 0;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-title {
+    color: var(--bs-primary);
+}
+
+/* Decorative Elements */
+.decoration-dots {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-image: radial-gradient(var(--bs-primary) 2px, transparent 2px);
+    background-size: 15px 15px;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.decoration-dots-1 {
+    top: 10%;
+    left: -50px;
+}
+
+.decoration-dots-2 {
+    bottom: 10%;
+    right: -50px;
+}
+
+/* استایل‌های بخش پکیج‌ها */
+.package-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.package-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(45deg, var(--bs-primary), var(--bs-info));
+    color: white;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.package-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--bs-gray-800);
+}
+
+.package-subtitle {
+    color: var(--bs-gray-600);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.price-card {
+    padding: 2.5rem;
+    border-radius: 20px;
+    background: var(--bs-white);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(var(--bs-primary-rgb), 0.15);
+}
+
+.price-card.popular {
+    border: 2px solid var(--bs-primary);
+}
+
+.popular-badge {
+    position: absolute;
+    top: 20px;
+    right: -60px;
+    background: var(--bs-primary);
+    color: white;
+    padding: 0.5rem 4rem;
+    transform: rotate(45deg);
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 2px 10px rgba(var(--bs-primary-rgb), 0.3);
+}
+
+.price-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(var(--bs-primary-rgb), 0.1);
+}
+
+.price-badge {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    background: linear-gradient(45deg, var(--bs-primary), var(--bs-info));
+    color: white;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.price-amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--bs-gray-800);
+}
+
+.currency {
+    font-size: 1rem;
+    color: var(--bs-gray-600);
+}
+
+.price-features {
+    margin-bottom: 2rem;
+}
+
+.price-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.price-features li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    color: var(--bs-gray-700);
+    transition: all 0.3s ease;
+}
+
+.price-features li.active i {
+    color: var(--bs-success);
+}
+
+.price-features li.inactive {
+    color: var(--bs-gray-500);
+}
+
+.price-features li.inactive i {
+    color: var(--bs-danger);
+}
+
+.price-footer {
+    text-align: center;
+}
+
+.btn-order {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-order::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--bs-primary), var(--bs-info));
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.btn-order:not(.popular):not(.premium) {
+    color: var(--bs-primary);
+    border: 2px solid var(--bs-primary);
+}
+
+.btn-order.popular {
+    background: linear-gradient(45deg, var(--bs-primary), var(--bs-info));
+    color: white;
+    box-shadow: 0 10px 20px rgba(var(--bs-primary-rgb), 0.3);
+}
+
+.btn-order.premium {
+    color: var(--bs-success);
+    border: 2px solid var(--bs-success);
+}
+
+.btn-order:hover {
+    transform: translateY(-3px);
+}
+
+.btn-order:not(.popular):not(.premium):hover {
+    color: white;
+}
+
+.btn-order:not(.popular):not(.premium):hover::before {
+    opacity: 1;
+}
+
+.btn-order.popular:hover {
+    box-shadow: 0 15px 30px rgba(var(--bs-primary-rgb), 0.4);
+}
+
+.btn-order.premium:hover {
+    color: white;
+    background: var(--bs-success);
+    box-shadow: 0 10px 20px rgba(var(--bs-success-rgb), 0.3);
+}
+
+/* Dark Mode Styles */
+[data-bs-theme="dark"] .package-title {
+    color: var(--bs-light);
+}
+
+[data-bs-theme="dark"] .package-subtitle {
+    color: var(--bs-gray-400);
+}
+
+[data-bs-theme="dark"] .price-card {
+    background: var(--bs-dark);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="dark"] .price-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .amount {
+    color: var(--bs-light);
+}
+
+[data-bs-theme="dark"] .currency {
+    color: var(--bs-gray-400);
+}
+
+[data-bs-theme="dark"] .price-features li {
+    color: var(--bs-gray-300);
+}
+
+[data-bs-theme="dark"] .price-features li.inactive {
+    color: var(--bs-gray-600);
+}
+
+[data-bs-theme="dark"] .btn-order:not(.popular):not(.premium) {
+    color: var(--bs-info);
+    border-color: var(--bs-info);
+}
+
+[data-bs-theme="dark"] .btn-order.premium {
+    color: var(--bs-success);
+    border-color: var(--bs-success);
+}
+
+/* انیمیشن‌ها */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scaleX(1); opacity: 0.5; }
+    50% { transform: scaleX(1.2); opacity: 1; }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* استایل‌های حالت تاریک */
+[data-bs-theme="dark"] .heading-primary {
+    background: linear-gradient(45deg, var(--bs-info), var(--bs-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+[data-bs-theme="dark"] .heading-secondary {
+    color: var(--bs-gray-400);
+}
+
+[data-bs-theme="dark"] .divider-icon {
+    color: var(--bs-info);
+}
+
+/* استایل‌های بخش فرم تماس */
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(45deg, var(--bs-primary), var(--bs-info));
+    color: white;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--bs-gray-800);
+}
+
+.contact-subtitle {
+    color: var(--bs-gray-600);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form-card {
+    padding: 3rem;
+    border-radius: 20px;
+    background: var(--bs-white);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+}
+
+.custom-form-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-control,
+.form-select {
+    height: calc(3.5rem + 2px);
+    padding: 1rem 1rem;
+    border-radius: 15px;
+    border: 2px solid rgba(var(--bs-primary-rgb), 0.1);
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.1);
+}
+
+textarea.form-control {
+    height: 150px;
+    resize: none;
+}
+
+.form-floating > label {
+    padding: 1rem;
+    color: var(--bs-gray-600);
+}
+
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(45deg, var(--bs-primary), var(--bs-info));
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(var(--bs-primary-rgb), 0.3);
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(var(--bs-primary-rgb), 0.4);
+}
+
+.btn-submit i {
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover i {
+    transform: translate(5px, -5px);
+}
+
+/* Dark Mode Styles */
+[data-bs-theme="dark"] .contact-title {
+    color: var(--bs-light);
+}
+
+[data-bs-theme="dark"] .contact-subtitle {
+    color: var(--bs-gray-400);
+}
+
+[data-bs-theme="dark"] .contact-form-card {
+    background: var(--bs-dark);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--bs-light);
+}
+
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+    border-color: var(--bs-info);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-info-rgb), 0.1);
+}
+
+[data-bs-theme="dark"] .form-floating > label {
+    color: var(--bs-gray-400);
+}
+
+[data-bs-theme="dark"] .form-control::placeholder {
+    color: var(--bs-gray-600);
+}
+
+[data-bs-theme="dark"] .form-select option {
+    background-color: var(--bs-dark);
+    color: var(--bs-light);
+}
 </style>
 
-
-<section class="py-5">
-    <div class="container">
-        <div class="row justify-content-center my-4">
-            <div class="col-12">
-                <!-- Slider START -->
-              
-                <!-- Slider END -->
-            </div>
-        </div>
-    </div>
-</section>
-
-</main>
-<!-- **************** MAIN CONTENT END **************** -->
-
-
-</main>
-<!-- =======================
-
-
-<!-- Back to top -->
-<div class="back-top"><i class="fas fa-arrow-up position-absolute top-50 start-50 translate-middle"></i></div>
-
-<!-- Font Awesome Script -->
-<script src="{% static 'vendor/font-awesome/js/all.min.js' %}"></script>
-<script src="{% static 'CACHE/js/output.8d126b85d939.js' %}"></script>
-</body>
-
-
-
-</html>
 {% endblock %}

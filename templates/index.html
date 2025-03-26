@@ -58,7 +58,7 @@
                 <circle cx="118.9" cy="107.3" r="5.4" />
                 <path d="m98.4 111.9c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6c0 2.6-2.1 4.6-4.6 4.6z" />
                 <path d="m77.9 111.2c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z" />
-                <path d="m57.3 110.4c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z" />
+                <path d="m57.3 110.4c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1c0 1.8-1.4 3.1-3.1 3.1z" />
                 <path d="m36.8 109.6c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z" />
                 <circle cx="16.3" cy="107.3" r="1.6" />
                 <circle cx="180.4" cy="130.3" r="7.7" />
@@ -316,6 +316,91 @@
         rotate: 0deg;
     }
 }
+
+/* تنظیمات واکنش‌گرا */
+@media (max-width: 991.98px) {
+    .post-card-image {
+        height: 220px;
+    }
+    
+    .post-section-title {
+        font-size: 1.8rem;
+    }
+    
+    .post-title {
+        font-size: 1.2rem;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .post-card-content {
+        padding: 1.5rem;
+    }
+    
+    .post-section-title {
+        font-size: 1.6rem;
+    }
+    
+    .title-separator {
+        margin: 0 0.4rem;
+    }
+    
+    .post-title {
+        font-size: 1.1rem;
+    }
+    
+    .post-side-image {
+        width: 100px;
+        min-width: 100px;
+    }
+    
+    .post-date-badge {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .post-date-day {
+        font-size: 1.2rem;
+    }
+    
+    .post-date-month {
+        font-size: 0.7rem;
+    }
+    
+    .post-card-main:hover {
+        transform: translateY(-8px);
+    }
+    
+    .post-card-side:hover {
+        transform: translateX(-5px);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .post-section-badge {
+        padding: 0.4rem 1.2rem;
+    }
+    
+    .post-section-title {
+        font-size: 1.4rem;
+    }
+    
+    .post-category-main {
+        padding: 0.3rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .view-all-posts-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
 </style>
                 </div>
                 <!-- Right content END -->
@@ -461,597 +546,785 @@
 
 
 <div class="container">
-    <!-- Title -->
+    <!-- عنوان بخش -->
     <div class="row mb-4">
         <div class="col-12">
-            <div class="blog-title-wrapper text-center">
-                <div class="blog-title-top">
-                    <i class="fas fa-feather-alt blog-icon"></i>
-                    <span class="blog-badge">مطالب وبلاگ</span>
-                </div>
-                <h2 class="blog-main-title">
-                    <span class="blog-title-text">آخـریـن</span>
-                    <span class="blog-title-text">پـسـت‌ها</span>
+            <div class="post-section-header text-center position-relative">
+              
+                <h2 class="post-section-title mb-4">
+                    <span class="title-part">  آخـرین پـست‌ها</span>
+                    
+                    
                 </h2>
-                <div class="blog-title-line">
-                    <span class="line-dot"></span>
-                    <span class="line-middle"></span>
-                    <span class="line-dot"></span>
+                <div class="post-section-line">
+                    <span></span>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- کارت‌های پست -->
     <div class="row g-4">
-        <!-- Main Blog Post -->
+        <!-- پست اصلی -->
         <div class="col-lg-6">
-            <article class="blog-card h-100">
-                <div class="blog-card-img">
-                    <img src="{% static 'images/blog/default-blog.jpg' %}" alt="blog post">
-                    <span class="blog-category bg-warning">جنگو</span>
-                </div>
-                <div class="blog-card-content">
-                    <h3 class="blog-title">
-                        <a href="#">پیاده سازی پروژه Django Channels</a>
-                    </h3>
-                    <p class="blog-excerpt">توی این ویدئو درباره نحوه پیاده سازی پروژه های ASGI در جنگو با استفاده از ماژول Channels صحبت خواهم کرد...</p>
-                    <div class="blog-meta">
-                        <div class="blog-date">
-                            <span class="day">19</span>
-                            <span class="month-year">مرداد 1403</span>
-                        </div>
+            <div class="post-card-main">
+                <div class="post-card-image">
+                    <img src="{% static 'images/blog/default-blog.jpg' %}" alt="پست جنگو" class="img-fluid">
+                    <div class="post-overlay"></div>
+                    <div class="post-category-main">
+                        <i class="fas fa-code me-1"></i>
+                        <span>جنگو</span>
+                    </div>
+                    <div class="post-date-badge">
+                        <span class="post-date-day">19</span>
+                        <span class="post-date-month">مرداد</span>
                     </div>
                 </div>
-            </article>
-        </div>
-
-        <!-- Side Blog Posts -->
-        <div class="col-lg-6">
-            <div class="row g-4">
-                <!-- Blog Item 1 -->
-                <div class="col-12">
-                    <article class="blog-card-mini">
-                        <div class="blog-card-mini-img">
-                            <img src="{% static 'images/blog/default-blog.jpg' %}" alt="blog post">
-                            <span class="blog-category bg-info">داکر</span>
+                <div class="post-card-content">
+                    <h3 class="post-title">
+                        <a href="#">پیاده سازی پروژه Django Channels</a>
+                    </h3>
+                    <p class="post-excerpt">توی این ویدئو درباره نحوه پیاده سازی پروژه های ASGI در جنگو با استفاده از ماژول Channels صحبت خواهم کرد...</p>
+                    <div class="post-meta">
+                        <div class="post-author">
+                            <i class="fas fa-user-circle"></i>
+                            <span>نویدیار</span>
                         </div>
-                        <div class="blog-card-mini-content">
-                            <h4 class="blog-title-mini">
-                                <a href="#">استفاده از محیط docker-compose در مدیریت پروژه</a>
-                            </h4>
-                            <div class="blog-meta-mini">
-                                <span class="date">22 بهمن 1402</span>
-                            </div>
+                        <div class="post-views">
+                            <i class="fas fa-eye"></i>
+                            <span>234 بازدید</span>
                         </div>
-                    </article>
-                </div>
-
-                <!-- Blog Item 2 -->
-                <div class="col-12">
-                    <article class="blog-card-mini">
-                        <div class="blog-card-mini-img">
-                            <img src="{% static 'images/blog/default-blog.jpg' %}" alt="blog post">
-                            <span class="blog-category bg-success">لینوکس</span>
-                        </div>
-                        <div class="blog-card-mini-content">
-                            <h4 class="blog-title-mini">
-                                <a href="#">نحوه نصب و پیاده سازی Caprover</a>
-                            </h4>
-                            <div class="blog-meta-mini">
-                                <span class="date">29 بهمن 1402</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Blog Item 3 -->
-                <div class="col-12">
-                    <article class="blog-card-mini">
-                        <div class="blog-card-mini-img">
-                            <img src="{% static 'images/blog/default-blog.jpg' %}" alt="blog post">
-                            <span class="blog-category bg-warning">جنگو</span>
-                        </div>
-                        <div class="blog-card-mini-content">
-                            <h4 class="blog-title-mini">
-                                <a href="#">پیاده سازی پروژه django بر روی Caprover</a>
-                            </h4>
-                            <div class="blog-meta-mini">
-                                <span class="date">15 مرداد 1403</span>
-                            </div>
-                        </div>
-                    </article>
+                    </div>
+                    <a href="#" class="read-more-btn">ادامه مطلب <i class="fas fa-long-arrow-alt-left"></i></a>
                 </div>
             </div>
         </div>
-
-        <!-- View All Button -->
-        <div class="col-12 text-center mt-4">
-            <a href="/blog" class="btn btn-blog-view-all">
-                مشاهده تمام مقالات
-                <i class="fas fa-long-arrow-alt-left ms-2"></i>
+        
+        <!-- پست‌های کناری -->
+        <div class="col-lg-6">
+            <div class="row g-3">
+                <!-- پست کناری 1 -->
+                <div class="col-12">
+                    <div class="post-card-side h-100">
+                        <div class="post-side-image">
+                            <img src="{% static 'images/blog/default-blog.jpg' %}" alt="پست داکر">
+                            <div class="post-side-overlay"></div>
+                            <div class="post-side-category docker-category">
+                                <i class="fab fa-docker"></i>
+                                <span>داکر</span>
+                            </div>
+                        </div>
+                        <div class="post-side-content">
+                            <div class="post-side-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>22 بهمن 1402</span>
+                            </div>
+                            <h4 class="post-side-title">
+                                <a href="#">استفاده از محیط docker-compose در مدیریت پروژه</a>
+                            </h4>
+                            <a href="#" class="post-side-link">
+                                <span>مطالعه</span>
+                                <div class="arrow-icon">
+                                    <i class="fas fa-arrow-left"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- پست کناری 2 -->
+                <div class="col-12">
+                    <div class="post-card-side h-100">
+                        <div class="post-side-image">
+                            <img src="{% static 'images/blog/default-blog.jpg' %}" alt="پست لینوکس">
+                            <div class="post-side-overlay"></div>
+                            <div class="post-side-category linux-category">
+                                <i class="fab fa-linux"></i>
+                                <span>لینوکس</span>
+                            </div>
+                        </div>
+                        <div class="post-side-content">
+                            <div class="post-side-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>29 بهمن 1402</span>
+                            </div>
+                            <h4 class="post-side-title">
+                                <a href="#">نحوه نصب و پیاده سازی Caprover</a>
+                            </h4>
+                            <a href="#" class="post-side-link">
+                                <span>مطالعه</span>
+                                <div class="arrow-icon">
+                                    <i class="fas fa-arrow-left"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- پست کناری 3 -->
+                <div class="col-12">
+                    <div class="post-card-side h-100">
+                        <div class="post-side-image">
+                            <img src="{% static 'images/blog/default-blog.jpg' %}" alt="پست جنگو">
+                            <div class="post-side-overlay"></div>
+                            <div class="post-side-category django-category">
+                                <i class="fab fa-python"></i>
+                                <span>جنگو</span>
+                            </div>
+                        </div>
+                        <div class="post-side-content">
+                            <div class="post-side-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>15 مرداد 1403</span>
+                            </div>
+                            <h4 class="post-side-title">
+                                <a href="#">پیاده سازی پروژه django بر روی Caprover</a>
+                            </h4>
+                            <a href="#" class="post-side-link">
+                                <span>مطالعه</span>
+                                <div class="arrow-icon">
+                                    <i class="fas fa-arrow-left"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- دکمه مشاهده همه -->
+        <div class="col-12 text-center mt-5">
+            <a href="/blog" class="view-all-posts-btn">
+                <span>مشاهده تمام مقالات</span>
+                <i class="fas fa-long-arrow-alt-left"></i>
             </a>
         </div>
     </div>
 </div>
 
 <style>
-/* Blog Section Styles - Light & Dark Mode */
+/* استایل‌های بخش آخرین پست‌ها - سازگار با حالت روشن و تاریک */
 :root {
-    --blog-card-bg: #fff;
-    --blog-card-shadow: rgba(0,0,0,0.1);
-    --blog-title-color: var(--bs-primary);
-    --blog-text-color: var(--bs-dark);
-    --blog-meta-color: var(--bs-gray-600);
-    --blog-separator-color: var(--bs-primary);
-    --blog-card-border: transparent;
-    --blog-hover-shadow: rgba(0,0,0,0.15);
-    --blog-date-bg: #f8f9fa;
-    --blog-date-day-color: var(--bs-primary);
-    --blog-title-glow: rgba(13, 110, 253, 0.2);
-    --blog-title-border-color: var(--bs-primary);
+    --post-primary: var(--bs-primary);
+    --post-secondary: #6c757d;
+    --post-bg-light: #ffffff;
+    --post-bg-dark: #212529;
+    --post-text-light: #2c3e50;
+    --post-text-dark: #ecf0f1;
+    --post-shadow-light: rgba(0, 0, 0, 0.1);
+    --post-shadow-dark: rgba(0, 0, 0, 0.3);
+    --post-border-light: rgba(0, 0, 0, 0.1);
+    --post-border-dark: rgba(255, 255, 255, 0.1);
+    --post-overlay-light: rgba(0, 0, 0, 0.3);
+    --post-overlay-dark: rgba(0, 0, 0, 0.5);
+    --post-gradient-start: var(--bs-primary);
+    --post-gradient-end: var(--bs-info);
+    --post-badge-bg: linear-gradient(45deg, var(--post-gradient-start), var(--post-gradient-end));
+    --post-hover-shadow: 0 15px 35px rgba(var(--bs-primary-rgb), 0.2);
+    --post-hover-shadow-dark: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
-[data-bs-theme="dark"] {
-    --blog-card-bg: rgba(33, 37, 41, 0.95);
-    --blog-card-shadow: rgba(0,0,0,0.3);
-    --blog-title-color: var(--bs-primary-text-emphasis);
-    --blog-text-color: rgba(255, 255, 255, 0.85);
-    --blog-meta-color: rgba(255, 255, 255, 0.6);
-    --blog-separator-color: var(--bs-primary-bg-subtle);
-    --blog-card-border: var(--bs-border-color-translucent);
-    --blog-hover-shadow: rgba(255,255,255,0.1);
-    --blog-date-bg: rgba(33, 37, 41, 0.8);
-    --blog-date-day-color: var(--bs-primary-bg-subtle);
-    --blog-title-glow: rgba(102, 153, 255, 0.35);
-    --blog-title-border-color: var(--bs-primary-bg-subtle);
+/* انیمیشن‌ها */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
 
-/* Blog Section Title */
-.blog-section-header {
-    position: relative;
-    padding: 1rem 0;
-    margin-bottom: 1rem;
-}
-
-.blog-section-icon {
-    margin-bottom: 1rem;
-    animation: pulse 2s infinite;
-}
-
-.blog-section-icon i {
-    font-size: 2rem;
-    color: var(--blog-title-color);
-    transition: color 0.3s ease;
-}
-
-.blog-section-title {
-    color: var(--blog-title-color);
-    font-weight: 700;
-    position: relative;
-    display: inline-block;
-    transition: color 0.3s ease;
-    text-shadow: 0 0 15px var(--blog-title-glow);
-    letter-spacing: 1px;
-    background: linear-gradient(135deg, var(--blog-title-color) 0%, var(--bs-primary) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding: 0 1rem;
-}
-
-.blog-title-highlight {
-    position: relative;
-    display: inline-block;
-    animation: colorPulse 3s infinite alternate;
-}
-
-@keyframes colorPulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.8; }
-    100% { opacity: 1; }
-}
-
-.blog-title-highlight::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--bs-warning);
-    animation: widthPulse 3s infinite alternate;
-    border-radius: 2px;
-}
-
-@keyframes widthPulse {
-    0% { width: 0; left: 0; }
-    100% { width: 100%; left: 0; }
-}
-
-.title-separator {
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--blog-separator-color), transparent);
-    margin: 0 auto;
-    position: relative;
-    transition: background 0.3s ease;
-}
-
-.title-separator::before,
-.title-separator::after {
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: var(--blog-separator-color);
-    border-radius: 50%;
-    top: -2.5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.title-separator::before {
-    left: 20px;
-    animation: moveLeft 3s infinite alternate;
-}
-
-.title-separator::after {
-    right: 20px;
-    animation: moveRight 3s infinite alternate;
-}
-
-.title-separator-dot {
-    width: 10px;
-    height: 10px;
-    background: var(--blog-title-color);
-    border-radius: 50%;
-    position: absolute;
-    top: -3.5px;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 0 10px var(--blog-title-glow);
-    animation: pulse 2s infinite;
+@keyframes rotate {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.2); opacity: 0.8; }
-    100% { transform: scale(1); opacity: 1; }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* عنوان بخش */
+.post-section-header {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.post-section-badge-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.post-section-badge {
+    display: inline-flex;
+    align-items: center;
+    background: var(--post-badge-bg);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(var(--bs-primary-rgb), 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.post-section-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    z-index: 1;
+}
+
+.post-section-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(var(--bs-primary-rgb), 0.3);
+}
+
+.rotate-icon {
+    animation: rotate 10s linear infinite;
+    margin-left: 0.5rem;
+}
+
+.badge-text {
+    position: relative;
+    z-index: 2;
+    font-weight: 500;
+}
+
+.post-section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--post-text-light);
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] .post-section-title {
+    color: var(--post-text-dark);
+}
+
+.title-part {
+    display: inline-block;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.title-part:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.title-separator {
+    margin: 0 0.8rem;
+    display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+    vertical-align: middle;
+}
+
+.title-separator i {
+    font-size: 0.5rem;
+    color: var(--post-primary);
+}
+
+.post-section-line {
+    width: 80px;
+    height: 4px;
+    background: var(--post-badge-bg);
+    margin: 0 auto;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.post-section-line span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    animation: moveLeft 2s infinite alternate;
 }
 
 @keyframes moveLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-10px); }
+    0% { right: 0; }
+    100% { right: calc(100% - 30px); }
 }
 
-@keyframes moveRight {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(10px); }
-}
-
-/* Blog Cards */
-.blog-card {
-    background: var(--blog-card-bg);
+/* カード メイン */
+.post-card-main {
+    background: var(--post-bg-light);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px var(--blog-card-shadow);
-    transition: all 0.3s ease;
-    border: 1px solid var(--blog-card-border);
+    box-shadow: 0 10px 30px var(--post-shadow-light);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    height: 100%;
+    border: 1px solid var(--post-border-light);
 }
 
-.blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px var(--blog-hover-shadow);
+[data-bs-theme="dark"] .post-card-main {
+    background: var(--post-bg-dark);
+    box-shadow: 0 10px 30px var(--post-shadow-dark);
+    border-color: var(--post-border-dark);
 }
 
-.blog-card-img {
+.post-card-main:hover {
+    transform: translateY(-15px);
+    box-shadow: var(--post-hover-shadow);
+}
+
+[data-bs-theme="dark"] .post-card-main:hover {
+    box-shadow: var(--post-hover-shadow-dark);
+}
+
+.post-card-image {
     position: relative;
     height: 250px;
     overflow: hidden;
 }
 
-.blog-card-img img {
+.post-card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-.blog-card:hover .blog-card-img img {
-    transform: scale(1.05);
-}
-
-.blog-category {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    padding: 5px 15px;
-    border-radius: 20px;
-    color: white;
-    font-size: 0.85rem;
-    font-weight: 500;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 2;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.blog-card:hover .blog-category,
-.blog-card-mini:hover .blog-category {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.blog-card-content {
-    padding: 1.5rem;
-    transition: background-color 0.3s ease;
-    background: var(--blog-card-bg);
-}
-
-.blog-title {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    transition: color 0.3s ease;
-}
-
-.blog-title a {
-    color: var(--blog-text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.blog-title a:hover {
-    color: var(--bs-primary);
-}
-
-.blog-excerpt {
-    color: var(--blog-meta-color);
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    transition: color 0.3s ease;
-}
-
-.blog-meta {
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease;
-}
-
-.blog-date {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--blog-date-bg);
-    padding: 5px 10px;
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.blog-date .day {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--blog-date-day-color);
-    transition: color 0.3s ease;
-}
-
-.blog-date .month-year {
-    color: var(--blog-meta-color);
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-/* Mini Blog Cards */
-.blog-card-mini {
-    display: flex;
-    background: var(--blog-card-bg);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px var(--blog-card-shadow);
-    transition: all 0.3s ease;
-    border: 1px solid var(--blog-card-border);
-    position: relative;
-}
-
-.blog-card-mini:hover {
-    transform: translateX(-5px);
-    box-shadow: 0 5px 15px var(--blog-hover-shadow);
-}
-
-.blog-card-mini::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 5px;
-    height: 0;
-    background: linear-gradient(to top, var(--blog-separator-color), transparent);
-    transition: height 0.3s ease;
-    border-radius: 0 0 0 3px;
-}
-
-.blog-card-mini:hover::after {
-    height: 100%;
-}
-
-.blog-card-mini-img {
-    position: relative;
-    width: 120px;
-    min-width: 120px;
-    height: 120px;
-    overflow: hidden;
-}
-
-.blog-card-mini-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.blog-card-mini:hover .blog-card-mini-img img {
+.post-card-main:hover .post-card-image img {
     transform: scale(1.1);
 }
 
-.blog-card-mini-content {
-    padding: 1rem;
-    flex-grow: 1;
-    transition: background-color 0.3s ease;
-    background: var(--blog-card-bg);
-    position: relative;
+.post-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7));
     z-index: 1;
 }
 
-.blog-card-mini-content::before {
-    content: '';
+.post-category-main {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(var(--bs-primary-rgb), 0.05));
-    transition: width 0.3s ease;
-    z-index: -1;
-}
-
-.blog-card-mini:hover .blog-card-mini-content::before {
-    width: 100%;
-}
-
-.blog-title-mini {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+    background-color: var(--bs-warning);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-}
-
-.blog-title-mini a {
-    color: var(--blog-text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    padding-bottom: 2px;
-    position: relative;
-}
-
-.blog-title-mini a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    right: 0;
-    background: var(--blog-separator-color);
-    transition: width 0.3s ease;
-}
-
-.blog-card-mini:hover .blog-title-mini a::after {
-    width: 100%;
-}
-
-.blog-title-mini a:hover {
-    color: var(--bs-primary);
-}
-
-.blog-meta-mini {
-    font-size: 0.85rem;
-    color: var(--blog-meta-color);
-    transition: color 0.3s ease;
     display: flex;
     align-items: center;
 }
 
-.blog-meta-mini .date {
-    display: inline-block;
+.post-card-main:hover .post-category-main {
+    transform: translateY(-5px);
+}
+
+.post-date-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+[data-bs-theme="dark"] .post-date-badge {
+    background-color: var(--post-bg-dark);
+    color: var(--post-text-dark);
+}
+
+.post-card-main:hover .post-date-badge {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.post-date-day {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--post-primary);
+}
+
+.post-date-month {
+    font-size: 0.8rem;
+    color: var(--post-secondary);
+    margin-top: 3px;
+}
+
+.post-card-content {
+    padding: 2rem;
     position: relative;
-    padding-right: 12px;
+}
+
+.post-title {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    position: relative;
+    padding-right: 15px;
+}
+
+.post-title::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0.2rem;
+    width: 5px;
+    height: 80%;
+    background: var(--post-gradient-start);
+    border-radius: 5px;
+}
+
+.post-title a {
+    color: var(--post-text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .post-title a {
+    color: var(--post-text-dark);
+}
+
+.post-title a:hover {
+    color: var(--post-primary);
+}
+
+.post-excerpt {
+    color: var(--post-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+[data-bs-theme="dark"] .post-excerpt {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.post-author, .post-views {
+    display: flex;
+    align-items: center;
+    color: var(--post-secondary);
+    font-size: 0.9rem;
+}
+
+[data-bs-theme="dark"] .post-author, 
+[data-bs-theme="dark"] .post-views {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.post-author i, .post-views i {
+    margin-left: 0.5rem;
+    color: var(--post-primary);
+}
+
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    color: var(--post-primary);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--post-primary);
+    transition: width 0.3s ease;
+}
+
+.read-more-btn i {
+    margin-right: 0.5rem;
     transition: transform 0.3s ease;
 }
 
-.blog-card-mini:hover .blog-meta-mini .date {
+.read-more-btn:hover {
+    color: var(--post-gradient-end);
+}
+
+.read-more-btn:hover::after {
+    width: 100%;
+}
+
+.read-more-btn:hover i {
     transform: translateX(-5px);
 }
 
-.blog-meta-mini .date::before {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--bs-primary);
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    box-shadow: 0 0 5px var(--blog-title-glow);
+/* کارت‌های کناری */
+.post-card-side {
+    display: flex;
+    background: var(--post-bg-light);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--post-shadow-light);
     transition: all 0.3s ease;
+    margin-bottom: 0;
+    position: relative;
+    border: 1px solid var(--post-border-light);
+    height: 100%;
 }
 
-.blog-card-mini:hover .blog-meta-mini .date::before {
-    width: 8px;
-    height: 8px;
+[data-bs-theme="dark"] .post-card-side {
+    background: var(--post-bg-dark);
+    box-shadow: 0 5px 15px var(--post-shadow-dark);
+    border-color: var(--post-border-dark);
 }
 
-.blog-category {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    padding: 5px 15px;
-    border-radius: 20px;
-    color: white;
-    font-size: 0.85rem;
-    font-weight: 500;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 2;
-    transition: all 0.3s ease;
+.post-card-side:hover {
+    transform: translateX(-10px);
+    box-shadow: var(--post-hover-shadow);
 }
 
-.blog-card:hover .blog-category,
-.blog-card-mini:hover .blog-category {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    letter-spacing: 0.5px;
+[data-bs-theme="dark"] .post-card-side:hover {
+    box-shadow: var(--post-hover-shadow-dark);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 991.98px) {
-    .blog-card-img {
-        height: 200px;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .blog-card-mini-img {
-        width: 100px;
-        min-width: 100px;
-        height: 100px;
-    }
-}
-
-/* View All Button */
-.btn-blog-view-all {
-    background: var(--blog-card-bg);
-    color: var(--blog-title-color);
-    border: 2px solid var(--blog-separator-color);
-    padding: 0.5rem 1.5rem;
-    border-radius: 30px;
-    font-weight: 500;
-    transition: all 0.3s ease;
+.post-side-image {
+    width: 120px;
+    min-width: 120px;
+    height: auto;
     position: relative;
     overflow: hidden;
-    z-index: 1;
-    box-shadow: 0 4px 15px var(--blog-card-shadow);
 }
 
-.btn-blog-view-all::before {
+.post-side-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.post-card-side:hover .post-side-image img {
+    transform: scale(1.1);
+}
+
+.post-side-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--post-overlay-light);
+    z-index: 1;
+}
+
+[data-bs-theme="dark"] .post-side-overlay {
+    background: var(--post-overlay-dark);
+}
+
+.post-side-category {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.docker-category {
+    background-color: #2496ED;
+}
+
+.linux-category {
+    background-color: #FCC624;
+    color: #222;
+}
+
+.django-category {
+    background-color: #092E20;
+}
+
+.post-side-category i {
+    margin-left: 0.3rem;
+}
+
+.post-card-side:hover .post-side-category {
+    transform: translateY(-5px);
+}
+
+.post-side-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.post-side-date {
+    color: var(--post-secondary);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+[data-bs-theme="dark"] .post-side-date {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.post-side-date i {
+    margin-left: 0.3rem;
+    color: var(--post-primary);
+}
+
+.post-side-title {
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+}
+
+.post-side-title a {
+    color: var(--post-text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+[data-bs-theme="dark"] .post-side-title a {
+    color: var(--post-text-dark);
+}
+
+.post-side-title a:hover {
+    color: var(--post-primary);
+}
+
+.post-side-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    color: var(--post-primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.post-side-link:hover {
+    background-color: var(--post-primary);
+    color: white;
+}
+
+.arrow-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.post-side-link:hover .arrow-icon {
+    transform: translateX(-3px);
+}
+
+/* دکمه مشاهده همه */
+.view-all-posts-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--post-badge-bg);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(var(--bs-primary-rgb), 0.3);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.view-all-posts-btn::before {
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     width: 0;
     height: 100%;
-    background: linear-gradient(90deg, var(--blog-separator-color), var(--bs-primary));
+    background: linear-gradient(45deg, var(--post-gradient-end), var(--post-gradient-start));
     transition: width 0.5s ease;
     z-index: -1;
 }
 
-.btn-blog-view-all:hover {
+.view-all-posts-btn span {
+    position: relative;
+    z-index: 2;
+    margin-left: 0.5rem;
+}
+
+.view-all-posts-btn i {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.view-all-posts-btn:hover {
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(var(--bs-primary-rgb), 0.5);
+}
+
+.view-all-posts-btn:hover::before {
+    width: 100%;
+}
+
+.view-all-posts-btn:hover i {
+    transform: translateX(-7px);
+}
+
+/* حذف کدهای اضافی و نادرست */
+/* .btn-blog-view-all:hover {
     color: #fff;
     border-color: transparent;
     transform: translateY(-3px);
@@ -1071,10 +1344,9 @@
     transform: translateX(-5px);
 }
 
-/* Dark mode specific adjustments */
 [data-bs-theme="dark"] .btn-blog-view-all:hover {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
+} */
 </style>
     </section>
 

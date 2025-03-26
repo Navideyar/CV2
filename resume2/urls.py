@@ -12,6 +12,9 @@ urlpatterns = [
     path('accounts/logout/', views.logout_view, name='logout'),
     path('accounts/signup/', views.signup_view, name='signup'),
     path('accounts/password_reset/', views.password_reset_view, name='password_reset'),
+    path('personal-website/', views.personal_website, name='personal_website'),
+    path('corporate-website/', views.corporate_website, name='corporate_website'),
+    path('ecommerce-website/', views.ecommerce_website, name='ecommerce_website'),
 
 ]
 

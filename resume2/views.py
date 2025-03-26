@@ -82,3 +82,14 @@ def signup_view(request):
 def password_reset_view(request):
     return render(request, 'accounts/password-reset.html')
 
+def personal_website(request):
+    return render(request, 'services/personal-website.html')
+
+def corporate_website(request):
+    return render(request, 'services/corporate-website.html')
+
+def ecommerce_website(request):
+    return render(request, 'services/ecommerce-website.html')
+
+
+

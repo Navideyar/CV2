@@ -2,8 +2,855 @@
 {% load static %} 
 {% block content %}
 
+<!-- بخش شهادت‌نامه -->
+<section class="testimonials-section py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <span class="badge rounded-pill bg-primary-subtle text-primary px-3 py-2 mb-3">تجربه مشتریان</span>
+                <h2 class="section-title position-relative mb-3">همه نظرات</h2>
+                <p class="section-subtitle">آنچه مشتریان درباره خدمات ما می‌گویند</p>
+            </div>
+        </div>
+        
+        <div class="row testimonials-slider">
+            <div class="col-12">
+                <div class="slider-container overflow-hidden position-relative">
+                    <div class="slider-track d-flex">
+                        <!-- نظر ۱ -->
+                        <div class="slider-item px-2">
+                            <div class="testimonial-card h-100">
+                                <div class="testimonial-content p-4 shadow-sm rounded h-100">
+                                    <div class="quote-icon">
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <div class="rating mb-3">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="testimonial-text">طراحی وب‌سایت ما توسط این تیم فوق‌العاده بود. آنها دقیقاً متوجه نیازهای ما شدند و وب‌سایتی ایجاد کردند که بیش از انتظار ما بود. پشتیبانی مداوم آن‌ها بسیار ارزشمند است.</p>
+                                    <div class="testimonial-info d-flex align-items-center mt-4">
+                                        <div class="testimonial-img me-3">
+                                            <img src="{% static 'images/avatar-placeholder.jpg' %}" alt="تصویر مشتری" class="rounded-circle">
+                                        </div>
+                                        <div class="testimonial-author">
+                                            <h5 class="mb-1">محمد احمدی</h5>
+                                            <p class="text-muted mb-0">مدیرعامل شرکت آینده نگر</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- نظر ۲ -->
+                        <div class="slider-item px-2">
+                            <div class="testimonial-card h-100">
+                                <div class="testimonial-content p-4 shadow-sm rounded h-100">
+                                    <div class="quote-icon">
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <div class="rating mb-3">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <p class="testimonial-text">پس از کار با چند شرکت طراحی وب، باید بگویم این تیم بهترین تجربه را برای ما رقم زد. سرعت، کیفیت و خلاقیت آن‌ها در طراحی وب‌سایت ما بی‌نظیر بود. مطمئناً برای پروژه‌های آینده نیز با آن‌ها همکاری خواهیم کرد.</p>
+                                    <div class="testimonial-info d-flex align-items-center mt-4">
+                                        <div class="testimonial-img me-3">
+                                            <img src="{% static 'images/avatar-placeholder.jpg' %}" alt="تصویر مشتری" class="rounded-circle">
+                                        </div>
+                                        <div class="testimonial-author">
+                                            <h5 class="mb-1">سارا محمدی</h5>
+                                            <p class="text-muted mb-0">مدیر بازاریابی گروه پارسیان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- نظر ۳ -->
+                        <div class="slider-item px-2">
+                            <div class="testimonial-card h-100">
+                                <div class="testimonial-content p-4 shadow-sm rounded h-100">
+                                    <div class="quote-icon">
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <div class="rating mb-3">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="testimonial-text">ما به دنبال طراحی وب‌سایتی بودیم که بتواند هویت برند ما را به خوبی نمایش دهد. این تیم با درک عمیق از نیازهای ما و بازار هدف، وب‌سایتی طراحی کرد که باعث افزایش چشمگیر ترافیک و فروش ما شده است.</p>
+                                    <div class="testimonial-info d-flex align-items-center mt-4">
+                                        <div class="testimonial-img me-3">
+                                            <img src="{% static 'images/avatar-placeholder.jpg' %}" alt="تصویر مشتری" class="rounded-circle">
+                                        </div>
+                                        <div class="testimonial-author">
+                                            <h5 class="mb-1">علی کریمی</h5>
+                                            <p class="text-muted mb-0">بنیانگذار استارتاپ تک‌نوین</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- دکمه‌های کنترل اسلایدر -->
+                    <div class="slider-controls mt-4 text-center">
+                        <button class="btn btn-sm btn-outline-primary mx-2 slider-prev">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary mx-2 slider-next">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- بخش دوم نظرات -->
+        <div class="row mt-5">
+            <div class="col-12 text-center mb-4">
+                <span class="badge rounded-pill bg-success-subtle text-success px-3 py-2 mb-2">بازخوردهای برتر</span>
+                <h3 class="mb-0">نظرات منتخب</h3>
+            </div>
+            
+            <!-- نظر ۴ -->
+            <div class="col-md-6 mb-4">
+                <div class="testimonial-card-alt d-flex">
+                    <div class="testimonial-img-large me-4">
+                        <img src="{% static 'images/avatar-placeholder.jpg' %}" alt="تصویر مشتری" class="rounded">
+                        <div class="rating mt-2 text-center">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-content-alt p-4 shadow-sm rounded flex-grow-1">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="testimonial-author mb-3">
+                            <h5 class="mb-1">نرگس حسینی</h5>
+                            <p class="text-muted mb-0">مدیر روابط عمومی شرکت سازه‌های نوین</p>
+                        </div>
+                        <p class="testimonial-text">همکاری با این تیم یک تجربه فوق‌العاده بود. آن‌ها نه تنها در طراحی وب‌سایت بلکه در بهینه‌سازی SEO و تجربه کاربری نیز عملکرد بسیار خوبی داشتند. اکنون وب‌سایت ما در صفحه اول نتایج جستجو قرار دارد و بازدید روزانه ما به طور قابل توجهی افزایش یافته است.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- نظر ۵ -->
+            <div class="col-md-6 mb-4">
+                <div class="testimonial-card-alt d-flex">
+                    <div class="testimonial-img-large me-4">
+                        <img src="{% static 'images/avatar-placeholder.jpg' %}" alt="تصویر مشتری" class="rounded">
+                        <div class="rating mt-2 text-center">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-content-alt p-4 shadow-sm rounded flex-grow-1">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="testimonial-author mb-3">
+                            <h5 class="mb-1">حسین رضایی</h5>
+                            <p class="text-muted mb-0">صاحب فروشگاه آنلاین دیجی‌کالا</p>
+                        </div>
+                        <p class="testimonial-text">پس از راه‌اندازی وب‌سایت جدید ما توسط این تیم، نرخ تبدیل ما ۴۰٪ افزایش یافت! طراحی واکنش‌گرا و سرعت بارگذاری سریع وب‌سایت تجربه کاربری فوق‌العاده‌ای را برای مشتریان ما فراهم کرده است. همچنین، پشتیبانی مداوم تیم در حل مشکلات و بروزرسانی‌ها بسیار ارزشمند بوده است.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- بخش ارسال نظر جدید -->
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="leave-testimonial p-4 shadow-sm rounded">
+                    <div class="text-center mb-4">
+                        <span class="badge rounded-pill bg-primary-subtle text-primary px-3 py-2 mb-2">تجربه خود را به اشتراک بگذارید</span>
+                        <h4 class="mb-2">نظر خود را با ما در میان بگذارید</h4>
+                        <p class="text-muted">تجربه همکاری با ما چگونه بود؟ نظرات شما به ما کمک می‌کند تا خدمات خود را بهبود دهیم.</p>
+                    </div>
+                    <form class="testimonial-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">نام و نام خانوادگی</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white"><i class="fas fa-user text-primary"></i></span>
+                                    <input type="text" class="form-control" placeholder="نام و نام خانوادگی" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">ایمیل</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white"><i class="fas fa-envelope text-primary"></i></span>
+                                    <input type="email" class="form-control" placeholder="ایمیل" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">سمت یا شرکت</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white"><i class="fas fa-building text-primary"></i></span>
+                                    <input type="text" class="form-control" placeholder="سمت یا شرکت">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">امتیاز شما</label>
+                                <div class="rating-select d-flex align-items-center bg-white rounded p-2 border">
+                                    <span class="me-2">امتیاز:</span>
+                                    <div class="star-rating ms-2">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label class="form-label">نظر شما</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white"><i class="fas fa-comment-alt text-primary"></i></span>
+                                    <textarea class="form-control" rows="4" placeholder="نظر خود را بنویسید..." required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label class="form-label">تصویر شما (اختیاری)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white"><i class="fas fa-image text-primary"></i></span>
+                                    <input type="file" class="form-control" id="testimonialImage">
+                                </div>
+                                <div class="form-text text-muted">تصویر شما در کنار نظرتان نمایش داده خواهد شد</div>
+                            </div>
+                            <div class="col-12 text-center mt-2">
+                                <button type="submit" class="btn btn-primary px-4 py-2">
+                                    <i class="fas fa-paper-plane me-2"></i>
+                                    ارسال نظر
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- بخش نمایش آمار و ارقام -->
+<section class="stats-section py-5 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 col-6 mb-4 mb-md-0">
+                <div class="stats-item">
+                    <div class="stats-icon mb-3">
+                        <i class="fas fa-users fa-2x"></i>
+                    </div>
+                    <h3 class="counter">۱۵۰۰</h3>
+                    <p class="mb-0">مشتری راضی</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4 mb-md-0">
+                <div class="stats-item">
+                    <div class="stats-icon mb-3">
+                        <i class="fas fa-project-diagram fa-2x"></i>
+                    </div>
+                    <h3 class="counter">۸۵۰</h3>
+                    <p class="mb-0">پروژه موفق</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stats-item">
+                    <div class="stats-icon mb-3">
+                        <i class="fas fa-award fa-2x"></i>
+                    </div>
+                    <h3 class="counter">۴۵</h3>
+                    <p class="mb-0">جوایز دریافتی</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stats-item">
+                    <div class="stats-icon mb-3">
+                        <i class="fas fa-clock fa-2x"></i>
+                    </div>
+                    <h3 class="counter">۱۲</h3>
+                    <p class="mb-0">سال تجربه</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- استایل‌های اختصاصی -->
+<style>
+    .testimonials-section {
+        font-family: 'Vazir', 'Tahoma', sans-serif;
+        direction: rtl;
+        text-align: right;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .testimonials-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('{% static "images/pattern.png" %}') repeat;
+        opacity: 0.05;
+        z-index: 0;
+    }
+    
+    .section-title {
+        font-weight: 700;
+        color: #2c3e50;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(90deg, #4e73df, #36b9cc);
+    }
+    
+    .section-subtitle {
+        color: #7f8c8d;
+        font-size: 1.1rem;
+        font-weight: 300;
+        margin-top: 1rem;
+    }
+    
+    .title-line {
+        display: none; /* Removed since we added ::after to section-title */
+    }
+    
+    .testimonial-card, .testimonial-card-alt, .leave-testimonial {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        background-color: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border: 1px solid rgba(0,0,0,0.02);
+        margin-bottom: 2rem;
+    }
+    
+    .testimonial-card:hover, .testimonial-card-alt:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+        border-color: rgba(78, 115, 223, 0.1);
+    }
+    
+    .testimonial-content, .testimonial-content-alt {
+        background-color: #fff;
+        border-radius: 15px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .testimonial-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, rgba(78, 115, 223, 0.1) 0%, rgba(78, 115, 223, 0) 70%);
+        border-radius: 0 15px 0 60px;
+        z-index: -1;
+    }
+    
+    .quote-icon {
+        color: #4e73df;
+        opacity: 0.2;
+        font-size: 2rem;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .testimonial-img img, .testimonial-img-large img {
+        width: 65px;
+        height: 65px;
+        object-fit: cover;
+        border: 4px solid #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .testimonial-img img:hover, .testimonial-img-large img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(78, 115, 223, 0.2);
+    }
+    
+    .testimonial-img-large img {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .testimonial-text {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #555;
+        position: relative;
+        padding-right: 40px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .testimonial-author h5 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0;
+        color: #2c3e50;
+        position: relative;
+        padding-right: 0.5rem;
+    }
+    
+    .testimonial-author h5::before {
+        content: '';
+        position: absolute;
+        right: -5px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 70%;
+        background: linear-gradient(to bottom, #4e73df, #36b9cc);
+        border-radius: 3px;
+    }
+    
+    .star-rating i {
+        cursor: pointer;
+        color: #e5e5e5;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        margin: 0 1px;
+    }
+    
+    .star-rating i:hover, .star-rating i.active, .rating i {
+        color: #FFD700 !important;
+        transform: scale(1.1);
+    }
+    
+    .stats-section {
+        background: linear-gradient(135deg, #f8f9fc 0%, #fff 100%);
+        border-top: 1px solid rgba(0,0,0,0.03);
+    }
+    
+    .stats-item {
+        padding: 25px;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        border: 1px solid rgba(0,0,0,0.02);
+    }
+    
+    .stats-item::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, rgba(78, 115, 223, 0.05) 0%, rgba(78, 115, 223, 0) 70%);
+        border-radius: 50%;
+        z-index: -1;
+    }
+    
+    .stats-item:hover {
+        background-color: #fff;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        transform: translateY(-5px);
+    }
+    
+    .stats-icon {
+        color: #4e73df;
+        background: linear-gradient(135deg, rgba(78, 115, 223, 0.1) 0%, rgba(78, 115, 223, 0) 70%);
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+    }
+    
+    .counter {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(120deg, #4e73df, #36b9cc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
+    
+    .leave-testimonial {
+        position: relative;
+        border: none;
+        border-top: 4px solid #4e73df;
+        z-index: 1;
+    }
+    
+    .leave-testimonial::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #4e73df, #36b9cc);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .leave-testimonial:hover::before {
+        opacity: 1;
+    }
+    
+    .form-control {
+        border-radius: 8px;
+        border: 1px solid #e5e5e5;
+        padding: 12px 15px;
+        transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+        box-shadow: 0 0 0 3px rgba(78, 115, 223, 0.1);
+        border-color: #4e73df;
+    }
+    
+    .btn-primary {
+        background: linear-gradient(90deg, #4e73df, #36b9cc);
+        border: none;
+        border-radius: 30px;
+        padding: 12px 30px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        box-shadow: 0 5px 15px rgba(78, 115, 223, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(78, 115, 223, 0.3);
+    }
+    
+    /* Animation Effect */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .testimonial-card {
+        animation: fadeInUp 0.5s ease forwards;
+    }
+    
+    .testimonial-card:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    
+    .testimonial-card:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+    
+    @media (max-width: 768px) {
+        .testimonial-card-alt {
+            flex-direction: column;
+        }
+        
+        .testimonial-img-large {
+            margin-bottom: 15px;
+            margin-right: 0 !important;
+            text-align: center;
+        }
+        
+        .testimonial-img-large img {
+            width: 90px;
+            height: 90px;
+        }
+        
+        .stats-item {
+            margin-bottom: 20px;
+        }
+    }
+    
+    .slider-container {
+        width: 100%;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+        direction: ltr;
+    }
+    
+    .slider-track {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: 100%;
+        direction: rtl;
+    }
+    
+    .slider-item {
+        min-width: 100%;
+        box-sizing: border-box;
+        flex: 0 0 100%;
+    }
+    
+    @media (min-width: 768px) {
+        .slider-item {
+            min-width: 50%;
+            flex: 0 0 50%;
+        }
+    }
+    
+    @media (min-width: 992px) {
+        .slider-item {
+            min-width: 33.333%;
+            flex: 0 0 33.333%;
+        }
+    }
+    
+    .slider-controls button {
+        transition: all 0.3s ease;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .slider-controls button:hover {
+        background: #4e73df;
+        color: white;
+        transform: translateY(-2px);
+    }
+</style>
 
+<!-- اسکریپت برای انیمیشن‌ها و کارکردها -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // انیمیشن نمایش تدریجی کارت‌ها
+        const testimonialCards = document.querySelectorAll('.testimonial-card, .testimonial-card-alt');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        testimonialCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.5s ease-out';
+            observer.observe(card);
+        });
+        
+        // انیمیشن شمارنده آمار
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+        
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.innerText.replace(/[^\d]/g, '');
+                const count = +counter.getAttribute('data-count') || 0;
+                const inc = target / speed;
+                
+                if (count < target) {
+                    counter.setAttribute('data-count', Math.ceil(count + inc));
+                    counter.innerText = counter.getAttribute('data-count') + '+';
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target + '+';
+                }
+            };
+            
+            counter.setAttribute('data-count', 0);
+            
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateCount();
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counterObserver.observe(counter);
+        });
+        
+        // انتخاب ستاره برای امتیازدهی
+        const stars = document.querySelectorAll('.star-rating i');
+        
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                stars.forEach((s, i) => {
+                    if (i <= index) {
+                        s.classList.remove('far');
+                        s.classList.add('fas');
+                        s.classList.add('text-warning');
+                        s.style.color = '#FFD700';
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('fas');
+                        s.classList.remove('text-warning');
+                        s.classList.remove('active');
+                        s.classList.add('far');
+                        s.style.color = '#e5e5e5';
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseenter', () => {
+                stars.forEach((s, i) => {
+                    if (i <= index) {
+                        s.classList.add('hover');
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseleave', () => {
+                stars.forEach(s => {
+                    s.classList.remove('hover');
+                });
+            });
+        });
+        
+        // اضافه کردن رنگ زرد به همه ستاره‌های موجود
+        document.querySelectorAll('.rating i.fas, .rating i.fa-star-half-alt').forEach(star => {
+            star.style.color = '#FFD700';
+        });
+        
+        // اسلایدر نظرات
+        const sliderTrack = document.querySelector('.slider-track');
+        const sliderItems = document.querySelectorAll('.slider-item');
+        const prevButton = document.querySelector('.slider-prev');
+        const nextButton = document.querySelector('.slider-next');
+        
+        if (sliderTrack && sliderItems.length > 0) {
+            let currentIndex = 0;
+            
+            // تابع برای محاسبه تعداد اسلایدهای قابل نمایش بر اساس عرض صفحه
+            function getVisibleSlides() {
+                if (window.innerWidth >= 992) return 3;
+                if (window.innerWidth >= 768) return 2;
+                return 1;
+            }
+            
+            // تابع برای تنظیم عرض آیتم‌ها
+            function setItemWidths() {
+                const visibleSlides = getVisibleSlides();
+                const itemWidth = 100 / visibleSlides;
+                
+                sliderItems.forEach(item => {
+                    item.style.minWidth = `${itemWidth}%`;
+                    item.style.flex = `0 0 ${itemWidth}%`;
+                });
+                
+                return itemWidth;
+            }
+            
+            // تنظیم اولیه عرض آیتم‌ها
+            setItemWidths();
+            
+            // تابع برای حرکت اسلایدر در حالت RTL
+            function moveSlider() {
+                const visibleSlides = getVisibleSlides();
+                const maxIndex = sliderItems.length - visibleSlides;
+                if (currentIndex > maxIndex) currentIndex = maxIndex;
+                if (currentIndex < 0) currentIndex = 0;
+                
+                // در RTL باید جهت حرکت برعکس شود
+                const offset = currentIndex * (100 / visibleSlides); // مثبت برای RTL
+                sliderTrack.style.transform = `translateX(${offset}%)`;
+            }
+            
+            // فراخوانی اولیه برای تنظیم موقعیت اولیه
+            moveSlider();
+            
+            // رویداد دکمه‌ها - توجه کنید که در RTL نقش دکمه‌ها برعکس می‌شود
+            if (prevButton) {
+                prevButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentIndex = Math.min(currentIndex + 1, sliderItems.length - getVisibleSlides());
+                    moveSlider();
+                });
+            }
+            
+            if (nextButton) {
+                nextButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentIndex = Math.max(currentIndex - 1, 0);
+                    moveSlider();
+                });
+            }
+            
+            // حرکت خودکار اسلایدر
+            let autoSlide = setInterval(() => {
+                // در RTL جهت حرکت خودکار نیز برعکس می‌شود
+                if (currentIndex >= sliderItems.length - getVisibleSlides()) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex++;
+                }
+                moveSlider();
+            }, 5000);
+            
+            // توقف حرکت خودکار هنگام هاور روی اسلایدر
+            sliderTrack.addEventListener('mouseenter', () => {
+                clearInterval(autoSlide);
+            });
+            
+            sliderTrack.addEventListener('mouseleave', () => {
+                autoSlide = setInterval(() => {
+                    if (currentIndex >= sliderItems.length - getVisibleSlides()) {
+                        currentIndex = 0;
+                    } else {
+                        currentIndex++;
+                    }
+                    moveSlider();
+                }, 5000);
+            });
+            
+            // تغییر اندازه‌ها با تغییر سایز صفحه
+            window.addEventListener('resize', () => {
+                setItemWidths();
+                moveSlider();
+            });
+        }
+    });
+</script>
 
 {% endblock %}

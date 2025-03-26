@@ -91,5 +91,8 @@ def corporate_website(request):
 def ecommerce_website(request):
     return render(request, 'services/ecommerce-website.html')
 
+def testimonials(request):
+    return render(request, 'services/testimonials.html')
+
 
 

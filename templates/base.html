@@ -6,14 +6,14 @@
 <head  prefix="og: http://ogp.me/ns#">
      
 
-<meta name="description" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta name="keywords" content="python, ai, iot, py3, پایتون, اینترنت اشیا, django, جنگو, micropython, fastapi">{% block title %}<title>نویدیار</title>{% endblock %}<meta property="og:title" content="شرایط و قوانین استفاده از سایت"><meta property="og:url" content="https://thealibigdeli.ir/policy-and-privacy"><meta property="og:description" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta property="og:image" content="https://thealibigdeli.ir/static/images/alibigdeli.png"><meta property="og:image:secure_url" content="https://thealibigdeli.ir/static/images/alibigdeli.png"><meta property="og:type" content="website"><meta property="og:site_name" content="thealibigdeli"><meta property="og:locale" content="fa_IR"><meta name="twitter:domain" content="thealibigdeli.ir"><meta name="twitter:card" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta name="twitter:title" content="شرایط و قوانین استفاده از سایت"><meta name="twitter:url" content="https://thealibigdeli.ir/policy-and-privacy"><meta name="twitter:description" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta name="twitter:image" content="https://thealibigdeli.ir/static/images/alibigdeli.png"><meta name="twitter:site" content="@thealibigdeli"><meta itemprop="name" content="شرایط و قوانین استفاده از سایت"><meta itemprop="url" content="https://thealibigdeli.ir/policy-and-privacy"><meta itemprop="description" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta itemprop="image" content="https://thealibigdeli.ir/static/images/alibigdeli.png">
+<meta name="description" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta name="keywords" content="python, ai, iot, py3, پایتون, اینترنت اشیا, django, جنگو, micropython, fastapi">{% block title %}<title>نویدیار</title>{% endblock %}<meta property="og:title" content="شرایط و قوانین استفاده از سایت"><meta property="og:url" content="https://thealibigdeli.ir/policy-and-privacy"><meta property="og:description" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta property="og:image" content="https://thealibigdeli.ir/static/images/alibigdeli.png"><meta property="og:image:secure_url" content="https://thealibigdeli.ir/static/images/alibigdeli.png"><meta property="og:type" content="website"><meta property="og:site_name" content="Navidyar"><meta property="og:locale" content="fa_IR"><meta name="twitter:domain" content="Navidyar.ir"><meta name="twitter:card" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta name="twitter:title" content="شرایط و قوانین استفاده از سایت"><meta name="twitter:url" content="https://thealibigdeli.ir/policy-and-privacy"><meta name="twitter:description" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta name="twitter:image" content="https://thealibigdeli.ir/static/images/alibigdeli.png"><meta name="twitter:site" content="@thealibigdeli"><meta itemprop="name" content="شرایط و قوانین استفاده از سایت"><meta itemprop="url" content="https://thealibigdeli.ir/policy-and-privacy"><meta itemprop="description" content="قوانینی که می بایست در استفاده از سایت از آن ها آگاه باشید"><meta itemprop="image" content="https://thealibigdeli.ir/static/images/alibigdeli.png">
 
     <!-- Path to manifest.json -->
 <link rel="manifest" href="/manifest.json">
 
 <!-- Add to homescreen for Chrome on Android -->
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="application-name" content="TheAliBigdeli">
+<meta name="application-name" content="">
 
 
 <!-- Chrome for Android theme color -->
@@ -21,7 +21,7 @@
 
 <!-- Add to homescreen for Safari on iOS -->
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="TheAliBigdeli">
+<meta name="apple-mobile-web-app-title" content="Navidyar">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
 
@@ -2219,20 +2219,20 @@
             <!-- Nav Main menu START -->
             <ul class="navbar-nav navbar-nav-scroll me-auto main-menu">
 
-                <li class="nav-item"><a class="nav-link menu-item" href="/">صفحه اصلی</a></li>
-                <li class="nav-item"><a class="nav-link menu-item" href="/about-me">درباره من</a></li>
-                <li class="nav-item"><a class="nav-link menu-item" href="/blog/">وبلاگ</a></li>
+                <li class="nav-item"><a class="nav-link menu-item" href="{% url 'core:index' %}">صفحه اصلی</a></li>
+                <li class="nav-item"><a class="nav-link menu-item" href="{% url 'core:about' %}">درباره من</a></li>
+                <li class="nav-item"><a class="nav-link menu-item" href="{% url 'core:blog' %}">وبلاگ</a></li>
                 
                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle menu-item" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         خدمات <i class="fas fa-chevron-down ms-1" style="font-size: 0.8rem;"></i>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                        <li><a class="dropdown-item" href="/services/personal-website">وب‌سایت شخصی</a></li>
-                        <li><a class="dropdown-item" href="/services/ecommerce-website">وبسایت فروشگاهی</a></li>
-                        <li><a class="dropdown-item" href="/services/corporate-website">وبسایت شرکتی</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:personal_website' %}">وب‌سایت شخصی</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:ecommerce_website' %}">وبسایت فروشگاهی</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:corporate_website' %}">وبسایت شرکتی</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="/testimonials">نظرات مشتریان</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:testimonials' %}">نظرات مشتریان</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link menu-item" href="/contact-me">تماس با من</a></li>

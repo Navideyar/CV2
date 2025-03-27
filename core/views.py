@@ -94,5 +94,8 @@ def ecommerce_website(request):
 def testimonials(request):
     return render(request, 'services/testimonials.html')
 
+def blog(request):
+    return render(request, 'blog/index.html')
+
 
 

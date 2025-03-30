@@ -15,4 +15,10 @@ class PostAdmin(admin.ModelAdmin):
     list_per_page = 10
     empty_value_display = '-empty-'
 
-
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('user', 'post', 'created_at')
+    list_filter = ('post', 'created_at')
+    search_fields = ('user__username', 'post__title')
+    list_per_page = 10
+    empty_value_display = '-empty-'

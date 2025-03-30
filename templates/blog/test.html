@@ -1,0 +1,1822 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block content %}
+
+<!-- اضافه کردن لینک Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- دکمه تغییر حالت شب و روز -->
+<div class="theme-toggle-wrapper">
+  <button id="themeToggle" class="theme-toggle" aria-label="تغییر حالت نمایش">
+    <i class="fas fa-sun"></i>
+    <i class="fas fa-moon"></i>
+  </button>
+</div>
+
+<!-- start banner Area -->
+<section class="relative about-banner">
+  <div class="overlay overlay-bg"></div>
+  <div class="container">
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="about-content col-lg-12">
+        <h1 class="text-white">{{post.title}}</h1>
+        <p class="text-white link-nav">
+          <a href="#">خانه</a>
+          <span class="lnr lnr-arrow-right"></span>
+          <a href="#">وبلاگ</a>
+          <span class="lnr lnr-arrow-right"></span>
+          <a href="#">{{post.title}}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End banner Area -->
+
+<!-- Start post-content Area -->
+<section class="post-content-area single-post-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 posts-list">
+        <div class="single-post row">
+          <div class="col-lg-12">
+            <div class="feature-img">
+              <img
+                class="img-fluid"
+                src="{% static 'img/blog/feature-img1.jpg' %}"
+                alt="" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 meta-details">
+            <ul class="tags">
+              {% for cat in post.category.all %}
+                <li><a href="#">{{ cat.name }}</a>{% if not forloop.last %}, {% endif %}</li>
+              {% endfor %}
+            </ul>
+            <div class="user-details row">
+              <p class="user-name col-lg-12 col-md-12 col-6">
+                <a href="#">{{post.author.get_full_name}}</a>
+                <span class="lnr lnr-user"></span>
+              </p>
+              <p class="date col-lg-12 col-md-12 col-6">
+                <a href="#">{{ post.published_date|date:"d M Y" }}</a>
+                <span class="lnr lnr-calendar-full"></span>
+              </p>
+              <p class="view col-lg-12 col-md-12 col-6">
+                <a href="#">{{post.counted_views}} بازدید</a> <span class="lnr lnr-eye"></span>
+              </p>
+              <p class="comments col-lg-12 col-md-12 col-6">
+                <a href="#">{{ comments.count }} نظر</a> <span class="lnr lnr-bubble"></span>
+              </p>
+              <ul class="social-links col-lg-12 col-md-12 col-6">
+                <li>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-behance"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-9">
+            <h3 class="mt-20 mb-20">{{post.title}}</h3>
+            
+            <!-- نوار اطلاعات مقاله -->
+            <div class="article-info-bar">
+              <div class="article-info">
+                <span class="article-date"><i class="fas fa-calendar"></i> {{ post.published_date|date:"d M Y" }}</span>
+                <span class="article-author"><i class="fas fa-user"></i> {{post.author.get_full_name}}</span>
+                <span class="article-read-time"><i class="fas fa-clock"></i> زمان مطالعه: <span id="readingTime">5</span> دقیقه</span>
+              </div>
+              <div class="article-actions">
+                <button class="action-btn like-btn" id="likeBtn" data-post-id="{{ post.id }}">
+                  <i class="fas fa-heart"></i>
+                  <span>لایک</span>
+                  <span class="like-count">{{ post.likes|default:"0" }}</span>
+                </button>
+                <button class="action-btn bookmark-btn" id="bookmarkBtn" data-post-id="{{ post.id }}">
+                  <i class="fas fa-bookmark"></i>
+                  <span>ذخیره</span>
+                </button>
+              </div>
+            </div>
+            
+            <!-- نوار پیشرفت خواندن -->
+            <div class="reading-progress-container">
+              <div class="reading-progress-bar" id="readingProgressBar"></div>
+            </div>
+            
+            <p class="excert">{{post.content | safe}}</p>
+            
+            <!-- بخش نقل قول -->
+            <div class="quotes">
+              <div class="quote-wrapper">
+                <i class="fas fa-quote-left fa-3x"></i>
+                <div class="quote-text">
+                  {{ post.quote|default:"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است." }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- بخش اشتراک‌گذاری -->
+        <div class="share-post-box mb-5 mt-4">
+          <h4 class="share-title mb-3">اشتراک‌گذاری این مطلب</h4>
+          <div class="share-stats mb-3">
+            <div class="row">
+              <div class="col-md-3 col-6 mb-3">
+                <div class="share-stat-box">
+                  <div class="stat-value">{{ post.counted_views|default:"0" }}</div>
+                  <div class="stat-name">بازدید</div>
+                  <div class="stat-icon"><i class="fas fa-eye"></i></div>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-3">
+                <div class="share-stat-box">
+                  <div class="stat-value">{{ comments.count|default:"0" }}</div>
+                  <div class="stat-name">نظرات</div>
+                  <div class="stat-icon"><i class="fas fa-comments"></i></div>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-3">
+                <div class="share-stat-box">
+                  <div class="stat-value">{{ post.likes|default:"0" }}</div>
+                  <div class="stat-name">لایک‌ها</div>
+                  <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-3">
+                <div class="share-stat-box">
+                  <div class="stat-value">{{ post.shares|default:"0" }}</div>
+                  <div class="stat-name">اشتراک‌ها</div>
+                  <div class="stat-icon"><i class="fas fa-share-alt"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="social-share-list d-flex">
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank" class="facebook-share"><i class="fab fa-facebook-f"></i> فیسبوک</a></li>
+            <li><a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ post.title }}" target="_blank" class="twitter-share"><i class="fab fa-twitter"></i> توییتر</a></li>
+            <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ post.title }}" target="_blank" class="linkedin-share"><i class="fab fa-linkedin-in"></i> لینکدین</a></li>
+            <li><a href="https://telegram.me/share/url?url={{ request.build_absolute_uri }}&text={{ post.title }}" target="_blank" class="telegram-share"><i class="fab fa-telegram-plane"></i> تلگرام</a></li>
+            <li><a href="https://wa.me/?text={{ post.title }} {{ request.build_absolute_uri }}" target="_blank" class="whatsapp-share"><i class="fab fa-whatsapp"></i> واتساپ</a></li>
+          </ul>
+        </div>
+        
+        <!-- پست‌های مرتبط -->
+        <div class="related-posts-wrapper mb-5">
+          <h4 class="related-posts-title">مطالب مرتبط</h4>
+          <div class="row">
+            {% for related_post in related_posts %}
+            <div class="col-lg-4 col-md-4">
+              <div class="single-related-post">
+                <div class="related-thumb">
+                  <img class="img-fluid" src="{% if related_post.image %}{{ related_post.image.url }}{% else %}{% static 'img/blog/r1.jpg' %}{% endif %}" alt="">
+                  <div class="post-info">
+                    <div class="post-date">
+                      <span class="day">{{ related_post.published_date|date:"d" }}</span>
+                      <span class="month">{{ related_post.published_date|date:"M" }}</span>
+                    </div>
+                    <div class="post-category">
+                      {% for cat in related_post.category.all|slice:":1" %}
+                        <span>{{ cat.name }}</span>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+                <div class="related-details">
+                  <h4><a href="{% url 'blog:single' related_post.id %}">{{ related_post.title|truncatechars:40 }}</a></h4>
+                  <p>{{ related_post.published_date|date:"d M Y" }}</p>
+                  <div class="post-meta">
+                    <span><i class="fas fa-eye"></i> {{ related_post.counted_views|default:"0" }}</span>
+                    <span><i class="fas fa-comments"></i> {{ related_post.comment_set.count|default:"0" }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center py-4">
+              <p class="no-related-posts">مطلب مرتبطی یافت نشد</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        
+        <!-- اشتراک‌گذاری در شبکه‌های اجتماعی -->
+        <div class="navigation-area mb-5">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+              {% if prev_post %}
+              <div class="thumb">
+                <a href="{% url 'blog:single' prev_post.id %}">
+                  <img class="img-fluid" src="{% static 'img/blog/prev.jpg' %}" alt="">
+                </a>
+              </div>
+              <div class="arrow">
+                <a href="{% url 'blog:single' prev_post.id %}">
+                  <span class="lnr text-white lnr-arrow-right"></span>
+                </a>
+              </div>
+              <div class="detials">
+                <p>پست قبلی</p>
+                <a href="{% url 'blog:single' prev_post.id %}">
+                  <h4>{{ prev_post.title|truncatechars:30 }}</h4>
+                </a>
+              </div>
+              {% endif %}
+            </div>
+            <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+              {% if next_post %}
+              <div class="detials">
+                <p>پست بعدی</p>
+                <a href="{% url 'blog:single' next_post.id %}">
+                  <h4>{{ next_post.title|truncatechars:30 }}</h4>
+                </a>
+              </div>
+              <div class="arrow">
+                <a href="{% url 'blog:single' next_post.id %}">
+                  <span class="lnr text-white lnr-arrow-left"></span>
+                </a>
+              </div>
+              <div class="thumb">
+                <a href="{% url 'blog:single' next_post.id %}">
+                  <img class="img-fluid" src="{% static 'img/blog/next.jpg' %}" alt="">
+                </a>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        
+       <!--
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://http-127-0-0-1-8000-kayov13dvt.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        -->
+        <div class="comments-area">
+          <h4>{{ comments.count }} نظر</h4>
+          {% for comment in comments %}
+          <div class="comment-list">
+            <div class="single-comment justify-content-between d-flex">
+              <div class="user justify-content-between d-flex">
+                <div class="thumb">
+                  <img src="{% static 'img/blog/c1.jpg' %}" alt="" />
+                </div>
+                <div class="desc">
+                  <h5><a href="#">{{ comment.name }}</a></h5>
+                  <p class="date">{{ comment.created_date|date:"d M Y" }}</p>
+                  <p class="comment">{{ comment.message }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% empty %}
+          <div class="text-center py-5">
+            <div class="empty-comments-container" style="
+              background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+              border-radius: 15px;
+              padding: 2.5rem 2rem;
+              box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+              border: 1px solid rgba(0,0,0,0.08);
+              margin: 2rem 0;
+              transition: all 0.3s ease;
+              position: relative;
+              overflow: hidden;
+            ">
+              <div class="icon-wrapper" style="
+                background: linear-gradient(135deg, #6c63ff 0%, #5a54d4 100%);
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                margin: 0 auto 1.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 10px 20px rgba(108, 99, 255, 0.25);
+                transform: scale(1);
+                transition: transform 0.3s ease;
+              " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <i class="fas fa-comments fa-3x" style="color: white;" aria-hidden="true"></i>
+              </div>
+              <h4 class="empty-comments-text mb-3" style="
+                font-family: 'Vazir', 'IRANSans', sans-serif;
+                font-weight: 700;
+                color: #343a40;
+                font-size: 1.5rem;
+              ">هنوز نظری ثبت نشده است</h4>
+              <p class="text-muted" style="
+                font-family: 'Vazir', 'IRANSans', sans-serif;
+                font-size: 1.1rem;
+                color: #6c757d;
+              ">اولین نفری باشید که نظر می‌دهید</p>
+              <div class="decorative-line" style="
+                height: 4px;
+                width: 50px;
+                background: linear-gradient(90deg, #6c63ff, #5a54d4);
+                margin: 1.5rem auto 0;
+                border-radius: 2px;
+              "></div>
+              <div class="decorative-circles" style="position: absolute; bottom: -30px; right: -30px; opacity: 0.05;">
+                <div style="width: 120px; height: 120px; border-radius: 50%; border: 15px solid #6c63ff;"></div>
+              </div>
+              <div class="decorative-circles" style="position: absolute; top: -20px; left: -20px; opacity: 0.05;">
+                <div style="width: 80px; height: 80px; border-radius: 50%; border: 12px solid #6c63ff;"></div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        
+        <div class="comment-form">
+          <h4>نظر خود را بنویسید</h4>
+          <form action="#" method="post">
+            {% csrf_token %}
+            {% if request.user.is_authenticated %}
+              <input type="hidden" name="name" value="{{ request.user.get_full_name }}">
+              <input type="hidden" name="email" value="{{ request.user.email }}">
+            {% else %}
+            <div class="form-group form-inline">
+              <div class="form-group col-lg-6 col-md-12 name">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="نام خود را وارد کنید"
+                  onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'نام خود را وارد کنید'" 
+                  required/>
+              </div>
+              <div class="form-group col-lg-6 col-md-12 email">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="ایمیل خود را وارد کنید"
+                  onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'ایمیل خود را وارد کنید'" 
+                  required/>
+              </div>
+            </div>
+            {% endif %}
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="subject"
+                name="subject"
+                placeholder="موضوع"
+                onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'موضوع'" 
+                required/>
+            </div>
+            <div class="form-group">
+              <textarea
+                class="form-control mb-10"
+                rows="5"
+                name="message"
+                placeholder="پیام خود را بنویسید"
+                onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'پیام خود را بنویسید'"
+                required></textarea>
+            </div>
+            <button type="submit" class="primary-btn text-uppercase">ارسال نظر</button>
+          </form>
+        </div>
+        
+        {% if messages %}
+          <div class="messages-container">
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }} fade-in" style="
+                font-size: 1.2rem;
+                color: #fff;
+                background-color: {% if message.tags == 'success' %}#27ae60{% else %}#e74c3c{% endif %};
+                font-family: 'Vazir', 'IRANSans', sans-serif;
+                padding: 20px 25px;
+                border-radius: 10px;
+                box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+                margin: 20px 0;
+                text-align: center;
+                border-right: 6px solid {% if message.tags == 'success' %}#219653{% else %}#c0392b{% endif %};
+                position: relative;
+                overflow: hidden;">
+                <i class="fas {% if message.tags == 'success' %}fa-check-circle{% else %}fa-exclamation-circle{% endif %}" style="margin-left: 10px;"></i>
+                {{ message }}
+                
+                <!-- نوار پیشرفت در پایین پیام -->
+                <div class="progress-bar" style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  height: 4px;
+                  width: 100%;
+                  background-color: rgba(255, 255, 255, 0.3);
+                  ">
+                  <div class="progress" style="
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    animation: slideOut 5s linear forwards;
+                  "></div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <style>
+            @keyframes slideOut {
+              from { width: 100%; }
+              to { width: 0%; }
+            }
+            
+            .fade-in {
+              opacity: 0;
+              animation: fadeIn 0.5s ease forwards;
+            }
+            
+            @keyframes fadeIn {
+              from { opacity: 0; transform: translateY(-10px); }
+              to { opacity: 1; transform: translateY(0); }
+            }
+          </style>
+
+          <script>
+            // حذف پیام‌ها بعد از 5 ثانیه
+            document.addEventListener('DOMContentLoaded', function() {
+              setTimeout(function() {
+                const messages = document.querySelectorAll('.alert');
+                messages.forEach(function(message) {
+                  message.style.opacity = '0';
+                  message.style.transform = 'translateY(-10px)';
+                  message.style.transition = 'all 0.5s ease';
+                  
+                  setTimeout(function() {
+                    message.remove();
+                  }, 500);
+                });
+              }, 5000);
+            });
+          </script>
+        {% endif %}
+        
+      </div>
+      <div class="col-lg-4 sidebar-widgets">
+        <div class="widget-wrap">
+          <div class="single-sidebar-widget search-widget">
+            <form class="search-form" action="#">
+              <input
+                placeholder="جستجو در مقالات..."
+                name="search"
+                type="text"
+                onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'جستجو در مقالات...'" />
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+
+          <div class="single-sidebar-widget user-info-widget">
+            <img class="author-img" src="{% static 'img/blog/author.png' %}" alt="" />
+            <a href="#"><h4>{{post.author.get_full_name}}</h4></a>
+            <p>نویسنده مقاله</p>
+            <div class="author-bio">
+              <p>
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده 
+                از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و 
+                سطرآنچنان که لازم است.
+              </p>
+            </div>
+            <ul class="social-links">
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+          </div>
+
+          <div class="single-sidebar-widget popular-post-widget">
+            <h4 class="popular-title">محبوب‌ترین پست‌ها</h4>
+            <div class="popular-post-list">
+              {% for popular_post in popular_posts %}
+              <div class="single-post-list d-flex flex-row align-items-center">
+                <div class="thumb">
+                  <img class="img-fluid" src="{% if popular_post.image %}{{ popular_post.image.url }}{% else %}{% static 'img/blog/pp1.jpg' %}{% endif %}" alt="" />
+                </div>
+                <div class="details">
+                  <a href="{% url 'blog:single' popular_post.id %}">
+                    <h6>{{ popular_post.title|truncatechars:40 }}</h6>
+                  </a>
+                  <p>{{ popular_post.published_date|date:"d M Y" }}</p>
+                </div>
+              </div>
+              {% empty %}
+              <div class="no-content-message">
+                <p>هنوز پستی منتشر نشده است</p>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="single-sidebar-widget post-category-widget">
+            <h4 class="category-title">دسته‌بندی‌ها</h4>
+            <ul class="cat-list">
+              {% for category in categories %}
+              <li>
+                <a href="{% url 'blog:category' category.name %}" class="d-flex justify-content-between">
+                  <p>{{ category.name }}</p>
+                  <p>{{ category.post_set.count }}</p>
+                </a>
+              </li>
+              {% empty %}
+              <li><a href="#" class="d-flex justify-content-between">
+                <p>هنوز دسته‌بندی وجود ندارد</p>
+                <p>0</p>
+              </a></li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="single-sidebar-widget newsletter-widget">
+            <h4 class="newsletter-title">خبرنامه</h4>
+            <p>
+              برای دریافت آخرین مطالب و اخبار ایمیل خود را وارد کنید.
+            </p>
+            <div class="form-group d-flex flex-row">
+              <div class="col-autos">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inlineFormInputGroup"
+                    placeholder="ایمیل خود را وارد کنید"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'ایمیل خود را وارد کنید'" />
+                </div>
+              </div>
+              <a href="#" class="bbtns">اشتراک</a>
+            </div>
+            <p class="text-bottom">
+              با عضویت در خبرنامه ما، از آخرین اخبار و مطالب مطلع شوید.
+            </p>
+          </div>
+
+          <div class="single-sidebar-widget tag-cloud-widget">
+            <h4 class="tagcloud-title">برچسب‌ها</h4>
+            <ul>
+              {% for tag in tags %}
+              <li><a href="{% url 'blog:tag' tag.name %}">{{ tag.name }} <span class="tag-count">{{ tag.post_set.count }}</span></a></li>
+              {% empty %}
+              <li><a href="#">تکنولوژی <span class="tag-count">12</span></a></li>
+              <li><a href="#">برنامه‌نویسی <span class="tag-count">8</span></a></li>
+              <li><a href="#">طراحی <span class="tag-count">7</span></a></li>
+              <li><a href="#">کسب و کار <span class="tag-count">6</span></a></li>
+              <li><a href="#">مقالات <span class="tag-count">5</span></a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End post-content Area -->
+
+<style>
+  /* استایل برای بخش اشتراک‌گذاری */
+  .social-share-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+    margin-top: 15px;
+  }
+  
+  .social-share-list li a {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 30px;
+    color: white;
+    font-family: 'Vazir', 'IRANSans', sans-serif;
+    transition: all 0.3s ease;
+    font-size: 14px;
+  }
+  
+  .social-share-list li a i {
+    margin-left: 8px;
+    font-size: 16px;
+  }
+  
+  .facebook-share {
+    background: #3b5998;
+  }
+  
+  .twitter-share {
+    background: #1da1f2;
+  }
+  
+  .linkedin-share {
+    background: #0077b5;
+  }
+  
+  .telegram-share {
+    background: #0088cc;
+  }
+  
+  .whatsapp-share {
+    background: #25d366;
+  }
+  
+  .social-share-list li a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    opacity: 0.9;
+  }
+  
+  /* استایل برای بخش پست‌های مرتبط */
+  .related-posts-title, .share-title, .popular-title, .category-title, .newsletter-title, .tagcloud-title {
+    font-family: 'Vazir', 'IRANSans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eeeeee;
+    margin-bottom: 25px;
+    position: relative;
+  }
+  
+  .related-posts-title:after, .share-title:after, .popular-title:after, .category-title:after, .newsletter-title:after, .tagcloud-title:after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    background: #6c63ff;
+    bottom: -2px;
+    left: 0;
+  }
+  
+  .single-related-post {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .single-related-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+  
+  .related-details {
+    padding: 15px;
+    background: white;
+  }
+  
+  .related-details h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-family: 'Vazir', 'IRANSans', sans-serif;
+  }
+  
+  .related-details p {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+  
+  .navigation-area {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 30px 0;
+  }
+  
+  .navigation-area .detials h4 {
+    font-family: 'Vazir', 'IRANSans', sans-serif;
+    font-size: 16px;
+  }
+  
+  .navigation-area .detials p {
+    color: #6c63ff;
+  }
+  
+  .arrow span {
+    padding: 5px;
+    background: #6c63ff;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  .no-related-posts {
+    font-family: 'Vazir', 'IRANSans', sans-serif;
+    color: #888;
+    font-style: italic;
+  }
+  
+  /* استایل برای سایدبار */
+  .single-sidebar-widget {
+    background: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  }
+  
+  .user-info-widget {
+    text-align: center;
+  }
+  
+  .author-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    border: 5px solid #f5f5f5;
+  }
+  
+  .user-info-widget h4 {
+    margin-top: 0;
+    font-family: 'Vazir', 'IRANSans', sans-serif;
+    font-weight: 600;
+  }
+  
+  .user-info-widget p {
+    margin-bottom: 15px;
+    color: #6c63ff;
+  }
+  
+  .author-bio p {
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: justify;
+    color: #777;
+  }
+  
+  .social-links {
+    padding: 0;
+    margin: 20px 0 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-links li {
+    margin: 0 5px;
+  }
+  
+  .social-links li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  .social-links li a:hover {
+    background: #6c63ff;
+    color: #fff;
+  }
+  
+  .search-form {
+    position: relative;
+  }
+  
+  .search-form input {
+    width: 100%;
+    border: 1px solid #eeeeee;
+    padding: 12px 20px;
+    border-radius: 30px;
+    background: #f9f9f9;
+    outline: none;
+    font-family: 'Vazir', 'IRANSans', sans-serif;
+  }
+  
+  .search-form button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 13px 20px;
+    background: #6c63ff;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .search-form button:hover {
+    background: #5a54d4;
+  }
+  
+  .cat-list {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .cat-list li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 10px;
+  }
+  
+  .cat-list li a {
+    color: #777;
+    font-family: 'Vazir', 'IRANSans', sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  .cat-list li a:hover {
+    color: #6c63ff;
+  }
+  
+  .popular-post-list .single-post-list {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  
+  .popular-post-list .thumb {
+    width: 80px;
+    flex-shrink: 0;
+    margin-left: 15px;
+  }
+  
+  .popular-post-list .thumb img {
+    border-radius: 5px;
+  }
+  
+  .popular-post-list .details h6 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-family: 'Vazir', 'IRANSans', sans-serif;
+  }
+  
+  .popular-post-list .details p {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .bbtns {
+    background: #6c63ff;
+    color: #fff;
+    font-family: 'Vazir', 'IRANSans', sans-serif;
+    padding: 8px 22px;
+    border-radius: 30px;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .bbtns:hover {
+    background: #5a54d4;
+    color: #fff;
+  }
+  
+  .tag-cloud-widget ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .tag-cloud-widget ul li {
+    margin-left: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .tag-cloud-widget ul li a {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 15px;
+    background: #f5f5f5;
+    color: #777;
+    border-radius: 30px;
+    font-size: 13px;
+    font-family: 'Vazir', 'IRANSans', sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  .tag-cloud-widget ul li a:hover {
+    background: #6c63ff;
+    color: #fff;
+  }
+  
+  .tag-count {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 10px;
+    margin-right: 5px;
+    color: #6c63ff;
+    font-weight: bold;
+  }
+  
+  .tag-cloud-widget ul li a:hover .tag-count {
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* فونت فارسی برای همه متن‌ها */
+  body, h1, h2, h3, h4, h5, h6, p, a, span, div, input, textarea, button, li {
+    font-family: 'Vazir', 'IRANSans', sans-serif;
+  }
+  
+  /* استایل‌های جدید برای بهبود ظاهر */
+  /* استایل برای بخش اصلی مطلب */
+  .single-post-area {
+    padding: 80px 0;
+    background: #f9f9f9;
+  }
+  
+  .posts-list {
+    padding-right: 30px;
+  }
+  
+  .single-post {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+  }
+  
+  .feature-img {
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .feature-img img {
+    transition: transform 0.5s ease;
+    width: 100%;
+  }
+  
+  .feature-img:hover img {
+    transform: scale(1.05);
+  }
+  
+  .meta-details {
+    background: #f7f7f7;
+    padding: 20px;
+    border-right: 3px solid #6c63ff;
+  }
+  
+  .meta-details .tags {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .meta-details .tags li {
+    display: inline-block;
+  }
+  
+  .meta-details .tags li a {
+    color: #6c63ff;
+    font-weight: 500;
+  }
+  
+  .user-details p {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .user-details p a {
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .user-details p span {
+    color: #6c63ff;
+    margin-right: 8px;
+  }
+  
+  .excert {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+    padding: 30px;
+  }
+  
+  /* استایل برای بخش هدر */
+  .about-banner {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{% static "img/blog/feature-img1.jpg" %}');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+  }
+  
+  .about-content h1 {
+    font-size: 40px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  .link-nav {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+  }
+  
+  .link-nav a {
+    color: #fff !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .link-nav a:hover {
+    color: #6c63ff !important;
+  }
+  
+  /* استایل برای بخش نظرات */
+  .comments-area {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+  }
+  
+  .comments-area h4 {
+    position: relative;
+    margin-bottom: 30px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eeeeee;
+  }
+  
+  .comments-area h4:after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    background: #6c63ff;
+    bottom: -2px;
+    left: 0;
+  }
+  
+  .comment-list {
+    margin-bottom: 30px;
+  }
+  
+  .single-comment {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .single-comment:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transform: translateY(-3px);
+  }
+  
+  .single-comment:before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background: #6c63ff;
+    right: 0;
+    top: 0;
+    border-radius: 0 3px 3px 0;
+  }
+  
+  .user .thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 20px;
+  }
+  
+  .user .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .user .desc {
+    flex: 1;
+  }
+  
+  .user .desc h5 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .user .desc h5 a {
+    color: #333;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .user .desc h5 a:hover {
+    color: #6c63ff;
+  }
+  
+  .user .desc p.date {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 10px;
+  }
+  
+  .user .desc p.comment {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+  }
+  
+  /* استایل برای فرم نظر */
+  .comment-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+  }
+  
+  .comment-form h4 {
+    position: relative;
+    margin-bottom: 30px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eeeeee;
+  }
+  
+  .comment-form h4:after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    background: #6c63ff;
+    bottom: -2px;
+    left: 0;
+  }
+  
+  .comment-form .form-control {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    height: auto;
+    padding: 12px 15px;
+    font-size: 15px;
+    color: #555;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+  }
+  
+  .comment-form .form-control:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+    background: #fff;
+  }
+  
+  .comment-form textarea.form-control {
+    resize: vertical;
+  }
+  
+  .primary-btn {
+    background: #6c63ff;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .primary-btn:hover {
+    background: #5a54d4;
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  /* استایل‌های نمایشی برای موبایل و تبلت */
+  @media (max-width: 991px) {
+    .posts-list {
+      padding-right: 0;
+    }
+    
+    .single-sidebar-widget {
+      padding: 20px;
+    }
+    
+    .about-content h1 {
+      font-size: 32px;
+    }
+    
+    .excert {
+      padding: 20px;
+    }
+    
+    .meta-details {
+      padding: 15px;
+    }
+    
+    .related-posts-wrapper .col-lg-4 {
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .about-banner {
+      padding: 60px 0;
+    }
+    
+    .about-content h1 {
+      font-size: 26px;
+    }
+    
+    .single-post-area {
+      padding: 50px 0;
+    }
+    
+    .meta-details {
+      margin-top: 20px;
+      border-right: none;
+      border-top: 3px solid #6c63ff;
+    }
+    
+    .user-details p {
+      font-size: 13px;
+    }
+    
+    .social-share-list {
+      flex-wrap: wrap;
+    }
+    
+    .social-share-list li a {
+      margin-bottom: 10px;
+    }
+    
+    .navigation-area .detials h4 {
+      font-size: 14px;
+    }
+    
+    .navigation-area .thumb {
+      max-width: 40px;
+    }
+    
+    .comments-area, .comment-form {
+      padding: 20px;
+    }
+    
+    .single-comment {
+      padding: 15px;
+    }
+    
+    .user .thumb {
+      width: 50px;
+      height: 50px;
+      margin-left: 15px;
+    }
+    
+    .user .desc h5 {
+      font-size: 16px;
+    }
+    
+    .user .desc p.comment {
+      font-size: 14px;
+    }
+  }
+  
+  /* انیمیشن‌های زیبا */
+  .feature-img img, .single-related-post, .comment-form .primary-btn, .social-share-list li a, 
+  .single-sidebar-widget, .cat-list li, .tag-cloud-widget ul li a, .bbtns, .user .desc h5 a {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .single-post {
+    animation: fadeInUp 0.8s both;
+  }
+  
+  .related-posts-wrapper {
+    animation: fadeIn 1s both;
+    animation-delay: 0.3s;
+  }
+  
+  .navigation-area {
+    animation: fadeIn 1s both;
+    animation-delay: 0.4s;
+  }
+  
+  .comments-area {
+    animation: fadeIn 1s both;
+    animation-delay: 0.5s;
+  }
+  
+  .comment-form {
+    animation: fadeIn 1s both;
+    animation-delay: 0.6s;
+  }
+  
+  .single-sidebar-widget {
+    animation: fadeInRight 0.8s both;
+    animation-delay: 0.2s;
+  }
+  
+  .single-sidebar-widget:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  
+  .single-sidebar-widget:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  
+  .single-sidebar-widget:nth-child(4) {
+    animation-delay: 0.8s;
+  }
+  
+  .single-sidebar-widget:nth-child(5) {
+    animation-delay: 1s;
+  }
+  
+  .single-sidebar-widget:nth-child(6) {
+    animation-delay: 1.2s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* افزودن hover effects زیبا برای موارد مختلف */
+  .single-post:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transform: translateY(-5px);
+  }
+  
+  .single-related-post:hover .related-thumb img {
+    transform: scale(1.08);
+  }
+  
+  .related-thumb {
+    overflow: hidden;
+  }
+  
+  .related-thumb img {
+    transition: transform 0.5s ease;
+  }
+  
+  .tag-cloud-widget ul li a:hover {
+    background: #6c63ff;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(108, 99, 255, 0.2);
+  }
+  
+  .cat-list li a:hover p {
+    transform: translateX(5px);
+    color: #6c63ff;
+  }
+  
+  .cat-list li a p {
+    transition: all 0.3s ease;
+  }
+  
+  /* استایل‌های جدید برای بخش نقل قول */
+  .quotes {
+    margin: 30px 0;
+  }
+  
+  .quote-wrapper {
+    background: linear-gradient(135deg, #f2f7fd 0%, #f5f9ff 100%);
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(108, 99, 255, 0.05);
+    border-right: 5px solid #6c63ff;
+    margin: 40px 0;
+  }
+  
+  .quote-wrapper i.fa-quote-left {
+    position: absolute;
+    top: -25px;
+    right: 30px;
+    color: #6c63ff;
+    opacity: 0.2;
+  }
+  
+  .quote-text {
+    font-size: 18px;
+    line-height: 1.8;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .quote-author {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quote-author-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 15px;
+  }
+  
+  .quote-author-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .quote-author-info h6 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .quote-author-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #999;
+  }
+  
+  /* استایل‌های جدید برای آمار اشتراک گذاری */
+  .share-stats {
+    margin-bottom: 25px;
+  }
+  
+  .share-stat-box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+  }
+  
+  .share-stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(108, 99, 255, 0.1);
+  }
+  
+  .share-stat-box:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #6c63ff, #a29bfe);
+    bottom: 0;
+    left: 0;
+  }
+  
+  .stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .stat-name {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .stat-icon {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    opacity: 0.1;
+    font-size: 30px;
+    color: #6c63ff;
+  }
+  
+  /* استایل‌های جدید برای پست‌های مرتبط */
+  .post-info {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .post-date {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+  
+  .post-date .day {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1;
+  }
+  
+  .post-date .month {
+    display: block;
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .post-category {
+    background: rgba(108, 99, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    align-self: center;
+  }
+  
+  .post-meta {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .post-meta span {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .post-meta span i {
+    margin-left: 5px;
+    color: #6c63ff;
+  }
+  
+  /* استایل‌های جدید برای نوار اطلاعات مقاله */
+  .article-info-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 12px 20px;
+    border-radius: 50px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .article-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .article-info span {
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    align-items: center;
+  }
+  
+  .article-info span i {
+    color: #6c63ff;
+    margin-left: 5px;
+    font-size: 15px;
+  }
+  
+  .article-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .action-btn {
+    background: white;
+    border: 1px solid #eee;
+    padding: 8px 15px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .action-btn i {
+    margin-left: 5px;
+    font-size: 14px;
+  }
+  
+  .action-btn span.like-count {
+    background: #f5f5f5;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-right: 5px;
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .action-btn.liked {
+    background: #ffebee;
+    border-color: #ffcdd2;
+    color: #e53935;
+  }
+  
+  .action-btn.liked i {
+    color: #e53935;
+  }
+  
+  .action-btn.liked span.like-count {
+    background: rgba(229, 57, 53, 0.1);
+    color: #e53935;
+  }
+  
+  .action-btn.bookmarked {
+    background: #e3f2fd;
+    border-color: #bbdefb;
+    color: #1976d2;
+  }
+  
+  .action-btn.bookmarked i {
+    color: #1976d2;
+  }
+  
+  .action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+  }
+  
+  /* استایل برای نوار پیشرفت خواندن */
+  .reading-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0,0,0,0.1);
+    z-index: 9999;
+  }
+  
+  .reading-progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, #6c63ff, #a29bfe);
+    width: 0%;
+    transition: width 0.1s ease;
+  }
+  
+  @media (max-width: 767px) {
+    .article-info-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: 15px;
+    }
+    
+    .article-actions {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+</style>
+
+<script>
+  // اسکریپت برای نوار پیشرفت خواندن
+  document.addEventListener('DOMContentLoaded', function() {
+    const progressBar = document.getElementById('readingProgressBar');
+    const totalHeight = document.body.scrollHeight - window.innerHeight;
+    
+    // محاسبه زمان مطالعه
+    const articleContent = document.querySelector('.excert');
+    if (articleContent) {
+      const text = articleContent.textContent || articleContent.innerText;
+      const wordCount = text.split(/\s+/).length;
+      const readingTime = Math.max(1, Math.ceil(wordCount / 250));
+      document.getElementById('readingTime').textContent = readingTime;
+    }
+    
+    window.addEventListener('scroll', function() {
+      const progress = (window.pageYOffset / totalHeight) * 100;
+      progressBar.style.width = progress + '%';
+    });
+    
+    // اسکریپت برای دکمه لایک
+    const likeBtn = document.getElementById('likeBtn');
+    if (likeBtn) {
+      likeBtn.addEventListener('click', function() {
+        const icon = this.querySelector('i');
+        const count = this.querySelector('.like-count');
+        const currentCount = parseInt(count.textContent);
+        
+        if (!this.classList.contains('liked')) {
+          count.textContent = currentCount + 1;
+          this.classList.add('liked');
+        } else {
+          count.textContent = currentCount - 1;
+          this.classList.remove('liked');
+        }
+      });
+    }
+    
+    // اسکریپت برای دکمه ذخیره
+    const bookmarkBtn = document.getElementById('bookmarkBtn');
+    if (bookmarkBtn) {
+      bookmarkBtn.addEventListener('click', function() {
+        if (!this.classList.contains('bookmarked')) {
+          this.classList.add('bookmarked');
+        } else {
+          this.classList.remove('bookmarked');
+        }
+      });
+    }
+    
+    // اسکریپت برای تغییر حالت شب و روز
+    const themeToggle = document.getElementById('themeToggle');
+    
+    // بررسی حالت ذخیره شده در localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+    
+    themeToggle.addEventListener('click', function() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      
+      if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  });
+</script>
+{% endblock %}

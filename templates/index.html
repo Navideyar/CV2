@@ -547,14 +547,12 @@
 
 <div class="container">
     <!-- عنوان بخش -->
-    <div class="row mb-4">
+    <div class="row mb-5">
         <div class="col-12">
             <div class="post-section-header text-center position-relative">
-              
-                <h2 class="post-section-title mb-4">
-                    <span class="title-part">  آخـرین پـست‌ها</span>
-                    
-                    
+                
+                <h2 class="post-section-title mb-3">
+                    <span class="title-part">آخـرین پـست‌ها</span>
                 </h2>
                 <div class="post-section-line">
                     <span></span>
@@ -564,141 +562,106 @@
     </div>
 
     <!-- کارت‌های پست -->
-    <div class="row g-4">
-        <!-- پست اصلی -->
-        <div class="col-lg-6">
-            <div class="post-card-main">
-                <div class="post-card-image">
-                    <img src="{% static 'images/blog/default-blog.jpg' %}" alt="پست جنگو" class="img-fluid">
-                    <div class="post-overlay"></div>
-                    <div class="post-category-main">
-                        <i class="fas fa-code me-1"></i>
-                        <span>جنگو</span>
-                    </div>
-                    <div class="post-date-badge">
-                        <span class="post-date-day">19</span>
-                        <span class="post-date-month">مرداد</span>
+    <div class="latest-posts-container">
+        {% if latest_posts %}
+            <div class="row g-4">
+                {% for post in latest_posts|slice:":3" %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="modern-post-card h-100">
+                        <div class="modern-post-image">
+                            <img src="{{ post.image.url|default:'static/images/blog/default-blog.jpg' }}" alt="{{ post.title|default:'پست وبلاگ' }}">
+                            <div class="modern-post-overlay"></div>
+                            <div class="modern-post-category {% if post.post_category.name == 'جنگو' %}django-category{% elif post.post_category.name == 'لینوکس' %}linux-category{% elif post.post_category.name == 'داکر' %}docker-category{% else %}other-category{% endif %}">
+                                <i class="{% if post.post_category.name == 'جنگو' %}fab fa-python{% elif post.post_category.name == 'لینوکس' %}fab fa-linux{% elif post.post_category.name == 'داکر' %}fab fa-docker{% else %}fas fa-code{% endif %} me-1"></i>
+                                <span>{{ post.post_category.name|default:"بلاگ" }}</span>
+                            </div>
+                            <div class="modern-post-date">
+                                <span class="day">{{ post.created_at|date:"d"|default:'۰۱' }}</span>
+                                <span class="month">
+                                    {% with month=post.created_at|date:"m"|default:'01' %}
+                                        {% if month == '01' %}دی
+                                        {% elif month == '02' %}بهمن
+                                        {% elif month == '03' %}اسفند
+                                        {% elif month == '04' %}فروردین
+                                        {% elif month == '05' %}اردیبهشت
+                                        {% elif month == '06' %}خرداد
+                                        {% elif month == '07' %}تیر
+                                        {% elif month == '08' %}مرداد
+                                        {% elif month == '09' %}شهریور
+                                        {% elif month == '10' %}مهر
+                                        {% elif month == '11' %}آبان
+                                        {% elif month == '12' %}آذر
+                                        {% endif %}
+                                    {% endwith %}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="modern-post-content">
+                            <h3 class="modern-post-title">
+                                <a href="{% if post.slug %}{% url 'blog:blog_single' post.slug %}{% else %}#{% endif %}">{{ post.title|default:"عنوان در دسترس نیست" }}</a>
+                            </h3>
+                            <p class="modern-post-excerpt">{{ post.content|default:"محتوای این پست در دسترس نیست."|truncatechars:120 }}</p>
+                            <div class="modern-post-meta">
+                                <div class="modern-post-author">
+                                    <i class="fas fa-user-circle"></i>
+                                    <span>نویدیار</span>
+                                </div>
+                                <div class="modern-post-views">
+                                    <i class="fas fa-eye"></i>
+                                    <span>{{ post.count_views|default:"0" }} بازدید</span>
+                                </div>
+                            </div>
+                            <a href="{% if post.slug %}{% url 'blog:blog_single' post.slug %}{% else %}#{% endif %}" class="modern-read-more">
+                                <span>ادامه مطلب</span>
+                                <i class="fas fa-long-arrow-alt-left"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="post-card-content">
-                    <h3 class="post-title">
-                        <a href="#">پیاده سازی پروژه Django Channels</a>
-                    </h3>
-                    <p class="post-excerpt">توی این ویدئو درباره نحوه پیاده سازی پروژه های ASGI در جنگو با استفاده از ماژول Channels صحبت خواهم کرد...</p>
-                    <div class="post-meta">
-                        <div class="post-author">
-                            <i class="fas fa-user-circle"></i>
-                            <span>نویدیار</span>
-                        </div>
-                        <div class="post-views">
-                            <i class="fas fa-eye"></i>
-                            <span>234 بازدید</span>
+                {% empty %}
+                <div class="col-12">
+                    <div class="empty-posts-container text-center">
+                        <i class="fas fa-newspaper empty-main-icon mb-3"></i>
+                        <h4 class="mb-3">در حال حاضر پستی برای نمایش وجود ندارد</h4>
+                        <p class="text-muted mb-4">به زودی مطالب جذابی در این بخش قرار خواهد گرفت.</p>
+                        <a href="{% url 'blog:blog' %}" class="btn btn-primary rounded-pill">مشاهده بلاگ</a>
+                    </div>
+                </div>
+                {% endfor %}
+                
+                {% if latest_posts|length < 3 and latest_posts|length > 0 %}
+                    {% for i in "x"|ljust:3|slice:latest_posts|length|make_list %}
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="modern-post-card empty-card h-100">
+                            <div class="empty-post-content text-center">
+                                <i class="fas fa-newspaper empty-post-icon"></i>
+                                <h5 class="mt-4 mb-3">مطالب بیشتر</h5>
+                                <p class="text-muted mb-4">به زودی مطالب جدیدی اضافه خواهد شد.</p>
+                                <a href="{% url 'blog:blog' %}" class="btn btn-sm btn-outline-primary rounded-pill">مشاهده بلاگ</a>
+                            </div>
                         </div>
                     </div>
-                    <a href="#" class="read-more-btn">ادامه مطلب <i class="fas fa-long-arrow-alt-left"></i></a>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            
+            <!-- دکمه مشاهده همه -->
+            <div class="row">
+                <div class="col-12 text-center mt-4">
+                    <a href="{% url 'blog:blog' %}" class="view-all-posts-btn">
+                        <span>مشاهده تمام مقالات</span>
+                        <i class="fas fa-long-arrow-alt-left"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-        
-        <!-- پست‌های کناری -->
-        <div class="col-lg-6">
-            <div class="row g-3">
-                <!-- پست کناری 1 -->
-                <div class="col-12">
-                    <div class="post-card-side h-100">
-                        <div class="post-side-image">
-                            <img src="{% static 'images/blog/default-blog.jpg' %}" alt="پست داکر">
-                            <div class="post-side-overlay"></div>
-                            <div class="post-side-category docker-category">
-                                <i class="fab fa-docker"></i>
-                                <span>داکر</span>
-                            </div>
-                        </div>
-                        <div class="post-side-content">
-                            <div class="post-side-date">
-                                <i class="far fa-calendar-alt"></i>
-                                <span>22 بهمن 1402</span>
-                            </div>
-                            <h4 class="post-side-title">
-                                <a href="#">استفاده از محیط docker-compose در مدیریت پروژه</a>
-                            </h4>
-                            <a href="#" class="post-side-link">
-                                <span>مطالعه</span>
-                                <div class="arrow-icon">
-                                    <i class="fas fa-arrow-left"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- پست کناری 2 -->
-                <div class="col-12">
-                    <div class="post-card-side h-100">
-                        <div class="post-side-image">
-                            <img src="{% static 'images/blog/default-blog.jpg' %}" alt="پست لینوکس">
-                            <div class="post-side-overlay"></div>
-                            <div class="post-side-category linux-category">
-                                <i class="fab fa-linux"></i>
-                                <span>لینوکس</span>
-                            </div>
-                        </div>
-                        <div class="post-side-content">
-                            <div class="post-side-date">
-                                <i class="far fa-calendar-alt"></i>
-                                <span>29 بهمن 1402</span>
-                            </div>
-                            <h4 class="post-side-title">
-                                <a href="#">نحوه نصب و پیاده سازی Caprover</a>
-                            </h4>
-                            <a href="#" class="post-side-link">
-                                <span>مطالعه</span>
-                                <div class="arrow-icon">
-                                    <i class="fas fa-arrow-left"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- پست کناری 3 -->
-                <div class="col-12">
-                    <div class="post-card-side h-100">
-                        <div class="post-side-image">
-                            <img src="{% static 'images/blog/default-blog.jpg' %}" alt="پست جنگو">
-                            <div class="post-side-overlay"></div>
-                            <div class="post-side-category django-category">
-                                <i class="fab fa-python"></i>
-                                <span>جنگو</span>
-                            </div>
-                        </div>
-                        <div class="post-side-content">
-                            <div class="post-side-date">
-                                <i class="far fa-calendar-alt"></i>
-                                <span>15 مرداد 1403</span>
-                            </div>
-                            <h4 class="post-side-title">
-                                <a href="#">پیاده سازی پروژه django بر روی Caprover</a>
-                            </h4>
-                            <a href="#" class="post-side-link">
-                                <span>مطالعه</span>
-                                <div class="arrow-icon">
-                                    <i class="fas fa-arrow-left"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        {% else %}
+            <div class="empty-posts-container text-center">
+                <i class="fas fa-newspaper empty-main-icon mb-3"></i>
+                <h4 class="mb-3">در حال حاضر پستی برای نمایش وجود ندارد</h4>
+                <p class="text-muted mb-4">به زودی مطالب جذابی در این بخش قرار خواهد گرفت.</p>
+                <a href="{% url 'blog:blog' %}" class="btn btn-primary rounded-pill">مشاهده بلاگ</a>
             </div>
-        </div>
-        
-        <!-- دکمه مشاهده همه -->
-        <div class="col-12 text-center mt-5">
-            <a href="/blog" class="view-all-posts-btn">
-                <span>مشاهده تمام مقالات</span>
-                <i class="fas fa-long-arrow-alt-left"></i>
-            </a>
-        </div>
+        {% endif %}
     </div>
 </div>
 
@@ -711,8 +674,8 @@
     --post-bg-dark: #212529;
     --post-text-light: #2c3e50;
     --post-text-dark: #ecf0f1;
-    --post-shadow-light: rgba(0, 0, 0, 0.1);
-    --post-shadow-dark: rgba(0, 0, 0, 0.3);
+    --post-shadow-light: rgba(0, 0, 0, 0.08);
+    --post-shadow-dark: rgba(0, 0, 0, 0.25);
     --post-border-light: rgba(0, 0, 0, 0.1);
     --post-border-dark: rgba(255, 255, 255, 0.1);
     --post-overlay-light: rgba(0, 0, 0, 0.3);
@@ -720,8 +683,8 @@
     --post-gradient-start: var(--bs-primary);
     --post-gradient-end: var(--bs-info);
     --post-badge-bg: linear-gradient(45deg, var(--post-gradient-start), var(--post-gradient-end));
-    --post-hover-shadow: 0 15px 35px rgba(var(--bs-primary-rgb), 0.2);
-    --post-hover-shadow-dark: 0 15px 35px rgba(0, 0, 0, 0.5);
+    --post-hover-shadow: 0 15px 30px rgba(var(--bs-primary-rgb), 0.15);
+    --post-hover-shadow-dark: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 /* انیمیشن‌ها */
@@ -754,7 +717,7 @@
 
 /* عنوان بخش */
 .post-section-header {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     position: relative;
 }
 
@@ -769,9 +732,9 @@
     align-items: center;
     background: var(--post-badge-bg);
     color: white;
-    padding: 0.5rem 1.5rem;
+    padding: 0.4rem 1.2rem;
     border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(var(--bs-primary-rgb), 0.2);
+    box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb), 0.2);
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -790,7 +753,7 @@
 
 .post-section-badge:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(var(--bs-primary-rgb), 0.3);
+    box-shadow: 0 6px 15px rgba(var(--bs-primary-rgb), 0.3);
 }
 
 .rotate-icon {
@@ -805,13 +768,13 @@
 }
 
 .post-section-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--post-text-light);
     position: relative;
     display: inline-block;
-    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 [data-bs-theme="dark"] .post-section-title {
@@ -822,23 +785,6 @@
     display: inline-block;
     position: relative;
     animation: float 3s ease-in-out infinite;
-    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-.title-part:nth-child(3) {
-    animation-delay: 0.5s;
-}
-
-.title-separator {
-    margin: 0 0.8rem;
-    display: inline-block;
-    animation: pulse 2s ease-in-out infinite;
-    vertical-align: middle;
-}
-
-.title-separator i {
-    font-size: 0.5rem;
-    color: var(--post-primary);
 }
 
 .post-section-line {
@@ -866,51 +812,57 @@
     100% { right: calc(100% - 30px); }
 }
 
-/* カード メイン */
-.post-card-main {
-    background: var(--post-bg-light);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px var(--post-shadow-light);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    height: 100%;
-    border: 1px solid var(--post-border-light);
+/* طراحی جدید برای کارت‌های پست */
+.latest-posts-container {
+    padding: 0.5rem 0;
 }
 
-[data-bs-theme="dark"] .post-card-main {
+.modern-post-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--post-bg-light);
+    box-shadow: 0 8px 20px var(--post-shadow-light);
+    transition: all 0.4s ease;
+    border: 1px solid var(--post-border-light);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+[data-bs-theme="dark"] .modern-post-card {
     background: var(--post-bg-dark);
-    box-shadow: 0 10px 30px var(--post-shadow-dark);
+    box-shadow: 0 8px 20px var(--post-shadow-dark);
     border-color: var(--post-border-dark);
 }
 
-.post-card-main:hover {
-    transform: translateY(-15px);
+.modern-post-card:hover {
+    transform: translateY(-10px);
     box-shadow: var(--post-hover-shadow);
 }
 
-[data-bs-theme="dark"] .post-card-main:hover {
+[data-bs-theme="dark"] .modern-post-card:hover {
     box-shadow: var(--post-hover-shadow-dark);
 }
 
-.post-card-image {
+.modern-post-image {
     position: relative;
-    height: 250px;
+    height: 200px;
     overflow: hidden;
 }
 
-.post-card-image img {
+.modern-post-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
 }
 
-.post-card-main:hover .post-card-image img {
+.modern-post-card:hover .modern-post-image img {
     transform: scale(1.1);
 }
 
-.post-overlay {
+.modern-post-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -920,433 +872,276 @@
     z-index: 1;
 }
 
-.post-category-main {
+.modern-post-category {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    top: 15px;
+    right: 15px;
     z-index: 2;
-    background-color: var(--bs-warning);
+    background-color: var(--bs-primary);
     color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 30px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
     font-weight: 500;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
+    transition: all 0.3s ease;
 }
 
-.post-card-main:hover .post-category-main {
-    transform: translateY(-5px);
+.modern-post-card:hover .modern-post-category {
+    transform: translateY(-3px);
 }
 
-.post-date-badge {
+.modern-post-date {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    left: 15px;
+    bottom: 15px;
     z-index: 2;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 5px 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
 }
 
-[data-bs-theme="dark"] .post-date-badge {
-    background-color: var(--post-bg-dark);
+[data-bs-theme="dark"] .modern-post-date {
+    background: rgba(33, 37, 41, 0.9);
     color: var(--post-text-dark);
 }
 
-.post-card-main:hover .post-date-badge {
-    transform: scale(1.1) rotate(5deg);
+.modern-post-card:hover .modern-post-date {
+    transform: scale(1.05);
 }
 
-.post-date-day {
-    font-size: 1.5rem;
+.modern-post-date .day {
+    display: block;
     font-weight: 700;
+    font-size: 1.2rem;
     line-height: 1;
     color: var(--post-primary);
 }
 
-.post-date-month {
+.modern-post-date .month {
     font-size: 0.8rem;
     color: var(--post-secondary);
-    margin-top: 3px;
 }
 
-.post-card-content {
-    padding: 2rem;
+.modern-post-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.modern-post-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
     position: relative;
 }
 
-.post-title {
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    position: relative;
-    padding-right: 15px;
-}
-
-.post-title::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0.2rem;
-    width: 5px;
-    height: 80%;
-    background: var(--post-gradient-start);
-    border-radius: 5px;
-}
-
-.post-title a {
+.modern-post-title a {
     color: var(--post-text-light);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-[data-bs-theme="dark"] .post-title a {
+[data-bs-theme="dark"] .modern-post-title a {
     color: var(--post-text-dark);
 }
 
-.post-title a:hover {
+.modern-post-title a:hover {
     color: var(--post-primary);
 }
 
-.post-excerpt {
+.modern-post-excerpt {
     color: var(--post-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     line-height: 1.6;
+    font-size: 0.9rem;
+    flex-grow: 1;
 }
 
-[data-bs-theme="dark"] .post-excerpt {
+[data-bs-theme="dark"] .modern-post-excerpt {
     color: rgba(255, 255, 255, 0.7);
 }
 
-.post-meta {
+.modern-post-meta {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.post-author, .post-views {
-    display: flex;
+[data-bs-theme="dark"] .modern-post-meta {
+    border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+.modern-post-author, .modern-post-views {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 6px;
     align-items: center;
     color: var(--post-secondary);
-    font-size: 0.9rem;
-}
-
-[data-bs-theme="dark"] .post-author, 
-[data-bs-theme="dark"] .post-views {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.post-author i, .post-views i {
-    margin-left: 0.5rem;
-    color: var(--post-primary);
-}
-
-.read-more-btn {
-    display: inline-flex;
-    align-items: center;
-    color: var(--post-primary);
-    text-decoration: none;
-    font-weight: 500;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.read-more-btn::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    right: 0;
-    width: 0;
-    height: 2px;
-    background: var(--post-primary);
-    transition: width 0.3s ease;
-}
-
-.read-more-btn i {
-    margin-right: 0.5rem;
-    transition: transform 0.3s ease;
-}
-
-.read-more-btn:hover {
-    color: var(--post-gradient-end);
-}
-
-.read-more-btn:hover::after {
-    width: 100%;
-}
-
-.read-more-btn:hover i {
-    transform: translateX(-5px);
-}
-
-/* کارت‌های کناری */
-.post-card-side {
-    display: flex;
-    background: var(--post-bg-light);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px var(--post-shadow-light);
-    transition: all 0.3s ease;
-    margin-bottom: 0;
-    position: relative;
-    border: 1px solid var(--post-border-light);
-    height: 100%;
-}
-
-[data-bs-theme="dark"] .post-card-side {
-    background: var(--post-bg-dark);
-    box-shadow: 0 5px 15px var(--post-shadow-dark);
-    border-color: var(--post-border-dark);
-}
-
-.post-card-side:hover {
-    transform: translateX(-10px);
-    box-shadow: var(--post-hover-shadow);
-}
-
-[data-bs-theme="dark"] .post-card-side:hover {
-    box-shadow: var(--post-hover-shadow-dark);
-}
-
-.post-side-image {
-    width: 120px;
-    min-width: 120px;
-    height: auto;
-    position: relative;
-    overflow: hidden;
-}
-
-.post-side-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.post-card-side:hover .post-side-image img {
-    transform: scale(1.1);
-}
-
-.post-side-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--post-overlay-light);
-    z-index: 1;
-}
-
-[data-bs-theme="dark"] .post-side-overlay {
-    background: var(--post-overlay-dark);
-}
-
-.post-side-category {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    color: white;
-    font-size: 0.8rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.docker-category {
-    background-color: #2496ED;
-}
-
-.linux-category {
-    background-color: #FCC624;
-    color: #222;
-}
-
-.django-category {
-    background-color: #092E20;
-}
-
-.post-side-category i {
-    margin-left: 0.3rem;
-}
-
-.post-card-side:hover .post-side-category {
-    transform: translateY(-5px);
-}
-
-.post-side-content {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.post-side-date {
-    color: var(--post-secondary);
-    font-size: 0.8rem;
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-[data-bs-theme="dark"] .post-side-date {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.post-side-date i {
-    margin-left: 0.3rem;
-    color: var(--post-primary);
-}
-
-.post-side-title {
-    font-size: 1rem;
-    margin-bottom: 0.7rem;
-}
-
-.post-side-title a {
-    color: var(--post-text-light);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    line-height: 1.4;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-[data-bs-theme="dark"] .post-side-title a {
-    color: var(--post-text-dark);
-}
-
-.post-side-title a:hover {
-    color: var(--post-primary);
-}
-
-.post-side-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: auto;
-    background-color: rgba(var(--bs-primary-rgb), 0.1);
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    color: var(--post-primary);
-    text-decoration: none;
     font-size: 0.85rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    width: fit-content;
 }
 
-.post-side-link:hover {
-    background-color: var(--post-primary);
-    color: white;
+.modern-post-author i, .modern-post-views i {
+    color: var(--post-primary);
 }
 
-.arrow-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0.5rem;
-    transition: transform 0.3s ease;
-}
-
-.post-side-link:hover .arrow-icon {
-    transform: translateX(-3px);
-}
-
-/* دکمه مشاهده همه */
-.view-all-posts-btn {
+.modern-read-more {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
     background: var(--post-badge-bg);
     color: white;
-    padding: 0.8rem 2rem;
+    padding: 0.5rem 1.2rem;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 500;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(var(--bs-primary-rgb), 0.3);
+    font-size: 0.9rem;
     transition: all 0.3s ease;
-    z-index: 1;
+    align-self: center;
+    margin-top: auto;
 }
 
-.view-all-posts-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: linear-gradient(45deg, var(--post-gradient-end), var(--post-gradient-start));
-    transition: width 0.5s ease;
-    z-index: -1;
+.modern-read-more:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(var(--bs-primary-rgb), 0.3);
+    color: white;
 }
 
-.view-all-posts-btn span {
-    position: relative;
-    z-index: 2;
-    margin-left: 0.5rem;
+.modern-read-more i {
+    transition: transform 0.3s ease;
+}
+
+.modern-read-more:hover i {
+    transform: translateX(-5px);
+}
+
+/* رنگ دسته‌بندی‌ها */
+.docker-category {
+    background-color: #2496ed;
+}
+
+.linux-category {
+    background-color: #f0ae4e;
+}
+
+.django-category {
+    background-color: #092e20;
+}
+
+.other-category {
+    background-color: #6c63ff;
+}
+
+/* استایل برای کارت‌های خالی */
+.empty-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--post-bg-light);
+    border: 1px dashed var(--post-border-light);
+    transition: all 0.3s ease;
+}
+
+[data-bs-theme="dark"] .empty-card {
+    background: var(--post-bg-dark);
+    border-color: var(--post-border-dark);
+}
+
+.empty-card:hover {
+    border-color: var(--post-primary);
+    background-color: rgba(var(--bs-primary-rgb), 0.03);
+}
+
+[data-bs-theme="dark"] .empty-card:hover {
+    background-color: rgba(var(--bs-primary-rgb), 0.05);
+}
+
+.empty-post-content {
+    padding: 2rem;
+    width: 100%;
+}
+
+.empty-post-icon {
+    font-size: 2.5rem;
+    color: var(--post-primary);
+    opacity: 0.5;
+}
+
+.empty-main-icon {
+    font-size: 4rem;
+    color: var(--post-primary);
+    opacity: 0.5;
+}
+
+.empty-posts-container {
+    padding: 4rem 2rem;
+    background: var(--post-bg-light);
+    border-radius: 12px;
+    border: 1px dashed var(--post-border-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+[data-bs-theme="dark"] .empty-posts-container {
+    background: var(--post-bg-dark);
+    border-color: var(--post-border-dark);
+}
+
+.view-all-posts-btn {
+    display: inline-flex;
+    align-items: center;
+    background: var(--post-badge-bg);
+    color: white;
+    padding: 0.6rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(var(--bs-primary-rgb), 0.2);
+    transition: all 0.3s ease;
 }
 
 .view-all-posts-btn i {
-    position: relative;
-    z-index: 2;
+    margin-right: 0.5rem;
     transition: transform 0.3s ease;
 }
 
 .view-all-posts-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(var(--bs-primary-rgb), 0.3);
     color: white;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(var(--bs-primary-rgb), 0.5);
-}
-
-.view-all-posts-btn:hover::before {
-    width: 100%;
 }
 
 .view-all-posts-btn:hover i {
-    transform: translateX(-7px);
-}
-
-/* حذف کدهای اضافی و نادرست */
-/* .btn-blog-view-all:hover {
-    color: #fff;
-    border-color: transparent;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px var(--blog-hover-shadow);
-}
-
-.btn-blog-view-all:hover::before {
-    width: 100%;
-}
-
-.btn-blog-view-all i {
-    transform: translateX(0);
-    transition: transform 0.3s ease;
-}
-
-.btn-blog-view-all:hover i {
     transform: translateX(-5px);
 }
 
-[data-bs-theme="dark"] .btn-blog-view-all:hover {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-} */
+@media (max-width: 575.98px) {
+    .modern-post-title {
+        font-size: 1.1rem;
+    }
+    
+    .modern-post-excerpt {
+        font-size: 0.85rem;
+    }
+    
+    .modern-post-image {
+        height: 180px;
+    }
+    
+    .modern-post-content {
+        padding: 1.2rem;
+    }
+}
 </style>
    
 

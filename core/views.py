@@ -2,11 +2,22 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
-from blog.models import Post
+from blog.models import Post, Category
 
 # Create your views here.
 def index(request):
-    return render(request, "index.html")
+    # دریافت آخرین پست‌ها (فقط پست‌های فعال)
+    latest_posts = Post.objects.filter(status=True).order_by('-created_at')[:4]
+    
+    # دریافت دسته‌بندی‌های هر پست
+    for post in latest_posts:
+        post.post_category = Category.objects.filter(post=post).first()
+    
+    context = {
+        'latest_posts': latest_posts
+    }
+    
+    return render(request, "index.html", context)
 
 def about(request):
     return render(request, "about-me.html")

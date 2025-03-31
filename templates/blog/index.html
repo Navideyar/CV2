@@ -47,7 +47,7 @@ Page Banner START -->
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb mb-0">
 							<li class="breadcrumb-item"><a href="/">صفحه اصلی</a></li>
-							<li class="breadcrumb-item active" aria-current="page"> وبلاگ</li>
+							<li class="breadcrumb-item"><a href="{% url 'blog:blog' %}">وبلاگ</a></li>
 						</ol>
 					</nav>
 				</div>
@@ -101,7 +101,7 @@ Page content START -->
 							<i class="fas fa-sliders-h me-1"></i> نمایش فیلتر
 						</button>
 						<!-- Advanced filter responsive toggler END -->
-						<p class="mb-0 text-end result-count"><span class="badge bg-primary rounded-pill">17</span> نتیجه یافت شد</p>
+						<p class="mb-0 text-end result-count"><span class="badge bg-primary rounded-pill">{{posts.count}}</span> نتیجه یافت شد</p>
 					</div>
 
 				</div>
@@ -114,7 +114,7 @@ Page content START -->
 							<div class="row g-0">
 								<div class="col-lg-4">
 									<div class="overflow-hidden rounded-start h-100">
-										<img src="{% static 'images/blog/default-blog.jpg' %}" onerror="this.src='https://via.placeholder.com/600x400/6B5BA7/FFFFFF?text=بلاگ'" class="card-img-start h-100 w-100" alt="انتقال پروژه Django از پلتفرم Liara به پلتفرم Hamravesh" loading="lazy" style="object-fit: cover;">
+										<img src="{% if post.image %}{{post.image.url}}{% else %} {% static 'images/blog/default-blog.jpg' %} {% endif %}" class="card-img-start h-100 w-100" alt="{{post.title}}" loading="lazy" style="object-fit: cover;">
 										<!-- Overlay -->
 										<div class="bg-overlay bg-dark opacity-2"></div>
 										<div class="card-img-overlay d-flex align-items-start p-3">
@@ -191,60 +191,38 @@ Page content START -->
 								<button type="button" class="btn-close" data-bs-dismiss="offcanvas"
 									data-bs-target="#offcanvasSidebar" aria-label="Close"></button>
 							</div>
-							<!-- Category END -->
-
-							<!-- placement for categories -->
 							<!-- Category START -->
-
 							<div class="card card-body shadow p-4 mb-4">
 								<!-- Title -->
 								<h4 class="mb-3 fs-6">فیلتر دسته بندی</h4>
 								<!-- Category group -->
-
 								<div class="col-12">
-
-									
-
+									<!-- همه دسته‌بندی‌ها -->
+									<div class="d-flex justify-content-between align-items-center mb-2">
+										<div>
+											<a href="{% url 'blog:blog' %}" class="text-decoration-none category-link {% if not selected_category %}active{% endif %}">
+												همه
+											</a>
+										</div>
+										<span class="small text-light-emphasis">({{all_posts_count}})</span>
+									</div>
+									<!-- سایر دسته‌بندی‌ها -->
+									{% for category in categories %}
 									<div class="d-flex justify-content-between align-items-center">
 										<div>
-											<label for="flexCheckDefault">
-												<button class="btn btn-link p-0" onclick="addOrEditCategory('python')">
-													python
-												</button>
-											</label>
+											<a href="{% url 'blog:blog' %}?category={{category.name}}" class="text-decoration-none category-link {% if selected_category == category.name %}active{% endif %}">
+												{{category.name}}
+											</a>
 										</div>
-										<span class="small">(2)</span>
+										<span class="small text-light-emphasis">({{category.get_post_count}})</span>
 									</div>
-									
-
-									<div class="d-flex justify-content-between align-items-center">
-										<div>
-											<label for="flexCheckDefault">
-												<button class="btn btn-link p-0" onclick="addOrEditCategory('django')">
-													django
-												</button>
-											</label>
-										</div>
-										<span class="small">(12)</span>
-									</div>
-									
-
-									<div class="d-flex justify-content-between align-items-center">
-										<div>
-											<label for="flexCheckDefault">
-												<button class="btn btn-link p-0" onclick="addOrEditCategory('micro-python')">
-													micro python
-												</button>
-											</label>
-										</div>
-										<span class="small">(3)</span>
-									</div>
-									
-
-									
+									{% endfor %}
 								</div>
 							</div>
+							<!-- Category END -->
 
+							<!-- placement for categories -->
+							<!-- Category START -->
 
 						</div>
 
@@ -254,224 +232,12 @@ Page content START -->
 				<div class="col-md-6 col-lg-12 pb-4">
 					
 
-<!-- Recently Viewed START -->
-<div class="card card-body shadow p-4 ">
-    <!-- Title -->
-    <h4 class="mb-3 fs-5">دوره های من در مکتبخونه</h4>
-    <!-- Course item START -->
-    <div class="row gx-3 mb-3">
-        <!-- Image -->
-        <div class="col-4">
-            <img class="rounded" src="{% static 'images/maktabkhooneh/django-ecommerce.webp' %}" alt=""  loading="lazy">
-        </div>
-        <!-- Info -->
-        <div class="col-8">
-            <h6 class="mb-0 fw-normal"><a href="https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C-%D9%81%D8%B1%D9%88%D8%B4%DA%AF%D8%A7%D9%87-%D8%AC%D9%86%DA%AF%D9%88-mk5631/?v=1&affiliate_code=eYrbPz" target="_blank">آموزش
-                    طراحی فروشگاه با جنگو
-                </a>
-            </h6>
-            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
-                <li class="list-group-item px-0 d-flex justify-content-between">
-                    <span class="text-secondary">سطح: پیشرفته</span>
-                    <span class="h6 text-info">4.4<i class="fas fa-star text-warning ms-1"></i></span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- Course item END -->
-    <!-- Course item START -->
-    <div class="row gx-3 mb-3">
-        <!-- Image -->
-        <div class="col-4">
-            <img class="rounded" src="{% static 'images/maktabkhooneh/django-advanced.webp' %}" alt=""  loading="lazy">
-        </div>
-        <!-- Info -->
-        <div class="col-8">
-            <h6 class="mb-0 fw-normal"><a
-                    href="https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D9%86%DA%AF%D9%88-%D9%BE%DB%8C%D8%B4%D8%B1%D9%81%D8%AA%D9%87-mk1438/?v=1&affiliate_code=eYrbPz"
-                    target="_blank">آموزش جنگو پیشرفته
-                </a>
-            </h6>
-            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
-                <li class="list-group-item px-0 d-flex justify-content-between">
-                    <span class="text-secondary">سطح: پیشرفته</span>
-                    <span class="h6 text-info">4.7<i class="fas fa-star text-warning ms-1"></i></span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- Course item END -->
-    <!-- Course item START -->
-    <div class="row gx-3 mb-3">
-        <!-- Image -->
-        <div class="col-4">
-            <img class="rounded" src="{% static 'images/maktabkhooneh/django.webp' %}" alt=""  loading="lazy">
-        </div>
-        <!-- Info -->
-        <div class="col-8">
-            <h6 class="mb-0 fw-normal"><a
-                    href="https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D9%86%DA%AF%D9%88-mk1287/?v=1&affiliate_code=eYrbPz"
-                    target="_blank">آموزش جنگو Django</a>
-            </h6>
-            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
-                <li class="list-group-item px-0 d-flex justify-content-between">
-                    <span class="text-secondary">سطح: مقدماتی</span>
-                    <span class="h6 text-info">4.6<i class="fas fa-star text-warning ms-1"></i></span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- Course item END -->
 
-    <!-- Course item START -->
-    <div class="row gx-3 mb-3">
-        <!-- Image -->
-        <div class="col-4">
-            <img class="rounded" src="{% static 'images/maktabkhooneh/python-oop.jpg' %}" alt=""  loading="lazy">
-        </div>
-        <!-- Info -->
-        <div class="col-8">
-            <h6 class="mb-0 fw-normal"><a
-                    href="https://maktabkhooneh.org/course/%D8%B4%DB%8C%D8%A1-%DA%AF%D8%B1%D8%A7%DB%8C%DB%8C-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86-mk2032/?v=1&affiliate_code=eYrbPz"
-                    target="_blank">آموزش شی‌ءگرایی در پایتون</a>
-            </h6>
-            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
-                <li class="list-group-item px-0 d-flex justify-content-between">
-                    <span class="text-secondary">سطح: متوسط</span>
-                    <span class="h6 text-info">4.2<i class="fas fa-star text-warning ms-1"></i></span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- Course item END -->
-
-    <!-- Course item START -->
-    <div class="row gx-3 mb-3">
-        <!-- Image -->
-        <div class="col-4">
-            <img class="rounded" src="{% static 'images/maktabkhooneh/micropython.webp' %}" alt=""  loading="lazy">
-        </div>
-        <!-- Info -->
-        <div class="col-8">
-            <h6 class="mb-0 fw-normal"><a
-                    href="https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%DB%8C%DA%A9%D8%B1%D9%88-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86-%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA-%D8%A7%D8%B4%DB%8C%D8%A7-mk3287/?v=1&affiliate_code=eYrbPz"
-                    target="_blank">آموزش میکروپایتون در اینترنت اشیا
-                </a>
-            </h6>
-            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
-                <li class="list-group-item px-0 d-flex justify-content-between">
-                    <span class="text-secondary">سطح: متوسط</span>
-                    <span class="h6 text-info">4.4<i class="fas fa-star text-warning ms-1"></i></span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- Course item END -->
-     <!-- Course item START -->
-    <div class="row gx-3 mb-3">
-        <!-- Image -->
-        <div class="col-4">
-            <img class="rounded" src="{% static 'images/maktabkhooneh/telegram.webp' %}" alt=""  loading="lazy">
-        </div>
-        <!-- Info -->
-        <div class="col-8">
-            <h6 class="mb-0 fw-normal"><a
-                    href="https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B3%D8%A7%D8%AE%D8%AA-%D8%B1%D8%A8%D8%A7%D8%AA-%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86-mk7147/?v=1&affiliate_code=eYrbPz"
-                    target="_blank">آموزش ساخت ربات تلگرام با پایتون
-                </a>
-            </h6>
-            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
-                <li class="list-group-item px-0 d-flex justify-content-between">
-                    <span class="text-secondary">سطح: متوسط</span>
-                    <span class="h6 text-info">4.3<i class="fas fa-star text-warning ms-1"></i></span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- Course item END -->
-
-
-
-</div>
-<!-- Recently Viewed END -->
 				</div>
 				<div class="col-md-6 col-xl-12  pb-4">
 					
-<div class="card card-body shadow p-4 ">
-    <!-- Title -->
-    <h4 class="mb-3 fs-5">آخرین دوره ها</h4>
-    
-    <!-- Course item START -->
-    <div class="row gx-3 mb-3">
-        <!-- Image -->
-        <div class="col-4">
-            <img class="rounded" width="100" src="/media/CACHE/images/images/course_covers/python_async/9501dc526248d39b2de27ea07e6f479f.jpg" alt="آموزش برنامه نویسی Async در پایتون">
-        </div>
-        <!-- Info -->
-        <div class="col-8">
-            <h6 class="mb-0 fw-normal"><a href="/courses/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-async-%D8%AF%D8%B1-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86">آموزش برنامه نویسی Async در پایتون</a>
-            </h6>
-            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
-                <li class="list-group-item px-0 d-flex justify-content-between just">
                     
-                    <span class="text-success formatted-price">0</span>
-                    <!-- <span class="h6 fw-light">4.5<i class="fas fa-star text-warning ms-1"></i></span> -->
-                     
-                    <span class="h6 text-info">119 دانشجو </span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- Course item END -->
-    
-    <!-- Course item START -->
-    <div class="row gx-3 mb-3">
-        <!-- Image -->
-        <div class="col-4">
-            <img class="rounded" width="100" src="/media/CACHE/images/images/course_covers/telegram_bot/3eecf99224f00d1cff6b1ce9fec339b6.jpg" alt="آموزش ساخت ربات تلگرام با پایتون">
-        </div>
-        <!-- Info -->
-        <div class="col-8">
-            <h6 class="mb-0 fw-normal"><a href="/courses/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B3%D8%A7%D8%AE%D8%AA-%D8%B1%D8%A8%D8%A7%D8%AA-%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85-%D8%A8%D8%A7-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86">آموزش ساخت ربات تلگرام با پایتون</a>
-            </h6>
-            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
-                <li class="list-group-item px-0 d-flex justify-content-between just">
-                    
-                    <span class="text-success formatted-price">600000</span>
-                    <!-- <span class="h6 fw-light">4.5<i class="fas fa-star text-warning ms-1"></i></span> -->
-                     
-                    <span class="h6 text-info">27 دانشجو </span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- Course item END -->
-    
-    <!-- Course item START -->
-    <div class="row gx-3 mb-3">
-        <!-- Image -->
-        <div class="col-4">
-            <img class="rounded" width="100" src="/media/CACHE/images/images/course_covers/arduino-tutorial/0bd86c61f960b59ba07cb1033dc27477.jpg" alt="آموزش arduino">
-        </div>
-        <!-- Info -->
-        <div class="col-8">
-            <h6 class="mb-0 fw-normal"><a href="/courses/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-arduino">آموزش Arduino</a>
-            </h6>
-            <ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
-                <li class="list-group-item px-0 d-flex justify-content-between just">
-                    
-                    <span class="text-success formatted-price">0</span>
-                    <!-- <span class="h6 fw-light">4.5<i class="fas fa-star text-warning ms-1"></i></span> -->
-                     
-                    <span class="h6 text-info">152 دانشجو </span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- Course item END -->
-    
 
-</div>
 				</div>
 				<div class="col-md-6 col-xl-12 mb-3">
 					<div class="card card-body shadow p-4">
@@ -582,7 +348,6 @@ Page content END -->
 
 </html>
 {% endblock %}
-
 <style>
 .hover-translate-y {
     transition: all 0.3s ease-in-out;
@@ -666,5 +431,24 @@ Page content END -->
 .result-count .badge {
     padding: 6px 10px;
     margin-left: 6px;
+}
+
+/* استایل برای دسته‌بندی‌ها */
+.category-link {
+    color: var(--bs-light);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: inline-block;
+    padding: 3px 0;
+}
+
+.category-link:hover {
+    color: var(--bs-primary);
+    transform: translateX(5px);
+}
+
+.category-link.active {
+    color: var(--bs-primary);
+    font-weight: 700;
 }
 </style>

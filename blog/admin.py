@@ -22,3 +22,9 @@ class CommentAdmin(admin.ModelAdmin):
     search_fields = ('user__username', 'post__title')
     list_per_page = 10
     empty_value_display = '-empty-'
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    list_per_page = 10
+    empty_value_display = '-empty-'

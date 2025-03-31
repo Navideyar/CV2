@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'IRANSans';
+    src: url('fonts/IRANSans/IRANSansWeb.eot') format('embedded-opentype'),
+         url('fonts/IRANSans/IRANSansWeb(FaNum).woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('fonts/vazir/Vazir-Light-FD-WOL.eot') format('embedded-opentype'),
+         url('fonts/vazir/Vazir-Light-FD-WOL.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('fonts/vazir/Vazir-Bold-FD.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.welcome-headline {
+    font-family: 'IRANSans', sans-serif !important;
+    line-height: 1.2 !important;
+    text-align: right;
+    direction: rtl;
+    margin-bottom: 10px !important;
+}
+
+.welcome-headline .line {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: normal;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.welcome-headline .highlight {
+    color: #2a308f;
+    font-weight: bold;
+    position: relative;
+}
+
+.welcome-headline .welcome {
+    display: block;
+    font-size: 1.7rem;
+    margin-top: 5px;
+    color: #4389a2;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .welcome-headline .line {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-headline .welcome {
+        font-size: 1.5rem;
+    }
+} 

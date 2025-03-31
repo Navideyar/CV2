@@ -1,0 +1,263 @@
+/* استایل‌های اختصاصی سایدبار بلاگ */
+
+/* استایل‌های کلی سایدبار */
+.sidebar-box {
+    margin-bottom: 30px;
+    padding: 25px;
+    font-size: 15px;
+    width: 100%;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.sidebar-box:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+/* استایل‌های تیتر سایدبار */
+.heading-sidebar {
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.heading-sidebar:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--bs-primary, #4e73df);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-box:hover .heading-sidebar:after {
+    width: 80px;
+}
+
+/* استایل‌های دسته‌بندی‌ها */
+.categories {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.categories li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.categories li:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.categories li a {
+    display: block;
+    color: #212529;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.categories li a:hover {
+    color: var(--bs-primary, #4e73df);
+    transform: translateX(5px);
+}
+
+.categories li a span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #6c757d;
+}
+
+/* استایل‌های پست‌های اخیر */
+.block-21 {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.block-21:last-child {
+    margin-bottom: 0;
+}
+
+.blog-img {
+    display: block;
+    height: 80px;
+    width: 80px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-img:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.blog-img:hover:after {
+    background: rgba(0,0,0,0.1);
+}
+
+.mr-4 {
+    margin-left: 1.5rem !important;
+    margin-right: 0 !important;
+}
+
+.block-21 .text {
+    flex: 1;
+}
+
+.block-21 .text .heading {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.block-21 .text .heading a {
+    color: #212529;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.block-21 .text .heading a:hover {
+    color: var(--bs-primary, #4e73df);
+}
+
+.block-21 .text .meta {
+    font-size: 13px;
+    color: #6c757d;
+}
+
+.block-21 .text .meta div {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.block-21 .text .meta div a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.block-21 .text .meta div a i {
+    color: var(--bs-primary, #4e73df);
+}
+
+/* استایل‌های جستجو */
+.search-form .form-group {
+    position: relative;
+    margin-bottom: 0;
+}
+
+.search-form .form-control {
+    height: 45px;
+    padding-right: 50px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.search-form .form-control:focus {
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    border-color: var(--bs-primary, #4e73df);
+}
+
+.search-form button {
+    font-size: 18px;
+    padding: 0 15px;
+}
+
+.search-form button:hover {
+    color: var(--bs-primary, #4e73df) !important;
+}
+
+/* استایل‌های ابر تگ */
+.tagcloud {
+    margin-top: 15px;
+}
+
+.tag-cloud-link {
+    display: inline-block;
+    padding: 5px 12px;
+    margin: 0 3px 8px 0;
+    border-radius: 4px;
+    background-color: #e9ecef;
+    color: #495057;
+    text-decoration: none;
+    font-size: 12px !important;
+    transition: all 0.3s ease;
+}
+
+.tag-cloud-link:hover {
+    background-color: var(--bs-primary, #4e73df);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* حالت تاریک */
+[data-bs-theme="dark"] .sidebar-box {
+    background-color: #2c3034;
+}
+
+[data-bs-theme="dark"] .categories li a,
+[data-bs-theme="dark"] .block-21 .text .heading a {
+    color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .categories li a span,
+[data-bs-theme="dark"] .block-21 .text .meta div a {
+    color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .tag-cloud-link {
+    background-color: #343a40;
+    color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .categories li {
+    border-bottom-color: rgba(255,255,255,0.05);
+}
+
+[data-bs-theme="dark"] .heading-sidebar {
+    border-bottom-color: rgba(255,255,255,0.1);
+}
+
+[data-bs-theme="dark"] .search-form .form-control {
+    background-color: #343a40;
+    border-color: rgba(255,255,255,0.1);
+    color: #e9ecef;
+}
+
+[data-bs-theme="dark"] .search-form .form-control:focus {
+    border-color: var(--bs-primary, #6a93ff);
+}
+
+[data-bs-theme="dark"] .search-form button {
+    color: #adb5bd !important;
+}
+
+[data-bs-theme="dark"] .search-form button:hover {
+    color: var(--bs-primary, #6a93ff) !important;
+} 

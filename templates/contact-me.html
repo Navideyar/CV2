@@ -27,7 +27,8 @@ Image and contact form START -->
 					<h2 class="mt-4 mt-md-0 fs-4">با من در ارتباط باشید</h2>
 					<p>می تونید سوالات و نظرات و درخواست هاتون رو از طریق این فرم با من مطرح کنین</p>
 
-					<form action="/submit/ticket" method="post">
+					<form action="{% url 'contact:contact' %}" method="post">
+						{% csrf_token %}
 						<script src="https://www.google.com/recaptcha/api.js?render=6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa"></script>
 <script type="text/javascript">
     var element

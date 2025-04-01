@@ -6,6 +6,7 @@ class Contact(models.Model):
     email = models.EmailField()
     message = models.TextField()
     subject = models.CharField(max_length=250 , default='بدون موضوع')
+    phone = models.CharField(max_length=250 , default='بدون شماره تلفن', null=True, blank=True) 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

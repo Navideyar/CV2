@@ -29,9 +29,6 @@ def contact(request):
 def policy(request):
     return render(request, 'policy-and-privacy.html')
 
-def contact(request):
-    return render(request, 'contact-me.html')
-
 
 def login_view(request):
     if request.method == 'POST':

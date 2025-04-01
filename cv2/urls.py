@@ -24,6 +24,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("core.urls")),
     path("blog/", include("blog.urls")),
+    path("contact-me/", include("contact.urls")),
 ]
 
 # تنظیمات برای فایل‌های استاتیک و مدیا در محیط توسعه

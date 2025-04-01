@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} ^Wget [OR]
+RewriteCond %{HTTP_USER_AGENT} ^curl [OR]
+RewriteCond %{HTTP_USER_AGENT} ^python-requests [OR]
+RewriteCond %{HTTP_USER_AGENT} ^python-urllib [OR]
+RewriteCond %{HTTP_USER_AGENT} ^python-httpx
+RewriteRule .* - [F,L]
+
+# جلوگیری از لیست کردن محتوای دایرکتوری‌ها
+Options -Indexes
+
+# تنظیمات امنیتی اضافی
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule> 

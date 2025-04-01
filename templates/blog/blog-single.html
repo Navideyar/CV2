@@ -197,8 +197,10 @@
         <!-- ابزارک تگ‌ها -->
         <div class="tag-widget post-tag-container mb-5 mt-5">
           <div class="tagcloud">
-            {% for category in categories %}
-            <a href="{% url 'blog:blog' %}?category={{ category.name }}" class="tag-cloud-link">{{ category.name }}</a>
+            {% for tag in tags %}
+            <a href="{% url 'blog:blog' %}?tag={{ tag.name }}" class="tag-cloud-link">{{ tag.name }}</a>
+            {% empty %}
+            <p>هیچ تگی یافت نشد</p>
             {% endfor %}
           </div>
         </div>
@@ -323,14 +325,11 @@
         <div class="sidebar-box">
           <h3 class="heading-sidebar">Tag Cloud</h3>
           <div class="tagcloud">
-            <a href="#" class="tag-cloud-link">house</a>
-            <a href="#" class="tag-cloud-link">office</a>
-            <a href="#" class="tag-cloud-link">building</a>
-            <a href="#" class="tag-cloud-link">land</a>
-            <a href="#" class="tag-cloud-link">table</a>
-            <a href="#" class="tag-cloud-link">interior</a>
-            <a href="#" class="tag-cloud-link">exterior</a>
-            <a href="#" class="tag-cloud-link">industrial</a>
+            {% for tag in tags %}
+            <a href="{% url 'blog:blog' %}?tag={{ tag.name }}" class="tag-cloud-link">{{ tag.name }}</a>
+            {% empty %}
+            <p>هیچ تگی یافت نشد</p>
+            {% endfor %}
           </div>
         </div>
       </div>

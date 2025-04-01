@@ -77,6 +77,14 @@ TEMPLATES = [
     },
 ]
 
+# settings for sitemap
+SITE_ID = 1
+
+# settings for robots
+robots_use_https = True
+robots_use_sitemap = True
+
+
 WSGI_APPLICATION = "cv2.wsgi.application"
 
 

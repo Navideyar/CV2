@@ -4,22 +4,29 @@ from .models import Post
 from .models import Comment
 from django.utils.text import slugify
 from .models import Category
+from taggit.models import Tag
 
 def blog(request):
-    # دریافت دسته‌بندی از پارامتر URL
+    # دریافت دسته‌بندی و تگ از پارامتر URL
     category_name = request.GET.get('category')
+    tag_name = request.GET.get('tag')
     
     # دریافت تمام پست‌های فعال
     all_posts = Post.objects.filter(status=True)
     
-    # دریافت پست‌ها با فیلتر دسته‌بندی
+    # دریافت پست‌ها با فیلتر دسته‌بندی یا تگ
     posts = all_posts
     if category_name:
         posts = posts.filter(category__name=category_name)
+    if tag_name:
+        posts = posts.filter(tags__name=tag_name)
     posts = posts.order_by('-created_at')
     
     # دریافت تمام دسته‌بندی‌ها
     categories = Category.objects.all().distinct()
+    
+    # دریافت تمام تگ‌ها
+    tags = Tag.objects.all()
     
     # اطمینان از اینکه همه پست‌ها slug دارند
     for post in posts:
@@ -34,7 +41,9 @@ def blog(request):
         'posts': posts,
         'all_posts_count': all_posts.count(),
         'categories': categories,
-        'selected_category': category_name
+        'tags': tags,
+        'selected_category': category_name,
+        'selected_tag': tag_name
     })
 
 def blog_single(request, slug):
@@ -59,6 +68,7 @@ def blog_single(request, slug):
     context = {
         'post': post,
         'categories': categories,
-        'reading_time': reading_time
+        'reading_time': reading_time,
+        'tags': post.tags.all()
     }
     return render(request, 'blog/blog-single.html', context)

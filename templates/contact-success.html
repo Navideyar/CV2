@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>پیام شما ارسال شد | نویدیار</title>{% endblock %}
+{% block content %}
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+    <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <div class="py-5 my-5">
+                        <img src="{% static 'images/element/create-account.svg' %}" class="h-200px mb-4" alt="موفقیت" loading="lazy">
+                        <h1 class="h2">پیام شما با موفقیت ارسال شد</h1>
+                        <p class="mb-4">ممنون از پیام شما. در اسرع وقت پاسخ خواهید گرفت.</p>
+                        <a href="/" class="btn btn-primary mb-0">بازگشت به صفحه اصلی</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+{% endblock %} 

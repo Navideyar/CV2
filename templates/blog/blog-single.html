@@ -192,7 +192,7 @@
           <img src="{{post.image.url}}" alt="{{post.title}}" class="img-fluid rounded w-100" style="max-height: 500px; object-fit: cover;">
         </div>
         <!-- محتوای اصلی پست -->
-        <p>{{ post.content }}</p>
+        <p>{{ post.content|safe }}</p>
         
         <!-- ابزارک تگ‌ها -->
         <div class="tag-widget post-tag-container mb-5 mt-5">

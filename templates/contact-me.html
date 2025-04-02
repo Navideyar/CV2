@@ -39,46 +39,13 @@ Image and contact form START -->
             </div>
             {% endif %}
 
+            <!-- فرم ارسال پیام -->
+
             <form
               action="{% url 'contact:contact' %}"
               method="post">
               {% csrf_token %}
-			  
-              <script src="https://www.google.com/recaptcha/api.js?render=6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa"></script>
-              <script type="text/javascript">
-                var element;
-                grecaptcha.ready(function () {
-                  element = document.querySelector(
-                    '.g-recaptcha[data-widget-uuid="b8a824f828ce471f9c84b58750844bd0"]'
-                  );
-                  element.form.addEventListener("submit", recaptchaFormSubmit);
-                });
-                function recaptchaFormSubmit(event) {
-                  event.preventDefault();
-                  grecaptcha
-                    .execute("6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa", {
-                      action: "form",
-                    })
-                    .then(function (token) {
-                      console.log(
-                        "reCAPTCHA validated for 'data-widget-uuid=\"b8a824f828ce471f9c84b58750844bd0\"'. Setting input value..."
-                      );
-                      element.value = token;
-                      element.form.submit();
-                    });
-                }
-              </script>
-              <input
-                class="g-recaptcha"
-                type="hidden"
-                name="captcha"
-                required_score="0.5"
-                data-sitekey="6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa"
-                required
-                id="id_captcha"
-                data-widget-uuid="b8a824f828ce471f9c84b58750844bd0"
-                data-callback="onSubmit_b8a824f828ce471f9c84b58750844bd0"
-                data-size="normal" />
+              
               <!-- Name -->
               <div class="d-flex">
                 <div class="col-md-6 mb-4 m-1 bg-light-input">
@@ -149,6 +116,23 @@ Image and contact form START -->
                   oninput="updateCharacterCount()"></textarea>
                 <div id="characterCount">0/700</div>
               </div>
+              
+              <!-- reCAPTCHA -->
+              <div class="col-md-12 mb-4 m-1 bg-light-input rounded p-3">
+                <label for="id_captcha_1" class="form-label mb-2">کد امنیتی <span class="text-danger">*</span></label>
+                <div class="d-flex align-items-center">
+                  <!-- تصویر و فیلد کپچا -->
+                  <div class="d-flex align-items-center me-1">
+                    {{ form.captcha }}
+                  </div>
+                  <!-- دکمه رفرش -->
+                  <button type="button" onclick="refreshCaptcha()" class="btn btn-sm btn-outline-primary captcha-refresh-btn">
+                    <i class="fas fa-sync-alt"></i>
+                  </button>
+                </div>
+                <small class="text-muted captcha-help-text d-block mt-1">لطفاً کد نمایش داده شده را وارد کنید</small>
+              </div>
+              
               <!-- Button -->
               <div class="col-md-12 m-1 d-grid">
                 <button
@@ -175,8 +159,8 @@ Image and contact form END -->
 </div>
 
 <script src="/static/CACHE/js/output.8d126b85d939.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-<script src="https://www.google.com/recaptcha/api.js?render=6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa"></script>
 <script>
   function updateCharacterCount() {
     var textarea = document.getElementById("textareaBox");
@@ -187,6 +171,168 @@ Image and contact form END -->
 
     countElement.textContent = enteredCharacters + "/" + remainingCharacters;
   }
+  
+  function refreshCaptcha() {
+    console.log("Refreshing captcha...");
+    
+    // استفاده از endpoint مخصوص رفرش کپچا
+    $.getJSON("/captcha/refresh/", function(result) {
+      console.log("Captcha refreshed:", result);
+      
+      // بروزرسانی تصویر کپچا
+      $('.captcha').attr('src', result['image_url']);
+      
+      // بروزرسانی کلید مخفی کپچا
+      $('#id_captcha_0').val(result['key']);
+      
+      console.log("Updated captcha image and key");
+    });
+  }
+  
+  // اجرای کد بعد از بارگذاری صفحه
+  $(document).ready(function() {
+    // اعمال استایل‌های سفارشی به المان‌های کپچا
+    $('#id_captcha_1').addClass('form-control');
+    
+    // شناسایی و اصلاح ساختار کپچا برای فاصله‌گذاری صحیح
+    var captchaTable = $('table.captcha');
+    if (captchaTable.length) {
+      // اگر کپچا درون جدول قرار دارد
+      captchaTable.find('td').css('padding-right', '10px');
+    } else {
+      // اصلاح مستقیم عناصر کپچا
+      if ($('#id_captcha_1').prev().is('img.captcha')) {
+        $('#id_captcha_1').css('margin-left', '10px');
+      } else {
+        // جستجوی تصویر کپچا و اعمال فاصله بیشتر
+        $('.captcha').after('<span style="display: inline-block; width: 10px;"></span>');
+      }
+    }
+    
+    // استایل دکمه رفرش کپچا
+    $('.captcha-refresh-btn').css({
+      'border-radius': '50%',
+      'width': '38px',
+      'height': '38px',
+      'margin-right': '0px',
+      'margin-left': '0px',
+      'padding': '0',
+      'display': 'inline-flex',
+      'align-items': 'center',
+      'justify-content': 'center',
+      'font-size': '0.9rem',
+      'vertical-align': 'middle',
+      'box-shadow': '0 2px 4px rgba(0,0,0,0.1)',
+      'border': 'none',
+      'transition': 'all 0.2s ease-in-out',
+      'background-color': '#f8f9fa',
+      'color': '#007bff'
+    });
+    
+    // افکت hover برای دکمه رفرش
+    $('.captcha-refresh-btn').hover(
+      function() {
+        $(this).css({
+          'transform': 'rotate(30deg) scale(1.1)',
+          'background-color': '#007bff',
+          'color': 'white'
+        });
+      },
+      function() {
+        $(this).css({
+          'transform': 'rotate(0) scale(1)',
+          'background-color': '#f8f9fa',
+          'color': '#007bff'
+        });
+      }
+    );
+    
+    // مرتب‌سازی فیلد ورودی کپچا
+    $('#id_captcha_1').css({
+      'max-width': '150px',
+      'height': '38px',
+      'margin-top': '0',
+      'margin-left': '30px',
+      'vertical-align': 'middle',
+      'border-radius': '8px',
+      'box-shadow': 'inset 0 1px 3px rgba(0,0,0,0.1)',
+      'border': '1px solid #ced4da',
+      'transition': 'all 0.2s ease',
+      'padding': '8px 12px'
+    });
+    
+    // افکت focus برای فیلد ورودی
+    $('#id_captcha_1').focus(function() {
+      $(this).css({
+        'border-color': '#80bdff',
+        'box-shadow': 'inset 0 1px 3px rgba(0,0,0,0.1), 0 0 0 0.2rem rgba(0,123,255,0.15)'
+      });
+    }).blur(function() {
+      $(this).css({
+        'border-color': '#ced4da',
+        'box-shadow': 'inset 0 1px 3px rgba(0,0,0,0.1)'
+      });
+    });
+    
+    // تنظیم رنگ‌بندی براساس حالت روز/شب
+    function setColorMode() {
+      // بررسی آیا حالت تاریک فعال است
+      const isDarkMode = $('body').hasClass('dark-mode') || 
+                        $('html').hasClass('dark-mode') ||
+                        window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      if (isDarkMode) {
+        // حالت تاریک
+        $('.captcha').addClass('border border-secondary');
+        
+        // تغییر رنگ دکمه در حالت تاریک
+        $('.captcha-refresh-btn').css({
+          'background-color': '#343a40',
+          'color': '#80bdff'
+        });
+        
+        // تغییر استایل فیلد ورودی در حالت تاریک
+        $('#id_captcha_1').css({
+          'background-color': '#343a40',
+          'color': '#e9ecef',
+          'border-color': '#495057'
+        });
+        
+        // تغییر رنگ متن راهنمای کپچا در حالت تاریک
+        $('.captcha-help-text').removeClass('text-muted').attr('style', 'color: #adb5bd !important; font-weight: 400; display: block; margin-top: 0.25rem;');
+      } else {
+        // حالت روشن
+        $('.captcha').removeClass('border border-secondary');
+        
+        // تغییر رنگ دکمه در حالت روشن
+        $('.captcha-refresh-btn').css({
+          'background-color': '#f8f9fa',
+          'color': '#007bff'
+        });
+        
+        // تغییر استایل فیلد ورودی در حالت روشن
+        $('#id_captcha_1').css({
+          'background-color': '#fff',
+          'color': '#212529',
+          'border-color': '#ced4da'
+        });
+        
+        // تغییر رنگ متن راهنمای کپچا در حالت روشن
+        $('.captcha-help-text').removeClass('text-muted').attr('style', 'color: #495057 !important; font-weight: 400; display: block; margin-top: 0.25rem;');
+      }
+    }
+    
+    // اجرای تابع تنظیم رنگ
+    setColorMode();
+    
+    // گوش دادن به تغییرات حالت روز/شب
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setColorMode);
+    
+    // اگر سایت دارای سوئیچ تغییر حالت روز/شب است، این هم اضافه شود
+    $('.mode-switch, .dark-mode-switch').on('click', function() {
+      setTimeout(setColorMode, 100); // کمی تاخیر برای اعمال تغییرات
+    });
+  });
 </script>
 
 {% endblock %}

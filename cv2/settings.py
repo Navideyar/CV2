@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'multi_captcha_admin',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -47,8 +48,16 @@ INSTALLED_APPS = [
     'core',
     'taggit',
     'robots',
+    'django_recaptcha',
+    'captcha',
     
 ]
+
+# reCAPTCHA settings
+RECAPTCHA_PUBLIC_KEY = "6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa"
+RECAPTCHA_PRIVATE_KEY = "6LcFJzEnAAAAAJ4u--yT7zNZnz6x1PbVD8yvNE_j"
+RECAPTCHA_REQUIRED_SCORE = 0.5
+RECAPTCHA_DEFAULT_ACTION = "form"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -77,6 +86,11 @@ TEMPLATES = [
         },
     },
 ]
+
+
+MULTI_CAPTCHA_ADMIN = {
+    "ENGINE": "simple-captcha",  # نوع کپچا (در اینجا کپچای تصویری ساده)
+}
 
 # settings for sitemap
 SITE_ID = 1

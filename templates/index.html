@@ -600,7 +600,7 @@
                             <h3 class="modern-post-title">
                                 <a href="{% if post.slug %}{% url 'blog:blog_single' post.slug %}{% else %}#{% endif %}">{{ post.title|default:"عنوان در دسترس نیست" }}</a>
                             </h3>
-                            <p class="modern-post-excerpt">{{ post.content|default:"محتوای این پست در دسترس نیست."|truncatechars:120 }}</p>
+                            <p class="modern-post-excerpt">{{ post.content|default:"محتوای این پست در دسترس نیست." |safe|truncatechars:120 }}</p>
                             <div class="modern-post-meta">
                                 <div class="modern-post-author">
                                     <i class="fas fa-user-circle"></i>

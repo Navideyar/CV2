@@ -29,6 +29,9 @@ def blog(request):
     # دریافت تمام تگ‌ها
     tags = Tag.objects.all()
     
+    # دریافت آخرین پست‌ها برای نمایش در سایدبار
+    latest_posts = Post.objects.filter(status=True).order_by('-created_at')[:3]
+    
     # اطمینان از اینکه همه پست‌ها slug دارند
     for post in posts:
         if not post.slug or post.slug == '':
@@ -44,7 +47,8 @@ def blog(request):
         'categories': categories,
         'tags': tags,
         'selected_category': category_name,
-        'selected_tag': tag_name
+        'selected_tag': tag_name,
+        'latest_posts': latest_posts
     })
 
 
@@ -82,13 +86,18 @@ def blog_single(request, slug):
     # محاسبه زمان مطالعه تقریبی (هر 200 کلمه حدود یک دقیقه)
     word_count = len(post.content.split())
     reading_time = max(1, round(word_count / 200))
+    
+    # دریافت آخرین پست‌ها برای نمایش در سایدبار
+    latest_posts = Post.objects.filter(status=True).exclude(id=post.id).order_by('-created_at')[:3]
+    
     context = {
         'post': post,
         'categories': categories,
         'reading_time': reading_time,
         'tags': post.tags.all(),
         'comments': comments,
-        'form': form
+        'form': form,
+        'latest_posts': latest_posts
     }
     
     return render(request, 'blog/blog-single.html', context)

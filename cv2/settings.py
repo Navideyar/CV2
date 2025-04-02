@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'robots',
     'django_recaptcha',
     'captcha',
+    'django.contrib.humanize',
     
 ]
 

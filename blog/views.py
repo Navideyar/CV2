@@ -6,22 +6,36 @@ from .models import Category
 from taggit.models import Tag
 from .forms import CommentForm
 from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def blog(request):
     # دریافت دسته‌بندی و تگ از پارامتر URL
     category_name = request.GET.get('category')
     tag_name = request.GET.get('tag')
+    search_query = request.GET.get('q')
+    sort_type = request.GET.get('sort', 'newest')  # مقدار پیش‌فرض: جدیدترین
     
     # دریافت تمام پست‌های فعال
     all_posts = Post.objects.filter(status=True)
     
-    # دریافت پست‌ها با فیلتر دسته‌بندی یا تگ
+    # دریافت پست‌ها با فیلتر دسته‌بندی یا تگ یا جستجو
     posts = all_posts
     if category_name:
         posts = posts.filter(category__name=category_name)
     if tag_name:
         posts = posts.filter(tags__name=tag_name)
-    posts = posts.order_by('-created_at')
+    if search_query:
+        posts = posts.filter(title__icontains=search_query) | posts.filter(content__icontains=search_query)
+    
+    # مرتب‌سازی پست‌ها بر اساس پارامتر sort
+    if sort_type == 'newest':
+        posts = posts.order_by('-created_at')
+    elif sort_type == 'oldest':
+        posts = posts.order_by('created_at')
+    elif sort_type == 'popular':
+        posts = posts.order_by('-count_views')
+    else:
+        posts = posts.order_by('-created_at')  # مرتب‌سازی پیش‌فرض
     
     # دریافت تمام دسته‌بندی‌ها
     categories = Category.objects.all().distinct()
@@ -40,14 +54,31 @@ def blog(request):
             if not post.slug:
                 post.slug = f"post-{post.id}"
             post.save()
+    
+    # صفحه‌بندی
+    page = request.GET.get('page', 1)
+    posts_per_page = 5  # تعداد پست در هر صفحه
+    paginator = Paginator(posts, posts_per_page)
+    
+    try:
+        paginated_posts = paginator.page(page)
+    except PageNotAnInteger:
+        # اگر شماره صفحه عدد نباشد، صفحه اول نمایش داده شود
+        paginated_posts = paginator.page(1)
+    except EmptyPage:
+        # اگر شماره صفحه بیشتر از تعداد صفحات باشد، آخرین صفحه نمایش داده شود
+        paginated_posts = paginator.page(paginator.num_pages)
             
     return render(request, 'blog/index.html', {
-        'posts': posts,
-        'all_posts_count': all_posts.count(),
+        'posts': paginated_posts,
+        'all_posts_count': posts.count(),  # تعداد پست‌های فیلتر شده
+        'total_posts_count': all_posts.count(),  # تعداد کل پست‌ها
         'categories': categories,
         'tags': tags,
         'selected_category': category_name,
         'selected_tag': tag_name,
+        'search_query': search_query,
+        'sort_type': sort_type,
         'latest_posts': latest_posts
     })
 

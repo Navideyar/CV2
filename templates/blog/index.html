@@ -1,5 +1,6 @@
 {% extends 'base.html' %} 
 {% load static %} 
+{% load blog_filters %}
 {% block content %}
 
 
@@ -31,6 +32,9 @@ Page Banner START -->
 						<ol class="breadcrumb mb-0">
 							<li class="breadcrumb-item"><a href="/">صفحه اصلی</a></li>
 							<li class="breadcrumb-item"><a href="{% url 'blog:blog' %}">وبلاگ</a></li>
+							{% if search_query %}
+							<li class="breadcrumb-item active" aria-current="page">نتایج جستجو: "{{ search_query }}"</li>
+							{% endif %}
 						</ol>
 					</nav>
 				</div>
@@ -50,6 +54,7 @@ Page content START -->
 
 			<div class="col-lg-8 pt-5 pt-lg-0">
 				<div class="row mb-4 align-items-center">
+					
 					<!-- Search bar -->
 					<div class="col-md-6">
 						<div class="input-group search-box mb-3">
@@ -67,7 +72,7 @@ Page content START -->
 								<i class="fas fa-sort-amount-down"></i>
 							</label>
 							<select class="form-select custom-sort-select" id="inputGroupSort">
-								<option selected>مرتب سازی</option>
+								<option value="">مرتب سازی</option>
 								<option value="1">جدیدترین</option>
 								<option value="2">قدیمی ترین</option>
 								<option value="3">پربازدیدترین</option>
@@ -84,7 +89,17 @@ Page content START -->
 							<i class="fas fa-sliders-h me-1"></i> نمایش فیلتر
 						</button>
 						<!-- Advanced filter responsive toggler END -->
-						<p class="mb-0 text-end result-count"><span class="badge bg-primary rounded-pill">{{posts.count}}</span> نتیجه یافت شد</p>
+						
+						<!-- تعداد نتایج با پیام مناسب - نسخه ساده شده -->
+						<div class="mb-0 text-end result-count">
+							<span class="badge bg-primary rounded-pill me-1">{{all_posts_count}}</span>
+							{% if search_query or selected_category or selected_tag %}
+                                نتیجه  
+                                {% if all_posts_count != total_posts_count %}(از {{total_posts_count}} مطلب){% endif %}
+							{% else %}
+								مطلب
+							{% endif %}
+						</div>
 					</div>
 
 				</div>
@@ -102,7 +117,13 @@ Page content START -->
 										<div class="bg-overlay bg-dark opacity-2"></div>
 										<div class="card-img-overlay d-flex align-items-start p-3">
 											<!-- badge -->
-											<a href="/blog/?category=django" class="badge text-bg-danger fw-bold">django</a>
+											<div class="category-badges">
+												{% for category in post.category.all %}
+												<a href="/blog/?category={{category.name}}" class="badge text-bg-danger fw-bold me-1">{{category.name}}</a>
+												{% empty %}
+												<span class="badge text-bg-secondary fw-bold">بدون دسته</span>
+												{% endfor %}
+											</div>
 										</div>
 									</div>
 								</div>
@@ -112,7 +133,7 @@ Page content START -->
 										<!-- Title -->
 										<h4 class="card-title fw-semi-bold mb-3"><a class="text-decoration-none stretched-link"
 												href="{% if post.slug %}{% url 'blog:blog_single' post.slug %}{% else %}#{% endif %}">{{post.title}}</a></h4>
-										<p class="text-truncate-3 mb-3">{{post.content|truncatechars:100}}</p>
+										<p class="text-truncate-3 mb-3">{{post.content|clean_text_excerpt:100}}</p>
 										<!-- Info -->
 										<div class="d-flex justify-content-between align-items-center border-top pt-3 mt-auto">
 											<h6 class="mb-0 fw-normal"><a href="#" class="text-reset"><i class="fas fa-user-circle me-1 text-primary"></i>نویدیار</a>
@@ -123,6 +144,21 @@ Page content START -->
 									</div>
 								</div>
 							</div>
+						</div>
+					</div>
+					{% empty %}
+					<div class="col-12">
+						<div class="alert alert-info text-center p-4">
+							<i class="fas fa-info-circle fa-2x mb-3"></i>
+							<h4>نتیجه‌ای یافت نشد!</h4>
+							{% if search_query %}
+							<p>هیچ نتیجه‌ای برای جستجوی "<strong>{{ search_query }}</strong>" یافت نشد.</p>
+							<a href="{% url 'blog:blog' %}" class="btn btn-primary mt-3">
+								<i class="fas fa-redo me-2"></i>بازگشت به همه مطالب
+							</a>
+							{% else %}
+							<p>در حال حاضر مطلبی برای نمایش وجود ندارد.</p>
+							{% endif %}
 						</div>
 					</div>
 					{% endfor %}
@@ -136,33 +172,74 @@ Page content START -->
 <nav class="d-flex justify-content-center mt-5" aria-label="navigation">
     <ul class="pagination pagination-primary-soft rounded mb-0">
         
+        <!-- صفحه قبلی -->
+        {% if posts.has_previous %}
+        <li class="page-item mb-0">
+            <button class="page-link" onclick="changePage(`{{ posts.previous_page_number }}`)">
+                <i class="fas fa-angle-double-right"></i>
+            </button>
+        </li>
+        {% endif %}
         
+        <!-- شماره صفحات -->
+        {% if posts.paginator.num_pages > 0 %}
+            {% if posts.paginator.num_pages <= 5 %}
+                <!-- اگر تعداد صفحات کمتر از 5 باشد، همه را نمایش بده -->
+                {% for i in posts.paginator.page_range %}
+                    {% if posts.number == i %}
+                        <li class="page-item mb-0 active"><a class="page-link" href="#">{{ i }}</a></li>
+                    {% else %}
+                        <li class="page-item mb-0">
+                            <button class="page-link" onclick="changePage(`{{ i }}`)">{{ i }}</button>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <!-- نمایش محدود صفحات (تنها 5 صفحه حول صفحه جاری) -->
+                {% if posts.number > 3 %}
+                    <li class="page-item mb-0">
+                        <button class="page-link" onclick="changePage(`1`)">1</button>
+                    </li>
+                    {% if posts.number > 4 %}
+                        <li class="page-item mb-0 disabled"><span class="page-link">...</span></li>
+                    {% endif %}
+                {% endif %}
+                
+                {% for i in posts.paginator.page_range %}
+                    {% if posts.number|add:'-2' <= i and i <= posts.number|add:'2' %}
+                        {% if posts.number == i %}
+                            <li class="page-item mb-0 active"><a class="page-link" href="#">{{ i }}</a></li>
+                        {% else %}
+                            <li class="page-item mb-0">
+                                <button class="page-link" onclick="changePage(`{{ i }}`)">{{ i }}</button>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                
+                {% if posts.number < posts.paginator.num_pages|add:'-2' %}
+                    {% if posts.number < posts.paginator.num_pages|add:'-3' %}
+                        <li class="page-item mb-0 disabled"><span class="page-link">...</span></li>
+                    {% endif %}
+                    <li class="page-item mb-0">
+                        <button class="page-link" onclick="changePage(`{{ posts.paginator.num_pages }}`)">{{ posts.paginator.num_pages }}</button>
+                    </li>
+                {% endif %}
+            {% endif %}
+        {% endif %}
         
-        <li class="page-item mb-0 active"><a class="page-link" href="#">1</a></li>
+        <!-- صفحه بعدی -->
+        {% if posts.has_next %}
+        <li class="page-item mb-0">
+            <button class="page-link" onclick="changePage(`{{ posts.next_page_number }}`)">
+                <i class="fas fa-angle-double-left"></i>
+            </button>
+        </li>
+        {% endif %}
         
-            
-         <li class="page-item mb-0 ">
-            <button class="page-link" onclick="changePage(`2`)">2</button>
-            </li>
-            
-            
-         <li class="page-item mb-0 ">
-            <button class="page-link" onclick="changePage(`3`)">3</button>
-            </li>
-            
-            
-
-
-            
-            <li class="page-item mb-0">
-                <button class="page-link" onclick="changePage(`2`)">
-                    <i class="fas fa-angle-double-left"></i></button>
-            </li>
-            
     </ul>
 </nav>
-
-				<!-- Pagination END -->
+<!-- Pagination END -->
 			</div>
 			<div class="col-lg-4 pt-5 pt-lg-0">
 				<div class="col-md-6 col-lg-12 mb-3">
@@ -204,9 +281,9 @@ Page content END -->
 
     <script src="{% static 'CACHE/js/output.8d126b85d939.js' %}"></script>
     
+    <!-- اضافه کردن اسکریپت جستجو و مرتب‌سازی -->
+    <script src="{% static 'js/blog.js' %}"></script>
 
-
-    
 
 
 </body>
@@ -293,11 +370,19 @@ Page content END -->
 
 .result-count {
     font-weight: 500;
+    white-space: nowrap !important;
+    font-size: 0.95rem;
+    display: inline-flex !important;
+    flex-wrap: nowrap !important;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .result-count .badge {
     padding: 6px 10px;
     margin-left: 6px;
+    flex-shrink: 0;
 }
 
 /* استایل برای دسته‌بندی‌ها */

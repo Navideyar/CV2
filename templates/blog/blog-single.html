@@ -291,10 +291,10 @@
       <div class="col-lg-4 sidebar">
         <!-- ابزارک جستجو -->
         <div class="sidebar-box">
-          <form action="#" class="search-form">
+          <form action="{% url 'blog:blog' %}" method="get" class="search-form">
             <div class="form-group">
               <span class="icon icon-search"></span>
-              <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+              <input type="text" class="form-control" name="q" placeholder="یک عبارت بنویسید و Enter بزنید" required>
             </div>
           </form>
         </div>

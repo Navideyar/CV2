@@ -2245,8 +2245,8 @@
             <!-- Nav Search START -->
             <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
                 <div class="nav-item w-100">
-                    <form class="position-relative" action="/blog/">
-                        <input type="hidden" name="csrfmiddlewaretoken" value="CJRHMMviC3h9eqT64GUTH6G6dy1UX1NaV0vy2Zv8GWg841j8dseNwzvSePPNWmep">
+                    <form class="position-relative" action="{% url 'blog:blog' %}" method="get">
+                        {% csrf_token %}
                         <input class="form-control pe-5 bg-transparent search-box" type="search" placeholder=" جستجو..."
                             aria-label="Search" name="q">
                         <button

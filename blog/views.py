@@ -52,6 +52,7 @@ def blog_single(request, slug):
         return redirect('blog:blog')
         
     post = get_object_or_404(Post, slug=slug, status=True)
+    comments = Comment.objects.filter(post=post.id , approved=True).order_by('-created_at')
     
     # دریافت دسته‌بندی‌های مرتبط با پست
     # به احتمال زیاد فیلد category به صورت ManyToMany تعریف شده است
@@ -69,6 +70,7 @@ def blog_single(request, slug):
         'post': post,
         'categories': categories,
         'reading_time': reading_time,
-        'tags': post.tags.all()
+        'tags': post.tags.all(),
+        'comments': comments
     }
     return render(request, 'blog/blog-single.html', context)

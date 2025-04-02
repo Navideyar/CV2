@@ -77,7 +77,8 @@
                             <p class="mb-4">از دیدن شما خوشحالم! لطفا با حساب کاربری خود وارد شوید.</p>
                         </div>
                         <!-- Form START -->
-                        <form class=" mx-lg-5" method="POST" action=".">
+                        <form class=" mx-lg-5" method="POST" action="{% url 'accounts:login' %}">
+                            {% csrf_token %}
                             <script src="https://www.google.com/recaptcha/api.js?render=6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa"></script>
 <script type="text/javascript">
     var element
@@ -98,29 +99,28 @@
 <input class="g-recaptcha"
     type="hidden"
     name="captcha"
-     required_score="0.5" data-sitekey="6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa" required id="id_captcha" data-widget-uuid="aa70a2595df34160b150a50fdff0d8fb" data-callback="onSubmit_aa70a2595df34160b150a50fdff0d8fb" data-size="normal">
-                            <input type="hidden" name="csrfmiddlewaretoken" value="VbtNjfkRwAYalO4QCrQYwZVgos5uNEwhes7EzskHAtX9bpuSLdaSlsK2pJTnMZXw">
+                            required_score="0.5" data-sitekey="6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa" required id="id_captcha" data-widget-uuid="aa70a2595df34160b150a50fdff0d8fb" data-callback="onSubmit_aa70a2595df34160b150a50fdff0d8fb" data-size="normal">
                             <input type="hidden" name="next" value="" />
-                            <!-- Email -->
+                            <!-- Username -->
                             <div class="mb-4">
-                                <label for="exampleInputEmail1" class="form-label">ایمیل *</label>
+                                <label for="username" class="form-label">نام کاربری *</label>
                                 <div class="input-group input-group-lg">
                                     <span
                                         class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                                             class="fas fa-envelope"></i></span>
-                                    <input type="email" class="form-control border-0 bg-light rounded-end ps-1 text-center"
-                                        placeholder="***@gmail.com" name="username">
+                                    <input type="text" name="username" class="form-control border-0 bg-light rounded-end ps-1 text-center"
+                                        placeholder="نام کاربری" name="username">
                                 </div>
                             </div>
                             <!-- Password -->
                             <div class="mb-4">
-                                <label for="inputPassword5" class="form-label">رمز عبور *</label>
+                                <label for="password" class="form-label">رمز عبور *</label>
                                 <div class="input-group input-group-lg">
                                     <span
                                         class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                                             class="fas fa-lock"></i></span>
-                                    <input type="password" class="form-control border-0 bg-light rounded-end ps-1 text-center"
-                                        placeholder="********" name="password">
+                                    <input type="password" name="password" class="form-control border-0 bg-light rounded-end ps-1 text-center"
+                                        placeholder="رمز عبور" name="password">
                                 </div>
 
                             </div>

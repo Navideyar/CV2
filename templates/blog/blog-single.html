@@ -239,32 +239,68 @@
             </li>
             {% endfor %}
           </ul>
-          
+        
           <!-- فرم ارسال نظر جدید -->
           <div class="comment-form-wrap pt-5">
             <h3 class="mb-5">نظر خود را بنویسید</h3>
             <form action="{% url 'blog:blog_single' post.slug %}" method="post" class="p-5">
-              <div class="form-group">
-                {% csrf_token %}
-                <label for="name">نام *</label>
-                <input type="text" class="form-control" id="name" name="name">
-              </div>
-              <div class="form-group">
-                <label for="email">ایمیل *</label>
-                <input type="email" class="form-control" id="email" name="email">
-              </div>
-              <div class="form-group">
-                <label for="subject">موضوع</label>
-                <input type="text" class="form-control" id="subject" name="subject">
-              </div>
-
+              {% csrf_token %}
+              
+              {% if request.user.is_authenticated %}
+                <!-- اگر کاربر لاگین کرده باشد، فیلدهای نام و ایمیل مخفی و با مقادیر کاربر پر می‌شوند -->
+                <input type="hidden" name="name" value="{{ request.user.username }}">
+                <input type="hidden" name="email" value="{{ request.user.email }}">
+                <!-- پیام آگاه‌سازی برای کاربران لاگین‌شده -->
+                <div class="alert alert-info d-flex align-items-center animate__animated animate__fadeIn" role="alert" style="border-right: 3px solid #17a2b8; background-color: rgba(23, 162, 184, 0.1); box-shadow: 0 1px 5px rgba(0,0,0,0.08); padding: 10px 12px; margin-bottom: 20px; border-radius: 4px; max-width: 100%; font-size: 14px;">
+                  <div style="margin-left: 8px; font-size: 16px; color: #17a2b8;">
+                    <i class="fas fa-info-circle"></i>
+                  </div>
+                  <div style="margin-right: 4px; font-size: 14px; font-weight: 400;">
+                    نام و ایمیل شما به صورت خودکار از حساب کاربری‌تان استفاده خواهد شد.
+                  </div>
+                </div>
+              {% else %}
+                <!-- اگر کاربر لاگین نکرده باشد، فیلدهای نام و ایمیل نمایش داده می‌شوند -->
+                <div class="form-group">
+                  <label for="name">نام *</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">ایمیل</label>
+                  <input type="email" class="form-control" id="email" name="email">
+                </div>
+              {% endif %}
+              
               <div class="form-group">
                 <label for="message">نظر *</label>
-                <textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
+                <textarea name="message" id="message" cols="30" rows="10" class="form-control" required></textarea>
               </div>
               <div class="form-group">
-                <label for="captcha">کد امنیتی *</label>
-                {{ form.captcha }}
+                <label for="captcha-input" class="form-label">کد امنیتی <span class="text-danger">*</span></label>
+                <div class="row g-2">
+                    <div class="col-6">
+                        <div class="captcha-container bg-white border rounded p-3 text-center">
+                            <span id="captcha-code" class="fw-bold fs-4 user-select-none"
+                                style="letter-spacing: 3px; font-family: 'Courier New', monospace; color: #000; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">{{ captcha_code }}</span>
+                            <input type="hidden" name="server_captcha" value="{{ captcha_code }}">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3">
+                                <i class="fas fa-shield-alt"></i>
+                            </span>
+                            <input type="text" class="form-control border-0 bg-light rounded-end ps-1 text-center"
+                                placeholder="کد را وارد کنید" id="captcha-input" name="captcha_input" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-1">
+                    <a href="{{ request.path }}" class="btn btn-sm btn-outline-primary">
+                        <i class="fas fa-sync-alt"></i> تازه‌سازی کد
+                    </a>
+                </div>
+                <small class="text-muted d-block mt-1">لطفاً کد نمایش داده شده را وارد کنید</small>
               </div>
               <div class="form-group">
                 <input type="submit" value="ارسال نظر" class="btn py-3 px-4 btn-primary">

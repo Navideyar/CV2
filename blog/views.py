@@ -7,6 +7,15 @@ from taggit.models import Tag
 from .forms import CommentForm
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+import random
+import string
+
+def generate_captcha_code(length=5):
+    """تولید کد کپچای تصادفی با طول مشخص"""
+    characters = string.ascii_uppercase + string.digits
+    # حذف کاراکترهایی که ممکن است با هم اشتباه شوند
+    characters = characters.replace('0', '').replace('O', '').replace('1', '').replace('I', '')
+    return ''.join(random.choice(characters) for _ in range(length))
 
 def blog(request):
     # دریافت دسته‌بندی و تگ از پارامتر URL
@@ -87,11 +96,40 @@ def blog_single(request, slug):
     # اگر slug خالی باشد، به صفحه اصلی وبلاگ برگردیم
     if not slug or slug == '':
         return redirect('blog:blog')
+    
+    # تولید کد کپچای تصادفی
+    captcha_code = generate_captcha_code()
         
     post = get_object_or_404(Post, slug=slug, status=True)
     
     if request.method == 'POST':
         form = CommentForm(request.POST)
+        
+        # بررسی اعتبار کپچا
+        server_captcha = request.POST.get('server_captcha', '')
+        user_captcha = request.POST.get('captcha_input', '')
+        
+        # اگر کپچا نادرست بود
+        if user_captcha.upper() != server_captcha.upper():
+            messages.error(request, "کد امنیتی وارد شده صحیح نیست.")
+            comments = Comment.objects.filter(post=post.id, approved=True).order_by('-created_at')
+            categories = Category.objects.filter(post=post)
+            word_count = len(post.content.split())
+            reading_time = max(1, round(word_count / 200))
+            latest_posts = Post.objects.filter(status=True).exclude(id=post.id).order_by('-created_at')[:3]
+            
+            context = {
+                'post': post,
+                'categories': categories,
+                'reading_time': reading_time,
+                'tags': post.tags.all(),
+                'comments': comments,
+                'form': form,
+                'latest_posts': latest_posts,
+                'captcha_code': captcha_code
+            }
+            return render(request, 'blog/blog-single.html', context)
+        
         if form.is_valid():
             comment = form.save(commit=False)
             comment.post = post
@@ -128,7 +166,8 @@ def blog_single(request, slug):
         'tags': post.tags.all(),
         'comments': comments,
         'form': form,
-        'latest_posts': latest_posts
+        'latest_posts': latest_posts,
+        'captcha_code': captcha_code
     }
     
     return render(request, 'blog/blog-single.html', context)

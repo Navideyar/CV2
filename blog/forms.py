@@ -1,10 +1,10 @@
 from django import forms
 from .models import Comment
-from captcha.fields import CaptchaField
 
 class CommentForm(forms.ModelForm):
-    captcha = CaptchaField(label='کد امنیتی')
+    email = forms.EmailField(required=False, label='ایمیل')
+    
     class Meta:
         model = Comment
-        fields = ['name', 'email', 'message', 'subject']
+        fields = ['name', 'email', 'message']
     

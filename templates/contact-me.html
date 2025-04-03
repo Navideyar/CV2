@@ -28,6 +28,14 @@ Image and contact form START -->
               مطرح کنین
             </p>
 
+            <!-- نمایش پیام برای کاربران لاگین شده -->
+            {% if is_authenticated %}
+            <div class="alert alert-info mb-4">
+              <i class="fas fa-info-circle me-2"></i>
+              <span>نام و ایمیل شما به‌صورت خودکار از حساب کاربری‌تان پر شده است.</span>
+            </div>
+            {% endif %}
+
             <!-- نمایش پیام‌های خطا -->
             {% if messages %}
             <div class="alert alert-danger">
@@ -46,8 +54,10 @@ Image and contact form START -->
               method="post">
               {% csrf_token %}
               
-              <!-- Name -->
+              <!-- Name and Subject row -->
               <div class="d-flex">
+                {% if not is_authenticated %}
+                <!-- Name - Only visible for non-logged in users -->
                 <div class="col-md-6 mb-4 m-1 bg-light-input">
                   <label
                     for="yourName"
@@ -60,12 +70,16 @@ Image and contact form START -->
                     id="yourName"
                     name="name" />
                 </div>
+                {% else %}
+                <!-- Hidden input for logged in users -->
+                <input type="hidden" name="name" value="{{ form.name.value }}" />
+                {% endif %}
 
-                <div class="col-md-6 mb-4 m-1 bg-light-input">
+                <div class="col-md-{% if is_authenticated %}12{% else %}6{% endif %} mb-4 m-1 bg-light-input">
                   <label
                     for="subjectInput"
                     class="form-label"
-                    >عنوان *</label
+                    >عنوان </label
                   >
                   <input
                     type="text"
@@ -74,12 +88,16 @@ Image and contact form START -->
                     name="subject" />
                 </div>
               </div>
+              
+              <!-- Email and Phone row -->
               <div class="d-flex">
+                {% if not is_authenticated %}
+                <!-- Email - Only visible for non-logged in users -->
                 <div class="col-md-6 mb-4 m-1 bg-light-input">
                   <label
                     for="emailInput"
                     class="form-label"
-                    >ایمیل *</label
+                    >ایمیل </label
                   >
                   <input
                     type="email"
@@ -87,7 +105,12 @@ Image and contact form START -->
                     id="emailInput"
                     name="email" />
                 </div>
-                <div class="col-md-6 mb-4 m-1 bg-light-input">
+                {% else %}
+                <!-- Hidden input for logged in users -->
+                <input type="hidden" name="email" value="{{ form.email.value }}" />
+                {% endif %}
+                
+                <div class="col-md-{% if is_authenticated %}12{% else %}6{% endif %} mb-4 m-1 bg-light-input">
                   <label
                     for="phone_numberInput"
                     class="form-label"
@@ -100,6 +123,7 @@ Image and contact form START -->
                     name="phone" />
                 </div>
               </div>
+              
               <!-- Message -->
               <div class="col-md-12 mb-4 m-1 bg-light-input">
                 <label
@@ -119,16 +143,29 @@ Image and contact form START -->
               
               <!-- reCAPTCHA -->
               <div class="col-md-12 mb-4 m-1 bg-light-input rounded p-3">
-                <label for="id_captcha_1" class="form-label mb-2">کد امنیتی <span class="text-danger">*</span></label>
-                <div class="d-flex align-items-center">
-                  <!-- تصویر و فیلد کپچا -->
-                  <div class="d-flex align-items-center me-1">
-                    {{ form.captcha }}
-                  </div>
-                  <!-- دکمه رفرش -->
-                  <button type="button" onclick="refreshCaptcha()" class="btn btn-sm btn-outline-primary captcha-refresh-btn">
-                    <i class="fas fa-sync-alt"></i>
-                  </button>
+                <label for="captcha-input" class="form-label mb-2">کد امنیتی <span class="text-danger">*</span></label>
+                <div class="row g-2">
+                    <div class="col-6">
+                        <div class="captcha-container bg-white border rounded p-3 text-center">
+                            <span id="captcha-code" class="fw-bold fs-4 user-select-none"
+                                style="letter-spacing: 3px; font-family: 'Courier New', monospace; color: #000; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">{{ captcha_code }}</span>
+                            <input type="hidden" name="server_captcha" value="{{ captcha_code }}">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3">
+                                <i class="fas fa-shield-alt"></i>
+                            </span>
+                            <input type="text" class="form-control border-0 bg-light rounded-end ps-1 text-center"
+                                placeholder="کد را وارد کنید" id="captcha-input" name="captcha_input" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-1">
+                    <a href="{{ request.path }}" class="btn btn-sm btn-outline-primary">
+                        <i class="fas fa-sync-alt"></i> تازه‌سازی کد
+                    </a>
                 </div>
                 <small class="text-muted captcha-help-text d-block mt-1">لطفاً کد نمایش داده شده را وارد کنید</small>
               </div>
@@ -169,168 +206,35 @@ Image and contact form END -->
     var enteredCharacters = textarea.value.length;
     var remainingCharacters = textarea.maxLength - enteredCharacters;
 
-    countElement.textContent = enteredCharacters + "/" + remainingCharacters;
-  }
-  
-  function refreshCaptcha() {
-    console.log("Refreshing captcha...");
-    
-    // استفاده از endpoint مخصوص رفرش کپچا
-    $.getJSON("/captcha/refresh/", function(result) {
-      console.log("Captcha refreshed:", result);
-      
-      // بروزرسانی تصویر کپچا
-      $('.captcha').attr('src', result['image_url']);
-      
-      // بروزرسانی کلید مخفی کپچا
-      $('#id_captcha_0').val(result['key']);
-      
-      console.log("Updated captcha image and key");
-    });
+    countElement.textContent = enteredCharacters + "/" + textarea.maxLength;
   }
   
   // اجرای کد بعد از بارگذاری صفحه
   $(document).ready(function() {
-    // اعمال استایل‌های سفارشی به المان‌های کپچا
-    $('#id_captcha_1').addClass('form-control');
+    // تنظیم اولیه شمارنده کاراکترها
+    updateCharacterCount();
     
-    // شناسایی و اصلاح ساختار کپچا برای فاصله‌گذاری صحیح
-    var captchaTable = $('table.captcha');
-    if (captchaTable.length) {
-      // اگر کپچا درون جدول قرار دارد
-      captchaTable.find('td').css('padding-right', '10px');
-    } else {
-      // اصلاح مستقیم عناصر کپچا
-      if ($('#id_captcha_1').prev().is('img.captcha')) {
-        $('#id_captcha_1').css('margin-left', '10px');
-      } else {
-        // جستجوی تصویر کپچا و اعمال فاصله بیشتر
-        $('.captcha').after('<span style="display: inline-block; width: 10px;"></span>');
-      }
-    }
-    
-    // استایل دکمه رفرش کپچا
-    $('.captcha-refresh-btn').css({
-      'border-radius': '50%',
-      'width': '38px',
-      'height': '38px',
-      'margin-right': '0px',
-      'margin-left': '0px',
-      'padding': '0',
-      'display': 'inline-flex',
-      'align-items': 'center',
-      'justify-content': 'center',
-      'font-size': '0.9rem',
-      'vertical-align': 'middle',
-      'box-shadow': '0 2px 4px rgba(0,0,0,0.1)',
-      'border': 'none',
-      'transition': 'all 0.2s ease-in-out',
-      'background-color': '#f8f9fa',
-      'color': '#007bff'
-    });
-    
-    // افکت hover برای دکمه رفرش
-    $('.captcha-refresh-btn').hover(
+    // استایل دکمه تازه‌سازی کپچا
+    $('a.btn-outline-primary').hover(
       function() {
-        $(this).css({
-          'transform': 'rotate(30deg) scale(1.1)',
-          'background-color': '#007bff',
-          'color': 'white'
-        });
-      },
+        $(this).css('transform', 'scale(1.05)');
+      }, 
       function() {
-        $(this).css({
-          'transform': 'rotate(0) scale(1)',
-          'background-color': '#f8f9fa',
-          'color': '#007bff'
-        });
+        $(this).css('transform', 'scale(1)');
       }
     );
     
-    // مرتب‌سازی فیلد ورودی کپچا
-    $('#id_captcha_1').css({
-      'max-width': '150px',
-      'height': '38px',
-      'margin-top': '0',
-      'margin-left': '30px',
-      'vertical-align': 'middle',
-      'border-radius': '8px',
-      'box-shadow': 'inset 0 1px 3px rgba(0,0,0,0.1)',
-      'border': '1px solid #ced4da',
-      'transition': 'all 0.2s ease',
-      'padding': '8px 12px'
-    });
-    
     // افکت focus برای فیلد ورودی
-    $('#id_captcha_1').focus(function() {
+    $('#captcha-input').focus(function() {
       $(this).css({
         'border-color': '#80bdff',
-        'box-shadow': 'inset 0 1px 3px rgba(0,0,0,0.1), 0 0 0 0.2rem rgba(0,123,255,0.15)'
+        'box-shadow': '0 0 0 0.2rem rgba(0,123,255,0.15)'
       });
     }).blur(function() {
       $(this).css({
         'border-color': '#ced4da',
-        'box-shadow': 'inset 0 1px 3px rgba(0,0,0,0.1)'
+        'box-shadow': 'none'
       });
-    });
-    
-    // تنظیم رنگ‌بندی براساس حالت روز/شب
-    function setColorMode() {
-      // بررسی آیا حالت تاریک فعال است
-      const isDarkMode = $('body').hasClass('dark-mode') || 
-                        $('html').hasClass('dark-mode') ||
-                        window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      
-      if (isDarkMode) {
-        // حالت تاریک
-        $('.captcha').addClass('border border-secondary');
-        
-        // تغییر رنگ دکمه در حالت تاریک
-        $('.captcha-refresh-btn').css({
-          'background-color': '#343a40',
-          'color': '#80bdff'
-        });
-        
-        // تغییر استایل فیلد ورودی در حالت تاریک
-        $('#id_captcha_1').css({
-          'background-color': '#343a40',
-          'color': '#e9ecef',
-          'border-color': '#495057'
-        });
-        
-        // تغییر رنگ متن راهنمای کپچا در حالت تاریک
-        $('.captcha-help-text').removeClass('text-muted').attr('style', 'color: #adb5bd !important; font-weight: 400; display: block; margin-top: 0.25rem;');
-      } else {
-        // حالت روشن
-        $('.captcha').removeClass('border border-secondary');
-        
-        // تغییر رنگ دکمه در حالت روشن
-        $('.captcha-refresh-btn').css({
-          'background-color': '#f8f9fa',
-          'color': '#007bff'
-        });
-        
-        // تغییر استایل فیلد ورودی در حالت روشن
-        $('#id_captcha_1').css({
-          'background-color': '#fff',
-          'color': '#212529',
-          'border-color': '#ced4da'
-        });
-        
-        // تغییر رنگ متن راهنمای کپچا در حالت روشن
-        $('.captcha-help-text').removeClass('text-muted').attr('style', 'color: #495057 !important; font-weight: 400; display: block; margin-top: 0.25rem;');
-      }
-    }
-    
-    // اجرای تابع تنظیم رنگ
-    setColorMode();
-    
-    // گوش دادن به تغییرات حالت روز/شب
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setColorMode);
-    
-    // اگر سایت دارای سوئیچ تغییر حالت روز/شب است، این هم اضافه شود
-    $('.mode-switch, .dark-mode-switch').on('click', function() {
-      setTimeout(setColorMode, 100); // کمی تاخیر برای اعمال تغییرات
     });
   });
 </script>

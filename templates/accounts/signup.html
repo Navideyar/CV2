@@ -79,7 +79,8 @@
                         <p class="mb-4">از دیدن شما خوشحالم! لطفا با حساب کاربری خود ثبت نام کنید.</p>
 
                         <!-- Form START -->
-                        <form method="POST" action=".">
+                        <form method="POST" action="{% url 'accounts:signup' %}">
+                            {% csrf_token %}
                             <script src="https://www.google.com/recaptcha/api.js?render=6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa"></script>
 <script type="text/javascript">
     var element

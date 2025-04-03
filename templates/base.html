@@ -2482,9 +2482,9 @@
                 </div>
                 {% else %}
                 <div class="d-flex">
-                    <a class="btn login-button me-2 mb-0" href="/accounts/login/"><i
+                    <a class="btn login-button me-2 mb-0" href="{% url 'accounts:login' %}"><i
                             class="fas fa-sign-in-alt me-2"></i>ورود</a>
-                    <a class="btn register-button mb-0" href="/accounts/signup/"><i
+                    <a class="btn register-button mb-0" href="{% url 'accounts:signup' %}"><i
                             class="fas fa-user-plus me-2"></i>ثبت‌نام</a>
                 </div>
                 {% endif %}

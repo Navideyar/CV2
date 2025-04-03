@@ -32,8 +32,11 @@ def logout_view(request):
 
 
 def signup_view(request):
-    if request.user.is_authenticated:
-        return redirect('main_core:index')
+    form = UserCreationForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'accounts/signup.html', context)
         
     if request.method == 'POST':
         form = UserCreationForm(request.POST)

@@ -11,6 +11,7 @@
     transition: all 0.3s ease;
     max-width: 100%;
     display: inline-block;
+    background-color: var(--bg-sidebar);
   }
   
   .post-meta:hover {
@@ -20,17 +21,17 @@
   
   .post-meta .icon {
     font-size: 1.1rem;
-    color: var(--bs-primary);
+    color: var(--primary-color);
   }
   
   .post-meta .info {
     font-weight: 500;
-    color: var(--bs-gray-700);
+    color: var(--text-secondary);
     line-height: 1.2;
   }
   
   .border-end {
-    border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-left: 1px solid var(--border-color) !important;
     border-right: none !important;
   }
   
@@ -76,13 +77,57 @@
     right: 0;
     width: 50px;
     height: 3px;
-    background-color: var(--bs-primary);
+    background-color: var(--primary-color);
     border-radius: 3px;
     transition: all 0.3s ease;
   }
   
   .sidebar-box:hover .heading-sidebar:after {
     width: 80px;
+  }
+  
+  /* استایل برای نشانگر قفل محتوا */
+  .premium-badge {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    background: linear-gradient(135deg, #ffd200 0%, #f7971e 100%);
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(247, 151, 30, 0.2);
+    vertical-align: middle;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+    animation: shine 3s infinite;
+  }
+  
+  .premium-badge:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(247, 151, 30, 0.3);
+  }
+  
+  .premium-badge i {
+    margin-left: 5px;
+    font-size: 0.9em;
+  }
+
+  .premium-badge-text {
+    margin-right: 2px;
+  }
+  
+  @keyframes shine {
+    0% {
+      box-shadow: 0 0 5px rgba(255, 210, 0, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 210, 0, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(255, 210, 0, 0.5);
+    }
   }
   
   /* استایل بهبود یافته برای breadcrumb */
@@ -139,6 +184,30 @@
       color: #e2e8f0;
     }
   }
+  
+  /* استایل آیکون قفل در سایدبار */
+  .sidebar-lock-icon {
+    font-size: 0.8em;
+    margin-right: 5px;
+    vertical-align: middle;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    animation: float 2s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+  
+  .heading:hover .sidebar-lock-icon {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 </style>
 {% endblock %}
 
@@ -148,7 +217,11 @@
     <!-- تیتر پست در وسط صفحه -->
     <div class="row mb-2">
       <div class="col-12 text-center">
-        <h2 class="mb-2">{{ post.title }}</h2>
+        <h2 class="mb-2">{{ post.title }} 
+          {% if post.login_required %}
+          <i class="fas fa-lock text-warning"></i>
+          {% endif %}
+        </h2>
       </div>
     </div>
     
@@ -171,7 +244,7 @@
         
        
         <!-- اطلاعات مهم پست -->
-        <div class="post-meta mb-4 p-2 bg-light rounded w-100" style="margin-top: 1.5rem;">
+        <div class="post-meta mb-4 p-2 rounded w-100" style="margin-top: 1.5rem;">
           <div class="row g-0">
             <div class="col-md-4 text-center border-end py-2">
               <div class="icon mb-1"><i class="fas fa-eye"></i></div>
@@ -354,7 +427,11 @@
           <div class="block-21 mb-4 d-flex">
             <a class="blog-img mr-4" style="background-image: url('{{ post.image.url }}');"></a>
             <div class="text">
-              <h3 class="heading"><a href="{% url 'blog:blog_single' post.slug %}">{{ post.title }}</a></h3>
+              <h3 class="heading"><a href="{% url 'blog:blog_single' post.slug %}">{{ post.title }}</a>
+                {% if post.login_required %}
+                <i class="fas fa-lock text-warning sidebar-lock-icon" title="این مطلب فقط برای کاربران ثبت‌نام شده قابل مشاهده است"></i>
+                {% endif %}
+              </h3>
               <div class="meta">
                 <div><a href="#"><i class="far fa-calendar-alt" style="margin-left: 5px;"></i> {{ post.created_at|date:"Y/m/d" }}</a></div>
                 <div><a href="#"><i class="far fa-user" style="margin-left: 5px;"></i> {{ post.author.first_name }}</a></div>

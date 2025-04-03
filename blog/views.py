@@ -9,6 +9,9 @@ from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import random
 import string
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 def generate_captcha_code(length=5):
     """تولید کد کپچای تصادفی با طول مشخص"""
@@ -63,6 +66,16 @@ def blog(request):
             if not post.slug:
                 post.slug = f"post-{post.id}"
             post.save()
+        
+        # اضافه کردن فیلد مجازی برای نمایش وضعیت محتوا در تمپلیت
+        post.is_login_required = post.login_required
+        # اگر کاربر لاگین نکرده و پست نیاز به لاگین دارد، محتوای خلاصه نمایش داده شود
+        if post.login_required and not request.user.is_authenticated:
+            # ایجاد خلاصه کوتاه از محتوا (فقط ۳۰۰ کاراکتر اول)
+            if len(post.content) > 300:
+                post.content_preview = post.content[:300] + '...'
+            else:
+                post.content_preview = post.content
     
     # صفحه‌بندی
     page = request.GET.get('page', 1)
@@ -101,6 +114,11 @@ def blog_single(request, slug):
     captcha_code = generate_captcha_code()
         
     post = get_object_or_404(Post, slug=slug, status=True)
+    
+    # بررسی دسترسی کاربر به پست
+    if post.login_required and not request.user.is_authenticated:
+        messages.warning(request, "برای مشاهده این مطلب باید وارد حساب کاربری خود شوید")
+        return HttpResponseRedirect(reverse('accounts:login') + f'?next={request.path}')
     
     if request.method == 'POST':
         form = CommentForm(request.POST)

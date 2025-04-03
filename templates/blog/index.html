@@ -108,7 +108,7 @@ Page content START -->
 					<!-- Card item START -->
 					 {% for post in posts %}
 					<div class="col-12">
-						<div class="card bg-transparent shadow h-100 transition-hover border-0 hover-translate-y">
+						<div class="card bg-transparent shadow h-100 transition-hover border-0 hover-translate-y {% if post.is_login_required %}locked-post{% endif %}">
 							<div class="row g-0">
 								<div class="col-lg-4">
 									<div class="overflow-hidden rounded-start h-100">
@@ -131,9 +131,21 @@ Page content START -->
 									<!-- Card body -->
 									<div class="card-body p-4 h-100 d-flex flex-column">
 										<!-- Title -->
-										<h4 class="card-title fw-semi-bold mb-3"><a class="text-decoration-none stretched-link"
-												href="{% if post.slug %}{% url 'blog:blog_single' post.slug %}{% else %}#{% endif %}">{{post.title}}</a></h4>
-										<p class="text-truncate-3 mb-3">{{post.content|clean_text_excerpt:100}}</p>
+										<h4 class="card-title fw-semi-bold mb-3">
+											<a class="text-decoration-none stretched-link" href="{% if post.slug %}{% url 'blog:blog_single' post.slug %}{% else %}#{% endif %}">
+												{{post.title}}
+												{% if post.is_login_required %}
+												<span class="lock-icon-wrapper ms-2" title="این مطلب فقط برای کاربران ثبت‌نام شده قابل مشاهده است">
+												    <i class="fas fa-lock text-warning lock-icon"></i>
+												</span>
+												{% endif %}
+											</a>
+										</h4>
+										{% if post.is_login_required and not user.is_authenticated %}
+											<p class="text-truncate-3 mb-3">{{ post.content_preview|clean_text_excerpt:100 }}</p>
+										{% else %}
+											<p class="text-truncate-3 mb-3">{{post.content|clean_text_excerpt:100}}</p>
+										{% endif %}
 										<!-- Info -->
 										<div class="d-flex justify-content-between align-items-center border-top pt-3 mt-auto">
 											<h6 class="mb-0 fw-normal"><a href="#" class="text-reset"><i class="fas fa-user-circle me-1 text-primary"></i>نویدیار</a>
@@ -324,6 +336,34 @@ Page content END -->
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/* استایل برای پست‌های قفل شده */
+.lock-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.lock-icon {
+    color: #f7971e;
+    font-size: 16px;
+}
+
+/* استایل پس‌زمینه طلایی برای کارت‌های قفل‌شده */
+.card.locked-post {
+    background: linear-gradient(to bottom, rgba(255,245,220,0.7) 0%, rgba(255,255,255,1) 70%) !important;
+    border-right: 3px solid #f7971e !important;
+}
+
+/* حالت تاریک برای کارت‌های قفل‌شده */
+@media (prefers-color-scheme: dark) {
+    .card.locked-post {
+        background: linear-gradient(to bottom, rgba(80,60,10,0.3) 0%, rgba(40,40,40,0.1) 70%) !important;
+        border-right: 3px solid #f7971e !important;
+    }
 }
 
 /* استایل برای بخش جستجو و مرتب‌سازی */

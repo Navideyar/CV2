@@ -1,31 +1,36 @@
 from django import template
 from django.utils.html import strip_tags
+from django.utils.encoding import force_str
 from django.utils.safestring import mark_safe
 import re
 import html
 
 register = template.Library()
 
-@register.filter(name='clean_text_excerpt')
+@register.filter
 def clean_text_excerpt(value, length=100):
     """
-    حذف تگ‌های HTML و سپس کاراکترهای خاص HTML را به متن معمولی تبدیل می‌کند
-    و در نهایت متن را به طول مشخص‌شده محدود می‌کند.
+    این فیلتر تگ‌های HTML را حذف می‌کند، کاراکترهای خاص را پاک می‌کند
+    و متن را به اندازه مشخص شده کوتاه می‌کند
     """
     if not value:
         return ""
     
-    # حذف تگ‌های HTML
-    text = strip_tags(value)
+    # تبدیل به رشته معمولی
+    text = force_str(value)
     
-    # تبدیل کاراکترهای خاص HTML مانند &nbsp; به کاراکترهای معمولی
+    # حذف تگ‌های HTML
+    text = strip_tags(text)
+    
+    # تبدیل کدهای HTML مثل &nbsp; به کاراکترهای واقعی
     text = html.unescape(text)
     
-    # حذف فاصله‌های اضافی
-    text = re.sub(r'\s+', ' ', text).strip()
+    # حذف کاراکترهای اضافی و فاصله‌های زیاد
+    text = re.sub(r'\s+', ' ', text)
+    text = text.strip()
     
-    # محدود کردن طول متن
-    if len(text) > length:
-        text = text[:length] + '...'
-    
-    return text 
+    # کوتاه کردن متن
+    if len(text) <= length:
+        return text
+    else:
+        return text[:length] + '...' 

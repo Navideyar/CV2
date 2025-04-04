@@ -655,7 +655,7 @@
             <div class="post-section-header text-center position-relative">
                 
                 <h2 class="post-section-title mb-3">
-                    <span class="title-part">آخـرین پـست‌ها</span>
+                    آخـرین پـست‌ها
                 </h2>
                 <div class="post-section-line">
                     <span></span>
@@ -751,7 +751,7 @@
             <!-- دکمه مشاهده همه -->
             <div class="row">
                 <div class="col-12 text-center mt-4">
-                    <a href="{% url 'blog:blog' %}" class="view-all-posts-btn">
+                    <a href="{% url 'blog:blog' %}" class="view-all-posts-btn" style="color: var(--btn-primary-bg-1);">
                         <span>مشاهده تمام مقالات</span>
                         <i class="fas fa-long-arrow-alt-left"></i>
                     </a>
@@ -835,6 +835,7 @@
 .post-section-header {
     margin-bottom: 2.5rem;
     position: relative;
+    overflow: hidden;
 }
 
 .post-section-badge-wrapper {
@@ -884,29 +885,26 @@
 }
 
 .post-section-title {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 800;
     margin-bottom: 1rem;
-    color: var(--post-text-light);
+    color: #4776E6;
     position: relative;
     display: inline-block;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0 1rem;
+    background: none;
 }
 
 [data-bs-theme="dark"] .post-section-title {
-    color: var(--post-text-dark);
-}
-
-.title-part {
-    display: inline-block;
-    position: relative;
-    animation: float 3s ease-in-out infinite;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .post-section-line {
-    width: 80px;
+    width: 100px;
     height: 4px;
-    background: var(--post-badge-bg);
+    background: linear-gradient(45deg, #4776E6, #8E54E9);
     margin: 0 auto;
     border-radius: 2px;
     position: relative;
@@ -919,13 +917,40 @@
     right: 0;
     height: 100%;
     width: 30px;
-    background: rgba(255, 255, 255, 0.5);
-    animation: slide-right 1.2s infinite ease-in-out;
+    background: rgba(255, 255, 255, 0.7);
+    animation: slide-right 1.5s infinite ease-in-out;
 }
 
 @keyframes slide-right {
     0% { right: -30px; }
     100% { right: 100%; }
+}
+
+/* تنظیمات ریسپانسیو برای عنوان */
+@media (max-width: 991.98px) {
+    .post-section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .post-section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .post-section-badge {
+        padding: 0.3rem 1rem;
+    }
+    
+    .post-section-title {
+        font-size: 1.5rem;
+    }
+    
+    .post-section-line {
+        width: 80px;
+    }
 }
 
 /* کارت پست */

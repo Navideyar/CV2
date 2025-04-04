@@ -89,24 +89,25 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.8rem;
+    gap: 0.6rem;
     position: relative;
-    padding: 1rem 3.5rem;
+    padding: 0.65rem 1.8rem;
     background: transparent;
-    color: var(--btn-secondary-font);
-    font-weight: 700;
-    font-size: 1.1rem;
+    color: var(--btn-primary-bg-1);
+    font-weight: 600;
+    font-size: 0.95rem;
     border-radius: var(--btn-border-radius);
     overflow: hidden;
-    transition: all 0.4s ease;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    transition: all 0.45s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
     border: 2px solid var(--btn-primary-bg-1);
     text-decoration: none;
     margin-top: 2.5rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    animation: gentle-pulse 3s infinite ease-in-out;
+    position: relative;
+    z-index: 1;
 }
 
 @keyframes gentle-pulse {
@@ -123,9 +124,9 @@
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(90deg, var(--btn-primary-bg-1), var(--btn-primary-bg-2), var(--btn-primary-bg-1));
+    background: linear-gradient(45deg, var(--btn-primary-bg-1), var(--btn-primary-bg-2), var(--btn-primary-bg-1));
     background-size: 200% 200%;
-    animation: border-shine 3s linear infinite;
+    animation: border-shine 4s linear infinite;
     border-radius: var(--btn-border-radius);
     z-index: -2;
     opacity: 0.3;
@@ -162,10 +163,9 @@
 }
 
 .view-all-posts-btn:hover {
-    color: var(--btn-primary-font);
+    color: #ffffff !important;
     box-shadow: var(--btn-glow);
-    transform: translateY(-5px) scale(1.05);
-    animation: none;
+    transform: translateY(-3px);
 }
 
 .view-all-posts-btn:hover::before {
@@ -173,13 +173,12 @@
 }
 
 .view-all-posts-btn:hover i {
-    transform: translateX(-12px);
+    transform: translateX(-5px);
 }
 
 .view-all-posts-btn:active {
     transform: translateY(1px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    animation: none;
 }
 
 /* دکمه مشاهده بلاگ در حالت خالی */
@@ -287,8 +286,8 @@
     }
     
     .view-all-posts-btn {
-        padding: 0.7rem 2rem;
-        font-size: 0.95rem;
+        padding: 0.55rem 1.5rem;
+        font-size: 0.85rem;
         margin-top: 1.5rem;
     }
     

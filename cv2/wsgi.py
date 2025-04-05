@@ -11,6 +11,8 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+# به جای تنظیم مستقیم ماژول تنظیمات، اجازه می‌دهیم فایل settings.py
+# بر اساس متغیر محیطی DJANGO_ENV، فایل تنظیمات مناسب را انتخاب کند
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cv2.settings")
 
 application = get_wsgi_application()

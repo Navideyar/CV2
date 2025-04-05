@@ -1,0 +1,117 @@
+/* تنظیمات برای نمایش مناسب در دستگاه‌های موبایل */
+
+/* تنظیمات عمومی */
+@media (max-width: 767px) {
+    /* کاهش اندازه فونت‌ها */
+    body {
+        font-size: 14px !important;
+    }
+    
+    h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    h3 {
+        font-size: 1.3rem !important;
+    }
+    
+    h4, h5, h6 {
+        font-size: 1.1rem !important;
+    }
+    
+    /* اصلاح فاصله‌ها */
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    .row {
+        margin-left: -10px !important;
+        margin-right: -10px !important;
+    }
+    
+    .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, 
+    .col-auto, .col-lg, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, 
+    .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-auto, .col-md, .col-md-1, .col-md-2, .col-md-3, 
+    .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, 
+    .col-md-auto, .col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, 
+    .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-2, 
+    .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, 
+    .col-xl-12, .col-xl-auto {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    /* کاهش padding در باکس‌ها */
+    .card, .card-body, .p-4, .p-5 {
+        padding: 1rem !important;
+    }
+    
+    /* کاهش margin در المان‌ها */
+    .mt-4, .mt-5, .my-4, .my-5 {
+        margin-top: 1rem !important;
+    }
+    
+    .mb-4, .mb-5, .my-4, .my-5 {
+        margin-bottom: 1rem !important;
+    }
+    
+    /* کاهش اندازه آیکون‌ها */
+    .fa-3x {
+        font-size: 2em !important;
+    }
+    
+    .fa-4x {
+        font-size: 2.5em !important;
+    }
+    
+    .fa-5x {
+        font-size: 3em !important;
+    }
+    
+    /* تنظیم عرض دکمه‌ها */
+    .btn {
+        padding: 0.375rem 0.75rem !important;
+        font-size: 0.875rem !important;
+    }
+    
+    /* تنظیم منوی موبایل */
+    .navbar-collapse {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0 !important;
+    }
+}
+
+/* تنظیمات مخصوص تلفن‌های خیلی کوچک */
+@media (max-width: 360px) {
+    body {
+        font-size: 13px !important;
+    }
+    
+    h1 {
+        font-size: 1.6rem !important;
+    }
+    
+    h2 {
+        font-size: 1.4rem !important;
+    }
+    
+    /* کاهش بیشتر padding در باکس‌ها */
+    .card, .card-body, .p-4, .p-5 {
+        padding: 0.75rem !important;
+    }
+    
+    /* تنظیم اندازه تصاویر */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+} 

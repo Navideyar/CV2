@@ -201,6 +201,17 @@ STATICFILES_FINDERS = [
 
 COMPRESS_ENABLED = True
 COMPRESS_CSS_HASHING_METHOD = None
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.rCSSMinFilter',
+]
+COMPRESS_JS_FILTERS = [
+    'compressor.filters.jsmin.JSMinFilter',
+]
+COMPRESS_OFFLINE = True
+COMPRESS_OFFLINE_CONTEXT = {
+    'STATIC_URL': STATIC_URL,
+}
 
 # تنظیمات ایمیل برای بازیابی رمز عبور
 EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend')

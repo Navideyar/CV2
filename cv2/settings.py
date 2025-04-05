@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-_!%xuv8il!@!0zp)eso^)-b9&qjl!o_y29pnb#2x75#0ja6ry%"
+SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-_!%xuv8il!@!0zp)eso^)-b9&qjl!o_y29pnb#2x75#0ja6ry%")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(', ') if os.environ.get('ALLOWED_HOSTS') else []
 
 
 # Application definition
@@ -55,8 +56,8 @@ INSTALLED_APPS = [
 ]
 
 # reCAPTCHA settings
-RECAPTCHA_PUBLIC_KEY = "6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa"
-RECAPTCHA_PRIVATE_KEY = "6LcFJzEnAAAAAJ4u--yT7zNZnz6x1PbVD8yvNE_j"
+RECAPTCHA_PUBLIC_KEY = os.environ.get("RECAPTCHA_PUBLIC_KEY", "6LcFJzEnAAAAAI-8hoShDg728nMCH3kCXjv5Cjwa")
+RECAPTCHA_PRIVATE_KEY = os.environ.get("RECAPTCHA_PRIVATE_KEY", "6LcFJzEnAAAAAJ4u--yT7zNZnz6x1PbVD8yvNE_j")
 RECAPTCHA_REQUIRED_SCORE = 0.5
 RECAPTCHA_DEFAULT_ACTION = "form"
 
@@ -107,12 +108,21 @@ WSGI_APPLICATION = "cv2.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+# تنظیمات دیتابیس برای محیط توسعه و تولید
+DATABASE_URL = os.environ.get('DATABASE_URL')
+if DATABASE_URL:
+    # استفاده از دیتابیس تعریف شده در متغیر محیطی
+    DATABASES = {
+        'default': dj_database_url.config(default=DATABASE_URL)
     }
-}
+else:
+    # استفاده از دیتابیس محلی SQLite
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 
 # Password validation
@@ -193,13 +203,21 @@ COMPRESS_ENABLED = True
 COMPRESS_CSS_HASHING_METHOD = None
 
 # تنظیمات ایمیل برای بازیابی رمز عبور
-# در محیط توسعه، ایمیل‌ها در کنسول نمایش داده می‌شوند
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# در محیط تولید، می‌توانید از سرویس SMTP استفاده کنید
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.your-email-provider.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'your-email@example.com'
-# EMAIL_HOST_PASSWORD = 'your-password'
-# DEFAULT_FROM_EMAIL = 'your-name <your-email@example.com>'
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend')
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+
+# تنظیمات امنیتی اضافی برای محیط تولید
+if not DEBUG:
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_HSTS_SECONDS = 31536000  # 1 سال
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    SECURE_SSL_REDIRECT = True  # هدایت به HTTPS

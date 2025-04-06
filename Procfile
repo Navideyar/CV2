@@ -1,1 +1,1 @@
-web: python manage.py migrate && python manage.py collectstatic --noinput && gunicorn wsgi --bind 0.0.0.0:8000 --workers 3 --forwarded-allow-ips='*'
+web: gunicorn wsgi --bind 0.0.0.0:8000 --log-level debug

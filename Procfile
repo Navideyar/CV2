@@ -1,1 +1,1 @@
-web: python manage.py migrate && python manage.py collectstatic --noinput && gunicorn cv2.wsgi 
+web: python manage.py migrate && python manage.py collectstatic --noinput && gunicorn cv2.wsgi --bind 0.0.0.0:8000

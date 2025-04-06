@@ -1,14 +1,15 @@
 {
   "platform": "django",
   "django": {
-    "pythonVersion": "3.13",
+    "pythonVersion": "3.12",
     "collectStatic": true,
     "compileMessages": false,
     "modifySettings": true,
-    "timezone": "Asia/Tehran"
-    
+    "timezone": "Asia/Tehran",
+    "settingsFile": "cv2/setting/production.py",
+    "port": 8000
   },
-  "app": "mysite-alibigdeli",
+  "app": "navidyar",
   "disks": [
     {
       "name": "static",

@@ -6,7 +6,9 @@
     "compileMessages": false,
     "modifySettings": true,
     "timezone": "Asia/Tehran",
-    "settingsFile": "cv2/setting/production.py"
+    "settingsFile": "cv2/setting/production.py",
+    "wsgi": "cv2.wsgi",
+    "cmd": "gunicorn cv2.wsgi --bind 0.0.0.0:8000"
   },
   "app": "navidyar",
   "disks": [

@@ -5,8 +5,7 @@
     "collectStatic": true,
     "compileMessages": false,
     "modifySettings": false,
-    "timezone": "Asia/Tehran",
-    "settingsFile": "cv2.setting.production"
+    "timezone": "Asia/Tehran"
   },
   "app": "navidyar",
   "disks": [

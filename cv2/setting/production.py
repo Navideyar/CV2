@@ -9,7 +9,12 @@ from cv2.setting.base import *
 # تنظیمات امنیتی
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 SECRET_KEY = os.environ.get("SECRET_KEY")
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'navidyar.liara.run').split(', ') if os.environ.get('ALLOWED_HOSTS') else ['navidyar.liara.run']
+# پذیرش همه دامنه‌ها و آدرس‌های IP
+ALLOWED_HOSTS = ['*']
+
+# تنظیمات proxy - برای کار با nginx
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # تنظیمات دیتابیس
 DATABASE_URL = os.environ.get('DATABASE_URL')

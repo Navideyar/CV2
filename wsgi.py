@@ -12,6 +12,9 @@ os.environ["DJANGO_ENVIRONMENT"] = "production"
 # تنظیم مسیر ماژول تنظیمات
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cv2.setting")
 
+# تنظیم ALLOWED_HOSTS به صورت صریح
+os.environ["ALLOWED_HOSTS"] = "*"
+
 # افزودن مسیر فعلی به مسیرهای پایتون برای اطمینان از وارد شدن ماژول‌ها
 import sys
 from pathlib import Path
@@ -20,6 +23,7 @@ if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
 # چاپ تنظیمات و مسیرها برای کمک به تشخیص مشکلات
+print("=================== STARTING WSGI APPLICATION ===================", flush=True)
 print(f"Python version: {sys.version}", flush=True)
 print(f"Python executable: {sys.executable}", flush=True)
 print(f"Working directory: {os.getcwd()}", flush=True)
@@ -27,6 +31,8 @@ print(f"BASE_DIR: {BASE_DIR}", flush=True)
 print(f"sys.path: {sys.path}", flush=True)
 print(f"DJANGO_SETTINGS_MODULE: {os.environ.get('DJANGO_SETTINGS_MODULE')}", flush=True)
 print(f"DJANGO_ENVIRONMENT: {os.environ.get('DJANGO_ENVIRONMENT')}", flush=True)
+print(f"ALLOWED_HOSTS: {os.environ.get('ALLOWED_HOSTS')}", flush=True)
+print("==================================================================", flush=True)
 
 try:
     # وارد کردن تابع کاربردی جنگو

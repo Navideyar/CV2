@@ -11,7 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-# اصلاح مسیر ماژول تنظیمات برای استفاده از ساختار جدید پوشه setting
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cv2.setting")
+# اصلاح مسیر ماژول تنظیمات برای استفاده مستقیم از فایل تنظیمات تولید
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cv2.setting.production")
 
 application = get_wsgi_application()

@@ -4,7 +4,7 @@
 
 import os
 import dj_database_url
-from .base import *
+from cv2.setting.base import *
 
 # تنظیمات امنیتی
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'

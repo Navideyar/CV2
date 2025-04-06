@@ -6,8 +6,8 @@ ENVIRONMENT = os.environ.get('DJANGO_ENVIRONMENT', 'development')
 
 # بارگذاری تنظیمات مناسب بر اساس محیط
 if ENVIRONMENT == 'production':
-    from .production import *
+    from cv2.setting.production import *
 else:
-    from .development import *
+    from cv2.setting.development import *
 
 print(f"Django running in {ENVIRONMENT} mode.") 

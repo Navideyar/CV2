@@ -3,7 +3,7 @@
 """
 
 import os
-from .base import *
+from cv2.setting.base import *
 
 # تنظیمات امنیتی
 DEBUG = True

@@ -4,9 +4,9 @@
     "pythonVersion": "3.12",
     "collectStatic": true,
     "compileMessages": false,
-    "modifySettings": true,
+    "modifySettings": false,
     "timezone": "Asia/Tehran",
-    "settingsFile": "cv2/setting/production.py"
+    "settingsFile": "cv2.setting.production"
   },
   "app": "navidyar",
   "disks": [

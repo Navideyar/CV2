@@ -1,0 +1,235 @@
+/* تنظیمات موبایل برای دکمه منو */
+@media (max-width: 767.98px) {
+    .navbar-toggler {
+        padding: 6px 10px !important;
+        margin-right: 10px !important;
+        transition: all 0.3s ease;
+    }
+}
+
+/* تنظیمات دکمه منو در صفحات خیلی کوچک */
+@media (max-width: 575.98px) {
+    .navbar-toggler {
+        padding: 4px 7px !important;
+        margin-right: 5px !important;
+    }
+    
+    .navbar-toggler-animation span {
+        height: 2px !important;
+        margin: 3px 0 !important;
+    }
+}
+
+/* تنظیمات برای فوتر در حالت موبایل */
+@media (max-width: 767.98px) {
+    /* کاهش فاصله‌های کلی */
+    .footer-area {
+        padding-top: 1.5rem !important;
+    }
+    
+    /* کاهش فاصله بخش شبکه‌های اجتماعی */
+    .row.mb-5 {
+        margin-bottom: 1rem !important;
+    }
+    
+    /* تنظیم فاصله و سایز در بخش شبکه‌های اجتماعی */
+    .social-connect-wrapper {
+        padding: 1rem !important;
+    }
+    
+    .social-connect-wrapper h2 {
+        font-size: 1.2rem !important;
+    }
+    
+    .social-connect-wrapper p {
+        font-size: 0.85rem !important;
+    }
+    
+    /* کوچکتر کردن آیکون‌های شبکه‌های اجتماعی */
+    .social-icon {
+        width: 35px !important;
+        height: 35px !important;
+        margin: 0.2rem !important;
+    }
+    
+    /* کاهش فاصله بین ستون‌های فوتر */
+    .row.g-4 {
+        row-gap: 0.5rem !important;
+    }
+    
+    /* فاصله و استایل ویجت‌های فوتر */
+    .footer-widget {
+        padding: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    /* کاهش سایز عنوان بخش‌های فوتر */
+    .footer-widget-title {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.8rem !important;
+        padding-bottom: 0.4rem !important;
+    }
+    
+    /* کاهش سایز توضیحات و افزایش خوانایی */
+    .footer-description {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    /* کاهش فاصله بین لینک‌های فوتر */
+    .footer-links li {
+        margin-bottom: 0.3rem !important;
+    }
+    
+    .footer-link {
+        font-size: 0.85rem !important;
+        padding: 0.3rem 0 !important;
+    }
+    
+    /* تنظیم بخش اطلاعات تماس */
+    .contact-item {
+        margin-top: 0.5rem !important;
+    }
+    
+    .contact-label {
+        font-size: 0.8rem !important;
+    }
+    
+    .contact-value {
+        font-size: 0.85rem !important;
+    }
+    
+    /* بخش کپی‌رایت */
+    .footer-divider {
+        margin-top: 1rem !important;
+    }
+    
+    .footer-copyright {
+        padding: 0.8rem 0 !important;
+    }
+    
+    .copyright-text {
+        font-size: 0.8rem !important;
+    }
+    
+    .copyright-links {
+        margin-top: 0.5rem;
+    }
+    
+    .copyright-link {
+        font-size: 0.75rem !important;
+    }
+    
+    /* تنظیم نمایش آیکون‌های فوتر */
+    .footer-social-links {
+        margin-top: 0.5rem !important; 
+    }
+    
+    .social-link {
+        width: 32px !important;
+        height: 32px !important;
+    }
+}
+
+/* تنظیمات بیشتر برای صفحات خیلی کوچک */
+@media (max-width: 575.98px) {
+    /* فشرده‌تر کردن فوتر در موبایل‌های کوچک */
+    .footer-area {
+        padding-top: 1rem !important;
+    }
+    
+    /* اندازه آیکون‌ها در موبایل‌های کوچک */
+    .social-icon {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* متن کوچکتر برای بخش‌های فوتر */
+    .footer-widget-title {
+        font-size: 1rem !important;
+    }
+    
+    .footer-description {
+        font-size: 0.8rem !important;
+        margin-top: 0.3rem !important;
+    }
+    
+    /* نمایش یک ستونی کامل برای موبایل‌های کوچک */
+    .col-md-6 {
+        width: 100% !important;
+    }
+    
+    /* تنظیم نمایش بخش کپی‌رایت */
+    .copyright-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        align-items: center;
+        font-size: 0.75rem !important;
+    }
+    
+    /* کاهش فضای بخش شبکه‌های اجتماعی در بالای فوتر */
+    .social-connect-wrapper {
+        padding: 0.75rem !important;
+    }
+    
+    .social-connect-wrapper h2 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+    
+    .social-connect-wrapper p {
+        font-size: 0.75rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+    
+    /* حذف حاشیه اضافی از ستون‌های فوتر */
+    .footer-widget {
+        margin-bottom: 0.3rem !important;
+        padding: 0.75rem !important;
+    }
+    
+    /* فشرده کردن بخش دسترسی سریع و خدمات */
+    .col-lg-2, .col-lg-3 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    /* تنظیم فاصله بین بخش‌های مختلف */
+    .footer-widget-title {
+        margin-bottom: 0.5rem !important;
+        padding-bottom: 0.3rem !important;
+    }
+    
+    /* نمایش افقی آیکون‌های اجتماعی در فضای کمتر */
+    .social-icons-container {
+        gap: 5px !important;
+    }
+    
+    /* تنظیم فوتر برای دسترسی بهتر به لینک‌ها */
+    .footer-links li a, .contact-value {
+        padding: 0.4rem 0 !important;
+        display: block !important;
+    }
+    
+    /* مخفی کردن سال 2024 و آیکون کپی‌رایت در فوتر موبایل */
+    .copyright-year, .copyright-icon {
+        display: none !important;
+    }
+    
+    /* تنظیم نمایش متن کپی‌رایت */
+    .copyright-message {
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+    
+    /* بهبود نمایش متن کپی‌رایت */
+    .copyright-text {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+} 

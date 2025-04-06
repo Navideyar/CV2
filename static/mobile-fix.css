@@ -1,0 +1,110 @@
+/* استایل‌های مخصوص موبایل - فیکس فاصله */
+@media (max-width: 576px) {
+    h1.display-3 {
+        font-size: 3rem !important;
+        text-align: center !important;
+        line-height: 1.3 !important;
+        margin-bottom: -5px !important;
+    }
+    
+    h1.display-3 span {
+        font-size: 2.8rem !important;
+        text-align: center !important;
+        display: block !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .welcome-text {
+        font-size: 2.2rem !important;
+        display: block !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        position: relative !important;
+        margin-top: -55px !important;
+        padding-bottom: 15px !important;
+    }
+    
+    .welcome-underline {
+        position: absolute !important;
+        right: 20% !important;
+        left: auto !important;
+        transform: none !important;
+        top: auto !important;
+        margin-left: 0 !important;
+        bottom: 0 !important;
+    }
+    
+    .welcome-underline svg {
+        margin-left: 0 !important;
+        right: 0 !important;
+        transform: scale(0.8) !important;
+        width: 80% !important;
+    }
+    
+    br {
+        display: none !important;
+    }
+    
+    /* بهینه‌سازی شمارشگرها */
+    .counter-section {
+        padding-top: 0 !important;
+        margin-top: -1.5rem !important;
+    }
+    
+    .counter-section .row.g-4 {
+        margin-left: -3px !important;
+        margin-right: -3px !important;
+        row-gap: 8px !important;
+    }
+    
+    .counter-section h5, .counter-section .h5 {
+        font-size: 0.65rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    /* اصلاح بیرون زدن از کادر */
+    .counter-section .container.counter-container {
+        padding-right: 4px !important;
+        padding-left: 4px !important;
+    }
+    
+    /* حل مشکل عرض و پدینگ */
+    .col-sm-6 {
+        padding-left: 3px !important;
+        padding-right: 3px !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+    
+    /* کاهش ارتفاع شمارشگرها */
+    .counter-item {
+        height: auto !important;
+        min-height: auto !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* تنظیم سایز نمایش آیکون و شماره */
+    .d-flex.justify-content-center {
+        height: auto !important;
+    }
+    
+    /* تنظیم سایز فونت شمارشگرها */
+    .counter-icon.display-6 {
+        font-size: 1.2rem !important;
+    }
+    
+    .counter-section .counter-icon {
+        font-size: 1.2rem !important;
+    }
+    
+    .counter-section .counter-value,
+    .counter-section .counter-unit {
+        font-size: 0.65rem !important;
+    }
+    
+    .counter-section .counter-text {
+        font-size: 0.6rem !important;
+    }
+} 

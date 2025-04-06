@@ -1,0 +1,56 @@
+/* استایل‌های مخصوص موبایل */
+@media (max-width: 576px) {
+    /* تنظیمات برای تیتر اصلی */
+    h1.display-3 {
+        font-size: 3rem !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* تنظیمات برای خط اول تیتر */
+    h1.display-3 span.position-relative {
+        font-size: 2.8rem !important;
+        margin-bottom: 0 !important;
+        display: block !important;
+    }
+    
+    /* تنظیمات برای خط دوم (خوش آمدید) */
+    span.welcome-text {
+        font-size: 2.2rem !important;
+        position: relative !important;
+        display: block !important;
+        margin-top: -55px !important;
+        padding-bottom: 15px !important;
+    }
+    
+    /* تنظیمات برای خط زیر "خوش آمدید" */
+    .welcome-underline {
+        bottom: 0 !important;
+    }
+    
+    .welcome-underline svg {
+        transform: scale(0.8) !important;
+        width: 80% !important;
+    }
+}
+
+/* تنظیمات برای موبایل‌های خیلی کوچک */
+@media (max-width: 380px) {
+    h1.display-3 {
+        font-size: 2.6rem !important;
+    }
+    
+    h1.display-3 span.position-relative {
+        font-size: 2.4rem !important;
+        margin-bottom: 0 !important;
+    }
+    
+    span.welcome-text {
+        font-size: 2rem !important;
+        margin-top: -45px !important;
+    }
+    
+    .welcome-underline svg {
+        width: 75% !important;
+        transform: scale(0.8) !important;
+    }
+}

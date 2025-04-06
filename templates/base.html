@@ -88,6 +88,7 @@
 <link rel="alternate" type="application/rss+xml" title="آخرین مطالب وبلاگ" href="{% url 'blog:rss_feed' %}" />
 
     <link rel="stylesheet" href="{% static 'CACHE/css/output.004c4f90511e.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'mobile-styles.css' %}" type="text/css">
     
     {% block extra_css %}{% endblock %}
     
@@ -443,6 +444,7 @@
     html[data-bs-theme="dark"] .login-button {
         background: linear-gradient(45deg, #00DBDE, #FC00FF);
         color: white;
+        box-shadow: 0 4px 10px rgba(0, 219, 222, 0.25);
     }
 
     html[data-bs-theme="dark"] .login-button:hover {
@@ -453,7 +455,7 @@
     }
 
     html[data-bs-theme="dark"] .login-button::before {
-        background: linear-gradient(45deg, #FC00FF, #00DBDE);
+        background: linear-gradient(45deg, #1A2980, #26D0CE);
     }
 
     /* استایل باکس جستجو */
@@ -2301,8 +2303,131 @@
         transform: scale(1.1);
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
+
+    /* حالت تاریک */
+    html[data-bs-theme="dark"] .login-button {
+        background: linear-gradient(45deg, #00DBDE, #FC00FF);
+        color: white;
+        box-shadow: 0 4px 10px rgba(0, 219, 222, 0.25);
+    }
+
+    html[data-bs-theme="dark"] .register-button {
+        background: linear-gradient(45deg, #00BFFF, #00FF7F);
+        color: white;
+        box-shadow: 0 4px 10px rgba(0, 191, 255, 0.25);
+    }
+
+    html[data-bs-theme="dark"] .login-button::before {
+        background: linear-gradient(45deg, #1A2980, #26D0CE);
+    }
+
+    /* تغییرات ریسپانسیو برای حالت موبایل */
+    @media (max-width: 767.98px) {
+        /* قرار دادن منو در سمت راست در حالت موبایل */
+        .navbar-collapse {
+            text-align: right;
+            padding-right: 15px;
+        }
+        
+        /* تنظیم استایل دکمه toggle منو - فقط اندازه */
+        .navbar-toggler {
+            padding: 6px 10px;
+            margin-right: 10px !important;
+            transition: all 0.3s ease;
+        }
+        
+        /* استایل خاص برای منوی موبایل */
+        .mobile-menu-container {
+            background-color: var(--bs-body-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-top: 10px !important;
+            z-index: 1000;
+        }
+        
+        /* حالت تاریک برای منوی موبایل */
+        html[data-bs-theme="dark"] .mobile-menu-container {
+            background-color: var(--bs-dark);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* تنظیم سایز و فاصله آیتم‌های منو */
+        .main-menu .nav-item {
+            margin: 5px 0;
+        }
+        
+        /* استایل دکمه‌های ورود و ثبت‌نام در حالت موبایل */
+        .auth-buttons {
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        /* کوچک کردن دکمه‌های ورود و ثبت‌نام */
+        .login-button, .register-button {
+            font-size: 0.85rem !important;
+            padding: 6px 12px !important;
+        }
+        
+        /* کاهش فاصله بین دکمه‌ها */
+        .login-button {
+            margin-right: 5px !important;
+        }
+        
+        /* تنظیم اندازه آیکون‌ها در دکمه‌ها */
+        .login-button i, .register-button i {
+            font-size: 0.8rem;
+        }
+        
+        /* افزایش فضای منو در حالت باز شده در موبایل */
+        #navbarCollapse {
+            margin-top: 10px;
+        }
+    }
+    
+    /* تغییرات بیشتر برای صفحات خیلی کوچک */
+    @media (max-width: 575.98px) {
+        /* باز هم کوچکتر کردن دکمه‌ها */
+        .login-button, .register-button {
+            font-size: 0.8rem !important;
+            padding: 5px 10px !important;
+        }
+        
+        /* حذف آیکون‌ها در صفحات خیلی کوچک برای صرفه‌جویی در فضا */
+        .login-button i, .register-button i {
+            display: none;
+        }
+        
+        /* تنظیمات بیشتر برای منو در حالت خیلی کوچک */
+        .navbar-nav {
+            width: 100%;
+            padding-right: 0;
+        }
+        
+        /* تنظیم اندازه و حاشیه آیتم‌های منو */
+        .menu-item {
+            font-size: 0.95rem !important;
+            padding: 6px 10px !important;
+        }
+        
+        /* تنظیمات دیگر برای منوی خیلی کوچک */
+        .navbar-collapse {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+    }
+    
+    /* تنظیمات اضافی برای تبلت‌ها */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        /* اندازه متوسط برای دکمه‌ها در حالت تبلت */
+        .login-button, .register-button {
+            font-size: 0.9rem;
+            padding: 7px 14px;
+        }
+    }
 </style>
 <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/all.min.css' %}">
+<link rel="stylesheet" href="{% static 'custom.css' %}">
 </head>
 
 <body>
@@ -2321,7 +2446,7 @@
 
 
         <!-- Responsive navbar toggler -->
-        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+        <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-animation">
@@ -2332,7 +2457,7 @@
         </button>
 
         <!-- Main navbar START -->
-        <div class="navbar-collapse w-100 collapse" id="navbarCollapse">
+        <div class="navbar-collapse w-100 collapse mobile-menu-container" id="navbarCollapse">
 
             <!-- Nav category menu START -->
             <ul class="navbar-nav navbar-nav-scroll me-auto">
@@ -2481,7 +2606,7 @@
                     </ul>
                 </div>
                 {% else %}
-                <div class="d-flex">
+                <div class="d-flex auth-buttons">
                     <a class="btn login-button me-2 mb-0" href="{% url 'accounts:login' %}"><i
                             class="fas fa-sign-in-alt me-2"></i>ورود</a>
                     <a class="btn register-button mb-0" href="{% url 'accounts:signup' %}"><i

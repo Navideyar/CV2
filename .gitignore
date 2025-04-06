@@ -103,4 +103,9 @@ db.sqlite3
 .idea/
 
 # Secret keys
-.env 
+.env
+
+# Environment configuration
+.env.production
+# محیط توسعه را می‌توان به عنوان نمونه نگه داشت، اما محیط تولید نباید در مخزن باشد
+# .env.development 

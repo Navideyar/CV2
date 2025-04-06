@@ -1,14 +1,14 @@
 {
   "platform": "django",
   "django": {
-    "pythonVersion": "3.9",
+    "pythonVersion": "3.13",
     "collectStatic": true,
     "compileMessages": false,
     "modifySettings": true,
     "timezone": "Asia/Tehran"
     
   },
-  "app": "navidyar",
+  "app": "mysite-alibigdeli",
   "disks": [
     {
       "name": "static",
@@ -18,8 +18,5 @@
       "name": "media",
       "mountTo": "media"
     }
-  ],
-  "nginx": {
-    "customConfig": true
-  }
+  ]
 }

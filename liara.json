@@ -8,7 +8,7 @@
     "timezone": "Asia/Tehran"
     
   },
-  "app": "navidyar",
+  "app": "mysite-alibigdeli",
   "disks": [
     {
       "name": "static",
@@ -18,8 +18,5 @@
       "name": "media",
       "mountTo": "media"
     }
-  ],
-  "nginx": {
-    "customConfig": true
-  }
+  ]
 }

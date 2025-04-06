@@ -1,0 +1,8 @@
+"""
+DEPRECATED - این فایل دیگر استفاده نمی‌شود.
+لطفا از فایل‌های جدید در پوشه cv2/setting استفاده کنید.
+
+این فایل فقط به عنوان مرجع نگهداری شده است.
+"""
+
+# All settings moved to cv2/setting/base.py, cv2/setting/development.py and cv2/setting/production.py

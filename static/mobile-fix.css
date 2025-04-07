@@ -1,0 +1,79 @@
+/* استایل‌های مخصوص موبایل - فیکس فاصله */
+@media (max-width: 576px) {
+
+       
+    /* بهینه‌سازی شمارشگرها */
+    .counter-section {
+        padding-top: 0 !important;
+    }
+    
+    .counter-section .row.g-4 {
+        margin-left: -3px !important;
+        margin-right: -3px !important;
+        row-gap: 8px !important;
+    }
+    
+    .counter-section h5, .counter-section .h5 {
+        font-size: 0.65rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    /* اصلاح بیرون زدن از کادر */
+    .counter-section .container.counter-container {
+        padding-right: 4px !important;
+        padding-left: 4px !important;
+    }
+    
+    /* حل مشکل عرض و پدینگ */
+    .col-sm-6 {
+        padding-left: 3px !important;
+        padding-right: 3px !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+    
+    /* کاهش ارتفاع شمارشگرها */
+    .counter-item {
+        height: auto !important;
+        min-height: auto !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* تنظیم سایز نمایش آیکون و شماره */
+    .d-flex.justify-content-center {
+        height: auto !important;
+    }
+    
+    /* تنظیم سایز فونت شمارشگرها */
+    .counter-icon.display-6 {
+        font-size: 1.2rem !important;
+    }
+    
+    .counter-section .counter-icon {
+        font-size: 1.2rem !important;
+    }
+    
+    .counter-section .counter-value,
+    .counter-section .counter-unit {
+        font-size: 0.65rem !important;
+    }
+    
+    .counter-section .counter-text {
+        font-size: 0.6rem !important;
+    }
+
+    /* تنظیم فاصله بالای متن توسعه دهنده بک اند در موبایل */
+    .text-lg-start .backend-dev-text {
+        margin-top: 5px !important; /* اضافه کردن فاصله از بالا */
+        text-align: center !important; /* وسط چین کردن متن */
+        color: var(--bs-body-color);  /* رنگ متن سازگار با حالت روشن/تاریک */
+    }
+}
+
+@media (max-width: 575.98px) {
+    .counter-section {
+        margin-top: -187px !important; /* افزایش بیشتر مارجین منفی */
+    }
+}   
+

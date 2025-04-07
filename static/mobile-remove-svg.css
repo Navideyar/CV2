@@ -1,0 +1,32 @@
+/* استایل برای حذف SVG decoration و پس زمینه در موبایل */
+@media (max-width: 767.98px) {
+    /* مخفی کردن SVG decoration 1 */
+    .position-absolute.bottom-0.start-50.translate-middle-x.mt-4.mb-0 {
+        display: none !important;
+    }
+    
+    /* مخفی کردن SVG decoration 1 با کلاس move-up-on-mobile */
+    .position-absolute.bottom-0.start-50.translate-middle-x.mt-4.mb-0.move-up-on-mobile {
+        display: none !important;
+    }
+    
+    /* مخفی کردن پس زمینه */
+    .position-absolute.bottom-0.start-50.translate-middle-x.mb-n5.z-index-9 {
+        display: none !important;
+    }
+    
+    /* مخفی کردن SVG decoration 2 */
+    .position-absolute.top-50.start-50.translate-middle.mt-n7 {
+        display: none !important;
+    }
+    
+    /* مخفی کردن تصویر اصلی (Image 1) در موبایل */
+    .position-relative.move-up-on-mobile {
+        display: none !important;
+    }
+}
+
+/* استایل‌های بیشتر برای موبایل‌های کوچکتر */
+@media (max-width: 575.98px) {
+    /* استایل‌های تنظیم شده در counter-mobile-optimization.css */
+} 

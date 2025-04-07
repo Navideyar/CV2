@@ -1,0 +1,16 @@
+/* CSS برای حل مشکل تداخل متن با عکس در موبایل */
+
+@media (max-width: 767.98px) {
+    .backend-dev-text {
+        margin-top: 2.5rem !important; /* افزایش فاصله از بالا در موبایل */
+        padding-top: 1rem !important; /* افزودن فاصله بیشتر */
+    }
+}
+
+/* تنظیمات واکنش‌گرای بیشتر برای صفحه‌های بسیار کوچک */
+@media (max-width: 575.98px) {
+    .backend-dev-text {
+        margin-top: 3rem !important; /* فاصله بیشتر برای صفحه‌های بسیار کوچک */
+        padding-top: 1.5rem !important;
+    }
+} 

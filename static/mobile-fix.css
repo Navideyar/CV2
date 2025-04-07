@@ -2,7 +2,7 @@
 @media (max-width: 576px) {
 
     /* تنظیم والد اصلی برای چیدمان Flex عمودی در موبایل */
-    #left-content-area {
+    .text-lg-start {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
@@ -71,10 +71,10 @@
 
     /* تنظیم فاصله و کادر متن توسعه دهنده بک اند در موبایل */
     /* ترتیب نمایش: 1 */
-    #left-content-area > .backend-dev-text { 
-        order: 1; 
-        margin-top: 5px !important; 
-        margin-bottom: 1rem !important; 
+    .text-lg-start > .backend-dev-text {
+        order: 1;
+        margin-top: 15px !important;
+        margin-bottom: 1rem !important;
         text-align: center !important;
         color: var(--bs-body-color);
         display: inline-block;
@@ -85,24 +85,24 @@
 
     /* تنظیم بخش دکمه ها در موبایل */
     /* ترتیب نمایش: 2 (بالاتر از مهارت ها) */
-    #left-content-area > div.d-sm-flex {
-        order: 2; 
-        width: 100%; 
+    .text-lg-start > div.d-sm-flex {
+        order: 2;
+        width: 100%;
         justify-content: center !important;
         margin-top: 0 !important;
-        margin-bottom: 1rem !important; 
+        margin-bottom: 1rem !important;
         flex-wrap: wrap;
     }
 
     /* تنظیم دکمه رزومه در موبایل */
-    #left-content-area > div.d-sm-flex > .resume-btn {
+    .text-lg-start > div.d-sm-flex > .resume-btn {
        margin-right: 0.5rem !important;
        margin-left: 0.5rem !important;
        margin-bottom: 0.5rem !important;
     }
 
     /* تنظیم دکمه ویدیو در موبایل */
-    #left-content-area > div.d-sm-flex > div.d-flex {
+    .text-lg-start > div.d-sm-flex > div.d-flex {
         margin-left: 0.5rem !important;
         margin-right: 0.5rem !important;
         margin-bottom: 0.5rem !important;
@@ -112,8 +112,8 @@
 
     /* تنظیم لیست مهارت ها در موبایل */
     /* ترتیب نمایش: 3 (پایین تر از دکمه ها) */
-    #left-content-area > ul.list-inline {
-        order: 3; 
+    .text-lg-start > ul.list-inline {
+        order: 3;
         width: 100%;
         justify-content: center !important;
         margin-top: 0 !important;
@@ -122,11 +122,11 @@
         flex-wrap: wrap !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
-        list-style: none; 
+        list-style: none;
     }
 
     /* تنظیم آیتم های لیست مهارت ها در موبایل */
-    #left-content-area > ul.list-inline > .list-inline-item {
+    .text-lg-start > ul.list-inline > .list-inline-item {
         margin-right: 0.3rem !important;
         margin-left: 0.2rem !important;
         margin-bottom: 0.5rem !important;
@@ -135,7 +135,7 @@
 
 @media (max-width: 575.98px) {
     .counter-section {
-        margin-top: -180px !important; /* افزایش بیشتر مارجین منفی */
+        margin-top: -200px !important; /* افزایش بیشتر مارجین منفی */
     }
 }   
 

@@ -1,55 +1,10 @@
 /* استایل‌های مخصوص موبایل - فیکس فاصله */
 @media (max-width: 576px) {
-    h1.display-3 {
-        font-size: 3rem !important;
-        text-align: center !important;
-        line-height: 1.3 !important;
-        margin-bottom: -5px !important;
-    }
-    
-    h1.display-3 span {
-        font-size: 2.8rem !important;
-        text-align: center !important;
-        display: block !important;
-        margin-bottom: 0 !important;
-    }
-    
-    .welcome-text {
-        font-size: 2.2rem !important;
-        display: block !important;
-        text-align: center !important;
-        margin: 0 auto !important;
-        width: 100% !important;
-        position: relative !important;
-        margin-top: -55px !important;
-        padding-bottom: 15px !important;
-    }
-    
-    .welcome-underline {
-        position: absolute !important;
-        right: 20% !important;
-        left: auto !important;
-        transform: none !important;
-        top: auto !important;
-        margin-left: 0 !important;
-        bottom: 0 !important;
-    }
-    
-    .welcome-underline svg {
-        margin-left: 0 !important;
-        right: 0 !important;
-        transform: scale(0.8) !important;
-        width: 80% !important;
-    }
-    
-    br {
-        display: none !important;
-    }
-    
+
+       
     /* بهینه‌سازی شمارشگرها */
     .counter-section {
         padding-top: 0 !important;
-        margin-top: -1.5rem !important;
     }
     
     .counter-section .row.g-4 {
@@ -107,4 +62,18 @@
     .counter-section .counter-text {
         font-size: 0.6rem !important;
     }
-} 
+
+    /* تنظیم فاصله بالای متن توسعه دهنده بک اند در موبایل */
+    .text-lg-start .backend-dev-text {
+        margin-top: 5px !important; /* اضافه کردن فاصله از بالا */
+        text-align: center !important; /* وسط چین کردن متن */
+        color: var(--bs-body-color);  /* رنگ متن سازگار با حالت روشن/تاریک */
+    }
+}
+
+@media (max-width: 575.98px) {
+    .counter-section {
+        margin-top: -187px !important; /* افزایش بیشتر مارجین منفی */
+    }
+}   
+

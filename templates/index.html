@@ -445,11 +445,12 @@
                      
 
                      <!-- Image 1 -->
-                     <div class="position-relative move-up-on-mobile">
+                     <div class="position-relative d-none d-md-block">
                         <img src="{% static 'images/element/07.png' %}" style="animation-name: pulseImage; animation-duration: 1.5s; animation-timing-function: ease-in-out; animation-iteration-count: 1; animation-fill-mode: forwards;" alt="" loading="lazy">
                     </div>
                     <!-- Image 1 END -->
-                     
+
+
                     <!-- Icon logos 1 START -->
                     <div
                         class="p-2 bg-white shadow rounded-3 position-absolute top-50 start-0 translate-middle-y mt-n7 d-none d-sm-block tech-icon python-icon">
@@ -667,77 +668,155 @@
             </div>
         </div>
         <!-- Content END -->
+
+        <!-- تصویر مخصوص موبایل -->
+        <div class="container d-block d-md-none mb-0 mt-n4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <img src="{% static 'images/element/webmobileoic.png' %}" alt="تصویر موبایل" class="img-fluid" style="margin-top: -55px;" loading="lazy">
+                </div>
+            </div>
+        </div>
+        <!-- پایان تصویر مخصوص موبایل -->
     </section>
     <!-- =======================
     Main Banner END -->
 
     <!-- =======================
     Counter START -->
-    <section class="py-5 py-xl-5 counter-section">
-        <div class="container counter-container">
-            <div class="row g-4">
+    <section class="py-3 py-xl-5 counter-section" style="margin-top: -90px;">
+        <!-- تصویر مخصوص موبایل بالای شمارشگرها - حذف شد -->
+
+        <div class="container counter-container" style="max-width: 90% !important;">
+            <div class="row g-2 g-md-4">
                 <!-- Counter item -->
-                <div class="col-sm-6 col-xl-3">
-                    <div class="counter-item bg-warning-item d-flex justify-content-center align-items-center p-4 bg-warning bg-opacity-15 rounded-3">
-                        <span class="counter-icon display-6 lh-1 text-warning mb-0"><i class="fas fa-code"></i></span>
-                        <div class="ms-4 h6 fw-normal mb-0">
+                <div class="col-6 col-sm-6 col-xl-3">
+                    <div class="counter-item bg-warning-item d-flex justify-content-center align-items-center p-2 p-md-4 bg-warning bg-opacity-15 rounded-3">
+                        <span class="counter-icon display-6 lh-1 text-warning mb-0 d-none d-sm-block"><i class="fas fa-code"></i></span>
+                        <span class="counter-icon h3 lh-1 text-warning mb-0 d-block d-sm-none"><i class="fas fa-code"></i></span>
+                        <div class="ms-2 ms-md-4 h6 fw-normal mb-0">
                             <div class="d-flex">
-                                <h5 class="counter-value purecounter mb-0 fw-bold px-1" data-purecounter-start="0"
+                                <h5 class="counter-value purecounter mb-0 fw-bold px-1 h5 h4-md" data-purecounter-start="0"
                                     data-purecounter-end="1" data-purecounter-delay="200">14
                                 </h5>
-                                <span class="counter-unit mb-0 h5"> سال  </span>
+                                <span class="counter-unit mb-0 h5 h4-md"> سال  </span>
                             </div>
-                            <p class="counter-text mb-0">برنامه نویسی</p>
+                            <p class="counter-text mb-0 small">برنامه نویسی</p>
                         </div>
                     </div>
                 </div>
                 <!-- Counter item -->
-                <div class="col-sm-6 col-xl-3">
-                    <div class="counter-item bg-blue-item d-flex justify-content-center align-items-center p-4 bg-blue bg-opacity-10 rounded-3">
-                        <span class="counter-icon display-6 lh-1 text-blue mb-0"><i class="fas fa-video"></i></span>
-                        <div class="ms-4 h6 fw-normal mb-0">
+                <div class="col-6 col-sm-6 col-xl-3">
+                    <div class="counter-item bg-blue-item d-flex justify-content-center align-items-center p-2 p-md-4 bg-blue bg-opacity-10 rounded-3">
+                        <span class="counter-icon display-6 lh-1 text-blue mb-0 d-none d-sm-block"><i class="fas fa-video"></i></span>
+                        <span class="counter-icon h3 lh-1 text-blue mb-0 d-block d-sm-none"><i class="fas fa-video"></i></span>
+                        <div class="ms-2 ms-md-4 h6 fw-normal mb-0">
                             <div class="d-flex">
-                                <h5 class="counter-value purecounter mb-0 fw-bold px-1" data-purecounter-start="0"
+                                <h5 class="counter-value purecounter mb-0 fw-bold px-1 h5 h4-md" data-purecounter-start="0"
                                     data-purecounter-end="200" data-purecounter-delay="200">0</h5>
-                                <span class="counter-unit mb-0 h5"> + ساعت</span>
+                                <span class="counter-unit mb-0 h5 h4-md"> + ساعت</span>
                             </div>
-                            <p class="counter-text mb-0">آموزش ویدئویی</p>
+                            <p class="counter-text mb-0 small">آموزش ویدئویی</p>
                         </div>
                     </div>
                 </div>
                 <!-- Counter item -->
-                <div class="col-sm-6 col-xl-3">
-                    <div class="counter-item bg-purple-item d-flex justify-content-center align-items-center p-4 bg-purple bg-opacity-10 rounded-3">
-                        <span class="counter-icon display-6 lh-1 text-purple mb-0"><i class="fas fa-brain"></i></span>
-                        <div class="ms-4 h6 fw-normal mb-0">
+                <div class="col-6 col-sm-6 col-xl-3">
+                    <div class="counter-item bg-purple-item d-flex justify-content-center align-items-center p-2 p-md-4 bg-purple bg-opacity-10 rounded-3">
+                        <span class="counter-icon display-6 lh-1 text-purple mb-0 d-none d-sm-block"><i class="fas fa-brain"></i></span>
+                        <span class="counter-icon h3 lh-1 text-purple mb-0 d-block d-sm-none"><i class="fas fa-brain"></i></span>
+                        <div class="ms-2 ms-md-4 h6 fw-normal mb-0">
                             <div class="d-flex">
-                                <h5 class="counter-value purecounter mb-0 fw-bold px-1" data-purecounter-start="0"
+                                <h5 class="counter-value purecounter mb-0 fw-bold px-1 h5 h4-md" data-purecounter-start="0"
                                     data-purecounter-end="8" data-purecounter-delay="200">0</h5>
-                                <span class="counter-unit mb-0 h5">تخصص</span>
+                                <span class="counter-unit mb-0 h5 h4-md">تخصص</span>
                             </div>
-                            <p class="counter-text mb-0">حوزه مرتبط</p>
+                            <p class="counter-text mb-0 small">حوزه مرتبط</p>
                         </div>
                     </div>
                 </div>
                 <!-- Counter item -->
-                <div class="col-sm-6 col-xl-3">
-                    <div class="counter-item bg-info-item d-flex justify-content-center align-items-center p-4 bg-info bg-opacity-10 rounded-3">
-                        <span class="counter-icon display-6 lh-1 text-info mb-0"><i class="fas fa-project-diagram"></i></span>
-                        <div class="ms-4 h6 fw-normal mb-0">
+                <div class="col-6 col-sm-6 col-xl-3">
+                    <div class="counter-item bg-info-item d-flex justify-content-center align-items-center p-2 p-md-4 bg-info bg-opacity-10 rounded-3">
+                        <span class="counter-icon display-6 lh-1 text-info mb-0 d-none d-sm-block"><i class="fas fa-project-diagram"></i></span>
+                        <span class="counter-icon h3 lh-1 text-info mb-0 d-block d-sm-none"><i class="fas fa-project-diagram"></i></span>
+                        <div class="ms-2 ms-md-4 h6 fw-normal mb-0">
                             <div class="d-flex">
-                                <h5 class="counter-value purecounter mb-0 fw-bold px-1" data-purecounter-start="0"
+                                <h5 class="counter-value purecounter mb-0 fw-bold px-1 h5 h4-md" data-purecounter-start="0"
                                     data-purecounter-end="17" data-purecounter-delay="100">0</h5>
-                                <span class="counter-unit mb-0 h5"> + پروژه </span>
+                                <span class="counter-unit mb-0 h5 h4-md"> + پروژه </span>
                             </div>
-                            <p class="counter-text mb-0"> وبسایت حرفه ای </p>
+                            <p class="counter-text mb-0 small"> وبسایت حرفه ای </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
+<style>
+    /* استایل‌های جدید برای بهینه‌سازی شمارشگرها در موبایل */
+    @media (max-width: 767.98px) {
+        .counter-section {
+            margin-top: -20px;
+        }
+        .counter-item {
+            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+            transform: scale(0.9);
+            padding: 5px !important;
+        }
+        .counter-container {
+            padding-left: 2px;
+            padding-right: 2px;
+            max-width: 90% !important;
+        }
+        .counter-text {
+            font-size: 0.65rem;
+        }
+        .counter-icon.h3 {
+            font-size: 1.2rem !important;
+        }
+        .ms-2 {
+            margin-left: 0.3rem !important;
+        }
+        .col-6 {
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+        .counter-unit {
+            font-size: 0.9rem !important;
+        }
+        .counter-value {
+            font-size: 0.9rem !important;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .h4-md {
+            font-size: 1.5rem;
+        }
+    }
+</style>
     <!-- =======================
     Counter END -->
+
+<style>
+    /* استایل مخصوص برای شمارشگرها در موبایل */
+    @media (max-width: 767.98px) {
+        .mobile-counter-row {
+            width: 92%;
+            margin: 0 auto;
+        }
+        
+        .counter-container {
+            max-width: 100%;
+        }
+        
+        .counter-item {
+            transform: scale(0.95);
+        }
+    }
+</style>
 
 
 

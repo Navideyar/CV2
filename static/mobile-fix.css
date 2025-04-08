@@ -139,3 +139,25 @@
     }
 }   
 
+/* اصلاح موقعیت آواتار کاربر در حالت موبایل */
+@media (max-width: 576px) {
+    /* کاهش فاصله آواتار از بالا */
+    .navbar .dropdown .avatar.avatar-sm.p-0 {
+        margin-top: 0 !important;
+        position: relative !important;
+        top: auto !important;
+    }
+    
+    /* تنظیم فاصله آواتار از نوار ناوبری */
+    .navbar .dropdown {
+        margin-top: 0 !important;
+        margin-bottom: 10px !important;
+    }
+    
+    /* مطمئن شویم که آواتار بیش از حد بالا نباشد */
+    .navbar-expand-xl .navbar-nav .dropdown {
+        position: relative !important;
+        top: auto !important;
+    }
+}
+

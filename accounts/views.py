@@ -45,7 +45,7 @@ def logout_view(request):
 
 def generate_captcha_code(length=6):
     """تولید کد کپچای تصادفی"""
-    chars = string.ascii_letters + string.digits
+    chars = string.digits
     return ''.join(random.choice(chars) for _ in range(length))
 
 def signup_view(request):

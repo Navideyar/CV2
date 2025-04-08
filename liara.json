@@ -21,7 +21,7 @@
   ],
   "build": {
     "commands": [
-      "python manage.py migrate auth admin contenttypes sessions sites taggit accounts blog captcha contact core robots --noinput"
+      "python manage.py migrate --noinput"
     ]
   },
   "skip": {

@@ -55,66 +55,7 @@
         align-items: center !important;
     }
     
-    /* بهینه‌سازی شمارشگرها */
-    .counter-section {
-        padding-top: 0 !important;
-    }
-    
-    .counter-section .row.g-4 {
-        margin-left: -3px !important;
-        margin-right: -3px !important;
-        row-gap: 8px !important;
-    }
-    
-    .counter-section h5, .counter-section .h5 {
-        font-size: 0.65rem !important;
-        line-height: 1.1 !important;
-    }
-    
-    /* اصلاح بیرون زدن از کادر */
-    .counter-section .container.counter-container {
-        padding-right: 4px !important;
-        padding-left: 4px !important;
-    }
-    
-    /* حل مشکل عرض و پدینگ */
-    .col-sm-6 {
-        padding-left: 3px !important;
-        padding-right: 3px !important;
-        flex: 0 0 50% !important;
-        max-width: 50% !important;
-    }
-    
-    /* کاهش ارتفاع شمارشگرها */
-    .counter-item {
-        height: auto !important;
-        min-height: auto !important;
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-    }
-    
-    /* تنظیم سایز نمایش آیکون و شماره */
-    .d-flex.justify-content-center {
-        height: auto !important;
-    }
-    
-    /* تنظیم سایز فونت شمارشگرها */
-    .counter-icon.display-6 {
-        font-size: 1.2rem !important;
-    }
-    
-    .counter-section .counter-icon {
-        font-size: 1.2rem !important;
-    }
-    
-    .counter-section .counter-value,
-    .counter-section .counter-unit {
-        font-size: 0.65rem !important;
-    }
-    
-    .counter-section .counter-text {
-        font-size: 0.6rem !important;
-    }
+    /* حذف تمام استایل‌های شمارشگر از این بلاک */
 
     /* تنظیم فاصله و کادر متن توسعه دهنده بک اند در موبایل */
     /* ترتیب نمایش: 1 */
@@ -141,20 +82,25 @@
         flex-wrap: wrap;
     }
 
-    /* تنظیم دکمه رزومه در موبایل */
+    /* تنظیم دکمه رزومه در موبایل - تنظیم دقیق فاصله */
     .text-lg-start > div.d-sm-flex > .resume-btn {
-       margin-right: 0.5rem !important;
-       margin-left: 0.5rem !important;
-       margin-bottom: 0.5rem !important;
+       margin-right: 4rem !important; /* کاهش فاصله از دکمه سمت راست */
+       margin-left: 0.2rem !important;  /* تنظیم فاصله بیرونی */
+       margin-bottom: 0.5rem !important; 
+       font-size: 0.7rem !important; 
+       padding: 0.3rem 0.6rem !important; 
+       
+       box-sizing: border-box; 
+       text-align: center; 
     }
 
-    /* تنظیم دکمه ویدیو در موبایل */
+    /* تنظیم دکمه ویدیو ('من کی هستم') در موبایل - تنظیم دقیق فاصله */
     .text-lg-start > div.d-sm-flex > div.d-flex {
-        margin-left: 0.5rem !important;
-        margin-right: 0.5rem !important;
-        margin-bottom: 0.5rem !important;
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
+        margin-left: 0.05rem !important; /* کاهش فاصله از دکمه سمت چپ */
+        margin-right: 0.2rem !important;/* تنظیم فاصله بیرونی */
+        margin-bottom: 0.5rem !important; 
+        width: 48% !important; 
+        padding: 0 !important;
     }
 
     /* تنظیم لیست مهارت ها در موبایل */
@@ -163,7 +109,7 @@
         order: 3;
         width: 100%;
         justify-content: center !important;
-        margin-top: 0 !important;
+        margin-top: -10px !important;
         margin-bottom: 1rem !important;
         display: flex !important;
         flex-wrap: wrap !important;
@@ -172,22 +118,26 @@
         list-style: none;
     }
 
-    /* تنظیم آیتم های لیست مهارت ها در موبایل */
+    /* تنظیم آیتم های لیست مهارت ها در موبایل - بزرگتر و نزدیکتر */
     .text-lg-start > ul.list-inline > .list-inline-item {
-        margin-right: 0.3rem !important;
-        margin-left: 0.2rem !important;
-        margin-bottom: 0.5rem !important;
+        margin-right: 0.1rem !important; /* کاهش فاصله راست */
+        margin-left: 0.1rem !important;  /* کاهش فاصله چپ */
+        margin-bottom: 0.4rem !important;
     }
-}
 
-@media (max-width: 575.98px) {
-    .counter-section {
-        margin-top: -200px !important; /* افزایش بیشتر مارجین منفی */
+    /* افزایش اندازه خود badge */
+    .skill-badge {
+        font-size: 0.75rem !important; /* افزایش فونت متن */
+        padding: 0.45rem 0.35rem !important; /* تنظیم پدینگ */
     }
-}   
 
-/* اصلاح موقعیت آواتار کاربر در حالت موبایل */
-@media (max-width: 576px) {
+    /* افزایش اندازه آیکون داخل badge */
+    .skill-badge i {
+        font-size: 0.9rem !important; /* افزایش فونت آیکون */
+        margin-right: 0.15rem !important;
+    }
+
+    /* اصلاح موقعیت آواتار کاربر در حالت موبایل */
     /* کاهش فاصله آواتار از بالا */
     .navbar .dropdown .avatar.avatar-sm.p-0 {
         margin-top: 0 !important;
@@ -205,6 +155,65 @@
     .navbar-expand-xl .navbar-nav .dropdown {
         position: relative !important;
         top: auto !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .counter-section {
+        margin-top: -215px !important; /* افزایش بیشتر مارجین منفی */
+    }
+}   
+
+/* تنظیمات جدید و پاکسازی شده شمارشگرها در حالت موبایل */
+@media (max-width: 767.98px) {
+    /* بازگرداندن پدینگ افقی کانتینر برای ایجاد فاصله از لبه‌ها */
+    .counter-section .container.counter-container {
+        padding-left: 1rem !important; /* 16px فاصله از چپ */
+        padding-right: 1rem !important; /* 16px فاصله از راست */
+    }
+    
+    /* تنظیم چیدمان عمودی برای ردیف اصلی شمارشگرها */
+    .counter-section .row {
+        display: flex !important;
+        flex-direction: column !important;
+        row-gap: 12px !important; /* فاصله عمودی بین شمارشگرها */
+        margin-left: 0 !important; 
+        margin-right: 0 !important;
+    }
+    
+    /* تنظیم عرض کامل برای ستون‌های داخل ردیف شمارشگرها */
+    .counter-section .row > div[class*='col-'] {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        padding-left: 0 !important; 
+        padding-right: 0 !important;
+        margin-bottom: 0 !important; /* فاصله توسط row-gap مدیریت می‌شود */
+    }
+    
+    /* استایل برای آیتم‌های شمارشگر - پدینگ کمتر */
+    .counter-item {
+        height: auto !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 10px !important; /* کاهش پدینگ داخلی */
+    }
+
+    /* تنظیمات فونت و آیکون ها - کمی کوچکتر */
+    .counter-section .counter-icon {
+        font-size: 1.5rem !important; /* کاهش سایز آیکون */
+    }
+    
+    .counter-section .counter-value,
+    .counter-section .counter-unit {
+        font-size: 0.9rem !important; /* کاهش سایز اعداد */
+        line-height: 1.1 !important;
+    }
+    
+    .counter-section .counter-text {
+        font-size: 0.7rem !important; /* کاهش سایز متن */
     }
 }
 

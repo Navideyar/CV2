@@ -89,7 +89,7 @@
 
     <link rel="stylesheet" href="{% static 'CACHE/css/output.004c4f90511e.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'mobile-styles.css' %}" type="text/css">
-    
+    <link rel="stylesheet" href="{% static 'avatar-mobile-fix.css' %}" type="text/css">
     {% block extra_css %}{% endblock %}
     
     
@@ -2457,22 +2457,22 @@
         </button>
 
         <!-- Main navbar START -->
-        <div class="navbar-collapse w-100 collapse mobile-menu-container" id="navbarCollapse">
+        <div class="navbar-collapse w-100 collapse mobile-menu-container " id="navbarCollapse">
 
             <!-- Nav category menu START -->
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto ">
 
             </ul>
             <!-- Nav category menu END -->
 
             <!-- Nav Main menu START -->
-            <ul class="navbar-nav navbar-nav-scroll me-auto main-menu">
+            <ul class="navbar-nav navbar-nav-scroll me-auto main-menu ">
 
                 <li class="nav-item"><a class="nav-link menu-item" href="{% url 'main_core:index' %}">صفحه اصلی</a></li>
                 <li class="nav-item"><a class="nav-link menu-item" href="{% url 'main_core:about' %}">درباره من</a></li>
                 <li class="nav-item"><a class="nav-link menu-item" href="{% url 'blog:blog' %}">وبلاگ</a></li>
                 
-               <li class="nav-item dropdown">
+               <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle menu-item" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         خدمات <i class="fas fa-chevron-down ms-1" style="font-size: 0.8rem;"></i>
                     </a>

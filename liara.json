@@ -18,5 +18,15 @@
       "name": "media",
       "mountTo": "media"
     }
-  ]
+  ],
+  "build": {
+    "commands": [
+      "python manage.py migrate --noinput"
+    ]
+  },
+  "skip": {
+    "commands": [
+      "makemigrations"
+    ]
+  }
 }

@@ -1,5 +1,52 @@
 /* استایل‌های مخصوص موبایل - فیکس فاصله */
 @media (max-width: 576px) {
+    /* استایل جدید برای تیتر موبایل با specificity بالاتر */
+    body .d-block.d-md-none.display-3.mb-0 {
+        font-family: 'Vazirmatn', sans-serif !important;
+        font-size: 2rem !important;
+        font-weight: 800 !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+        margin: -26px 0 15px !important;
+        padding: 0 15px !important;
+        color: var(--bs-body-color) !important;
+        text-shadow: 0px 2px 3px rgba(0,0,0,0.1) !important;
+        position: relative !important;
+        letter-spacing: -0.5px !important;
+    }
+
+    /* استایل برای span داخل تیتر */
+    body .d-block.d-md-none.display-3.mb-0 .position-relative {
+        position: relative !important;
+        display: inline-block !important;
+        padding: 0 5px !important;
+        z-index: 1 !important;
+        background: linear-gradient(135deg, #333, #666);
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+    }
+
+ 
+
+    /* هایلایت پشت متن */
+    body .d-block.d-md-none.display-3.mb-0 .position-relative::before {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background-color: rgba(142, 84, 233, 0.15);
+        z-index: -1;
+        border-radius: 4px;
+    }
+
+    /* حالت دارک مود */
+    [data-bs-theme="dark"] .d-block.d-md-none.display-3.mb-0 .position-relative {
+        background: linear-gradient(135deg, #fff, #ccc);
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+    }
 
     /* تنظیم والد اصلی برای چیدمان Flex عمودی در موبایل */
     .text-lg-start {

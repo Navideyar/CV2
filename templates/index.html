@@ -345,32 +345,6 @@
                             margin-bottom: 0.5rem !important;
                         }
                         
-                        ul.list-inline {
-                            display: flex !important;
-                            flex-wrap: nowrap !important;
-                            justify-content: center !important;
-                            margin-top: 1.5rem !important;
-                            margin-bottom: 0.5rem !important;
-                            padding-left: 0 !important;
-                            padding-right: 0 !important;
-                        }
-                        
-                        .list-inline-item {
-                            margin-right: 0.3rem !important;
-                            margin-left: 0.2rem !important;
-                            margin-bottom: 0.2rem !important;
-                        }
-                        
-                        .skill-badge {
-                            font-size: 0.65rem !important;
-                            padding: 0.4rem 0.3rem !important;
-                            white-space: nowrap !important;
-                        }
-                        
-                        .skill-badge i {
-                            font-size: 0.8rem !important;
-                            margin-right: 0.1rem !important;
-                        }
                         
                         .fs-5.me-2 {
                             font-size: 0.9rem !important;
@@ -426,17 +400,17 @@
 
                   
                     <!-- Info -->
-                    <ul class="list-inline position-relative justify-content-center justify-content-lg-start mb-4">
-                        <li class="list-inline-item me-3 mb-2"> 
+                    <ul class="list-inline position-relative justify-content-center justify-content-lg-start mb-4 d-none d-md-flex">
+                        <li class="list-inline-item me-3 mb-2 d-none d-md-block"> 
                             <span class="skill-badge"><i class="fab fa-python fs-5 me-2"></i>پایتون</span>
                         </li>
-                        <li class="list-inline-item me-3 mb-2"> 
+                        <li class="list-inline-item me-3 mb-2 d-none d-md-block"> 
                             <span class="skill-badge"><i class="fab fa-docker fs-5 me-2"></i>داکر</span>
                         </li>
-                        <li class="list-inline-item me-3 mb-2"> 
+                        <li class="list-inline-item me-3 mb-2 d-none d-md-block"> 
                             <span class="skill-badge"><i class="fas fa-code fs-5 me-2"></i>جنگو</span>
                         </li>
-                        <li class="list-inline-item mb-2"> 
+                        <li class="list-inline-item mb-2 d-none d-md-block"> 
                             <span class="skill-badge"><i class="fas fa-exchange-alt fs-5 me-2"></i>رست جنگو</span>
                         </li>
                     </ul>
@@ -846,29 +820,13 @@
                         </svg>
                     </figure>
                     <!-- Image -->
-                    <img src="{% static 'images/element/1.png' %}" class="position-relative" alt="دوره آموزش برنامه‌نویسی پایتون" loading="lazy">
+                    <img src="{% static 'images/element/02.svg' %}" class="position-relative" alt="دوره آموزش برنامه‌نویسی پایتون" loading="lazy">
                 </div>
 
                 <div class="col-lg-6 position-relative order-1 order-lg-2">
                     <!-- Title -->
                     <h2 class="fs-3">دوره جامع برنامه‌نویسی پایتون</h2>
                     <p class="mb-2">به زودی دوره جامع آموزش برنامه‌نویسی پایتون از صفر تا پیشرفته برگزار خواهد شد. این دوره مناسب برای افرادی است که می‌خواهند وارد دنیای برنامه‌نویسی شوند یا مهارت‌های خود را ارتقا دهند.</p>
-                    <!-- Info list -->
-                    <ul class="list-group list-group-borderless mb-2">
-                        <li class="list-group-item d-flex align-items-center px-0">
-                            <p class="mb-0 h6 fw-light"><i class="fas fa-check-circle" style="color: var(--btn-primary-bg-1); margin-left: 10px;"></i>آموزش مفاهیم پایه و پیشرفته پایتون</p>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center px-0">
-                            <p class="mb-0 h6 fw-light"><i class="fas fa-check-circle" style="color: var(--btn-primary-bg-1); margin-left: 10px;"></i>پروژه‌های عملی و کاربردی</p>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center px-0">
-                            <p class="mb-0 h6 fw-light"><i class="fas fa-check-circle" style="color: var(--btn-primary-bg-1); margin-left: 10px;"></i>آموزش هوش مصنوعی و علم داده با پایتون</p>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center px-0">
-                            <p class="mb-0 h6 fw-light"><i class="fas fa-check-circle" style="color: var(--btn-primary-bg-1); margin-left: 10px;"></i>پشتیبانی مستمر و رفع اشکال</p>
-                        </li>
-                    </ul>
-                    <!-- Button -->
                     <a href="{% url 'contact:contact' %}" class="early-register-btn">ثبت‌نام زود هنگام</a>
                 </div>
             </div>

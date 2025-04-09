@@ -2513,11 +2513,12 @@
     .mobile-menu-link {
         display: flex;
         align-items: center;
-        padding: 12px 15px;
+        padding: 15px 20px; /* Significantly increased padding */
         border-radius: 10px;
         color: var(--bs-body-color);
         text-decoration: none;
         font-weight: 600;
+        font-size: 1.1rem; /* Significantly increased font size */
         transition: all 0.3s ease;
         position: relative;
     }
@@ -2577,11 +2578,12 @@
 
     .mobile-submenu-link {
         display: block;
-        padding: 10px 15px;
+        padding: 12px 20px; /* Significantly increased padding */
         border-radius: 10px;
         color: var(--bs-body-color);
         text-decoration: none;
         font-weight: 500;
+        font-size: 1rem; /* Significantly increased font size */
         transition: all 0.3s ease;
         position: relative;
     }
@@ -2630,6 +2632,7 @@
         font-size: 1.1rem;
         cursor: pointer;
         transition: all 0.3s ease;
+        margin-top: -10px;
     }
 
     .mobile-search-btn:hover {
@@ -3020,7 +3023,7 @@
             </div>
             
             <div class="mobile-search">
-                <form action="{% url 'blog:blog' %}" method="get">
+                <form action="{% url 'blog:blog' %}" method="get" style="margin-top: -25px;">
                     {% csrf_token %}
                     <input type="search" name="q" class="mobile-search-input" placeholder="جستجو...">
                     <button type="submit" class="mobile-search-btn">
@@ -3083,6 +3086,18 @@
             <div class="mobile-menu-divider"></div>
             
             <!-- تنظیمات حالت روشن/تاریک -->
+            <!-- Block moved below -->
+            
+            <!-- بخش احراز هویت -->
+            <div class="mobile-auth">
+                {% if request.user.is_authenticated %}
+                
+                {% else %}
+                <!-- This block is now intentionally empty as login/register buttons moved to top -->
+                {% endif %}
+            </div>
+
+            <!-- تنظیمات حالت روشن/تاریک (Moved Here) -->
             <div class="mobile-theme-selector">
                 <h6 class="fw-semibold text-center mb-3">حالت نمایش</h6>
                 <div class="theme-options">
@@ -3115,64 +3130,80 @@
                     </div>
                 </div>
 
-                <!-- اضافه کردن استایل‌های لازم برای نمایش کارت‌های تم -->
+                <!-- اضافه کردن استایل‌های لازم برای نمایش کارت‌های تم و ثابت کردن بخش -->
                 <style>
+                    /* Sticky styles */
+                    .mobile-theme-selector { 
+                        position: sticky;
+                        bottom: 0;
+                        /* Use offcanvas background variable with a fallback */
+                        background-color: var(--bs-offcanvas-bg, white); 
+                        padding: 15px;
+                        border-top: 1px solid var(--bs-border-color);
+                        z-index: 1; /* Ensure it stays on top */
+                        margin-top: auto; /* Push to bottom if parent is flex */
+                    }
+
                     .theme-options {
                         display: flex;
                         justify-content: space-around;
                         gap: 10px;
-                        margin-bottom: 20px;
+                        margin-bottom: 0; /* Adjusted margin */
                     }
                     
                     .theme-option-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 12px;
-        border-radius: 12px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-align: center;
-        width: 33%;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 10px; /* Adjusted padding */
+                        border-radius: 12px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        text-align: center;
+                        width: 33%;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                    }
 
                     .theme-option-card:hover, .theme-option-card.active {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
+                        transform: translateY(-3px); /* Adjusted hover effect */
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adjusted shadow */
+                    }
 
                     .theme-icon-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 45px;
-        height: 45px;
-        transition: all 0.2s ease;
-    }
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px; /* Adjusted size */
+                        height: 40px; /* Adjusted size */
+                        transition: all 0.2s ease;
+                    }
 
                     .bg-gradient {
-        background: linear-gradient(135deg, #ffffff 50%, #121212 50%);
-    }
+                        background: linear-gradient(135deg, #ffffff 50%, #121212 50%);
+                    }
 
                     .theme-label {
-        font-weight: 500;
-        margin-top: 4px;
-        font-size: 14px;
-    }
+                        font-weight: 500;
+                        margin-top: 4px;
+                        font-size: 13px; /* Adjusted font size */
+                    }
 
                     [data-bs-theme='dark'] .theme-option-card[data-bs-theme-value='dark'],
                     [data-bs-theme='light'] .theme-option-card[data-bs-theme-value='light'],
                     .theme-option-card[data-bs-theme-value='auto'].active {
-        box-shadow: 0 5px 15px rgba(var(--bs-primary-rgb), 0.2);
-        border: 1px solid var(--bs-primary);
-    }
+                        box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb), 0.2); /* Adjusted shadow */
+                        border: 1px solid var(--bs-primary);
+                    }
                 </style>
 
                 <script>
                     // اضافه کردن کد جاوااسکریپت برای عملکرد کارت‌های تم
                     document.addEventListener('DOMContentLoaded', function() {
-                        const themeOptions = document.querySelectorAll('.theme-option-card');
+                        // Find theme options scoped within this specific selector instance
+                        const currentThemeSelector = document.querySelector('.mobile-theme-selector'); // Be specific
+                        if (!currentThemeSelector) return; 
+                        
+                        const themeOptions = currentThemeSelector.querySelectorAll('.theme-option-card');
                         
                         // تنظیم حالت فعال براساس تم فعلی
                         const setActiveTheme = () => {
@@ -3184,35 +3215,32 @@
                                     option.classList.remove('active');
                                 }
                             });
+                             // Apply theme immediately based on stored value or preference
+                            const themeToApply = activeTheme === 'auto' ? 
+                                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : 
+                                    activeTheme;
+                            document.documentElement.setAttribute('data-bs-theme', themeToApply);
                         };
                         
-                        setActiveTheme();
+                        setActiveTheme(); // Set initial active state and theme
+
+                         // Add listener for system theme changes if 'auto' is selected
+                         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                            if (localStorage.getItem('theme') === 'auto') {
+                                setActiveTheme(); // Re-apply theme and active state
+                            }
+                        });
                         
                         // اضافه کردن رویداد کلیک به هر کارت
                         themeOptions.forEach(option => {
                             option.addEventListener('click', function() {
                                 const theme = this.getAttribute('data-bs-theme-value');
                                 localStorage.setItem('theme', theme);
-                                
-                                // تغییر تم صفحه
-                                document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? 
-                                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : 
-                                    theme);
-                                
-                                setActiveTheme();
+                                setActiveTheme(); // Update UI and apply theme
                             });
                         });
                     });
                 </script>
-            </div>
-            
-            <!-- بخش احراز هویت -->
-            <div class="mobile-auth">
-                {% if request.user.is_authenticated %}
-                
-                {% else %}
-                <!-- This block is now intentionally empty as login/register buttons moved to top -->
-                {% endif %}
             </div>
         </div>
         

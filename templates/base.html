@@ -2425,6 +2425,338 @@
             padding: 7px 14px;
         }
     }
+
+    /* منوی مدرن کشویی سمت راست */
+    .offcanvas-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100%;
+        background: var(--bs-body-bg);
+        box-shadow: -5px 0 30px rgba(0,0,0,0.15);
+        transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 2000;
+        padding: 25px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .offcanvas-menu.active {
+        right: 0;
+    }
+
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(3px);
+        z-index: 1999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .offcanvas-menu .mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(var(--bs-body-color-rgb), 0.1);
+    }
+
+    .offcanvas-menu .mobile-brand {
+        font-size: 1.8rem;
+        font-weight: 800;
+    }
+
+    .offcanvas-menu .close-menu {
+        background: transparent;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--bs-body-color);
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+    .offcanvas-menu .close-menu:hover {
+        background: rgba(var(--bs-body-color-rgb), 0.1);
+        transform: rotate(90deg);
+    }
+
+    .mobile-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-menu-item {
+        margin-bottom: 8px;
+    }
+
+    .mobile-menu-link {
+        display: flex;
+        align-items: center;
+        padding: 12px 15px;
+        border-radius: 10px;
+        color: var(--bs-body-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .mobile-menu-link i {
+        margin-left: 10px;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-link:hover {
+        background: rgba(var(--bs-primary-rgb), 0.1);
+        color: var(--bs-primary);
+    }
+
+    .mobile-menu-link:hover i {
+        transform: translateX(-5px);
+    }
+
+    .dropdown-toggle {
+        justify-content: space-between;
+    }
+
+    .dropdown-toggle::after {
+        display: none;
+    }
+
+    .dropdown-toggle .fa-chevron-down {
+        transition: all 0.3s ease;
+        font-size: 0.8rem;
+    }
+
+    .dropdown-toggle.show .fa-chevron-down {
+        transform: rotate(180deg);
+    }
+
+    .mobile-submenu {
+        list-style: none;
+        padding: 5px 0 5px 15px;
+        margin: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        opacity: 0;
+    }
+
+    .mobile-submenu.show {
+        max-height: 500px;
+        opacity: 1;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .mobile-submenu-item {
+        margin-bottom: 5px;
+    }
+
+    .mobile-submenu-link {
+        display: block;
+        padding: 10px 15px;
+        border-radius: 10px;
+        color: var(--bs-body-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .mobile-submenu-link:hover {
+        background: rgba(var(--bs-primary-rgb), 0.05);
+        color: var(--bs-primary);
+    }
+
+    .mobile-menu-divider {
+        height: 1px;
+        background: rgba(var(--bs-body-color-rgb), 0.1);
+        margin: 15px 0;
+    }
+
+    .mobile-search {
+        position: relative;
+        margin: 25px 0;
+    }
+
+    .mobile-search-input {
+        width: 100%;
+        padding: 12px 45px 12px 15px;
+        border-radius: 10px;
+        border: 1px solid rgba(var(--bs-body-color-rgb), 0.1);
+        background: rgba(var(--bs-body-color-rgb), 0.05);
+        color: var(--bs-body-color);
+        transition: all 0.3s ease;
+    }
+
+    .mobile-search-input:focus {
+        outline: none;
+        border-color: rgba(var(--bs-primary-rgb), 0.3);
+        background: rgba(var(--bs-body-color-rgb), 0.03);
+        box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.1);
+    }
+
+    .mobile-search-btn {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        background: transparent;
+        border: none;
+        color: var(--bs-body-color);
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-search-btn:hover {
+        color: var(--bs-primary);
+    }
+
+    .mobile-auth {
+        margin-top: auto;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .mobile-theme-selector {
+        margin: 15px 0;
+    }
+
+    .nav-toggle {
+        width: 40px;
+        height: 40px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .nav-toggle-icon {
+        width: 24px;
+        height: 2px;
+        background: var(--bs-body-color);
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .nav-toggle-icon::before,
+    .nav-toggle-icon::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background: var(--bs-body-color);
+        transition: all 0.3s ease;
+    }
+
+    .nav-toggle-icon::before {
+        top: -8px;
+    }
+
+    .nav-toggle-icon::after {
+        bottom: -8px;
+    }
+
+    .nav-toggle.active .nav-toggle-icon {
+        background: transparent;
+    }
+
+    .nav-toggle.active .nav-toggle-icon::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .nav-toggle.active .nav-toggle-icon::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
+
+    /* تنظیمات حالت تاریک برای منو */
+    html[data-bs-theme="dark"] .offcanvas-menu {
+        background: var(--bs-dark);
+    }
+
+    html[data-bs-theme="dark"] .mobile-search-input {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    html[data-bs-theme="dark"] .mobile-search-input:focus {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* پنهان کردن منوی قدیمی در حالت موبایل */
+    @media (max-width: 991.98px) {
+        #navbarCollapse {
+            display: none !important;
+        }
+        
+        .nav-toggle {
+            display: flex !important;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .nav-toggle, 
+        .offcanvas-menu, 
+        .menu-overlay {
+            display: none !important;
+        }
+    }
+
+    /* Add some CSS for hover effects and transitions */
+    .mobile-menu-link {
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        color: var(--bs-body-color); /* Ensure default color */
+    }
+    .mobile-menu-link:hover {
+        background-color: var(--bs-tertiary-bg);
+        color: var(--bs-primary); /* Highlight color on hover */
+    }
+    .mobile-menu-link .transition-transform {
+        transition: transform 0.3s ease;
+    }
+    .mobile-menu-link[aria-expanded="true"] .fa-chevron-down {
+        transform: rotate(180deg);
+    }
+    .mobile-submenu-link {
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, padding-left 0.2s ease-in-out;
+         color: var(--bs-body-color);
+    }
+    .mobile-submenu-link:hover {
+        background-color: var(--bs-secondary-bg);
+        color: var(--bs-primary);
+        padding-left: 1.5rem !important; /* Indent on hover */
+    }
 </style>
 <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/all.min.css' %}">
 <link rel="stylesheet" href="{% static 'custom.css' %}">
@@ -2438,23 +2770,244 @@
 
 <nav class="navbar navbar-expand-xl">
     <div class="container-fluid px-3 px-xl-5">
-        <!-- Logo START -->
-       <!-- <a class="navbar-brand mx-auto mx-lg-0" href="/">
-            <span class="logo-navidyar logo-navidyar-navbar">نویدیار</span>
-        </a>-->
-        <!-- Logo END -->
+       
 
 
-        <!-- Responsive navbar toggler -->
-        <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-animation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
+        <!-- دکمه منوی موبایل جدید -->
+        <button class="nav-toggle d-xl-none me-auto" type="button" aria-label="منو">
+            <span class="nav-toggle-icon"></span>
         </button>
+
+        <!-- منوی کشویی موبایل جدید -->
+        <div class="offcanvas-menu">
+            <div class="mobile-header">
+                {% if request.user.is_authenticated %}
+                <div class="d-flex align-items-center">
+                    <div class="avatar-circle avatar-sm me-2">
+                        <span class="avatar-initials">{{ request.user.get_full_name|default:request.user.username|slice:":1" }}</span>
+                    </div>
+                    <span class="fw-bold">{{ request.user.get_full_name|default:request.user.username }}</span>
+                </div>
+                {% else %}
+                <!-- Login/Register buttons for non-authenticated users -->
+                <div class="mobile-auth-top">
+                    <div class="d-flex auth-buttons justify-content-start">
+                        <a class="btn login-button btn-sm me-2" href="{% url 'accounts:login' %}">
+                            <i class="fas fa-sign-in-alt me-1"></i>ورود
+                        </a>
+                        <a class="btn register-button btn-sm" href="{% url 'accounts:signup' %}">
+                            <i class="fas fa-user-plus me-1"></i>ثبت‌نام
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <button class="close-menu" aria-label="بستن منو">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="mobile-search">
+                <form action="{% url 'blog:blog' %}" method="get">
+                    {% csrf_token %}
+                    <input type="search" name="q" class="mobile-search-input" placeholder="جستجو...">
+                    <button type="submit" class="mobile-search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            
+            {# Remove the buttons from here as they moved to the header #}
+            {# {% if not request.user.is_authenticated %} ... {% endif %} #}
+            
+            <ul class="mobile-menu list-unstyled px-2">
+                <li class="mobile-menu-item mb-1">
+                    <a href="{% url 'main_core:index' %}" class="mobile-menu-link d-flex align-items-center py-3 px-3 rounded-3 fw-semibold text-decoration-none">
+                        <i class="fas fa-home fa-fw me-3 fs-5"></i> <!-- Larger icon -->
+                        <span>صفحه اصلی</span>
+                    </a>
+                </li>
+                <li class="mobile-menu-item mb-1">
+                    <a href="{% url 'main_core:about' %}" class="mobile-menu-link d-flex align-items-center py-3 px-3 rounded-3 fw-semibold text-decoration-none">
+                        <i class="fas fa-user fa-fw me-3 fs-5"></i>
+                        <span>درباره من</span>
+                    </a>
+                </li>
+                <li class="mobile-menu-item mb-1">
+                    <a href="{% url 'blog:blog' %}" class="mobile-menu-link d-flex align-items-center py-3 px-3 rounded-3 fw-semibold text-decoration-none">
+                        <i class="fas fa-blog fa-fw me-3 fs-5"></i>
+                        <span>وبلاگ</span>
+                    </a>
+                </li>
+                <li class="mobile-menu-item mb-1">
+                    <a href="#" class="mobile-menu-link dropdown-toggle d-flex align-items-center py-3 px-3 rounded-3 fw-semibold text-decoration-none" data-bs-toggle="collapse" data-bs-target="#mobileSubmenuServices" aria-expanded="false">
+                        <i class="fas fa-briefcase fa-fw me-3 fs-5"></i>
+                        <span>خدمات</span>
+                        <i class="fas fa-chevron-down ms-auto small transition-transform"></i> <!-- Dropdown arrow -->
+                    </a>
+                    <ul class="mobile-submenu list-unstyled collapse ps-4 pt-1" id="mobileSubmenuServices">
+                        <li class="mobile-submenu-item mb-1">
+                            <a href="#" class="mobile-submenu-link d-block py-2 px-3 rounded-3 text-decoration-none fw-normal">وب‌سایت شخصی</a>
+                        </li>
+                        <li class="mobile-submenu-item mb-1">
+                            <a href="#" class="mobile-submenu-link d-block py-2 px-3 rounded-3 text-decoration-none fw-normal">وبسایت فروشگاهی</a>
+                        </li>
+                        <li class="mobile-submenu-item mb-1">
+                            <a href="#" class="mobile-submenu-link d-block py-2 px-3 rounded-3 text-decoration-none fw-normal">وبسایت شرکتی</a>
+                        </li>
+                         <li class="mobile-submenu-item mb-1">
+                            <a href="#" class="mobile-submenu-link d-block py-2 px-3 rounded-3 text-decoration-none fw-normal">نظرات مشتریان</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mobile-menu-item mb-1">
+                    <a href="{% url 'contact:contact' %}" class="mobile-menu-link d-flex align-items-center py-3 px-3 rounded-3 fw-semibold text-decoration-none">
+                        <i class="fas fa-envelope fa-fw me-3 fs-5"></i>
+                        <span>تماس با من</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="mobile-menu-divider"></div>
+            
+            <!-- تنظیمات حالت روشن/تاریک -->
+            <div class="mobile-theme-selector">
+                <h6 class="fw-semibold text-center mb-3">حالت نمایش</h6>
+                <div class="theme-options">
+                    <div class="theme-option-card" data-bs-theme-value="light">
+                        <div class="theme-icon-container bg-light text-dark rounded-circle mb-2">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+                                <use href="#"></use>
+                            </svg>
+                        </div>
+                        <div class="theme-label">روشن</div>
+                    </div>
+                    <div class="theme-option-card" data-bs-theme-value="dark">
+                        <div class="theme-icon-container bg-dark text-light rounded-circle mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+                                <use href="#"></use>
+                            </svg>
+                        </div>
+                        <div class="theme-label">تیره</div>
+                    </div>
+                    <div class="theme-option-card" data-bs-theme-value="auto">
+                        <div class="theme-icon-container bg-gradient rounded-circle mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+                                <use href="#"></use>
+                            </svg>
+                        </div>
+                        <div class="theme-label">خودکار</div>
+                    </div>
+                </div>
+
+                <!-- اضافه کردن استایل‌های لازم برای نمایش کارت‌های تم -->
+                <style>
+                    .theme-options {
+                        display: flex;
+                        justify-content: space-around;
+                        gap: 10px;
+                        margin-bottom: 20px;
+                    }
+                    
+                    .theme-option-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+        width: 33%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+                    .theme-option-card:hover, .theme-option-card.active {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+                    .theme-icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        transition: all 0.2s ease;
+    }
+
+                    .bg-gradient {
+        background: linear-gradient(135deg, #ffffff 50%, #121212 50%);
+    }
+
+                    .theme-label {
+        font-weight: 500;
+        margin-top: 4px;
+        font-size: 14px;
+    }
+
+                    [data-bs-theme='dark'] .theme-option-card[data-bs-theme-value='dark'],
+                    [data-bs-theme='light'] .theme-option-card[data-bs-theme-value='light'],
+                    .theme-option-card[data-bs-theme-value='auto'].active {
+        box-shadow: 0 5px 15px rgba(var(--bs-primary-rgb), 0.2);
+        border: 1px solid var(--bs-primary);
+    }
+                </style>
+
+                <script>
+                    // اضافه کردن کد جاوااسکریپت برای عملکرد کارت‌های تم
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const themeOptions = document.querySelectorAll('.theme-option-card');
+                        
+                        // تنظیم حالت فعال براساس تم فعلی
+                        const setActiveTheme = () => {
+                            const activeTheme = localStorage.getItem('theme') || 'auto';
+                            themeOptions.forEach(option => {
+                                if (option.getAttribute('data-bs-theme-value') === activeTheme) {
+                                    option.classList.add('active');
+                                } else {
+                                    option.classList.remove('active');
+                                }
+                            });
+                        };
+                        
+                        setActiveTheme();
+                        
+                        // اضافه کردن رویداد کلیک به هر کارت
+                        themeOptions.forEach(option => {
+                            option.addEventListener('click', function() {
+                                const theme = this.getAttribute('data-bs-theme-value');
+                                localStorage.setItem('theme', theme);
+                                
+                                // تغییر تم صفحه
+                                document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? 
+                                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : 
+                                    theme);
+                                
+                                setActiveTheme();
+                            });
+                        });
+                    });
+                </script>
+            </div>
+            
+            <!-- بخش احراز هویت -->
+            <div class="mobile-auth">
+                {% if request.user.is_authenticated %}
+                
+                {% else %}
+                <!-- This block is now intentionally empty as login/register buttons moved to top -->
+                {% endif %}
+            </div>
+        </div>
+        
+        <!-- پس‌زمینه تیره منو -->
+        <div class="menu-overlay"></div>
+
+        
 
         <!-- Main navbar START -->
         <div class="navbar-collapse w-100 collapse mobile-menu-container " id="navbarCollapse">
@@ -2867,6 +3420,67 @@
             
             // اجرای انیمیشن بعد از بارگذاری صفحه
             setTimeout(animateCounterItems, 500);
+            
+            // کد جاوااسکریپت برای منوی کشویی موبایل جدید
+            const initMobileMenu = () => {
+                const navToggle = document.querySelector('.nav-toggle');
+                const offcanvasMenu = document.querySelector('.offcanvas-menu');
+                const menuOverlay = document.querySelector('.menu-overlay');
+                const closeMenu = document.querySelector('.close-menu');
+                const dropdownToggles = document.querySelectorAll('.mobile-menu .dropdown-toggle');
+                
+                if (!navToggle || !offcanvasMenu || !menuOverlay || !closeMenu) return;
+                
+                // باز و بسته کردن منو
+                navToggle.addEventListener('click', () => {
+                    offcanvasMenu.classList.add('active');
+                    menuOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    navToggle.classList.add('active');
+                });
+                
+                // بستن منو
+                const closeOffcanvasMenu = () => {
+                    offcanvasMenu.classList.remove('active');
+                    menuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                    navToggle.classList.remove('active');
+                };
+                
+                closeMenu.addEventListener('click', closeOffcanvasMenu);
+                menuOverlay.addEventListener('click', closeOffcanvasMenu);
+                
+                // کلید ESC برای بستن منو
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && offcanvasMenu.classList.contains('active')) {
+                        closeOffcanvasMenu();
+                    }
+                });
+                
+                // منوهای کشویی داخلی
+                dropdownToggles.forEach(toggle => {
+                    toggle.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        
+                        const parent = toggle.closest('.mobile-menu-item');
+                        const submenu = parent.querySelector('.mobile-submenu');
+                        
+                        if (submenu) {
+                            submenu.classList.toggle('show');
+                            toggle.classList.toggle('show');
+                        }
+                    });
+                });
+                
+                // بستن منو در تغییر اندازه صفحه
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 992 && offcanvasMenu.classList.contains('active')) {
+                        closeOffcanvasMenu();
+                    }
+                });
+            };
+            
+            initMobileMenu();
         })
     })()
     </script>

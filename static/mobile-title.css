@@ -1,0 +1,58 @@
+/* استایل‌های موبایل تایتل */
+
+
+
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 5px rgba(9,132,227,0.2),
+                     0 0 10px rgba(9,132,227,0.1);
+    }
+    to {
+        text-shadow: 0 0 10px rgba(9,132,227,0.3),
+                     0 0 20px rgba(9,132,227,0.2);
+    }
+}
+
+/* استایل برای زیرتیتر موبایل */
+.mobile-subtitle {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #636e72;
+    text-align: center;
+    margin-top: 1px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    position: relative;
+    padding: 0 20px;
+}
+
+.mobile-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    
+}
+
+/* انیمیشن برای ظاهر شدن تایتل */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobile-title, .mobile-subtitle {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.mobile-subtitle {
+    animation-delay: 0.2s;
+} 

@@ -2702,7 +2702,219 @@
 
     /* تنظیمات حالت تاریک برای منو */
     html[data-bs-theme="dark"] .offcanvas-menu {
-        background: var(--bs-dark);
+        background: #343a40; /* کمی روشن‌تر */
+    }
+
+    html[data-bs-theme="dark"] .mobile-search-input {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    html[data-bs-theme="dark"] .mobile-search-input:focus {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* پنهان کردن منوی قدیمی در حالت موبایل */
+    @media (max-width: 991.98px) {
+        #navbarCollapse {
+            display: none !important;
+        }
+        
+        .nav-toggle {
+            display: flex !important;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .nav-toggle, 
+        .offcanvas-menu, 
+        .menu-overlay {
+            display: none !important;
+        }
+    }
+
+    /* Add some CSS for hover effects and transitions */
+    .mobile-menu-link {
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        color: var(--bs-body-color); /* Ensure default color */
+    }
+    .mobile-menu-link:hover {
+        background-color: var(--bs-tertiary-bg);
+        color: var(--bs-primary); /* Highlight color on hover */
+    }
+    .mobile-menu-link .transition-transform {
+        transition: transform 0.3s ease;
+    }
+    .mobile-menu-link[aria-expanded="true"] .fa-chevron-down {
+        transform: rotate(180deg);
+    }
+    .mobile-submenu-link {
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, padding-left 0.2s ease-in-out;
+         color: var(--bs-body-color);
+    }
+    .mobile-submenu-link:hover {
+        background-color: var(--bs-secondary-bg);
+        color: var(--bs-primary);
+        padding-left: 1.5rem !important; /* Indent on hover */
+    }
+
+    .mobile-menu-link {
+        display: flex;
+        align-items: center;
+        padding: 10px 12px; /* Reduced padding */
+        border-radius: 8px; /* Slightly smaller radius */
+        color: var(--bs-body-color);
+        text-decoration: none;
+        font-weight: 500; /* Slightly less bold */
+        font-size: 0.95rem; /* Slightly smaller font size */
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .mobile-menu-link i {
+        margin-left: 8px; /* Reduced margin */
+        font-size: 1rem; /* Slightly smaller icon */
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-item {
+        margin-bottom: 3px; /* Reduced margin */
+    }
+
+    .mobile-submenu-item {
+        margin-bottom: 3px; /* Reduced margin */
+    }
+
+    .mobile-submenu-link {
+        display: block;
+        padding: 8px 12px; /* Reduced padding */
+        border-radius: 8px; /* Slightly smaller radius */
+        color: var(--bs-body-color);
+        text-decoration: none;
+        font-weight: 400; /* Regular weight */
+        font-size: 0.9rem; /* Slightly smaller font size */
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .mobile-submenu-link:hover {
+        background: rgba(var(--bs-primary-rgb), 0.05);
+        color: var(--bs-primary);
+    }
+
+    .mobile-menu-divider {
+        height: 1px;
+        background: rgba(var(--bs-body-color-rgb), 0.1);
+        margin: 12px 0; /* Reduced margin */
+    }
+
+    .mobile-search {
+        position: relative;
+        margin: 20px 0; /* Reduced margin */
+    }
+
+    .mobile-search-input {
+        width: 100%;
+        padding: 10px 40px 10px 12px; /* Adjusted padding */
+        border-radius: 8px; /* Slightly smaller radius */
+        border: 1px solid rgba(var(--bs-body-color-rgb), 0.1);
+        background: rgba(var(--bs-body-color-rgb), 0.05);
+        color: var(--bs-body-color);
+        font-size: 0.9rem; /* Slightly smaller font size */
+        transition: all 0.3s ease;
+    }
+
+    .mobile-search-input:focus {
+        outline: none;
+        border-color: rgba(var(--bs-primary-rgb), 0.3);
+        background: rgba(var(--bs-body-color-rgb), 0.03);
+        box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.1);
+    }
+
+    .mobile-search-btn {
+        position: absolute;
+        top: 50%;
+        left: 12px; /* Adjusted position */
+        transform: translateY(-50%);
+        background: transparent;
+        border: none;
+        color: var(--bs-body-color);
+        font-size: 1rem; /* Slightly smaller icon */
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-search-btn:hover {
+        color: var(--bs-primary);
+    }
+
+    .mobile-auth {
+        margin-top: auto;
+        padding-top: 15px; /* Reduced padding */
+        display: flex;
+        flex-direction: column;
+        gap: 8px; /* Reduced gap */
+    }
+
+    .mobile-theme-selector {
+        margin: 12px 0; /* Reduced margin */
+    }
+
+    .nav-toggle {
+        width: 40px;
+        height: 40px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .nav-toggle-icon {
+        width: 24px;
+        height: 2px;
+        background: var(--bs-body-color);
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .nav-toggle-icon::before,
+    .nav-toggle-icon::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background: var(--bs-body-color);
+        transition: all 0.3s ease;
+    }
+
+    .nav-toggle-icon::before {
+        top: -8px;
+    }
+
+    .nav-toggle-icon::after {
+        bottom: -8px;
+    }
+
+    .nav-toggle.active .nav-toggle-icon {
+        background: transparent;
+    }
+
+    .nav-toggle.active .nav-toggle-icon::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .nav-toggle.active .nav-toggle-icon::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
+
+    /* تنظیمات حالت تاریک برای منو */
+    html[data-bs-theme="dark"] .offcanvas-menu {
+        background: #343a40; /* کمی روشن‌تر */
     }
 
     html[data-bs-theme="dark"] .mobile-search-input {
@@ -2822,30 +3034,30 @@
             
             <ul class="mobile-menu list-unstyled px-2">
                 <li class="mobile-menu-item mb-1">
-                    <a href="{% url 'main_core:index' %}" class="mobile-menu-link d-flex align-items-center py-3 px-3 rounded-3 fw-semibold text-decoration-none">
-                        <i class="fas fa-home fa-fw me-3 fs-5"></i> <!-- Larger icon -->
+                    <a href="{% url 'main_core:index' %}" class="mobile-menu-link d-flex align-items-center py-2 px-3 rounded-3 fw-medium text-decoration-none"> <!-- Adjusted padding/font-weight -->
+                        <i class="fas fa-home fa-fw me-2 fs-6"></i> <!-- Adjusted icon size/margin -->
                         <span>صفحه اصلی</span>
                     </a>
                 </li>
                 <li class="mobile-menu-item mb-1">
-                    <a href="{% url 'main_core:about' %}" class="mobile-menu-link d-flex align-items-center py-3 px-3 rounded-3 fw-semibold text-decoration-none">
-                        <i class="fas fa-user fa-fw me-3 fs-5"></i>
+                    <a href="{% url 'main_core:about' %}" class="mobile-menu-link d-flex align-items-center py-2 px-3 rounded-3 fw-medium text-decoration-none">
+                        <i class="fas fa-user fa-fw me-2 fs-6"></i>
                         <span>درباره من</span>
                     </a>
                 </li>
                 <li class="mobile-menu-item mb-1">
-                    <a href="{% url 'blog:blog' %}" class="mobile-menu-link d-flex align-items-center py-3 px-3 rounded-3 fw-semibold text-decoration-none">
-                        <i class="fas fa-blog fa-fw me-3 fs-5"></i>
+                    <a href="{% url 'blog:blog' %}" class="mobile-menu-link d-flex align-items-center py-2 px-3 rounded-3 fw-medium text-decoration-none">
+                        <i class="fas fa-blog fa-fw me-2 fs-6"></i>
                         <span>وبلاگ</span>
                     </a>
                 </li>
                 <li class="mobile-menu-item mb-1">
-                    <a href="#" class="mobile-menu-link dropdown-toggle d-flex align-items-center py-3 px-3 rounded-3 fw-semibold text-decoration-none" data-bs-toggle="collapse" data-bs-target="#mobileSubmenuServices" aria-expanded="false">
-                        <i class="fas fa-briefcase fa-fw me-3 fs-5"></i>
+                    <a href="#" class="mobile-menu-link dropdown-toggle d-flex align-items-center py-2 px-3 rounded-3 fw-medium text-decoration-none" data-bs-toggle="collapse" data-bs-target="#mobileSubmenuServices" aria-expanded="false">
+                        <i class="fas fa-briefcase fa-fw me-2 fs-6"></i>
                         <span>خدمات</span>
                         <i class="fas fa-chevron-down ms-auto small transition-transform"></i> <!-- Dropdown arrow -->
                     </a>
-                    <ul class="mobile-submenu list-unstyled collapse ps-4 pt-1" id="mobileSubmenuServices">
+                    <ul class="mobile-submenu list-unstyled collapse ps-3 pt-1" id="mobileSubmenuServices"> <!-- Adjusted padding -->
                         <li class="mobile-submenu-item mb-1">
                             <a href="#" class="mobile-submenu-link d-block py-2 px-3 rounded-3 text-decoration-none fw-normal">وب‌سایت شخصی</a>
                         </li>
@@ -2861,8 +3073,8 @@
                     </ul>
                 </li>
                 <li class="mobile-menu-item mb-1">
-                    <a href="{% url 'contact:contact' %}" class="mobile-menu-link d-flex align-items-center py-3 px-3 rounded-3 fw-semibold text-decoration-none">
-                        <i class="fas fa-envelope fa-fw me-3 fs-5"></i>
+                    <a href="{% url 'contact:contact' %}" class="mobile-menu-link d-flex align-items-center py-2 px-3 rounded-3 fw-medium text-decoration-none">
+                        <i class="fas fa-envelope fa-fw me-2 fs-6"></i>
                         <span>تماس با من</span>
                     </a>
                 </li>
@@ -3087,11 +3299,9 @@
                                     fill="currentColor" class="fas fa-moon fa-fw mode-switch me-1"
                                     viewBox="0 0 16 16">
                                     <path
-                                        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z">
-                                    </path>
+                                        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
                                     <path
-                                        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.115.346.386.617.732.732l.774.258a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
-                                    </path>
+                                        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.115.346.386.617.732.732l.774.258a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
                                     <use href="#"></use>
                                 </svg>تیره
                             </button>

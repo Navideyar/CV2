@@ -1,12 +1,11 @@
 from django.contrib import admin
 from .models import Post, Category, Tag, Comment
 from django.utils.html import format_html
-from django_summernote.admin import SummernoteModelAdmin
 # Register your models here.
 
 
 @admin.register(Post)
-class PostAdmin(SummernoteModelAdmin):
+class PostAdmin(admin.ModelAdmin):
     date_hierarchy = 'created_at'
     list_display = ('title', 'author', 'created_at', 'updated_at', 'status', 'login_required', 'category', 'is_login_required')
     list_filter = ('category', 'tags', 'status', 'login_required')
@@ -14,7 +13,6 @@ class PostAdmin(SummernoteModelAdmin):
     list_editable = ('category', 'status', 'login_required')
     list_per_page = 10
     empty_value_display = '-empty-'
-    summernote_fields = ('content',)
     
     def is_login_required(self, obj):
         if obj.login_required:

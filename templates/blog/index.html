@@ -9,7 +9,7 @@
         
 <!-- =======================
 Page Banner START -->
-<section class="py-5">
+<section class="py-3 py-md-5">
 	<div class="container">
 		<div class="row position-relative">
 		
@@ -47,13 +47,13 @@ Page Banner END -->
 
 <!-- =======================
 Page content START -->
-<section class="py-5">
+<section class="py-2 py-md-4">
 	<div class="container">
 
 		<div class="row">
 
-			<div class="col-lg-8 pt-5 pt-lg-0">
-				<div class="row mb-4 align-items-center">
+			<div class="col-lg-8 pt-0">
+				<div class="row mb-3 align-items-center">
 					
 					<!-- Search bar -->
 					<div class="col-md-6">
@@ -81,7 +81,7 @@ Page content START -->
 					</div>
 
 					<!-- Content -->
-					<div class="col-12 col-xl-3 d-flex justify-content-between align-items-center mt-3 mt-xl-0">
+					<div class="col-12 col-xl-3 d-flex justify-content-between align-items-center mt-2 mb-3 mt-xl-0">
 
 						<!-- Advanced filter responsive toggler START -->
 						<button class="btn btn-outline-primary mb-0 filter-btn d-lg-none" type="button" data-bs-toggle="offcanvas"
@@ -253,7 +253,7 @@ Page content START -->
 </nav>
 <!-- Pagination END -->
 			</div>
-			<div class="col-lg-4 pt-5 pt-lg-0">
+			<div class="col-lg-4 pt-0">
 				<div class="col-md-6 col-lg-12 mb-3">
 					<!-- Responsive offcanvas body START -->
 					<div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasSidebar">
@@ -263,7 +263,85 @@ Page content START -->
 								<button type="button" class="btn-close" data-bs-dismiss="offcanvas"
 									data-bs-target="#offcanvasSidebar" aria-label="Close"></button>
 							</div>
-						
+							
+							<!-- ارائه فیلترهای جستجو در بخش موبایل -->
+							<div class="p-3">
+                                <!-- جستجو -->
+                                <div class="mb-4">
+                                    <h6 class="mb-3 fw-bold"><i class="fas fa-search me-2 text-primary"></i>جستجو در وبلاگ</h6>
+                                    <div class="input-group mobile-search-box">
+                                        <input type="text" class="form-control" id="mobileBlogSearch" placeholder="عبارت مورد نظر...">
+                                        <button class="btn btn-primary" type="button" onclick="searchBlogMobile()">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- دسته‌بندی‌ها -->
+                                <div class="mb-4">
+                                    <h6 class="mb-3 fw-bold"><i class="fas fa-folder me-2 text-primary"></i>دسته‌بندی‌ها</h6>
+                                    <ul class="list-group list-group-borderless">
+                                        {% for category in categories %}
+                                        <li class="list-group-item px-0 py-1 d-flex justify-content-between align-items-center">
+                                            <a href="{% url 'blog:blog' %}?category={{ category.name }}" class="text-decoration-none {% if selected_category == category.name %}text-primary fw-bold{% endif %}">
+                                                {{ category.name }}
+                                            </a>
+                                            <span class="badge bg-secondary rounded-pill">{{ category.blog_posts.count }}</span>
+                                        </li>
+                                        {% empty %}
+                                        <li class="list-group-item px-0 py-1">هیچ دسته‌بندی یافت نشد</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                
+                                <!-- برچسب‌ها -->
+                                <div class="mb-4">
+                                    <h6 class="mb-3 fw-bold"><i class="fas fa-tags me-2 text-primary"></i>برچسب‌ها</h6>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        {% for tag in tags %}
+                                        <a href="{% url 'blog:blog' %}?tag={{ tag.name }}" class="btn btn-sm {% if selected_tag == tag.name %}btn-primary{% else %}btn-outline-primary{% endif %}">
+                                            {{ tag.name }}
+                                        </a>
+                                        {% empty %}
+                                        <div class="text-muted">هیچ برچسبی یافت نشد</div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
+                                <!-- فیلتر زمانی -->
+                                <div class="mb-4">
+                                    <h6 class="mb-3 fw-bold"><i class="fas fa-calendar-alt me-2 text-primary"></i>بازه زمانی</h6>
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <label for="dateFrom" class="form-label small fw-medium">از تاریخ:</label>
+                                            <input type="date" class="form-control form-control-sm" id="dateFrom">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="dateTo" class="form-label small fw-medium">تا تاریخ:</label>
+                                            <input type="date" class="form-control form-control-sm" id="dateTo">
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <button class="btn btn-sm btn-primary w-100" type="button" onclick="filterByDate()">
+                                                <i class="fas fa-filter me-1"></i> اعمال فیلتر
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- نمایش پرطرفدارترین -->
+                                <div class="mb-4">
+                                    <a href="{% url 'blog:blog' %}?sort=3" class="btn btn-outline-success w-100">
+                                        <i class="fas fa-chart-line me-2"></i> نمایش پربازدیدترین مطالب
+                                    </a>
+                                </div>
+                                
+                                <!-- حذف همه فیلترها -->
+                                <div>
+                                    <a href="{% url 'blog:blog' %}" class="btn btn-sm btn-outline-secondary w-100">
+                                        <i class="fas fa-times-circle me-2"></i> حذف همه فیلترها
+                                    </a>
+                                </div>
+                            </div>
 
 						</div>
 
@@ -295,6 +373,72 @@ Page content END -->
     
     <!-- اضافه کردن اسکریپت جستجو و مرتب‌سازی -->
     <script src="{% static 'js/blog.js' %}"></script>
+    
+    <!-- توابع جاوااسکریپت برای فیلترهای جستجوی پیشرفته -->
+    <script>
+        // تابع جستجو در موبایل
+        function searchBlogMobile() {
+            const searchTerm = document.getElementById('mobileBlogSearch').value.trim();
+            if (searchTerm) {
+                window.location.href = `{% url 'blog:blog' %}?search=${encodeURIComponent(searchTerm)}`;
+            }
+        }
+        
+        // اضافه کردن قابلیت جستجو با دکمه Enter
+        document.getElementById('mobileBlogSearch')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchBlogMobile();
+            }
+        });
+        
+        // تابع فیلتر بر اساس تاریخ
+        function filterByDate() {
+            const dateFrom = document.getElementById('dateFrom').value;
+            const dateTo = document.getElementById('dateTo').value;
+            
+            if (!dateFrom && !dateTo) {
+                alert('لطفاً حداقل یکی از فیلدهای تاریخ را پر کنید');
+                return;
+            }
+            
+            let url = new URL(window.location.href);
+            
+            // حذف پارامترهای قبلی تاریخ
+            url.searchParams.delete('date_from');
+            url.searchParams.delete('date_to');
+            
+            // اضافه کردن پارامترهای جدید
+            if (dateFrom) {
+                url.searchParams.set('date_from', dateFrom);
+            }
+            
+            if (dateTo) {
+                url.searchParams.set('date_to', dateTo);
+            }
+            
+            window.location.href = url.toString();
+        }
+        
+        // تنظیم مقادیر پیش‌فرض فیلدهای تاریخ بر اساس پارامترهای URL
+        function initDateFilters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const dateFrom = urlParams.get('date_from');
+            const dateTo = urlParams.get('date_to');
+            
+            if (dateFrom) {
+                document.getElementById('dateFrom').value = dateFrom;
+            }
+            
+            if (dateTo) {
+                document.getElementById('dateTo').value = dateTo;
+            }
+        }
+        
+        // اجرای تابع راه‌اندازی فیلترهای تاریخ
+        document.addEventListener('DOMContentLoaded', function() {
+            initDateFilters();
+        });
+    </script>
 
 
 
@@ -444,6 +588,105 @@ Page content END -->
     font-weight: 700;
 }
 
+/* استایل‌های جدید برای موبایل */
+@media (max-width: 768px) {
+    .search-box, .sort-box {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .custom-search-input {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
+    
+    .search-btn {
+        padding: 0 15px;
+        font-size: 0.9rem;
+    }
+    
+    .sort-label {
+        padding: 10px 12px;
+    }
+    
+    .custom-sort-select {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+    
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .result-count {
+        font-size: 0.85rem;
+    }
+    
+    .result-count .badge {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+    
+    h1.fs-2 {
+        font-size: 1.75rem !important;
+        margin-bottom: 0.5rem;
+    }
+    
+    .breadcrumb {
+        font-size: 0.85rem;
+    }
+}
 
+/* استایل‌های فیلتر پیشرفته موبایل */
+.mobile-search-box {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
+.mobile-search-box .form-control {
+    border: none;
+    padding: 12px 15px;
+}
+
+.mobile-search-box .btn {
+    border-radius: 0;
+}
+
+#offcanvasSidebar .offcanvas-header {
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 10px;
+}
+
+#offcanvasSidebar h6 {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+#offcanvasSidebar h6:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, var(--bs-primary), transparent);
+    border-radius: 10px;
+}
+
+#offcanvasSidebar .list-group-item {
+    border: none;
+    transition: all 0.2s ease;
+}
+
+#offcanvasSidebar .list-group-item:hover {
+    background-color: rgba(var(--bs-primary-rgb), 0.05);
+    transform: translateX(-5px);
+}
+
+#offcanvasSidebar .list-group-borderless {
+    border: none;
+}
 </style>

@@ -184,7 +184,7 @@
 </section>
 
 <!-- بخش دانلود رزومه -->
-<section class="my-4">
+<section class="my-4 resume-section-custom-margin">
     <div class="container">
         <div class="career-path-header text-center mb-4">
             <h2 class="career-path-title">
@@ -253,7 +253,7 @@ Footer END -->
 <style>
 /* استایل تیتر اصلی صفحه */
 .about-page-title {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 .about-title {
@@ -931,11 +931,11 @@ Footer END -->
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-top: -30px; /* موقعیت بالاتر برای عکس پروفایل */
+    z-index: 10; /* اطمینان از اینکه عکس روی سایر المان‌ها قرار می‌گیرد */
 }
 
-.profile-image-container:hover {
-    transform: scale(1.02);
-}
+
 
 .profile-image {
     width: 100%;
@@ -1774,7 +1774,216 @@ Footer END -->
     
     .dev-subtitle {
         font-size: 1.1rem;
+        margin-top: -10px;
+       
     }
+    
+    /* استایل‌های جدید برای مهارت‌ها و روحیات در موبایل */
+    .intro-badge {
+        font-size: 0.7rem !important; /* اندازه فونت خیلی کوچکتر */
+        padding: 0.2rem 0.5rem !important; /* پدینگ کمتر */
+        margin-bottom: 0.1rem; /* کاهش فاصله از پایین */
+        border-radius: 15px; /* کاهش گردی گوشه‌ها */
+    }
+    
+    .intro-badges, .intro-badges-2 {
+        gap: 0.35rem !important; /* فاصله خیلی کم بین آیتم‌ها */
+        margin-bottom: 0.8rem; /* فاصله کمتر تا بخش بعدی */
+    }
+    
+    .skills-header {
+        font-size: 0.9rem; /* اندازه فونت کوچکتر برای عنوان */
+        margin-bottom: 0.5rem; /* فاصله کمتر تا آیتم‌ها */
+        margin-top: 0.5rem; /* فاصله کمتر از بالا */
+    }
+    
+    .skills-header i {
+        font-size: 0.9rem; /* اندازه آیکون کوچکتر */
+    }
+    
+    /* بهبود فضای بین بخش‌ها */
+    .section-divider {
+        margin: 0.5rem 0; /* کاهش فاصله از بالا و پایین */
+    }
+    
+    .intro-bio {
+        font-size: 0.9rem; /* کاهش اندازه فونت متن معرفی */
+        line-height: 1.7; /* تنظیم ارتفاع خط */
+    }
+}
+
+/* استایل‌های اضافی برای موبایل‌های خیلی کوچک */
+@media (max-width: 480px) {
+    .intro-badge {
+        font-size: 0.65rem !important;
+        padding: 0.15rem 0.4rem !important;
+        border-radius: 12px;
+    }
+    
+    .intro-badges, .intro-badges-2 {
+        gap: 0.2rem !important;
+    }
+    
+    .skills-header {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+        margin-top: -8px; /* بالاتر آمدن در موبایل‌های کوچک‌تر */
+    }
+    
+    .skills-header i {
+        font-size: 0.85rem;
+    }
+    
+    /* کاهش بیشتر فضاها برای موبایل‌های کوچک */
+    .section-divider {
+        margin: 0.3rem 0;
+    }
+}
+
+/* استایل‌های اضافی برای بخش دانلود رزومه در موبایل */
+@media (max-width: 768px) {
+    /* استایل‌های بخش دانلود رزومه برای موبایل معمولی */
+    .career-path-title {
+        font-size: 1.4rem; /* کوچک‌تر کردن عنوان بخش رزومه */
+        margin-bottom: 0.6rem; /* کاهش فاصله پایین عنوان */
+    }
+    
+    .career-path-title-line {
+        width: 60px; /* کوچک‌تر کردن خط زیر عنوان */
+    }
+    
+    .resume-card-container {
+        margin: 1.2rem 0; /* کاهش فاصله بالا و پایین کارت رزومه */
+    }
+    
+    .resume-card-header {
+        padding: 1rem 1.2rem; /* کاهش پدینگ هدر کارت */
+    }
+    
+    .resume-download-link {
+        padding: 1.2rem 1.5rem; /* کاهش پدینگ لینک دانلود */
+    }
+    
+    /* تنظیم فاصله کلی بخش */
+    section.my-4 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+/* استایل‌های اضافی برای موبایل‌های کوچک در بخش رزومه */
+@media (max-width: 480px) {
+    /* استایل‌های بخش دانلود رزومه برای موبایل‌های کوچک */
+    .career-path-title {
+        font-size: 1.3rem; /* کوچک‌تر کردن بیشتر عنوان بخش رزومه */
+    }
+    
+    .career-path-title-line {
+        width: 50px; /* کوچک‌تر کردن خط زیر عنوان */
+        height: 2px; /* کم‌تر کردن ضخامت خط */
+    }
+    
+    .resume-card-container {
+        margin: 0.8rem 0; /* کاهش بیشتر فاصله کارت */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* سایه کمتر */
+    }
+    
+    .resume-card-header {
+        padding: 0.7rem 0.8rem; /* کاهش بیشتر پدینگ هدر */
+    }
+    
+    .resume-title {
+        font-size: 1rem; /* کوچک‌تر کردن بیشتر عنوان کارت */
+    }
+    
+    .resume-title-icon {
+        font-size: 0.9rem; /* کوچک‌تر کردن آیکون عنوان */
+    }
+    
+    .resume-file-item {
+        padding: 0.4rem 0; /* کاهش بیشتر پدینگ آیتم‌ها */
+    }
+    
+    .resume-lang {
+        font-size: 0.9rem; /* کوچک‌تر کردن بیشتر متن زبان */
+    }
+    
+    .resume-download-icon {
+        width: 1.6rem; /* کوچک‌تر کردن بیشتر آیکون دانلود */
+        height: 1.6rem;
+    }
+    
+    .resume-download-icon i {
+        font-size: 0.8rem; /* کوچک‌تر کردن آیکون داخلی دانلود */
+    }
+    
+    /* تنظیم فاصله کلی بخش */
+    section.my-4 {
+        margin-top: 0.8rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+}
+
+/* استایل‌های اضافی برای موبایل‌های خیلی کوچک در بخش رزومه */
+@media (max-width: 480px) {
+    /* استایل‌های بخش دانلود رزومه برای موبایل‌های کوچک */
+    .career-path-title {
+        font-size: 1.3rem; /* کوچک‌تر کردن بیشتر عنوان بخش رزومه */
+    }
+    
+    .career-path-title-line {
+        width: 50px; /* کوچک‌تر کردن خط زیر عنوان */
+        height: 2px; /* کم‌تر کردن ضخامت خط */
+    }
+    
+    .resume-card-container {
+        margin: 0.8rem 0; /* کاهش بیشتر فاصله کارت */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* سایه کمتر */
+    }
+    
+    .resume-card-header {
+        padding: 0.7rem 0.8rem; /* کاهش بیشتر پدینگ هدر */
+    }
+    
+    .resume-title {
+        font-size: 1rem; /* کوچک‌تر کردن بیشتر عنوان کارت */
+    }
+    
+    .resume-title-icon {
+        font-size: 0.9rem; /* کوچک‌تر کردن آیکون عنوان */
+    }
+    
+    .resume-file-item {
+        padding: 0.4rem 0; /* کاهش بیشتر پدینگ آیتم‌ها */
+    }
+    
+    .resume-download-link {
+        padding: 0.8rem 1rem; /* کاهش پدینگ لینک دانلود */
+    }
+    
+    .resume-lang {
+        font-size: 0.9rem; /* کوچک‌تر کردن بیشتر متن زبان */
+    }
+    
+    .resume-download-icon {
+        width: 1.6rem; /* کوچک‌تر کردن بیشتر آیکون دانلود */
+        height: 1.6rem;
+    }
+    
+    .resume-download-icon i {
+        font-size: 0.8rem; /* کوچک‌تر کردن آیکون داخلی دانلود */
+    }
+    
+    /* تنظیم فاصله کلی بخش */
+    section.my-4 {
+        margin-top: 0.8rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+}
+
+/* استایل سفارشی برای مارجین تاپ بخش رزومه */
+.resume-section-custom-margin {
+  margin-top: -30px !important; /* 20 پیکسل بالاتر */
 }
 </style>
 

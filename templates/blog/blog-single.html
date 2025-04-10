@@ -40,6 +40,34 @@
       border: none !important;
       margin-bottom: 15px;
     }
+    
+    /* استایل‌های جدید برای موبایل */
+    .post-meta {
+      padding: 8px !important;
+    }
+    
+    .post-meta .row {
+      flex-direction: row !important;
+    }
+    
+    .post-meta .icon {
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem !important;
+    }
+    
+    .post-meta .info {
+      font-size: 0.75rem !important;
+    }
+    
+    .post-meta .py-2 {
+      padding-top: 0.3rem !important;
+      padding-bottom: 0.3rem !important;
+    }
+    
+    .post-meta .border-end {
+      border-left: 1px solid var(--border-color) !important;
+      margin-bottom: 0 !important;
+    }
   }
   
   .post-image-container {
@@ -246,15 +274,15 @@
         <!-- اطلاعات مهم پست -->
         <div class="post-meta mb-4 p-2 rounded w-100" style="margin-top: 1.5rem;">
           <div class="row g-0">
-            <div class="col-md-4 text-center border-end py-2">
+            <div class="col-4 text-center border-end py-2">
               <div class="icon mb-1"><i class="fas fa-eye"></i></div>
               <div class="info small">{{ post.count_views }} بازدید</div>
             </div>
-            <div class="col-md-4 text-center border-end py-2">
+            <div class="col-4 text-center border-end py-2">
               <div class="icon mb-1"><i class="far fa-clock"></i></div>
               <div class="info small">{{ reading_time }} دقیقه مطالعه</div>
             </div>
-            <div class="col-md-4 text-center py-2">
+            <div class="col-4 text-center py-2">
               <div class="icon mb-1"><i class="far fa-calendar-alt"></i></div>
               <div class="info small">{{ post.created_at|date:"Y/m/d" }}</div>
             </div>

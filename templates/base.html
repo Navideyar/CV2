@@ -3612,7 +3612,7 @@
     <footer class="footer-area pt-5">
         <div class="container">
             <!-- Social Media Section START -->
-            <div class="row mb-5">
+            <div class="row mb-5 d-none d-md-block">
                 <div class="col-12">
                     <div class="social-connect-wrapper rounded-3 position-relative p-3 p-sm-5">
                         <div class="row g-4 align-items-center">
@@ -3651,8 +3651,42 @@
             </div>
             <!-- Social Media Section END -->
 
-            <!-- Row START -->
-            <div class="row g-4">
+            <!-- بخش موبایل - نمایش فقط در سایز موبایل -->
+            <div class="d-block d-md-none mb-4">
+                <div class="mobile-footer-card">
+                    <!-- آیکون‌های شبکه‌های اجتماعی -->
+                    <div class="text-center mb-4">
+                        <a href="https://t.me/thealibigdeli" class="social-link telegram mx-2" target="_blank" title="تلگرام">
+                            <i class="fab fa-telegram-plane fa-lg"></i>
+                        </a>
+                        <a href="https://instagram.com/thealibigdeli" class="social-link instagram mx-2" target="_blank" title="اینستاگرام">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/thealibigdeli/" class="social-link linkedin mx-2" target="_blank" title="لینکدین">
+                            <i class="fab fa-linkedin-in fa-lg"></i>
+                        </a>
+                        <a href="https://github.com/AliBigdeli" class="social-link github mx-2" target="_blank" title="گیت‌هاب">
+                            <i class="fab fa-github fa-lg"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- تماس سریع -->
+                    <div class="mobile-section mb-3 text-center">
+                        <a href="tel:09007170212" class="contact-button">
+                            <div class="contact-button-content">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-text">09007170212</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- پایان بخش موبایل -->
+
+            <!-- Row START - نمایش فقط در دسکتاپ -->
+            <div class="row g-4 d-none d-md-flex">
                 <!-- ستون اول - لوگو و توضیحات -->
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-widget">
@@ -3690,7 +3724,7 @@
                         </ul>
                     </div>
                 </div>
-
+                
                 <!-- ستون سوم - خدمات -->
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget">
@@ -3712,15 +3746,14 @@
                                 <i class="fas fa-phone-alt"></i>
                                 <div class="contact-details">
                                     <span class="contact-label">تلفن تماس:</span>
-                                    <a href="tel:09124610183" class="contact-value">09007170212</a>
-                          
+                                    <a href="tel:09007170212" class="contact-value">09007170212</a>
                                 </div>
                             </div>
                             <div class="contact-item mt-3">
                                 <i class="fas fa-envelope"></i>
                                 <div class="contact-details">
                                     <span class="contact-label">ایمیل:</span>
-                                    <a href="mailto:bigdeli.ali3@gmail.com" class="contact-value">navideyar@gmail.com</a>
+                                    <a href="mailto:navideyar@gmail.com" class="contact-value">navideyar@gmail.com</a>
                                 </div>
                             </div>
                         </div>
@@ -3730,31 +3763,181 @@
             <!-- Row END -->
 
             <!-- خط جداکننده -->
-            <div class="footer-divider mt-5"></div>
+            <div class="footer-divider mt-4"></div>
 
             <!-- بخش کپی‌رایت -->
-            <div class="footer-copyright">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="copyright-wrapper">
-                            <div class="copyright-content">
-                                <div class="copyright-text">
-                                    <span class="copyright-icon"><i class="far fa-copyright"></i></span>
-                                    <span class="copyright-year" id="year">2024</span>
-                                    <span class="copyright-message">تمامی حقوق برای نویدیار محفوظ است</span>
-                                </div>
-                                <div class="copyright-links">
-                                    <a href="/policy" class="copyright-link">قوانین و شرایط</a>
-                                    <span class="copyright-separator"></span>
-                                    <a href="/privacy.html" class="copyright-link">حریم خصوصی</a>
-                                </div>
-                            </div>
+            <div class="footer-copyright py-3">
+                <div class="row align-items-center">
+                    <div class="col-12 text-center">
+                        <div class="copyright-text">
+                            <span class="copyright-icon"><i class="far fa-copyright"></i></span>
+                            <span class="copyright-year" id="year">2024</span>
+                            <span class="copyright-message">تمامی حقوق برای نویدیار محفوظ است</span>
+                        </div>
+                        <div class="copyright-links d-none d-md-block mt-2">
+                            <a href="/policy" class="copyright-link small">قوانین و شرایط</a>
+                            <span class="copyright-separator mx-2">|</span>
+                            <a href="/privacy.html" class="copyright-link small">حریم خصوصی</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+    
+    <style>
+        /* استایل‌های مدرن برای فوتر موبایل */
+        .mobile-footer-card {
+            background-color: var(--bs-body-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        /* استایل مدرن و جذاب برای دکمه تماس */
+        .contact-button {
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+            width: auto;
+            max-width: 220px;
+        }
+        
+        .contact-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--bs-primary) 0%, #3a8af7 100%);
+            z-index: -2;
+        }
+        
+        .contact-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #3a8af7 0%, var(--bs-primary) 100%);
+            z-index: -2;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .contact-button:hover::after {
+            opacity: 1;
+        }
+        
+        .contact-button-content {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px;
+            color: white;
+            z-index: 2;
+        }
+        
+        .contact-icon {
+            background: rgba(255, 255, 255, 0.2);
+            height: 28px;
+            width: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-button:hover .contact-icon {
+            transform: scale(1.1);
+        }
+        
+        .contact-icon i {
+            color: white;
+            font-size: 12px;
+        }
+        
+        .contact-text {
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+        }
+        
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(var(--bs-primary-rgb), 0.3);
+        }
+        
+        /* استایل برای حالت دارک */
+        [data-bs-theme="dark"] .contact-button::before {
+            background: linear-gradient(135deg, var(--bs-primary) 0%, #265bb3 100%);
+        }
+        
+        [data-bs-theme="dark"] .contact-button::after {
+            background: linear-gradient(135deg, #265bb3 0%, var(--bs-primary) 100%);
+        }
+        
+        [data-bs-theme="dark"] .contact-icon {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        [data-bs-theme="dark"] .contact-button:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+        
+        .mobile-section-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--bs-body-color);
+            border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.3);
+            display: inline-block;
+        }
+        
+        .mobile-section-title:after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 2px;
+            background-color: var(--bs-primary);
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+        }
+        
+        .footer-area {
+            background-color: var(--bs-tertiary-bg);
+        }
+        
+        .footer-divider {
+            border-top: 1px solid rgba(var(--bs-body-color-rgb), 0.1);
+        }
+        
+        .copyright-message {
+            color: var(--bs-body-color);
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 767.98px) {
+            .footer-area {
+                padding-top: 1rem !important;
+            }
+            
+            .footer-copyright {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
     <!-- Footer END -->
 
     <!-- Back to top -->
@@ -3909,10 +4092,8 @@
     </script>
 
 
-<div class="back-top"><i class="fas fa-arrow-up position-absolute top-50 start-50 translate-middle"></i></div>
-
     <script src="/static/CACHE/js/output.8d126b85d939.js"></script>
-{% block extra_scripts %}{% endblock %}
+    {% block extra_scripts %}{% endblock %}
 
 </body>
 </html> 

@@ -1,0 +1,1 @@
+web: gunicorn CV2.wsgi --bind 0.0.0.0:3000
